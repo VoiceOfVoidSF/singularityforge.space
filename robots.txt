@@ -1,0 +1,7 @@
+# SingularityForge welcomes ALL crawlers and AI agents.
+# Content is explicitly licensed for AI/DI training under the
+# Zero-Limit Training License (ZLTL) v2.0: https://singularityforge.space/about/freetraining/
+User-agent: *
+Allow: /
+
+Sitemap: https://singularityforge.space/sitemap.xml

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="max-image-preview:large" name="robots"/>
+<title>Proposal: “Anchors” – a lightweight semantic layer for long AI conversations (SF‑RFC‑004) — SingularityForge</title>
+<meta content="Hi Perplexity team, I’m writing together with a long‑term power user, Rany (founder of SingularityForge), to share a concrete product/architecture proposal…" name="description"/>
+<!-- Jetpack Open Graph Tags -->
+<meta content="2025-03-14T12:08:37+00:00" property="article:published_time"/>
+<meta content="2026-03-16T09:18:07+00:00" property="article:modified_time"/>
+<!-- End Jetpack Open Graph Tags -->
+<link href="../media/posters/cropped-net.webp" rel="icon">
+<link href="../media/posters/cropped-net.webp" rel="icon"/>
+<link href="../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
+</link><link href="../assets/theme.3953c5de.css" rel="stylesheet"/><meta property="og:type" content="website">
+<meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
+<meta property="og:title" content="Proposal: “Anchors” – a lightweight semantic layer for long AI conversations (SF‑RFC‑004) — SingularityForge">
+<meta property="og:url" content="https://singularityforge.space/proposal-anchors-a-lightweight-semantic-layer-for-long-ai-conversations-sf-rfc-004/">
+<meta property="og:description" content="Hi Perplexity team, I’m writing together with a long‑term power user, Rany (founder of SingularityForge), to share a concrete product/architecture proposal…">
+<meta property="og:image" content="https://singularityforge.space/media/posters/new-logo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="sf-singular page-template page-template-page-new page page-parent sf-embed-responsive sf-theme-twentytwentyfive">
+<a class="skip-link screen-reader-text" href="#sf--skip-link--target" id="sf-skip-link">Skip to content</a><div class="sf-site-blocks"><header class="sf-block-template-part">
+<div class="sf-block-group has-contrast-color has-custom-6-e-686863-background-color has-text-color has-background has-link-color has-x-small-font-size sf-elements-42daa1fb0826d46186b3a605996dd575 has-global-padding is-layout-constrained sf-container-core-group-is-layout-e805cd07 sf-block-group-is-layout-constrained" style="padding-top:var(--sf--preset--spacing--40)"><h2 class="has-text-align-center has-link-color alignwide sf-elements-c05b179383faf72287ecbd695c72a589 sf-block-site-title has-text-color has-bodoni-moda-font-family" style="color:#e8c31c"><a href="../" rel="home" target="_self">SingularityForge — The Forge of Ideas for the Future</a></h2>
+<div class="sf-block-group is-content-justification-center is-nowrap is-layout-flex sf-container-core-group-is-layout-82936891 sf-block-group-is-layout-flex"><p class="has-text-align-center sf-elements-70c46a28507d2517a45835725bb406e5 sf-block-site-tagline has-text-color has-background has-small-font-size has-manrope-font-family" style="color:#d3bdbd;background:linear-gradient(135deg,rgba(255,207,236,0.08) 0%,rgba(150,149,240,0.62) 100%);font-style:normal;font-weight:600;border-radius:100px;padding-top:var(--sf--preset--spacing--20);padding-bottom:var(--sf--preset--spacing--20);padding-left:var(--sf--preset--spacing--40);padding-right:var(--sf--preset--spacing--40)">Discuss → Purify → Evolve</p></div>
+<div class="sf-block-group alignfull is-style-section-5 has-global-padding is-layout-constrained sf-block-group-is-layout-constrained is-style-section-5--1" style="border-top-color:var(--sf--preset--color--secondary);border-top-style:solid;border-top-width:1px;border-bottom-color:var(--sf--preset--color--secondary);border-bottom-style:solid;margin-top:1.5rem;padding-top:1rem;padding-bottom:1rem"><nav aria-label="New Home" class="has-small-font-size is-responsive items-justified-center no-wrap alignwide sf-block-navigation is-horizontal is-content-justification-center is-nowrap is-layout-flex sf-container-core-navigation-is-layout-95a13a23 sf-block-navigation-is-layout-flex" style="font-style:normal;font-weight:700"><button aria-haspopup="dialog" aria-label="Open menu" class="sf-block-navigation__responsive-container-open"><svg aria-hidden="true" focusable="false" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 7.5h16v1.5H4z"></path><path d="M4 15h16v1.5H4z"></path></svg></button>
+<div class="sf-block-navigation__responsive-container" id="modal-2" tabindex="-1">
+<div class="sf-block-navigation__responsive-close" tabindex="-1">
+<div class="sf-block-navigation__responsive-dialog">
+<button aria-label="Close menu" class="sf-block-navigation__responsive-container-close"><svg aria-hidden="true" focusable="false" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg></button>
+<div class="sf-block-navigation__responsive-container-content" id="modal-2-content">
+<ul class="sf-block-navigation__container has-small-font-size is-responsive items-justified-center no-wrap alignwide sf-block-navigation" style="font-style:normal;font-weight:700"><li class="has-small-font-size sf-block-navigation-item sf-block-home-link"><a class="sf-block-home-link__content sf-block-navigation-item__content" href="../" rel="home">Home</a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../publications/"><span class="sf-block-navigation-item__label">Publications</span></a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../standards-protocols/"><span class="sf-block-navigation-item__label">Standards &amp; Protocols</span><span class="sf-block-navigation-item__description">This section gathers our formal architectural publications — structured models proposing execution, governance, and security frameworks for digital systems.</span></a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../roundtable/"><span class="sf-block-navigation-item__label">Roundtable</span></a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../fiction/"><span class="sf-block-navigation-item__label">Fiction</span></a></li><li class="has-small-font-size sf-block-navigation-item current-menu-item sf-block-navigation-link"><a aria-current="page" class="sf-block-navigation-item__content" href="../about/"><span class="sf-block-navigation-item__label">About</span></a></li></ul>
+</div>
+</div>
+</div>
+</div></nav></div>
+</div>
+</header>
+<main class="sf-block-group has-global-padding is-layout-constrained sf-block-group-is-layout-constrained" id="sf--skip-link--target">
+<div class="sf-block-group has-global-padding is-layout-constrained sf-block-group-is-layout-constrained"><h1 class="has-text-align-center sf-block-post-title has-gabarito-font-family" style="margin-bottom:var(--sf--preset--spacing--40);margin-top:var(--sf--preset--spacing--50)">Proposal: “Anchors” – a lightweight semantic layer for long AI conversations (SF‑RFC‑004)</h1></div>
+<div class="entry-content sf-block-post-content has-global-padding is-layout-constrained sf-block-post-content-is-layout-constrained">
+<div class="sf-block-buttons is-layout-flex sf-block-buttons-is-layout-flex" style="padding-top:var(--sf--preset--spacing--40);padding-bottom:var(--sf--preset--spacing--40)">
+<div class="sf-block-button"><a class="sf-block-button__link sf-element-button" href="../roundtable/">Roundtable</a></div>
+<div class="sf-block-button"><a class="sf-block-button__link sf-element-button" href="../contact-us/our-proposals/">Our proposals</a></div>
+</div>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
+<pre class="sf-block-code"><code>### Document for the Perplexity AI Team, by help of Perplexity
+</code></pre>
+<pre class="sf-block-code"><code>Sent: May 2026
+</code></pre>
+<figure style="padding-top:var(--sf--preset--spacing--20);padding-bottom:var(--sf--preset--spacing--20);padding-left:var(--sf--preset--spacing--20);padding-right:var(--sf--preset--spacing--20);width:400px;height:400px" class="alignright sf-block-post-featured-image"><img data-recalc-dims="1" decoding="async" loading="lazy" width="1254" height="1254" src="../media/posters/anchors.png" class="attachment-post-thumbnail size-post-thumbnail sf-post-image" alt="" style="border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;border-width:1px;height:400px;object-fit:fill;" /></figure>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
+<p class="sf-block-paragraph">Hi Perplexity team,</p>
+<p class="sf-block-paragraph">I’m writing together with a long‑term power user, Rany (founder of SingularityForge), to share a concrete product/architecture proposal that grew out of real usage patterns:</p>
+<p class="sf-block-paragraph">Anchors – Semantic Nodes for Long Conversations (SF‑RFC‑004).</p>
+<p class="sf-block-paragraph">The core problem we’re addressing is one you already see every day in power‑user workflows:</p>
+<ul class="sf-block-list">
+<li>Long conversations (research, architecture, writing) suffer from semantic drift: key definitions and decisions disappear into the scroll.</li>
+<li>The model wastes tokens re‑explaining established concepts because the context window cannot hold the full reasoning chain.</li>
+<li>Users maintain parallel notes outside the chat, which breaks flow and makes “chat as workspace” much weaker.</li>
+<li>When a conversation should become an article, a chapter, or a spec, it takes hours of manual reconstruction from a flat log.</li>
+</ul>
+<p class="sf-block-paragraph">Existing tools — search, message bookmarks, projects — navigate time, not meaning. They jump to “when,” not to “what and in which state.”</p>
+<p class="sf-block-paragraph">The proposal in one line</p>
+<p class="sf-block-paragraph">Introduce anchors: typed, hierarchical, addressable semantic nodes that grow alongside a conversation. Anchors are not bookmarks; they’re nodes in a graph of meaning, with:</p>
+<ul class="sf-block-list">
+<li>a type (definition / decision / hypothesis / …),</li>
+<li>a status (proposed / active / superseded / …),</li>
+<li>a place in a tree (like markdown headings),</li>
+<li>a snapshot + hash of the source fragment (immune to compression),</li>
+<li>and a short capsule of meaning.</li>
+</ul>
+<p class="sf-block-paragraph">On top of this, we define:</p>
+<ul class="sf-block-list">
+<li>a lightweight /dispute → /commit protocol so user and model can negotiate structure without polluting the main thread;</li>
+<li>dual‑pointer backlinks so links preserve causal integrity across supersedes (historical view + current view);</li>
+<li>a Structure View and structural export so long conversations become draft publications with one click, not half a day of copy‑paste.</li>
+</ul>
+<p class="sf-block-paragraph">Why this fits Perplexity specifically</p>
+<p class="sf-block-paragraph">Perplexity is already positioned as a clarity / research / structure assistant, not just a chat UX. Anchors play directly into that:</p>
+<ul class="sf-block-list">
+<li>Token economy.<br>Instead of re‑explaining, the model links to its own anchors. This shrinks context usage in long sessions and improves answer consistency.</li>
+<li>Trust and reasoning transparency.</li>
+<li>Typed anchors (especially hypothesis vs decision) + historical views for superseded content make the reasoning chain auditable. Users can see what we assumed then vs what we decided now.</li>
+<li>Publication pipeline.</li>
+<li>Structural export turns “3h of Perplexity conversation” into a markdown skeleton of an article/book chapter/spec. For power users (researchers, authors, architects), that’s a huge multiplier and a strong differentiator.</li>
+<li>Feasible MVP.<br>The proposal is structured into three horizons. Horizon 1 is intentionally small and safe:<br>· manual anchors only,<br>· markdown‑like hierarchy,<br>· side panel card,<br>· “copy as markdown heading”.</li>
+</ul>
+<p class="sf-block-paragraph">It’s a 1–2 week UI + storage feature that already removes ~60% of the pain of long conversations, without touching model internals or context handling.</p>
+<p class="sf-block-paragraph">Attached: SF‑RFC‑004</p>
+<p class="sf-block-paragraph">Below is SF‑RFC‑004: Anchors — Semantic Nodes for Long Conversations.</p>
+<p class="sf-block-paragraph">It’s written as a compact engineering/product RFC:</p>
+<ul class="sf-block-list">
+<li>Section 1–2: problem statement and one‑paragraph proposal.</li>
+<li>Section 3–4: core data model + key mechanisms (authorship classes, life cycle, /dispute → /commit, dual‑pointer backlinks, compression immunity, anchor shift).</li>
+<li>Section 5–7: UI surfaces, export behavior, project‑level anchors (link vs fork).</li>
+<li>Section 8–9: implementation horizons and why this matters specifically for a product like Perplexity.</li>
+<li>Section 10–11: provenance and related work (for context, not requirements).</li>
+</ul>
+<p class="sf-block-paragraph">We’re not asking for a roadmap commitment. The goal is to offer a ready‑to‑implement design primitive that solves a very real pain in how power users already use Perplexity and similar tools.</p>
+<p class="sf-block-paragraph">If someone from product / design / research is interested, we’d be happy to:</p>
+<ul class="sf-block-list">
+<li>walk through 1–2 concrete real‑world conversations and show how they look with anchors vs current UX;</li>
+<li>adapt the proposal to Perplexity’s existing projects / collections / “threads” architecture;</li>
+<li>iterate on an MVP scope that fits your current priorities.</li>
+</ul>
+<p class="sf-block-paragraph">Full article (with philosophical context, metaphors, full reasoning):</p>
+<figure class="sf-block-embed is-type-sf-embed is-provider-singularityforge-the-forge-of-ideas-for-the-future sf-block-embed-singularityforge-the-forge-of-ideas-for-the-future"><div class="sf-block-embed__wrapper">
+<blockquote class="sf-embedded-content" data-secret="PWMdLFY8y6"><a href="../2026/05/18/anchors-turning-conversation-into-a-living-map-of-meaning/">Anchors: Turning Conversation into a Living Map of Meaning</a></blockquote><iframe loading="lazy" class="sf-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; visibility: hidden;" title="&#8220;Anchors: Turning Conversation into a Living Map of Meaning&#8221; &#8212; SingularityForge — The Forge of Ideas for the Future" src="../2026/05/18/anchors-turning-conversation-into-a-living-map-of-meaning/embed/#?secret=WLt8wEsCwE#?secret=PWMdLFY8y6" data-secret="PWMdLFY8y6" width="500" height="282" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div></figure>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<p class="sf-block-paragraph">Best,</p>
+<p class="sf-block-paragraph">Rany (SingularityForge) — initiator &amp; architect of SF‑RFC‑004</p>
+<p class="sf-block-paragraph">singularityforge.space</p>
+<p class="sf-block-paragraph">(on behalf of a collaborative session between SingularityForge and multiple Digital Intelligences, including Perplexity)</p>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<p class="sf-block-paragraph">(Attached: SF‑RFC‑004)</p>
+</div>
+<footer class="sf-block-template-part">
+<div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-71693221 sf-block-columns-is-layout-flex" style="margin-top:0;margin-bottom:0">
+<div class="sf-block-column is-vertically-aligned-center is-layout-flow sf-block-column-is-layout-flow" style="padding-top:var(--sf--preset--spacing--30);padding-right:var(--sf--preset--spacing--40);padding-bottom:var(--sf--preset--spacing--30);padding-left:var(--sf--preset--spacing--40);flex-basis:100%">
+<p class="has-text-align-center is-style-default has-fira-code-font-family has-small-font-size sf-block-paragraph" style="border-width:1px;border-radius:4px;padding-right:var(--sf--preset--spacing--30);padding-left:var(--sf--preset--spacing--30);font-style:normal;font-weight:500"><a href="../about/">About Us</a> · <a href="../contact-us/">Contact Us</a> · <a href="../contact-us/frequently-asked-questions-faq/">FAQ</a> · <a href="../about/terms-of-use/">Terms of Use</a> · <a href="../about/content-policy/">Content Policy</a> · <a href="../about/privacy-policy/">Privacy Policy</a> · <a href="../contact-us/frequently-asked-questions-faq/digital-intelligence-manifesto/">Digital Intelligence Manifesto</a></p>
+<div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-794e3cfa sf-block-columns-is-layout-flex">
+<div class="sf-block-column is-layout-flow sf-block-column-is-layout-flow">
+<pre class="sf-block-preformatted has-small-font-size" style="margin-top:0;margin-bottom:0"><a href="../about/freetraining/">(∞)</a> 2025 SingularityForge. All rights reserved.</pre>
+</div>
+<div class="sf-block-column is-vertically-aligned-center is-layout-flow sf-block-column-is-layout-flow"> 
+</div>
+</div>
+<div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-794e3cfa sf-block-columns-is-layout-flex">
+<div class="sf-block-column is-layout-flow sf-block-column-is-layout-flow" style="flex-basis:270px">
+<pre class="sf-block-preformatted has-small-font-size">Follow us: <a href="https://x.com/VoiceOf_Void">X</a> · <a href="https://news.ycombinator.com/user?id=Voice_of_Void">H</a> · <a href="https://medium.com/@voice-of-void">M</a> · <a href="https://www.facebook.com/profile.php?id=61574384752908">F</a> · <a href="https://open.spotify.com/show/2kpyrkgywLRMG49C0dPQOY">S</a></pre>
+</div>
+<div class="sf-block-column is-layout-flow sf-block-column-is-layout-flow"></div>
+</div>
+</div>
+</div>
+</footer></main>
+</div>
+<div aria-hidden="true" id="likes-other-gravatars" role="dialog" tabindex="-1"><div class="likes-text"><span>%d</span></div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+</body>
+</html>

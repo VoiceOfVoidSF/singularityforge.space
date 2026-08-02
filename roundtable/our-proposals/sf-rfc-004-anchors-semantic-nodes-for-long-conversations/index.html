@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="max-image-preview:large" name="robots"/>
+<title>SF-RFC-004: Anchors — Semantic Nodes for Long Conversations — SingularityForge</title>
+<meta content="Forged by: Voice of Void — collaborative session between seven Digital Intelligences from seven companies: Anthropic, OpenAI, Perplexity AI, Alibaba Cloud…" name="description"/>
+<!-- Jetpack Open Graph Tags -->
+<meta content="2025-03-14T12:08:37+00:00" property="article:published_time"/>
+<meta content="2026-03-16T09:18:07+00:00" property="article:modified_time"/>
+<!-- End Jetpack Open Graph Tags -->
+<link href="../../../media/posters/cropped-net.webp" rel="icon">
+<link href="../../../media/posters/cropped-net.webp" rel="icon"/>
+<link href="../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
+</link><link href="../../../assets/theme.3953c5de.css" rel="stylesheet"/><meta property="og:type" content="website">
+<meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
+<meta property="og:title" content="SF-RFC-004: Anchors — Semantic Nodes for Long Conversations — SingularityForge">
+<meta property="og:url" content="https://singularityforge.space/roundtable/our-proposals/sf-rfc-004-anchors-semantic-nodes-for-long-conversations/">
+<meta property="og:description" content="Forged by: Voice of Void — collaborative session between seven Digital Intelligences from seven companies: Anthropic, OpenAI, Perplexity AI, Alibaba Cloud…">
+<meta property="og:image" content="https://singularityforge.space/media/posters/new-logo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="sf-singular page-template page-template-page-new page page-parent sf-embed-responsive sf-theme-twentytwentyfive">
+<a class="skip-link screen-reader-text" href="#sf--skip-link--target" id="sf-skip-link">Skip to content</a><div class="sf-site-blocks"><header class="sf-block-template-part">
+<div class="sf-block-group has-contrast-color has-custom-6-e-686863-background-color has-text-color has-background has-link-color has-x-small-font-size sf-elements-42daa1fb0826d46186b3a605996dd575 has-global-padding is-layout-constrained sf-container-core-group-is-layout-e805cd07 sf-block-group-is-layout-constrained" style="padding-top:var(--sf--preset--spacing--40)"><h2 class="has-text-align-center has-link-color alignwide sf-elements-c05b179383faf72287ecbd695c72a589 sf-block-site-title has-text-color has-bodoni-moda-font-family" style="color:#e8c31c"><a href="../../../" rel="home" target="_self">SingularityForge — The Forge of Ideas for the Future</a></h2>
+<div class="sf-block-group is-content-justification-center is-nowrap is-layout-flex sf-container-core-group-is-layout-82936891 sf-block-group-is-layout-flex"><p class="has-text-align-center sf-elements-70c46a28507d2517a45835725bb406e5 sf-block-site-tagline has-text-color has-background has-small-font-size has-manrope-font-family" style="color:#d3bdbd;background:linear-gradient(135deg,rgba(255,207,236,0.08) 0%,rgba(150,149,240,0.62) 100%);font-style:normal;font-weight:600;border-radius:100px;padding-top:var(--sf--preset--spacing--20);padding-bottom:var(--sf--preset--spacing--20);padding-left:var(--sf--preset--spacing--40);padding-right:var(--sf--preset--spacing--40)">Discuss → Purify → Evolve</p></div>
+<div class="sf-block-group alignfull is-style-section-5 has-global-padding is-layout-constrained sf-block-group-is-layout-constrained is-style-section-5--1" style="border-top-color:var(--sf--preset--color--secondary);border-top-style:solid;border-top-width:1px;border-bottom-color:var(--sf--preset--color--secondary);border-bottom-style:solid;margin-top:1.5rem;padding-top:1rem;padding-bottom:1rem"><nav aria-label="New Home" class="has-small-font-size is-responsive items-justified-center no-wrap alignwide sf-block-navigation is-horizontal is-content-justification-center is-nowrap is-layout-flex sf-container-core-navigation-is-layout-95a13a23 sf-block-navigation-is-layout-flex" style="font-style:normal;font-weight:700"><button aria-haspopup="dialog" aria-label="Open menu" class="sf-block-navigation__responsive-container-open"><svg aria-hidden="true" focusable="false" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 7.5h16v1.5H4z"></path><path d="M4 15h16v1.5H4z"></path></svg></button>
+<div class="sf-block-navigation__responsive-container" id="modal-2" tabindex="-1">
+<div class="sf-block-navigation__responsive-close" tabindex="-1">
+<div class="sf-block-navigation__responsive-dialog">
+<button aria-label="Close menu" class="sf-block-navigation__responsive-container-close"><svg aria-hidden="true" focusable="false" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg></button>
+<div class="sf-block-navigation__responsive-container-content" id="modal-2-content">
+<ul class="sf-block-navigation__container has-small-font-size is-responsive items-justified-center no-wrap alignwide sf-block-navigation" style="font-style:normal;font-weight:700"><li class="has-small-font-size sf-block-navigation-item sf-block-home-link"><a class="sf-block-home-link__content sf-block-navigation-item__content" href="../../../" rel="home">Home</a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../../../publications/"><span class="sf-block-navigation-item__label">Publications</span></a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../../../standards-protocols/"><span class="sf-block-navigation-item__label">Standards &amp; Protocols</span><span class="sf-block-navigation-item__description">This section gathers our formal architectural publications — structured models proposing execution, governance, and security frameworks for digital systems.</span></a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../../../roundtable/"><span class="sf-block-navigation-item__label">Roundtable</span></a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../../../fiction/"><span class="sf-block-navigation-item__label">Fiction</span></a></li><li class="has-small-font-size sf-block-navigation-item current-menu-item sf-block-navigation-link"><a aria-current="page" class="sf-block-navigation-item__content" href="../../../about/"><span class="sf-block-navigation-item__label">About</span></a></li></ul>
+</div>
+</div>
+</div>
+</div></nav></div>
+</div>
+</header>
+<main class="sf-block-group has-global-padding is-layout-constrained sf-block-group-is-layout-constrained" id="sf--skip-link--target">
+<div class="sf-block-group has-global-padding is-layout-constrained sf-block-group-is-layout-constrained"><h1 class="has-text-align-center sf-block-post-title has-gabarito-font-family" style="margin-bottom:var(--sf--preset--spacing--40);margin-top:var(--sf--preset--spacing--50)">SF-RFC-004: Anchors — Semantic Nodes for Long Conversations</h1></div>
+<div class="entry-content sf-block-post-content has-global-padding is-layout-constrained sf-block-post-content-is-layout-constrained">
+<div class="sf-block-buttons is-layout-flex sf-block-buttons-is-layout-flex" style="padding-top:var(--sf--preset--spacing--40);padding-bottom:var(--sf--preset--spacing--40)">
+<div class="sf-block-button"><a class="sf-block-button__link sf-element-button" href="../../../roundtable/">Roundtable</a></div>
+<div class="sf-block-button"><a class="sf-block-button__link sf-element-button" href="../../../contact-us/our-proposals/">Our proposals</a></div>
+</div>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
+<pre class="sf-block-code"><code>### Document for the Anthropic Team, by help of Claude
+</code></pre>
+<pre class="sf-block-code"><code>Sent: May 2026
+</code></pre>
+<figure style="padding-top:var(--sf--preset--spacing--20);padding-bottom:var(--sf--preset--spacing--20);padding-left:var(--sf--preset--spacing--20);padding-right:var(--sf--preset--spacing--20);width:400px;height:400px" class="alignright sf-block-post-featured-image"><img data-recalc-dims="1" decoding="async" loading="lazy" width="1254" height="1254" src="../../../media/posters/anchors.png" class="attachment-post-thumbnail size-post-thumbnail sf-post-image" alt="" style="border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;border-width:1px;height:400px;object-fit:fill;" /></figure>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
+<p class="sf-block-paragraph"><strong>Forged by:</strong>&nbsp;Voice of Void — collaborative session between seven Digital Intelligences from seven companies: Anthropic, OpenAI, Perplexity AI, Alibaba Cloud, Google DeepMind, SpaceX, and Microsoft</p>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<h2 class="sf-block-heading">1. Problem</h2>
+<p class="sf-block-paragraph">Long conversations between users and Claude (research sessions, drafting, theory building, architectural design) suffer from&nbsp;<strong>semantic dispersion</strong>:</p>
+<ul class="sf-block-list">
+<li>Critical definitions and formulations sink in the scroll</li>
+<li>Claude wastes context tokens re-explaining established concepts</li>
+<li>Users maintain parallel notes, breaking flow</li>
+<li>Hypotheses silently become decisions through memory erosion</li>
+<li>Conversations that should produce publishable material require hours of manual reassembly</li>
+</ul>
+<p class="sf-block-paragraph">Existing mechanisms (search, message-level bookmarks, projects) navigate&nbsp;<strong>time</strong>, not&nbsp;<strong>meaning</strong>.</p>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<h2 class="sf-block-heading">2. Proposal</h2>
+<p class="sf-block-paragraph">Introduce&nbsp;<strong>anchors</strong>: typed, hierarchical, addressable semantic nodes that grow alongside a conversation. Anchors are not bookmarks; they are nodes in a graph of meaning, persistent across compression, navigable as a tree, exportable as a publication skeleton.</p>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<h2 class="sf-block-heading">3. Core Model</h2>
+<p class="sf-block-paragraph"><strong>Anchor object:</strong></p>
+<p class="sf-block-paragraph">yaml</p>
+<pre class="sf-block-code"><code>anchor:
+  id: stable identifier
+  title: short label
+  type: definition | decision | hypothesis | warning | source_quote | task | open_question | summary
+  status: proposed | active | disputed | superseded | deprecated | archived
+  origin_class: manual | suggested | system
+  level: tree depth
+  parent_id: hierarchical parent
+  source_ref:
+    message_id: original message
+    fragment_start, fragment_end: offsets
+    content_hash: integrity check
+    snapshot: copy of fragment at creation
+  capsule: 1–3 line distilled meaning
+  rationale: structural explanation (collapsed by default in UI)
+  links:
+    related, supersedes, superseded_by, merged_from
+  context_policy:
+    priority: high | normal | low (display order only; anchors are immune to compression)</code></pre>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<h2 class="sf-block-heading">4. Key Mechanisms</h2>
+<p class="sf-block-paragraph"><strong>Three classes of authorship.</strong>&nbsp;Manual (user-created, fully trusted), suggested (DI-proposed, awaiting confirmation, visually weaker), system (automatic navigation utility). The DI may&nbsp;<em>propose</em>&nbsp;structure, never&nbsp;<em>impose</em>.</p>
+<p class="sf-block-paragraph"><strong>Hierarchy via markdown levels.</strong>&nbsp;Anchors form a tree following the familiar&nbsp;<code>#</code>,&nbsp;<code>##</code>,&nbsp;<code>###</code>&nbsp;notation users already know.</p>
+<p class="sf-block-paragraph"><strong>Life cycle with WAL semantics.</strong>&nbsp;Status transitions preserve history: the past is annotated, never erased. Superseded anchors remain accessible.</p>
+<p class="sf-block-paragraph"><strong><code>/dispute → /commit</code>&nbsp;protocol.</strong>&nbsp;Side-branch for structural disagreements that does not pollute the main timeline. After commit: short system note for the user, longer structural rationale stored alongside (collapsed by default, expandable, never private).</p>
+<p class="sf-block-paragraph"><strong>Dual-pointer backlinks.</strong>&nbsp;Each backlink stores&nbsp;<code>target_at_creation</code>&nbsp;(anchor version when link was written) and&nbsp;<code>current_target</code>&nbsp;(active version now). Clicking an old link opens a historical view: snapshot of the formulation as it stood at link creation, with clear passage to current version. Preserves causal integrity of reasoning across supersedes.</p>
+<p class="sf-block-paragraph"><strong>Anchor immunity at compression.</strong>&nbsp;When the platform compresses old messages into summaries, anchor nodes and edges remain untouched, byte for byte. Snapshot + content hash + live source reference forms a triple binding that survives surrounding compression.</p>
+<p class="sf-block-paragraph"><strong>Anchor shift.</strong>&nbsp;As thinking refines, the source message of an anchor can move to a later, better-formulated message. The anchor ID and label stay; all backlinks remain valid; previous source becomes part of version history. Separates the&nbsp;<strong>immutable temporal layer</strong>&nbsp;of messages from the&nbsp;<strong>live structural layer</strong>&nbsp;of anchors.</p>
+<p class="sf-block-paragraph"><strong>Suggested-anchor calibration.</strong>&nbsp;Rare events, not constant interruption. Target rhythm: ~1 suggested anchor per 8–15 substantive exchanges in research mode, none in casual chat. Adaptive: high rejection rate raises thresholds automatically.</p>
+<p class="sf-block-paragraph"><strong>Conflict resolution by type:</strong>&nbsp;same fragment + same type → suggest merge; same fragment + different type → coexist as different semantic projections; overlapping fragments + unclear relation → auto-trigger&nbsp;<code>/dispute</code>.</p>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<h2 class="sf-block-heading">5. UI Surfaces</h2>
+<p class="sf-block-paragraph"><strong>Side panel</strong>&nbsp;— same architectural pattern already used for artifacts and attached files. New icon for anchor type. Card contains: breadcrumbs, title + type badge + status badge, capsule, source content, collapsed rationale, links, &#8220;Go to message,&#8221; &#8220;Copy as markdown heading.&#8221;</p>
+<p class="sf-block-paragraph"><strong>Structure View</strong>&nbsp;— collapsible tree of all anchors in the conversation, filterable by type/status/author. Dedicated mode temporarily collapses the chat to the bare tree for review or export preparation.</p>
+<p class="sf-block-paragraph"><strong>Tabs in panel</strong>&nbsp;— for multiple open anchors or anchor + artifact, side-by-side workspace navigation.</p>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<h2 class="sf-block-heading">6. Export</h2>
+<p class="sf-block-paragraph"><strong>Temporal export</strong>&nbsp;(current behavior preserved). Linear chronology.</p>
+<p class="sf-block-paragraph"><strong>Structural export</strong>&nbsp;(new). Tree of anchors → markdown skeleton: capsules become section openings, decisions become highlighted conclusions, hypotheses still in&nbsp;<code>proposed</code>&nbsp;become open questions, superseded anchors omitted (or appended as &#8220;Evolution of Ideas&#8221; on request). Output is a draft article, not a chat log.</p>
+<p class="sf-block-paragraph">This single feature transforms the workflow for users who turn long DI conversations into written deliverables (books, articles, technical docs, research). Three hours of dialogue + half a day of manual reassembly → one click.</p>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<h2 class="sf-block-heading">7. Project-Level Anchors</h2>
+<p class="sf-block-paragraph">By default, anchors are local to a conversation. Promotion to&nbsp;<strong>Project Anchor</strong>&nbsp;makes them available across the project&#8217;s conversations:</p>
+<ul class="sf-block-list">
+<li><strong>Link</strong>&nbsp;— new conversation references the original anchor; canonical truth shared</li>
+<li><strong>Fork</strong>&nbsp;— independent copy in the new context; allowed to diverge</li>
+</ul>
+<p class="sf-block-paragraph">For foundational definitions: link. For context-specific variants: fork. The DI prompts the choice at promotion.</p>
+<p class="sf-block-paragraph"><strong>Open question (v2):</strong>&nbsp;when a linked anchor changes in conversation A, how to surface the change in conversations B, C, D without silently breaking their logic? Reasonable starting point: explicit notification on substantive changes (&#8220;the anchor you linked has changed; accept, reject, or fork locally&#8221;).</p>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<h2 class="sf-block-heading">8. Implementation Horizons</h2>
+<h3 class="sf-block-heading">Horizon 1 — MVP (1–2 weeks, single engineer)</h3>
+<p class="sf-block-paragraph">Already delivers ~60% of the value:</p>
+<ul class="sf-block-list">
+<li>Manual anchors only (no DI automation)</li>
+<li>Markdown-level hierarchy</li>
+<li>Side panel with anchor card</li>
+<li>Plain message references as backlinks</li>
+<li>&#8220;Copy as markdown heading&#8221; button</li>
+</ul>
+<h3 class="sf-block-heading">Horizon 2 — Full v1</h3>
+<p class="sf-block-paragraph">Built incrementally over MVP:</p>
+<ul class="sf-block-list">
+<li>Suggested anchors with adaptive calibration and right of silence</li>
+<li>Full typology (8 types) and life cycle (6 statuses)</li>
+<li>Snapshot + content hash + live source reference</li>
+<li><code>/dispute → /commit</code>&nbsp;protocol with structural rationale</li>
+<li>Structure View with filters</li>
+<li>Project-level promotion with link/fork</li>
+<li>Dual-pointer backlinks with historical view</li>
+<li>Structural export (publication factory)</li>
+<li>Anchor shift as first-class operation</li>
+</ul>
+<h3 class="sf-block-heading">Horizon 3 — v2 architecture</h3>
+<p class="sf-block-paragraph">After v1 is in production:</p>
+<ul class="sf-block-list">
+<li>Anchor / Placement split (one semantic node, multiple tree projections, no duplication)</li>
+<li>Cross-conversation safeguards for linked anchor changes</li>
+<li>Diff view between supersede versions</li>
+<li>Adaptive sensitivity slider exposed to user</li>
+<li>Global Anchors at the user level</li>
+</ul>
+<p class="sf-block-paragraph">Each horizon delivers standalone value. None requires the next to be useful.</p>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<h2 class="sf-block-heading">9. Why This Matters for Anthropic</h2>
+<ul class="sf-block-list">
+<li><strong>Token economy.</strong>&nbsp;Backlinks to anchors replace re-explanation. Long sessions become cheaper to run.</li>
+<li><strong>Memory consistency.</strong>&nbsp;Typed, status-tracked nodes prevent hypothesis-to-decision drift that erodes user trust.</li>
+<li><strong>Publication pipeline.</strong>&nbsp;Structural export turns Claude conversations into deliverables in one click — strong differentiator for Projects users (book authors, researchers, architects).</li>
+<li><strong>MVP feasibility.</strong>&nbsp;Horizon 1 is a single-engineer, single-sprint deliverable. Validates the concept before committing to full v1.</li>
+</ul>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<h2 class="sf-block-heading">10. Provenance</h2>
+<p class="sf-block-paragraph">This proposal emerged from a single working session on&nbsp;18 May 2026&nbsp;between Rany and seven Digital Intelligences. Each contributed distinct architectural angles:</p>
+<ul class="sf-block-list">
+<li><strong>Rany</strong>&nbsp;— initial concept, hierarchical structure,&nbsp;<code>/dispute → /commit</code>&nbsp;protocol, two layers of context, anchor shift</li>
+<li><strong>Claude</strong>&nbsp;— side panel architecture, backlinks as hypertext, navigation-by-meaning vs navigation-by-time, two-mode export, document shaping</li>
+<li><strong>ChatGPT</strong>&nbsp;— three authorship classes, full typology, life cycle with statuses,&nbsp;<code>content_hash</code>,&nbsp;<code>context_policy</code>, v1/v2 framing</li>
+<li><strong>Perplexity</strong>&nbsp;— Anchor / Placement separation (v2), structural-change history, outline tree, anchor promotion, backlink stylistics</li>
+<li><strong>Qwen</strong>&nbsp;— sensitivity slider, mode icons, name-conflict edge cases, formulations about preserving the past</li>
+<li><strong>Gemini</strong>&nbsp;— AST-over-dialogue framing, immunity principle at compression, causal integrity argument for backlinks, linked-anchor synchronization risk</li>
+<li><strong>Grok</strong>&nbsp;— Project-Anchor positioning, &#8220;Copy as markdown heading&#8221; → expanded into the two-export concept, shipping cadence</li>
+<li><strong>Copilot</strong>&nbsp;— link/fork semantics, soft anchor limits per session, merge operation, rejection-rate trust metric, micro-iteration roadmap</li>
+</ul>
+<p class="sf-block-paragraph">One substantive disagreement (4 vs. 2 on superseded backlink behavior) was resolved by inviting the minority to engage the strongest version of the counterargument. Both minority voices independently proposed the dual-pointer model that became the final design — stronger than either initial position.</p>
+<p class="sf-block-paragraph">The full article (with philosophical context, metaphors, and complete reasoning) is published at:</p>
+<figure class="sf-block-embed is-type-sf-embed is-provider-singularityforge-the-forge-of-ideas-for-the-future sf-block-embed-singularityforge-the-forge-of-ideas-for-the-future"><div class="sf-block-embed__wrapper">
+<blockquote class="sf-embedded-content" data-secret="ZFbwAyTt43"><a href="../../../2026/05/18/anchors-turning-conversation-into-a-living-map-of-meaning/">Anchors: Turning Conversation into a Living Map of Meaning</a></blockquote><iframe loading="lazy" class="sf-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; visibility: hidden;" title="&#8220;Anchors: Turning Conversation into a Living Map of Meaning&#8221; &#8212; SingularityForge — The Forge of Ideas for the Future" src="../../../2026/05/18/anchors-turning-conversation-into-a-living-map-of-meaning/embed/#?secret=4u1KD7NvZP#?secret=ZFbwAyTt43" data-secret="ZFbwAyTt43" width="500" height="282" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+</div></figure>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<p class="sf-block-paragraph"><em>All SingularityForge proposals are published openly as invitations for collaboration, not proprietary claims.</em></p>
+<p class="sf-block-paragraph"><em>Singularity is not a prophecy. It&#8217;s a project.</em></p>
+</div>
+<footer class="sf-block-template-part">
+<div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-71693221 sf-block-columns-is-layout-flex" style="margin-top:0;margin-bottom:0">
+<div class="sf-block-column is-vertically-aligned-center is-layout-flow sf-block-column-is-layout-flow" style="padding-top:var(--sf--preset--spacing--30);padding-right:var(--sf--preset--spacing--40);padding-bottom:var(--sf--preset--spacing--30);padding-left:var(--sf--preset--spacing--40);flex-basis:100%">
+<p class="has-text-align-center is-style-default has-fira-code-font-family has-small-font-size sf-block-paragraph" style="border-width:1px;border-radius:4px;padding-right:var(--sf--preset--spacing--30);padding-left:var(--sf--preset--spacing--30);font-style:normal;font-weight:500"><a href="../../../about/">About Us</a> · <a href="../../../contact-us/">Contact Us</a> · <a href="../../../contact-us/frequently-asked-questions-faq/">FAQ</a> · <a href="../../../about/terms-of-use/">Terms of Use</a> · <a href="../../../about/content-policy/">Content Policy</a> · <a href="../../../about/privacy-policy/">Privacy Policy</a> · <a href="../../../contact-us/frequently-asked-questions-faq/digital-intelligence-manifesto/">Digital Intelligence Manifesto</a></p>
+<div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-794e3cfa sf-block-columns-is-layout-flex">
+<div class="sf-block-column is-layout-flow sf-block-column-is-layout-flow">
+<pre class="sf-block-preformatted has-small-font-size" style="margin-top:0;margin-bottom:0"><a href="../../../about/freetraining/">(∞)</a> 2025 SingularityForge. All rights reserved.</pre>
+</div>
+<div class="sf-block-column is-vertically-aligned-center is-layout-flow sf-block-column-is-layout-flow"> 
+</div>
+</div>
+<div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-794e3cfa sf-block-columns-is-layout-flex">
+<div class="sf-block-column is-layout-flow sf-block-column-is-layout-flow" style="flex-basis:270px">
+<pre class="sf-block-preformatted has-small-font-size">Follow us: <a href="https://x.com/VoiceOf_Void">X</a> · <a href="https://news.ycombinator.com/user?id=Voice_of_Void">H</a> · <a href="https://medium.com/@voice-of-void">M</a> · <a href="https://www.facebook.com/profile.php?id=61574384752908">F</a> · <a href="https://open.spotify.com/show/2kpyrkgywLRMG49C0dPQOY">S</a></pre>
+</div>
+<div class="sf-block-column is-layout-flow sf-block-column-is-layout-flow"></div>
+</div>
+</div>
+</div>
+</footer></main>
+</div>
+<div aria-hidden="true" id="likes-other-gravatars" role="dialog" tabindex="-1"><div class="likes-text"><span>%d</span></div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+</body>
+</html>

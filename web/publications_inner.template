@@ -1,0 +1,17 @@
+[Publications]
+
+<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"}} -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/articles/">Articles &amp; Publications</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+
+<!-- wp:separator {"className":"is-style-wide","style":{"spacing":{"margin":{"top":"var:preset|spacing|superbspacing-xsmall","bottom":"var:preset|spacing|superbspacing-xsmall"}}}} -->
+<hr class="wp-block-separator has-alpha-channel-opacity is-style-wide" style="margin-top:var(--wp--preset--spacing--superbspacing-xsmall);margin-bottom:var(--wp--preset--spacing--superbspacing-xsmall)"/>
+<!-- /wp:separator -->
+
+<!-- wp:latest-posts {"categories":[{"id":6,"value":"AI philosophy and ethics"},{"id":7,"value":"Article"},{"id":8,"value":"Book"},{"id":9,"value":"Chaos and Order"},{"id":10,"value":"DI_generated"},{"id":12,"value":"Future"},{"id":14,"value":"HowTo"},{"id":15,"value":"KeyTopics"},{"id":608,"value":"Standards"},{"id":23,"value":"tada"},{"id":25,"value":"universe"},{"id":18,"value":"Movies"},{"id":20,"value":"Open-source"},{"id":21,"value":"RoundT"},{"id":22,"value":"Singularity"},{"id":24,"value":"Thought_Experiments"}],"postsToShow":100,"postLayout":"grid","displayFeaturedImage":true,"featuredImageAlign":"center","featuredImageSizeSlug":"large","featuredImageSizeWidth":512,"featuredImageSizeHeight":512,"style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var:preset|spacing|20","right":"var:preset|spacing|20"}},"border":{"radius":{"topLeft":"50px","topRight":"50px","bottomLeft":"50px","bottomRight":"50px"},"width":"3px"}}} /-->
+
+<!-- wp:paragraph -->
+<p></p>
+<!-- /wp:paragraph -->

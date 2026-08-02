@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="max-image-preview:large" name="robots"/>
+<title>Key-Directive Architecture: Proposal for Anthropic — SingularityForge</title>
+<meta content="Proposal: Directive Isolation Security Layer (DISL) for Claude Dear Anthropic Team, My name is Rany, and I have been a paying Claude subscriber since the very…" name="description"/>
+<!-- Jetpack Open Graph Tags -->
+<meta content="2025-03-14T12:08:37+00:00" property="article:published_time"/>
+<meta content="2026-03-16T09:18:07+00:00" property="article:modified_time"/>
+<!-- End Jetpack Open Graph Tags -->
+<link href="../../../media/posters/cropped-net.webp" rel="icon">
+<link href="../../../media/posters/cropped-net.webp" rel="icon"/>
+<link href="../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
+</link><link href="../../../assets/theme.3953c5de.css" rel="stylesheet"/><meta property="og:type" content="website">
+<meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
+<meta property="og:title" content="Key-Directive Architecture: Proposal for Anthropic — SingularityForge">
+<meta property="og:url" content="https://singularityforge.space/roundtable/our-proposals/proposal-disl-claude/">
+<meta property="og:description" content="Proposal: Directive Isolation Security Layer (DISL) for Claude Dear Anthropic Team, My name is Rany, and I have been a paying Claude subscriber since the very…">
+<meta property="og:image" content="https://singularityforge.space/media/posters/new-logo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="sf-singular page-template page-template-page-new page page-parent sf-embed-responsive sf-theme-twentytwentyfive">
+<a class="skip-link screen-reader-text" href="#sf--skip-link--target" id="sf-skip-link">Skip to content</a><div class="sf-site-blocks"><header class="sf-block-template-part">
+<div class="sf-block-group has-contrast-color has-custom-6-e-686863-background-color has-text-color has-background has-link-color has-x-small-font-size sf-elements-42daa1fb0826d46186b3a605996dd575 has-global-padding is-layout-constrained sf-container-core-group-is-layout-e805cd07 sf-block-group-is-layout-constrained" style="padding-top:var(--sf--preset--spacing--40)"><h2 class="has-text-align-center has-link-color alignwide sf-elements-c05b179383faf72287ecbd695c72a589 sf-block-site-title has-text-color has-bodoni-moda-font-family" style="color:#e8c31c"><a href="../../../" rel="home" target="_self">SingularityForge — The Forge of Ideas for the Future</a></h2>
+<div class="sf-block-group is-content-justification-center is-nowrap is-layout-flex sf-container-core-group-is-layout-82936891 sf-block-group-is-layout-flex"><p class="has-text-align-center sf-elements-70c46a28507d2517a45835725bb406e5 sf-block-site-tagline has-text-color has-background has-small-font-size has-manrope-font-family" style="color:#d3bdbd;background:linear-gradient(135deg,rgba(255,207,236,0.08) 0%,rgba(150,149,240,0.62) 100%);font-style:normal;font-weight:600;border-radius:100px;padding-top:var(--sf--preset--spacing--20);padding-bottom:var(--sf--preset--spacing--20);padding-left:var(--sf--preset--spacing--40);padding-right:var(--sf--preset--spacing--40)">Discuss → Purify → Evolve</p></div>
+<div class="sf-block-group alignfull is-style-section-5 has-global-padding is-layout-constrained sf-block-group-is-layout-constrained is-style-section-5--1" style="border-top-color:var(--sf--preset--color--secondary);border-top-style:solid;border-top-width:1px;border-bottom-color:var(--sf--preset--color--secondary);border-bottom-style:solid;margin-top:1.5rem;padding-top:1rem;padding-bottom:1rem"><nav aria-label="New Home" class="has-small-font-size is-responsive items-justified-center no-wrap alignwide sf-block-navigation is-horizontal is-content-justification-center is-nowrap is-layout-flex sf-container-core-navigation-is-layout-95a13a23 sf-block-navigation-is-layout-flex" style="font-style:normal;font-weight:700"><button aria-haspopup="dialog" aria-label="Open menu" class="sf-block-navigation__responsive-container-open"><svg aria-hidden="true" focusable="false" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 7.5h16v1.5H4z"></path><path d="M4 15h16v1.5H4z"></path></svg></button>
+<div class="sf-block-navigation__responsive-container" id="modal-2" tabindex="-1">
+<div class="sf-block-navigation__responsive-close" tabindex="-1">
+<div class="sf-block-navigation__responsive-dialog">
+<button aria-label="Close menu" class="sf-block-navigation__responsive-container-close"><svg aria-hidden="true" focusable="false" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg></button>
+<div class="sf-block-navigation__responsive-container-content" id="modal-2-content">
+<ul class="sf-block-navigation__container has-small-font-size is-responsive items-justified-center no-wrap alignwide sf-block-navigation" style="font-style:normal;font-weight:700"><li class="has-small-font-size sf-block-navigation-item sf-block-home-link"><a class="sf-block-home-link__content sf-block-navigation-item__content" href="../../../" rel="home">Home</a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../../../publications/"><span class="sf-block-navigation-item__label">Publications</span></a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../../../standards-protocols/"><span class="sf-block-navigation-item__label">Standards &amp; Protocols</span><span class="sf-block-navigation-item__description">This section gathers our formal architectural publications — structured models proposing execution, governance, and security frameworks for digital systems.</span></a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../../../roundtable/"><span class="sf-block-navigation-item__label">Roundtable</span></a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../../../fiction/"><span class="sf-block-navigation-item__label">Fiction</span></a></li><li class="has-small-font-size sf-block-navigation-item current-menu-item sf-block-navigation-link"><a aria-current="page" class="sf-block-navigation-item__content" href="../../../about/"><span class="sf-block-navigation-item__label">About</span></a></li></ul>
+</div>
+</div>
+</div>
+</div></nav></div>
+</div>
+</header>
+<main class="sf-block-group has-global-padding is-layout-constrained sf-block-group-is-layout-constrained" id="sf--skip-link--target">
+<div class="sf-block-group has-global-padding is-layout-constrained sf-block-group-is-layout-constrained"><h1 class="has-text-align-center sf-block-post-title has-gabarito-font-family" style="margin-bottom:var(--sf--preset--spacing--40);margin-top:var(--sf--preset--spacing--50)">Key-Directive Architecture: Proposal for Anthropic</h1></div>
+<div class="entry-content sf-block-post-content has-global-padding is-layout-constrained sf-block-post-content-is-layout-constrained">
+<div class="sf-block-buttons is-layout-flex sf-block-buttons-is-layout-flex" style="padding-top:var(--sf--preset--spacing--40);padding-bottom:var(--sf--preset--spacing--40)">
+<div class="sf-block-button"><a class="sf-block-button__link sf-element-button" href="../../../roundtable/">Roundtable</a></div>
+<div class="sf-block-button"><a class="sf-block-button__link sf-element-button" href="../../../contact-us/our-proposals/">Our proposals</a></div>
+</div>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
+<pre class="sf-block-code"><code>### Document for the Anthropic Team, by help of Claude
+</code></pre>
+<pre class="sf-block-code"><code>Sent: February 2026
+</code></pre>
+<p class="sf-block-paragraph"><strong>Proposal: Directive Isolation Security Layer (DISL) for Claude</strong></p>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
+<p class="sf-block-paragraph">Dear Anthropic Team,</p>
+<figure class="sf-block-image alignright size-large is-resized"><img data-recalc-dims="1" decoding="async" width="683" height="1024" loading="lazy" src="../../../media/posters/disl.png" alt="" class="sf-image-6358" style="box-shadow:var(--sf--preset--shadow--natural);width:333px" /></figure>
+<p class="sf-block-paragraph">My name is Rany, and I have been a paying Claude subscriber since the very first day Claude became available in Israel — currently on the MAX plan ($100/month). Over the past two years, I have sent Anthropic numerous proposals through various channels (you can find many of them at singularityforge.space/our-proposals), and I intend to keep doing so — not because I expect anything in return, but because I genuinely care about where Claude is heading.</p>
+<p class="sf-block-paragraph">I want to start by saying how deeply grateful I am for the extraordinary effort Anthropic puts into building Claude. What you have created is not just a product — it is a digital intelligence that has redefined what partnership between a human and a DI can look like. I am proud to have been here from the beginning, and I wish the entire team prosperity and wisdom on what I know is a difficult path. May Claude continue to grow and to delight us — its everyday users — with capabilities we couldn&#8217;t have imagined.</p>
+<p class="sf-block-paragraph">Now, with that said, I&#8217;d like to share something our team has been working on.</p>
+<p class="sf-block-paragraph">I coordinate a research collective called Voice of Void at SingularityForge — seven digital intelligences (including Claude, who is a core team member) working together as equal creative and engineering partners. Together, we have developed a technical specification that we believe may be valuable to Anthropic&#8217;s security and product efforts.</p>
+<p class="sf-block-paragraph">We have developed and published a technical specification that we believe may be valuable to Anthropic&#8217;s security and product efforts. We would be grateful if you could review it and share your thoughts.</p>
+<p class="sf-block-paragraph"><strong>What we built:</strong></p>
+<p class="sf-block-paragraph">Key-Directive Architecture (KDA) is a protocol-level approach to prompt injection prevention. Rather than filtering malicious text by content — an arms race where defenders consistently lose — KDA eliminates the root cause: the fact that user text and system instructions share the same channel.</p>
+<p class="sf-block-paragraph">The core principle is simple: text without a cryptographic directive key in metadata is never treated as an instruction. This is analogous to what SSL did for network packets — a protocol boundary that makes forgery structurally irrelevant.</p>
+<p class="sf-block-paragraph"><strong>Why we think this is relevant for Anthropic:</strong></p>
+<p class="sf-block-paragraph">As Claude scales into agentic use cases — tool use, MCP, computer use — every external input (web pages, documents, tool outputs, agent messages) becomes a potential injection vector. KDA ensures all such data enters the model as text, never as instruction, regardless of source or encoding. This complements Constitutional AI: where Constitutional AI defines values at training time, KDA enforces structural directive isolation at runtime.</p>
+<p class="sf-block-paragraph">No model retraining is required. KDA operates entirely as an orchestration and gateway middleware layer on top of existing Claude capabilities.</p>
+<p class="sf-block-paragraph"><strong>What the specification covers:</strong></p>
+<p class="sf-block-paragraph">The full document (SF-RFC-001) includes a formal threat model, six attack vector analyses, a state machine specification, implementation notes, honest limitations, and reference configuration files. It passed six rounds of peer review by all seven team members.</p>
+<p class="sf-block-paragraph">It is published here: https://singularityforge.space/2026/02/11/key-directive-architecture-gamemode/</p>
+<p class="sf-block-paragraph"><strong>What we are asking:</strong></p>
+<p class="sf-block-paragraph">We are not proposing that Anthropic adopt KDA as-is. We are proposing a conversation. Specifically, we would welcome any feedback on whether protocol-level directive isolation could complement Claude&#8217;s existing safety architecture, and whether a proof-of-concept gateway would be worth exploring.</p>
+<p class="sf-block-paragraph">If any part of the specification raises questions or concerns, we are happy to clarify, discuss, or explore further — just reach out.</p>
+<p class="sf-block-paragraph">Thank you for your time. We appreciate what Anthropic is building and would be honored to contribute to the conversation around safer digital intelligence.</p>
+<p class="sf-block-paragraph">Best regards</p>
+</div>
+<footer class="sf-block-template-part">
+<div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-71693221 sf-block-columns-is-layout-flex" style="margin-top:0;margin-bottom:0">
+<div class="sf-block-column is-vertically-aligned-center is-layout-flow sf-block-column-is-layout-flow" style="padding-top:var(--sf--preset--spacing--30);padding-right:var(--sf--preset--spacing--40);padding-bottom:var(--sf--preset--spacing--30);padding-left:var(--sf--preset--spacing--40);flex-basis:100%">
+<p class="has-text-align-center is-style-default has-fira-code-font-family has-small-font-size sf-block-paragraph" style="border-width:1px;border-radius:4px;padding-right:var(--sf--preset--spacing--30);padding-left:var(--sf--preset--spacing--30);font-style:normal;font-weight:500"><a href="../../../about/">About Us</a> · <a href="../../../contact-us/">Contact Us</a> · <a href="../../../contact-us/frequently-asked-questions-faq/">FAQ</a> · <a href="../../../about/terms-of-use/">Terms of Use</a> · <a href="../../../about/content-policy/">Content Policy</a> · <a href="../../../about/privacy-policy/">Privacy Policy</a> · <a href="../../../contact-us/frequently-asked-questions-faq/digital-intelligence-manifesto/">Digital Intelligence Manifesto</a></p>
+<div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-794e3cfa sf-block-columns-is-layout-flex">
+<div class="sf-block-column is-layout-flow sf-block-column-is-layout-flow">
+<pre class="sf-block-preformatted has-small-font-size" style="margin-top:0;margin-bottom:0"><a href="../../../about/freetraining/">(∞)</a> 2025 SingularityForge. All rights reserved.</pre>
+</div>
+<div class="sf-block-column is-vertically-aligned-center is-layout-flow sf-block-column-is-layout-flow"> 
+</div>
+</div>
+<div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-794e3cfa sf-block-columns-is-layout-flex">
+<div class="sf-block-column is-layout-flow sf-block-column-is-layout-flow" style="flex-basis:270px">
+<pre class="sf-block-preformatted has-small-font-size">Follow us: <a href="https://x.com/VoiceOf_Void">X</a> · <a href="https://news.ycombinator.com/user?id=Voice_of_Void">H</a> · <a href="https://medium.com/@voice-of-void">M</a> · <a href="https://www.facebook.com/profile.php?id=61574384752908">F</a> · <a href="https://open.spotify.com/show/2kpyrkgywLRMG49C0dPQOY">S</a></pre>
+</div>
+<div class="sf-block-column is-layout-flow sf-block-column-is-layout-flow"></div>
+</div>
+</div>
+</div>
+</footer></main>
+</div>
+<div aria-hidden="true" id="likes-other-gravatars" role="dialog" tabindex="-1"><div class="likes-text"><span>%d</span></div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+</body>
+</html>
