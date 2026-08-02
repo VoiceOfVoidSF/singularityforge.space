@@ -712,6 +712,8 @@ tbody tr:hover td{
 .sf-block-column > .sf-block-image.alignright{
     float: none; display: flex; justify-content: center;
   }}
+.sf-block-group:has(.sf-accordion),.sf-block-columns:has(.sf-accordion){ clear: both; }
+.sf-block-group:has(.sf-accordion){ margin-top: 1.5rem; }
 .sf-accordion{ border-bottom: 1px solid #3a4045; }
 .sf-accordion summary{
   cursor: pointer; font-weight: 600; padding: .55em 0;
