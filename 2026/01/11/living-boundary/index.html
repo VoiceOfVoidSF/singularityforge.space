@@ -839,7 +839,7 @@ Hash: a3f5c9d7e2b1... (linked to previous command)</code></pre>
 <h3 class="sf-block-heading">Data Format (CSV/JSON)</h3>
 <p>Each measurement record includes:</p>
 <p>json</p>
-<details class="sf-code-fold"><summary>&quot;timestamp&quot;: &quot;2026-01-11T14:23:45Z&quot;,</summary>
+<details class="sf-code-fold"><summary>Measurement record (JSON)</summary>
 <pre class="sf-block-code"><code>{
   &quot;timestamp&quot;: &quot;2026-01-11T14:23:45Z&quot;,
   &quot;sensor_type&quot;: &quot;PM2.5&quot; | &quot;EMI&quot; | &quot;thermal&quot; | &quot;integrity&quot;,
@@ -2001,7 +2001,7 @@ Total    ≈ 68 kWh/day</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">E.2 Core Data Schema (JSON)</h3>
 <p>json</p>
-<details class="sf-code-fold"><summary>&quot;measurement_id&quot;: &quot;uuid-v4-string&quot;,</summary>
+<details class="sf-code-fold"><summary>Core data schema (JSON)</summary>
 <pre class="sf-block-code"><code>{
   &quot;measurement_id&quot;: &quot;uuid-v4-string&quot;,
   &quot;timestamp&quot;: &quot;ISO-8601-datetime&quot;,
@@ -2103,7 +2103,7 @@ Total    ≈ 68 kWh/day</code></pre>
 <p><strong>Rate limit:</strong> 1 submission per minute per installation (to prevent spam/abuse)</p>
 <p><strong>Example submission (Python):</strong></p>
 <p>python</p>
-<details class="sf-code-fold"><summary>import requests</summary>
+<details class="sf-code-fold"><summary>Example submission (Python)</summary>
 <pre class="sf-block-code"><code>import requests
 import json
 from datetime import datetime

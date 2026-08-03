@@ -369,7 +369,7 @@ L0 (Core / Semantic Engine)</code></pre>
 ...noise...noise...noise...</code></pre>
 <p><strong>Result in L0 memory: ENTROPY EXPLOSION</strong></p>
 <p><strong>Asphyxiation at depth:</strong></p>
-<details class="sf-code-fold"><summary>L0 tries to work at 1000+ layers</summary>
+<details class="sf-code-fold"><summary>Without TADA: entropy explosion</summary>
 <pre class="sf-block-code"><code>L0 tries to work at 1000+ layers
 ↓
 Each node contains:
@@ -384,7 +384,7 @@ Context asphyxiation at layer 10
 ↓
 L0 suffocates</code></pre></details>
 <p><strong>With clean TADA:</strong></p>
-<details class="sf-code-fold"><summary>L0 works at 1000+ layers</summary>
+<details class="sf-code-fold"><summary>With clean TADA: graph stays lean</summary>
 <pre class="sf-block-code"><code>L0 works at 1000+ layers
 ↓
 Each node:
@@ -399,7 +399,7 @@ L0 breathes freely</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">L1↔L0 Dialogue Protocol</h3>
 <p><strong>Not monologue, but dialogue:</strong></p>
-<details class="sf-code-fold"><summary>Scenario: Data arrives with break</summary>
+<details class="sf-code-fold"><summary>L1↔L0 dialogue: broken data scenario</summary>
 <pre class="sf-block-code"><code>Scenario: Data arrives with break
 
 1. L1 → Transport → L0
@@ -475,7 +475,7 @@ B</code></pre>
   strB: "B"</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">Example 4: Type 10 Dictionary + Substitution</h3>
-<details class="sf-code-fold"><summary>.tree⧞⧞strA⧞4⧞5⧞listA⧞9⧞funcA⧞⧞</summary>
+<details class="sf-code-fold"><summary>Example 4: dictionary + substitution</summary>
 <pre class="sf-block-code"><code>.tree⧞⧞strA⧞4⧞5⧞listA⧞9⧞funcA⧞⧞
 CL&amp; works with &amp;CH⧞
 .tree.funcA⧞
@@ -499,7 +499,7 @@ funcA.row2.email = "Bb@ChatGPT.com"</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading" id="parser">5. The Wooden Parser {#parser}</h2>
 <h3 class="sf-block-heading">Python Implementation (by ChatGPT)</h3>
-<details class="sf-code-fold"><summary>from dataclasses import dataclass</summary>
+<details class="sf-code-fold"><summary>The Wooden Parser (Python, by ChatGPT)</summary>
 <pre class="sf-block-code"><code>from dataclasses import dataclass
 from typing import Any, Dict, List
 
@@ -691,7 +691,7 @@ Result: min(10, ⌈1500/100⌉) = min(10, 15) = 10
 → Latency increases but system doesn't crash</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">Implementation</h3>
-<details class="sf-code-fold"><summary>import math</summary>
+<details class="sf-code-fold"><summary>LoaderManager implementation (Python)</summary>
 <pre class="sf-block-code"><code>import math
 
 class LoaderManager:
@@ -750,7 +750,7 @@ class LoaderManager:
 <h2 class="sf-block-heading" id="examples">8. Implementation Examples {#examples}</h2>
 <h3 class="sf-block-heading">Complete Workflow Example</h3>
 <p><strong>Query:</strong> &#8220;Find all Python developers in company&#8221;</p>
-<details class="sf-code-fold"><summary>1. L2 (Human)</summary>
+<details class="sf-code-fold"><summary>Complete workflow example</summary>
 <pre class="sf-block-code"><code>1. L2 (Human):
    "Show me all Python developers"
 
