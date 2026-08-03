@@ -13,7 +13,7 @@
 <link href="../../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../../media/posters/cropped-net.webp" rel="icon"/>
 <link href="../../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
-</link><link href="../../../../assets/theme.bd9242c6.css" rel="stylesheet"/><meta property="og:type" content="article">
+</link><link href="../../../../assets/theme.924f731b.css" rel="stylesheet"/><meta property="og:type" content="article">
 <meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
 <meta property="og:title" content="Half the Solution Before the First Line of Code — SingularityForge">
 <meta property="og:url" content="https://singularityforge.space/2026/08/03/half-the-solution-before-the-first-line-of-code/">
@@ -71,7 +71,7 @@ python root.py --no-gui --games 500</code></pre>
 <p class="sf-block-paragraph">Every introduction to convolutional networks teaches the same stack: convolution, pooling, convolution, pooling. Our first version was exactly that — four convolutions, a <code>MaxPool2d(2, 2)</code> after each one, then fully connected layers.</p>
 <p class="sf-block-paragraph">It does not merely perform poorly on a 10×10 board. It does not run.</p>
 <p class="sf-block-paragraph">Four halvings take the feature map from 10 to 5 to 2 to 1 to 0. The fourth pooling layer has nothing left to pool, and PyTorch says so:</p>
-<pre class="sf-block-code"><code>RuntimeError: Given input size: (128x1x1). Calculated output size:
+<pre class="sf-block-code" style="font-family:math,'Cambria Math',serif;font-size:1.05em"><code>RuntimeError: Given input size: (128x1x1). Calculated output size:
 (128x0x0). Output size is too small</code></pre>
 <p class="sf-block-paragraph">The canonical stack silently assumes a 224×224 photograph. On a board this size, it runs out of board. This is worth dwelling on, because it is the cleanest possible example of the difference between copying and thinking: a pattern that is not slightly suboptimal here but structurally incompatible, and the incompatibility is arithmetic you can do in your head before you write anything.</p>
 <p class="sf-block-paragraph">Trim it to three pooling layers so it at least runs, and the deeper problem appears. Pooling exists to discard spatial precision — to answer <em>is there a cat</em> rather than <em>exactly where</em>. Battleship asks the opposite question. <em>Which exact cell</em> is the entire content of the answer. Pooling throws away precisely the information the task is made of.</p>
