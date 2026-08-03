@@ -269,10 +269,6 @@ h1.has-text-align-left[style*=writing-mode]:where([style*=vertical-lr]),h2.has-t
 .sf-block-table .has-fixed-layout td,.sf-block-table .has-fixed-layout th{word-break:break-word}
 .sf-block-table.aligncenter,.sf-block-table.alignleft,.sf-block-table.alignright{display:table;width:auto}
 .sf-block-table.aligncenter td,.sf-block-table.aligncenter th,.sf-block-table.alignleft td,.sf-block-table.alignleft th,.sf-block-table.alignright td,.sf-block-table.alignright th{word-break:break-word}
-.sf-block-table.is-style-stripes{background-color:initial;border-collapse:inherit;border-spacing:0}
-.sf-block-table.is-style-stripes tbody tr:nth-child(odd){background-color:#f0f0f0}
-.sf-block-table.is-style-stripes td,.sf-block-table.is-style-stripes th{border-color:#0000}
-.sf-block-table.is-style-stripes{border-bottom:1px solid #f0f0f0}
 .sf-block-table .has-border-color td,.sf-block-table .has-border-color th,.sf-block-table .has-border-color tr,.sf-block-table .has-border-color>*{border-color:inherit}
 .sf-block-table table[style*=border-top-color] tr:first-child,.sf-block-table table[style*=border-top-color] tr:first-child td,.sf-block-table table[style*=border-top-color] tr:first-child th,.sf-block-table table[style*=border-top-color]>*,.sf-block-table table[style*=border-top-color]>* td,.sf-block-table table[style*=border-top-color]>* th{border-top-color:inherit}
 .sf-block-table table[style*=border-top-color] tr:not(:first-child){border-top-color:initial}
