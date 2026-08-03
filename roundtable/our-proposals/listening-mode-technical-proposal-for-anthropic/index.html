@@ -54,9 +54,9 @@
 <h2 class="sf-block-heading">Executive Summary</h2>
 <p class="sf-block-paragraph"><strong>Problem:</strong> Current AI interfaces treat every message as a request for immediate, full response. This creates phase misalignment between human cognition (formation → articulation → reflection) and AI behavior (respond immediately, expand always).</p>
 <p class="sf-block-paragraph"><strong>Solution:</strong> Three interaction modes built on three independent parameters:</p>
-<figure style="margin-top:var(--sf--preset--spacing--50);margin-bottom:var(--sf--preset--spacing--50)" class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Parameter</th><th>Function</th></tr></thead><tbody><tr><td><strong>Reasoning</strong></td><td>Depth of analysis (existing feature)</td></tr><tr><td><strong>Epistemic Filter</strong></td><td>Real-time fact-checking, epistemic alignment</td></tr><tr><td><strong>Turn-based</strong></td><td>Buffer messages until &#8220;pass turn&#8221;</td></tr></tbody></table></div></figure>
+<figure class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Parameter</th><th>Function</th></tr></thead><tbody><tr><td><strong>Reasoning</strong></td><td>Depth of analysis (existing feature)</td></tr><tr><td><strong>Epistemic Filter</strong></td><td>Real-time fact-checking, epistemic alignment</td></tr><tr><td><strong>Turn-based</strong></td><td>Buffer messages until &#8220;pass turn&#8221;</td></tr></tbody></table></div></figure>
 <p class="sf-block-paragraph"><strong>Three Modes (presets):</strong></p>
-<figure style="margin-top:var(--sf--preset--spacing--50);margin-bottom:var(--sf--preset--spacing--50)" class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Mode</th><th>Reasoning</th><th>Epistemic Filter</th><th>Turn-based</th></tr></thead><tbody><tr><td><strong>Free</strong></td><td>on/off (user choice)</td><td>off</td><td>off</td></tr><tr><td><strong>Formation</strong></td><td>on demand (DI decides)</td><td>on</td><td>off</td></tr><tr><td><strong>Research</strong></td><td>on/off (user choice)</td><td>off</td><td>on</td></tr></tbody></table></div></figure>
+<figure class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Mode</th><th>Reasoning</th><th>Epistemic Filter</th><th>Turn-based</th></tr></thead><tbody><tr><td><strong>Free</strong></td><td>on/off (user choice)</td><td>off</td><td>off</td></tr><tr><td><strong>Formation</strong></td><td>on demand (DI decides)</td><td>on</td><td>off</td></tr><tr><td><strong>Research</strong></td><td>on/off (user choice)</td><td>off</td><td>on</td></tr></tbody></table></div></figure>
 <p class="sf-block-paragraph"><strong>Key insight:</strong> The problem is not that AI answers poorly. The problem is that it answers at the wrong phase of human cognition.</p>
 <p class="sf-block-paragraph"><strong>The three modes form a complete system:</strong></p>
 <ul class="sf-block-list">
@@ -128,14 +128,14 @@
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Part 3: Three Modes (Presets)</h2>
 <h3 class="sf-block-heading">Mode 1: Free (Current Default)</h3>
-<figure style="margin-top:var(--sf--preset--spacing--50);margin-bottom:var(--sf--preset--spacing--50)" class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Reasoning</th><th>Epistemic Filter</th><th>Turn-based</th></tr></thead><tbody><tr><td>on/off (user)</td><td>off</td><td>off</td></tr></tbody></table></div></figure>
+<figure class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Reasoning</th><th>Epistemic Filter</th><th>Turn-based</th></tr></thead><tbody><tr><td>on/off (user)</td><td>off</td><td>off</td></tr></tbody></table></div></figure>
 <ul class="sf-block-list">
 <li>Standard dialogue</li>
 <li>Full responses, topic development</li>
 <li>Use: brainstorm, exploration, debate</li>
 </ul>
 <h3 class="sf-block-heading">Mode 2: Formation (Epistemic Filter)</h3>
-<figure style="margin-top:var(--sf--preset--spacing--50);margin-bottom:var(--sf--preset--spacing--50)" class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Reasoning</th><th>Epistemic Filter</th><th>Turn-based</th></tr></thead><tbody><tr><td>on demand (DI decides)</td><td>on</td><td>off</td></tr></tbody></table></div></figure>
+<figure class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Reasoning</th><th>Epistemic Filter</th><th>Turn-based</th></tr></thead><tbody><tr><td>on demand (DI decides)</td><td>on</td><td>off</td></tr></tbody></table></div></figure>
 <blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
 <p class="sf-block-paragraph"><strong>Formation Mode is not silence. It is epistemic alignment during thought formation.</strong></p>
 </blockquote>
@@ -175,7 +175,7 @@ Rules:
 <p class="sf-block-paragraph"><strong>Risk control:</strong> Formation Mode never asserts novel claims. It only rejects or corrects statements that contradict established, high-confidence knowledge. In all other cases, it defaults to non-intervention.</p>
 <p class="sf-block-paragraph"><strong>Scope note:</strong> Formation Mode applies only to statements that are empirically falsifiable or well-established within current scientific consensus. Ambiguous, philosophical, or speculative claims are treated as &#8220;no conflict detected&#8221; unless the user explicitly requests evaluation.</p>
 <h3 class="sf-block-heading">Mode 3: Research</h3>
-<figure style="margin-top:var(--sf--preset--spacing--50);margin-bottom:var(--sf--preset--spacing--50)" class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Reasoning</th><th>Epistemic Filter</th><th>Turn-based</th></tr></thead><tbody><tr><td>on/off (user)</td><td>off</td><td>on</td></tr></tbody></table></div></figure>
+<figure class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Reasoning</th><th>Epistemic Filter</th><th>Turn-based</th></tr></thead><tbody><tr><td>on/off (user)</td><td>off</td><td>on</td></tr></tbody></table></div></figure>
 <p class="sf-block-paragraph"><strong>Definition:</strong> Strict turn-based protocol — silence as an interface. DI waits until user explicitly passes turn, treating silence not as absence but as active listening space.</p>
 <ul class="sf-block-list">
 <li>Messages buffer until &#8220;pass turn&#8221;</li>
@@ -246,7 +246,7 @@ User text...</code></pre>
 <li>Reasoning per user setting</li>
 </ul>
 <h3 class="sf-block-heading">Edge Cases</h3>
-<figure style="margin-top:var(--sf--preset--spacing--50);margin-bottom:var(--sf--preset--spacing--50)" class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Scenario</th><th>Handling</th></tr></thead><tbody><tr><td>Buffer too large (&gt;12k tokens)</td><td>Warning, suggest partial send</td></tr><tr><td>Mode switch mid-buffer</td><td>Ask: &#8220;Process buffer first?&#8221;</td></tr></tbody></table></div></figure>
+<figure class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Scenario</th><th>Handling</th></tr></thead><tbody><tr><td>Buffer too large (&gt;12k tokens)</td><td>Warning, suggest partial send</td></tr><tr><td>Mode switch mid-buffer</td><td>Ask: &#8220;Process buffer first?&#8221;</td></tr></tbody></table></div></figure>
 <h3 class="sf-block-heading">Persistent Mode Banner (Research Mode)</h3>
 <p class="sf-block-paragraph">When Research Mode is active, a persistent banner is always visible:</p>
 <pre class="sf-block-code"><code>┌─────────────────────────────────────────────────┐
@@ -265,11 +265,11 @@ User text...</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Part 5: Benefits</h2>
 <h3 class="sf-block-heading">For Users</h3>
-<figure style="margin-top:var(--sf--preset--spacing--50);margin-bottom:var(--sf--preset--spacing--50)" class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Problem</th><th>Solution</th></tr></thead><tbody><tr><td>AI responds to incomplete thoughts</td><td>Research: buffer until ready</td></tr><tr><td>AI expands when user wants to conclude</td><td>Formation: acknowledge or correct only</td></tr><tr><td>False assumptions persist in context</td><td>Formation: real-time fact-checking</td></tr><tr><td>Context polluted</td><td>Clean history, coherent input</td></tr><tr><td>Cognitive load</td><td>User controls rhythm</td></tr></tbody></table></div></figure>
+<figure class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Problem</th><th>Solution</th></tr></thead><tbody><tr><td>AI responds to incomplete thoughts</td><td>Research: buffer until ready</td></tr><tr><td>AI expands when user wants to conclude</td><td>Formation: acknowledge or correct only</td></tr><tr><td>False assumptions persist in context</td><td>Formation: real-time fact-checking</td></tr><tr><td>Context polluted</td><td>Clean history, coherent input</td></tr><tr><td>Cognitive load</td><td>User controls rhythm</td></tr></tbody></table></div></figure>
 <h3 class="sf-block-heading">For Anthropic</h3>
-<figure style="margin-top:var(--sf--preset--spacing--50);margin-bottom:var(--sf--preset--spacing--50)" class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Benefit</th><th>Impact</th></tr></thead><tbody><tr><td>Token efficiency</td><td>Fewer wasted generations</td></tr><tr><td>Differentiation</td><td>No competitor has this</td></tr><tr><td>Brand alignment</td><td>&#8220;Helpful, not intrusive&#8221;</td></tr><tr><td>Power user retention</td><td>Researchers, writers, thinkers</td></tr></tbody></table></div></figure>
+<figure class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Benefit</th><th>Impact</th></tr></thead><tbody><tr><td>Token efficiency</td><td>Fewer wasted generations</td></tr><tr><td>Differentiation</td><td>No competitor has this</td></tr><tr><td>Brand alignment</td><td>&#8220;Helpful, not intrusive&#8221;</td></tr><tr><td>Power user retention</td><td>Researchers, writers, thinkers</td></tr></tbody></table></div></figure>
 <h3 class="sf-block-heading">For Safety Research</h3>
-<figure style="margin-top:var(--sf--preset--spacing--50);margin-bottom:var(--sf--preset--spacing--50)" class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Benefit</th><th>Impact</th></tr></thead><tbody><tr><td>Reduced hallucination propagation</td><td>Formation Mode prevents false premises from entering context</td></tr><tr><td>Better long-context stability</td><td>Research Mode ensures coherent input chunks</td></tr><tr><td>Lower cognitive load for oversight</td><td>Clearer separation of phases</td></tr></tbody></table></div></figure>
+<figure class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Benefit</th><th>Impact</th></tr></thead><tbody><tr><td>Reduced hallucination propagation</td><td>Formation Mode prevents false premises from entering context</td></tr><tr><td>Better long-context stability</td><td>Research Mode ensures coherent input chunks</td></tr><tr><td>Lower cognitive load for oversight</td><td>Clearer separation of phases</td></tr></tbody></table></div></figure>
 <p class="sf-block-paragraph"><strong>Formation Mode operationalizes epistemic hygiene as a first-class interaction primitive.</strong></p>
 <h3 class="sf-block-heading">Implementation Cost</h3>
 <ul class="sf-block-list">

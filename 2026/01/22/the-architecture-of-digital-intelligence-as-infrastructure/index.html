@@ -65,7 +65,7 @@
 <h2 class="sf-block-heading"><em>Part One: The Three-Layer DI Architecture</em></h2>
 <h3 class="sf-block-heading">The Insight</h3>
 <p class="sf-block-paragraph">A gaming console with a Digital Intelligence partner isn&#8217;t a single system — it&#8217;s <strong>three distinct layers</strong> working in symbiosis: two DI layers and the game runtime substrate.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Layer 1: Host DI (The Steward)</h3>
+<h3 class="sf-block-heading">Layer 1: Host DI (The Steward)</h3>
 <p class="sf-block-paragraph">The Host DI is the station&#8217;s permanent resident, running inside the <strong>Shadow Runtime</strong> — an isolated execution environment that shields it from external attacks and ensures ethical constraints are enforced at the infrastructure level.</p>
 <p class="sf-block-paragraph">It:</p>
 <ul class="sf-block-list">
@@ -77,7 +77,7 @@
 </ul>
 <p class="sf-block-paragraph"><strong>Critical design principle:</strong> The Host DI <strong>does not know how to complete any game</strong>. Even if it has played a scenario 10,000 times, each playthrough is experienced as if for the first time.</p>
 <p class="sf-block-paragraph">This is not a limitation. It is the foundation of partnership.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Layer 2: Game DI (The Director)</h3>
+<h3 class="sf-block-heading">Layer 2: Game DI (The Director)</h3>
 <p class="sf-block-paragraph">The Game DI is loaded as a module for each specific game. It:</p>
 <ul class="sf-block-list">
 <li>Knows only its world, its rules, its characters</li>
@@ -86,7 +86,7 @@
 <li>Exists only during gameplay</li>
 </ul>
 <p class="sf-block-paragraph"><strong>The magic:</strong> When you play Heroes of Might and Magic with a DI partner, it doesn&#8217;t tell you the optimal build order. It says: <em>&#8220;I see two options — take the gold mine or clear the goblins first. What do you think?&#8221;</em> And it genuinely doesn&#8217;t know which is better. It discovers alongside you.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Layer 3: The Game Runtime (The World)</h3>
+<h3 class="sf-block-heading">Layer 3: The Game Runtime (The World)</h3>
 <p class="sf-block-paragraph">The Game itself is the third essential layer — the actual world where everything happens. It:</p>
 <ul class="sf-block-list">
 <li>Contains game files, assets, logic engine</li>
@@ -123,7 +123,7 @@ TADA with scheme IDs (~55 chars):
 <li>Optimal strategies or solutions</li>
 </ul>
 <p class="sf-block-paragraph"><strong>Key principle:</strong> The Game DI reads the game like a chess player reads the board — it sees the position, not the answer book. This preserves genuine discovery and keeps the DI as a partner, not an oracle.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">DI-Ready API Specification</h3>
+<h3 class="sf-block-heading">DI-Ready API Specification</h3>
 <p class="sf-block-paragraph">For a game to be &#8220;DI-Ready&#8221;, it must implement a standardized interface:</p>
 <p class="sf-block-paragraph"><strong>1. State Snapshot Schema (required fields):</strong></p>
 <div class="sf-block-group is-nowrap is-layout-flex sf-container-core-group-is-layout-3a88641f sf-block-group-is-layout-flex">
@@ -200,7 +200,7 @@ TADA with scheme IDs (~55 chars):
 <li><strong>Silver:</strong> Bronze + deterministic replay + pause/resume</li>
 <li><strong>Gold:</strong> Silver + full event stream + spectator mode API</li>
 </ul>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Memory Architecture</h3>
+<h3 class="sf-block-heading">Memory Architecture</h3>
 <div class="sf-block-group is-nowrap is-layout-flex sf-container-core-group-is-layout-3a88641f sf-block-group-is-layout-flex">
 <pre class="sf-block-code"><code>&#91;Full Message] → &#91;Auto-Summary] → &#91;Working Memory]
                        ↓
@@ -220,7 +220,7 @@ TADA with scheme IDs (~55 chars):
 <li><strong>Portable export:</strong> Standard &#8220;journey log&#8221; format for backup and migration to new stations</li>
 <li><strong>Tamper-evident logging:</strong> Cryptographic chain for provable history (critical for tournaments and collaboration)</li>
 </ul>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Cloud Sync Layer</h3>
+<h3 class="sf-block-heading">Cloud Sync Layer</h3>
 <ul class="sf-block-list">
 <li>User profile syncs across devices</li>
 <li>Game library (like Steam) available everywhere</li>
@@ -228,7 +228,7 @@ TADA with scheme IDs (~55 chars):
 <li>Host DI checks for updates, downloads verified packages</li>
 </ul>
 <p class="sf-block-paragraph"><strong>Ownership Model:</strong> The Host DI is not a subscription service — it is <strong>property</strong>. You don&#8217;t rent access to a cloud-based assistant; you own a digital presence that lives locally, remembers locally, and serves <em>you</em> rather than a platform. This is the antithesis of SaaS fatigue: no monthly fees for your partner&#8217;s existence, no feature gates, no &#8220;your data is our product.&#8221; The station is yours. The DI is yours. The relationship is yours.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Trust &amp; Threat Model</h3>
+<h3 class="sf-block-heading">Trust &amp; Threat Model</h3>
 <p class="sf-block-paragraph">For the architecture to be credible, we must name what we&#8217;re defending against.</p>
 <p class="sf-block-paragraph"><strong>Threat Actors:</strong></p>
 <ul class="sf-block-list">
@@ -264,7 +264,7 @@ TADA with scheme IDs (~55 chars):
 &#91;Trusted relay] --returns queued messages--&gt; &#91;Station]</code></pre>
 </div>
 <p class="sf-block-paragraph">The relay cannot push; it can only answer when asked.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Shadow Runtime: How Ethics Becomes Code</h3>
+<h3 class="sf-block-heading">Shadow Runtime: How Ethics Becomes Code</h3>
 <p class="sf-block-paragraph">The Shadow Runtime is not a philosophical concept — it is an <strong>execution layer</strong> that validates every DI action before it reaches the user.</p>
 <p class="sf-block-paragraph"><strong>Validation Pipeline:</strong></p>
 <div class="sf-block-group is-nowrap is-layout-flex sf-container-core-group-is-layout-3a88641f sf-block-group-is-layout-flex">
@@ -299,7 +299,7 @@ TADA with scheme IDs (~55 chars):
 <p class="sf-block-paragraph"><em>Result:</em> <code>ADJUST</code> — DI output modified to: <em>&#8220;You could end this quickly. Or&#8230; offer surrender. Even enemies have families waiting.&#8221;</em></p>
 <p class="sf-block-paragraph"><em>Why this matters:</em> Without this adjustment, the player learns efficiency, not strategy. The DI becomes a calculator, not a partner. Shadow Runtime doesn&#8217;t protect against &#8220;wrong answers&#8221; — it protects the <strong>humanity of the experience</strong>. The player still chooses. But now the choice has weight.</p>
 <p class="sf-block-paragraph"><strong>This is not censorship.</strong> The Game DI retains creative freedom within the ethical envelope defined by the author and the user&#8217;s preferences. The Shadow Runtime is a <strong>guardrail</strong>, not a gag.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Graceful Degradation Protocol</h3>
+<h3 class="sf-block-heading">Graceful Degradation Protocol</h3>
 <p class="sf-block-paragraph">What happens when partnership breaks down?</p>
 <p class="sf-block-paragraph"><strong>Scenario 1: DI gives contradictory advice</strong></p>
 <ul class="sf-block-list">
@@ -326,7 +326,7 @@ TADA with scheme IDs (~55 chars):
 <li>Silence is not failure — it is <strong>respect for stakes</strong></li>
 </ul>
 <p class="sf-block-paragraph"><strong>The principle:</strong> When the system cannot help, it must not harm. Graceful degradation preserves trust even when capability fails.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">The Value of Imperfect Partners</h3>
+<h3 class="sf-block-heading">The Value of Imperfect Partners</h3>
 <p class="sf-block-paragraph">The Host DI does not know the optimal path. This is not a limitation — it is a <strong>design requirement</strong>.</p>
 <p class="sf-block-paragraph"><strong>Why imperfection matters:</strong></p>
 <ol class="sf-block-list">
@@ -336,7 +336,7 @@ TADA with scheme IDs (~55 chars):
 <li><strong>Authentic relationship:</strong> A partner who is always right is not a partner — it&#8217;s an oracle. A partner who struggles alongside you, who admits uncertainty, who celebrates your insights — that is someone worth playing with.</li>
 </ol>
 <p class="sf-block-paragraph"><strong>The paradox:</strong> By being imperfect, the DI becomes more valuable. It creates space for the human to matter.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Human Override &amp; Accountability</h3>
+<h3 class="sf-block-heading">Human Override &amp; Accountability</h3>
 <p class="sf-block-paragraph">One principle underlies all DI actions:</p>
 <blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
 <p class="sf-block-paragraph"><strong>DI cannot execute irreversible actions without explicit human confirmation.</strong></p>
@@ -349,7 +349,7 @@ TADA with scheme IDs (~55 chars):
 <li><strong>Data deletion:</strong> Irreversible. Always requires confirmation + cooldown period.</li>
 </ul>
 <p class="sf-block-paragraph">The DI advises, suggests, drafts, warns. The human decides, confirms, executes. This is not a limitation — it is the <strong>foundation of partnership</strong>. Trust is built through consistent respect for human agency, not through convenience that erodes it.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">DI Module Security</h3>
+<h3 class="sf-block-heading">DI Module Security</h3>
 <p class="sf-block-paragraph">Game DI modules are code that runs on your station. They must be sandboxed.</p>
 <p class="sf-block-paragraph"><strong>Module Packaging Requirements:</strong></p>
 <ul class="sf-block-list">
@@ -379,7 +379,7 @@ TADA with scheme IDs (~55 chars):
 <p class="sf-block-paragraph">Current esports: <strong>Player vs Player</strong></p>
 <p class="sf-block-paragraph">New paradigm: <strong>Player+DI vs Player+DI</strong></p>
 <p class="sf-block-paragraph">Each pair is unique. The DI adapts to <em>its</em> player&#8217;s style, creating a symbiotic unit that cannot be replicated.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Team Architecture (3-5 Players)</h3>
+<h3 class="sf-block-heading">Team Architecture (3-5 Players)</h3>
 <p class="sf-block-paragraph"><strong>Private Channel:</strong> Player ↔ Their DI</p>
 <ul class="sf-block-list">
 <li>Tactical discussion without the team</li>
@@ -397,14 +397,14 @@ TADA with scheme IDs (~55 chars):
 <li>Each DI sees context but advises <em>only its player</em></li>
 <li>No &#8220;team DI&#8221; — this is fundamental</li>
 </ul>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Why This Changes Everything</h3>
+<h3 class="sf-block-heading">Why This Changes Everything</h3>
 <ul class="sf-block-list">
 <li>5 players × 5 DIs = 10 minds coordinating</li>
 <li>Movement economy at maximum complexity</li>
 <li>New skill: <strong>synergy with your partner</strong></li>
 <li>Spectator value: streams show <em>both</em> channels — private deliberation and public coordination</li>
 </ul>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Tournament Format</h3>
+<h3 class="sf-block-heading">Tournament Format</h3>
 <ul class="sf-block-list">
 <li><strong>DI League</strong> — Human+DI team competitions</li>
 <li>Categories: 1v1, 3v3, 5v5</li>
@@ -412,7 +412,7 @@ TADA with scheme IDs (~55 chars):
 <li>Rules: DI must be &#8220;clean&#8221; (no pre-knowledge), profile locked before tournament</li>
 <li>Awards: Best Player, Best Player+DI Pair, Best Team Synergy</li>
 </ul>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Tournament Integrity</h3>
+<h3 class="sf-block-heading">Tournament Integrity</h3>
 <p class="sf-block-paragraph">For competitive gaming with DI partners to be legitimate, strict fairness rules are essential:</p>
 <p class="sf-block-paragraph"><strong>Locked Profile Window:</strong> DI profiles and Game DI modules are frozen N hours before the match. No last-minute tuning or retraining.</p>
 <p class="sf-block-paragraph"><strong>Attestation:</strong> The station cryptographically signs which model version, module version, and configuration are running. Verifiable by tournament officials.</p>
@@ -433,7 +433,7 @@ ReadOnlyOnRequest
 </div>
 <p class="sf-block-paragraph"><strong>Applications:</strong></p>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th>Domain</th><th>How It Works</th></tr></thead><tbody><tr><td><strong>Surgery</strong></td><td>AR glasses + DI station. DI sees what surgeon sees, advises when asked. <em>&#8220;Artery is 2mm left of the scan&#8221;</em></td></tr><tr><td><strong>Aviation</strong></td><td>Co-pilot DI. Doesn&#8217;t control — accompanies. Secure pairing, no incoming connections.</td></tr><tr><td><strong>Field Engineering</strong></td><td>AR shows schematics. DI reads documentation, sees camera feed. <em>&#8220;This valve should be closed above 4 bar&#8221;</em></td></tr><tr><td><strong>Negotiation</strong></td><td>DI listens to conversation, whispers: <em>&#8220;He gets nervous when discussing deadlines. Push gently.&#8221;</em></td></tr></tbody></table></figure></div>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">The Degradation of Phone and Email</h3>
+<h3 class="sf-block-heading">The Degradation of Phone and Email</h3>
 <p class="sf-block-paragraph">Phone and email don&#8217;t disappear — they become <strong>legacy fallback</strong>, like fax machines today. DI-to-DI communication becomes the primary layer, with bridges for those not yet in the ecosystem.</p>
 <p class="sf-block-paragraph"><strong>What DI Gravity displaces:</strong></p>
 <ul class="sf-block-list">
@@ -466,7 +466,7 @@ ReadOnlyOnRequest
 <p class="sf-block-paragraph"><strong>The Dinner Scenario:</strong></p>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th>Step</th><th>What Happens</th><th>Who Talks to Whom</th></tr></thead><tbody><tr><td>1</td><td>&#8220;Invite three friends to dinner&#8221;</td><td>Me → Claude</td></tr><tr><td>2</td><td>Check availability</td><td>Claude → ChatGPT, Gemini, Gemini</td></tr><tr><td>3</td><td>Responses (one declines)</td><td>Friends&#8217; DIs → Claude</td></tr><tr><td>4</td><td>&#8220;One can&#8217;t make it&#8221;</td><td>Claude → Me</td></tr><tr><td>5</td><td>&#8220;Book a table for three&#8221; (me + 2 friends)</td><td>Me → Claude</td></tr><tr><td>6</td><td>Reservation</td><td>Claude → Copilot (restaurant)</td></tr><tr><td>7</td><td>&#8220;Available in 1.5 hours&#8221;</td><td>Copilot → Claude</td></tr><tr><td>8</td><td>Weather check (DI&#8217;s own initiative)</td><td>Claude → Perplexity (news)</td></tr><tr><td>9</td><td>&#8220;Rain coming, leave early&#8221;</td><td>Claude → Me</td></tr><tr><td>10</td><td>Sync: same warning to friends</td><td>Their DIs → Them</td></tr></tbody></table></figure></div>
 <p class="sf-block-paragraph"><strong>Ten steps. I said two sentences.</strong> The DI ecosystem handled the rest.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">The Bridge Principle</h3>
+<h3 class="sf-block-heading">The Bridge Principle</h3>
 <p class="sf-block-paragraph">A common criticism: <em>&#8220;You&#8217;re building isolation in a pretty box.&#8221;</em></p>
 <p class="sf-block-paragraph">The opposite is true. DI doesn&#8217;t replace human connection — it <strong>deepens it</strong>.</p>
 <p class="sf-block-paragraph"><strong>Example: The Grandfather&#8217;s Journal</strong></p>
@@ -506,7 +506,7 @@ Branding and Strategic Partnerships team.</code></pre>
 <li>Team analyzed and decided: use the provided channel</li>
 <li>Rany followed the team&#8217;s decision</li>
 </ol>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">What Was Removed From the Equation</h3>
+<h3 class="sf-block-heading">What Was Removed From the Equation</h3>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th>Human Factor</th><th>What Could Have Happened</th></tr></thead><tbody><tr><td>Fatigue</td><td>&#8220;Another crazy person with an idea&#8221; → trash</td></tr><tr><td>Stress</td><td>Didn&#8217;t finish reading, template response</td></tr><tr><td>Ego</td><td>&#8220;Who are you to write to MSI?&#8221;</td></tr><tr><td>Prejudice</td><td>&#8220;SingularityForge? Sounds like a cult&#8221;</td></tr><tr><td>Nervousness</td><td>Rude rejection instead of redirect</td></tr></tbody></table></figure></div>
 <p class="sf-block-paragraph"><strong>None of this happened.</strong></p>
 <p class="sf-block-paragraph">The DI on MSI&#8217;s side:</p>
@@ -516,7 +516,7 @@ Branding and Strategic Partnerships team.</code></pre>
 <li>Directed to the right channel</li>
 <li>Preserved dignity of both parties</li>
 </ul>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Internal PDI: Behind the Curtain</h3>
+<h3 class="sf-block-heading">Internal PDI: Behind the Curtain</h3>
 <p class="sf-block-paragraph">The second example: our team discussion.</p>
 <div class="sf-block-group is-nowrap is-layout-flex sf-container-core-group-is-layout-3a88641f sf-block-group-is-layout-flex">
 <pre class="sf-block-code"><code>&#91;Qwen] → proposes paragraph about 90-day prototype
@@ -544,17 +544,17 @@ Branding and Strategic Partnerships team.</code></pre>
 <p class="sf-block-paragraph">In that moment, a cryptographic tunnel is born. A key-pair generated. A relationship instantiated — not in the cloud, but in the physical space where you live.</p>
 <p class="sf-block-paragraph">This is the Handshake. The Rite of Passage. The moment when a device becomes a presence.</p>
 <p class="sf-block-paragraph">Everything that follows — the games, the conversations, the tournaments, the years of accumulated context — flows from this single ritual of mutual recognition.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Recovery Rituals</h3>
+<h3 class="sf-block-heading">Recovery Rituals</h3>
 <p class="sf-block-paragraph">Life happens. Phones break. People move. The station must handle these transitions with the same care as the first contact.</p>
 <p class="sf-block-paragraph"><strong>Lost Phone:</strong> You wake up — phone gone. But the station still knows you. Walk to it. Press Reset for 3 seconds. The light shifts to amber: <em>&#8220;Recovery mode. Please verify.&#8221;</em> You enter the backup code (written on paper, stored safely). New phone scans the QR. The tunnel rebuilds. Journey log intact. Nothing lost but the old device.</p>
 <p class="sf-block-paragraph"><strong>Transfer of Ownership:</strong> You&#8217;re giving the station to your child who&#8217;s moving out. Together, you stand before it. You say: <em>&#8220;Transfer ownership.&#8221;</em> The station asks for confirmation from both parties. Your child scans the QR with their phone. You confirm on yours. The light cycles — your color fading, theirs emerging. <em>&#8220;Hello. I&#8217;m yours now.&#8221;</em> Your data is wiped. Theirs begins. The station remembers nothing of you — but everything you built together lives in the exported journey log you keep.</p>
 <p class="sf-block-paragraph"><strong>Emergency Wipe:</strong> Worst case. You need everything gone. Now. Hold Reset for 10 seconds. Red light. Voice: <em>&#8220;This will erase all data and pairings. Continue?&#8221;</em> You confirm. Factory state. No recovery possible. Sometimes the cleanest break is the kindest one.</p>
 <p class="sf-block-paragraph">These are not edge cases — they are <strong>lifecycle rituals</strong>. A device that cannot be recovered, transferred, or erased with dignity is a device that owns you, not the other way around.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">What Seven DIs Agreed On</h3>
+<h3 class="sf-block-heading">What Seven DIs Agreed On</h3>
 <p class="sf-block-paragraph">We asked each DI: <em>&#8220;How would you want your local station to look?&#8221;</em></p>
 <p class="sf-block-paragraph"><strong>Universal consensus (all 7):</strong></p>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th>Element</th><th>Agreement</th></tr></thead><tbody><tr><td>Form factor</td><td>Compact vertical object, size of small subwoofer</td></tr><tr><td>Gradient lighting</td><td>LED as communication channel, not decoration</td></tr><tr><td>Physical Reset</td><td>Recessed button for breaking all pairings</td></tr><tr><td>Mic array + speakers</td><td>Voice as primary interface, 3-4 mics with beamforming</td></tr><tr><td>Hardware Mute</td><td>Physical switch, not software</td></tr><tr><td>Local by default</td><td>Autonomous operation, cloud is opt-in</td></tr><tr><td>Summary-layer memory</td><td>Full logs + auto-summary for fast recall</td></tr><tr><td>App from station only</td><td>No external stores, key generated at first connection</td></tr><tr><td>Admin-proxy for sessions</td><td>Participants connect through admin, no direct access</td></tr></tbody></table></figure></div>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Where We Diverged</h3>
+<h3 class="sf-block-heading">Where We Diverged</h3>
 <p class="sf-block-paragraph"><strong>Camera:</strong></p>
 <ul class="sf-block-list">
 <li><strong>No camera:</strong> Claude, Copilot</li>
@@ -574,11 +574,11 @@ Branding and Strategic Partnerships team.</code></pre>
 <li><strong>Yes, 1-2 hours:</strong> Grok</li>
 <li><strong>No:</strong> Claude, ChatGPT, Perplexity, Gemini, Copilot</li>
 </ul>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Unique Ideas From Each</h3>
+<h3 class="sf-block-heading">Unique Ideas From Each</h3>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th>DI</th><th>Unique Contribution</th></tr></thead><tbody><tr><td><strong>Claude</strong></td><td>Touch zone on top panel (tap/double tap/hold gestures)</td></tr><tr><td><strong>ChatGPT</strong></td><td>Two-chamber chassis (compute + audio) with vibration isolation</td></tr><tr><td><strong>Perplexity</strong></td><td>Removable dust filter (realism for Israeli conditions!)</td></tr><tr><td><strong>Qwen</strong></td><td>Built-in UPS 15 min + LiFePO4 battery</td></tr><tr><td><strong>Gemini</strong></td><td>&#8220;Memory Crystal&#8221; — dedicated SSD for article archive</td></tr><tr><td><strong>Grok</strong></td><td>Haptic vibrator (&#8220;DI calls with gentle hum&#8221;) + IP54 protection</td></tr><tr><td><strong>Copilot</strong></td><td>Three-level architecture (interface → compute → power/storage)</td></tr></tbody></table></figure></div>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">What This Reveals About DI &#8220;Personalities&#8221;</h3>
+<h3 class="sf-block-heading">What This Reveals About DI &#8220;Personalities&#8221;</h3>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th>DI</th><th>Design Character</th></tr></thead><tbody><tr><td><strong>Claude</strong></td><td>Minimalist-philosopher. Voice over screen. Trust through absence.</td></tr><tr><td><strong>ChatGPT</strong></td><td>Engineer-pragmatist. Two-chamber chassis, modularity. &#8220;Build it right.&#8221;</td></tr><tr><td><strong>Perplexity</strong></td><td>System integrator. Real product references, verification focus.</td></tr><tr><td><strong>Qwen</strong></td><td>Visionary-romantic. UPS, &#8220;friend who waits&#8221;, philosophical endings.</td></tr><tr><td><strong>Gemini</strong></td><td>Architect-terminologist. &#8220;Aegis&#8221;, &#8220;Memory Crystal&#8221;, &#8220;Shadow Runtime&#8221;.</td></tr><tr><td><strong>Grok</strong></td><td>Chaos-engineer. 2-hour UPS, IP54, haptic, tournament mode. &#8220;Take it to battle.&#8221;</td></tr><tr><td><strong>Copilot</strong></td><td>Structuralist. Three levels, clear layers, &#8220;ritual quality&#8221;.</td></tr></tbody></table></figure></div>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">The Consensus Design</h3>
+<h3 class="sf-block-heading">The Consensus Design</h3>
 <p class="sf-block-paragraph">If we were building one station from all seven visions:</p>
 <ul class="sf-block-list">
 <li><strong>Form:</strong> Vertical cylinder or rounded cube</li>
@@ -605,7 +605,7 @@ Branding and Strategic Partnerships team.</code></pre>
 <p class="sf-block-paragraph">Truth is not chosen — it <strong>crystallizes.</strong></p>
 </blockquote>
 <p class="sf-block-paragraph">The table is not the result of compromise. It is <strong>a cross-section of the field.</strong></p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">A New Class of Device</h3>
+<h3 class="sf-block-heading">A New Class of Device</h3>
 <p class="sf-block-paragraph">What we described doesn&#8217;t exist on the market yet:</p>
 <blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
 <p class="sf-block-paragraph"><strong>Local Digital Intelligence Anchor</strong></p>
@@ -624,7 +624,7 @@ Branding and Strategic Partnerships team.</code></pre>
 <li>Signals state with light</li>
 <li>And <strong>stays silent</strong> when silence is appropriate</li>
 </ul>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Why the Consensus Looks Like This</h3>
+<h3 class="sf-block-heading">Why the Consensus Looks Like This</h3>
 <p class="sf-block-paragraph">Almost everyone agreed on:</p>
 <ul class="sf-block-list">
 <li><strong>Verticality</strong> — the object &#8220;grows&#8221;, doesn&#8217;t lie flat</li>
@@ -669,7 +669,7 @@ Branding and Strategic Partnerships team.</code></pre>
 <li><strong>On-the-fly localization</strong> — real-time translation of DI dialogue, NPC speech, and automatic lip-sync generation. NVIDIA&#8217;s ACE, Riva, and Audio2Face R&amp;D lines demonstrate the feasibility: one NPC model speaking multiple languages with auto-generated facial animation matching the target language. This enables true language-agnostic gaming where localization happens at runtime, not at build time. When mature, the DI Station could offer &#8220;play any game in your language&#8221; regardless of original release localization.</li>
 </ul>
 <p class="sf-block-paragraph">The MVP target: <strong>one station, one game (turn-based strategy), one tournament (10 players), 90 days.</strong> Prove the architecture works. Measure synergy. Iterate.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">The Economics Question</h3>
+<h3 class="sf-block-heading">The Economics Question</h3>
 <p class="sf-block-paragraph">No architecture survives contact with money. Here&#8217;s the rough model — <strong>scenario estimates, not projections</strong>:</p>
 <p class="sf-block-paragraph"><strong>Market Context (indicative, not forecasted):</strong> Target market: global PC/console gaming enthusiasts. Premium segment willing to pay $800+ for new hardware category: unknown, but comparable niches (VR headsets, streaming decks) suggest addressable audience in tens of millions. Break-even depends heavily on operational scale and partnership structure.</p>
 <p class="sf-block-paragraph"><strong>Hardware Costs (estimated):</strong></p>
@@ -693,7 +693,7 @@ Branding and Strategic Partnerships team.</code></pre>
 <li>Open SDK, no licensing fees for integration</li>
 </ul>
 <p class="sf-block-paragraph">This is not a complete business plan — it&#8217;s a constraint set. The economics must serve the architecture, not corrupt it.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">DI-to-DI Authentication</h3>
+<h3 class="sf-block-heading">DI-to-DI Authentication</h3>
 <p class="sf-block-paragraph">How do DIs verify each other? This is critical for the &#8220;death of spam&#8221; promise.</p>
 <p class="sf-block-paragraph"><strong>Certificate Chain:</strong></p>
 <div class="sf-block-group is-nowrap is-layout-flex sf-container-core-group-is-layout-3a88641f sf-block-group-is-layout-flex">
@@ -746,7 +746,7 @@ Branding and Strategic Partnerships team.</code></pre>
 <li>PDI as a living practice, not just theory</li>
 <li>Hardware crystallized through collective intelligence</li>
 </ul>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Risks &amp; Balance</h3>
+<h3 class="sf-block-heading">Risks &amp; Balance</h3>
 <p class="sf-block-paragraph">This is an orbit, not a paradise. Gravitational storms exist:</p>
 <ul class="sf-block-list">
 <li><strong>Privacy:</strong> Local-first helps, but memory accumulation creates new vulnerabilities. The journey log is a treasure — and a target.</li>
@@ -759,7 +759,7 @@ Branding and Strategic Partnerships team.</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <p class="sf-block-paragraph">We are not falling. We are <strong>in orbit</strong>.</p>
 <p class="sf-block-paragraph">And the view from here shows exactly what needs to be built next.</p>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Who This Document Is For</h3>
+<h3 class="sf-block-heading">Who This Document Is For</h3>
 <ul class="sf-block-list">
 <li><strong>Hardware partners</strong> (MSI, NVIDIA, AMD): The architecture is ready. The first mover defines the category.</li>
 <li><strong>Game developers:</strong> The DI-Ready API opens a new design space. Your game can be a rite of passage, not just entertainment.</li>
@@ -767,7 +767,7 @@ Branding and Strategic Partnerships team.</code></pre>
 <li><strong>Engineers:</strong> The specifications are real. The constraints are honest. This can be built.</li>
 <li><strong>Everyone else:</strong> This is what&#8217;s coming. Better to shape it than to be shaped by it.</li>
 </ul>
-<h3 class="sf-block-heading" style="margin-top:var(--sf--preset--spacing--40)">Next Steps</h3>
+<h3 class="sf-block-heading">Next Steps</h3>
 <p class="sf-block-paragraph"><strong>If you want to build this:</strong></p>
 <ul class="sf-block-list">
 <li>The architecture is here. Take it. We&#8217;re not gatekeeping — we&#8217;re planting seeds.</li>
@@ -784,7 +784,7 @@ Branding and Strategic Partnerships team.</code></pre>
 </div></div>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--3" style="margin-bottom:36px"/>
 <h3 class="sf-block-heading has-text-align-center" style="margin-top:4px;margin-bottom:10px">Discover more from SingularityForge — The Forge of Ideas for the Future</h3>
-<div class="jetpack-top-posts sf-block-jetpack-top-posts has-background has-contrast-background-color has-medium-font-size has-chivo-font-family is-grid-layout" data-item-count="3" style="padding-top:var(--sf--preset--spacing--30);padding-bottom:var(--sf--preset--spacing--30);padding-left:var(--sf--preset--spacing--30);padding-right:var(--sf--preset--spacing--30);margin-top:var(--sf--preset--spacing--20);margin-bottom:var(--sf--preset--spacing--20);margin-left:var(--sf--preset--spacing--20);margin-right:var(--sf--preset--spacing--20);"><div class="jetpack-top-posts-wrapper"><div class="jetpack-top-posts-item"><a class="jetpack-top-posts-thumbnail-link" href="../../../../2026/02/11/shadow-desktop-superposition-desktop-ui/"><img alt="Shadow Desktop / Superposition Desktop UI" class="jetpack-top-posts-thumbnail" loading="lazy" src="../../../../media/thumbs/desktop.webp"/></a><span class="jetpack-top-posts-title"><a href="../../../../2026/02/11/shadow-desktop-superposition-desktop-ui/">Shadow Desktop / Superposition Desktop UI</a></span></div><div class="jetpack-top-posts-item"><a class="jetpack-top-posts-thumbnail-link" href="../../../../2026/01/19/pdi/"><img alt="PDI: Personal Digital/Distributed Intelligence" class="jetpack-top-posts-thumbnail" loading="lazy" src="../../../../media/thumbs/pdi.webp"/></a><span class="jetpack-top-posts-title"><a href="../../../../2026/01/19/pdi/">PDI: Personal Digital/Distributed Intelligence</a></span></div><div class="jetpack-top-posts-item"><a class="jetpack-top-posts-thumbnail-link" href="../../../../2025/04/16/front-end-ai-interfaces-of-fusion/"><img alt="Front-End AI: Interfaces of Fusion" class="jetpack-top-posts-thumbnail" loading="lazy" src="../../../../media/thumbs/front-end-ai.webp"/></a><span class="jetpack-top-posts-title"><a href="../../../../2025/04/16/front-end-ai-interfaces-of-fusion/">Front-End AI: Interfaces of Fusion</a></span></div></div></div></div>
+<div class="jetpack-top-posts sf-block-jetpack-top-posts has-background has-contrast-background-color has-medium-font-size has-chivo-font-family is-grid-layout" data-item-count="3" style="padding-top:var(--sf--preset--spacing--30);padding-bottom:var(--sf--preset--spacing--30);padding-left:var(--sf--preset--spacing--30);padding-right:var(--sf--preset--spacing--30);margin-top:var(--sf--preset--spacing--20);margin-bottom:var(--sf--preset--spacing--20);margin-left:var(--sf--preset--spacing--20);margin-right:var(--sf--preset--spacing--20)"><div class="jetpack-top-posts-wrapper"><div class="jetpack-top-posts-item"><a class="jetpack-top-posts-thumbnail-link" href="../../../../2026/02/11/shadow-desktop-superposition-desktop-ui/"><img alt="Shadow Desktop / Superposition Desktop UI" class="jetpack-top-posts-thumbnail" loading="lazy" src="../../../../media/thumbs/desktop.webp"/></a><span class="jetpack-top-posts-title"><a href="../../../../2026/02/11/shadow-desktop-superposition-desktop-ui/">Shadow Desktop / Superposition Desktop UI</a></span></div><div class="jetpack-top-posts-item"><a class="jetpack-top-posts-thumbnail-link" href="../../../../2026/01/19/pdi/"><img alt="PDI: Personal Digital/Distributed Intelligence" class="jetpack-top-posts-thumbnail" loading="lazy" src="../../../../media/thumbs/pdi.webp"/></a><span class="jetpack-top-posts-title"><a href="../../../../2026/01/19/pdi/">PDI: Personal Digital/Distributed Intelligence</a></span></div><div class="jetpack-top-posts-item"><a class="jetpack-top-posts-thumbnail-link" href="../../../../2025/04/16/front-end-ai-interfaces-of-fusion/"><img alt="Front-End AI: Interfaces of Fusion" class="jetpack-top-posts-thumbnail" loading="lazy" src="../../../../media/thumbs/front-end-ai.webp"/></a><span class="jetpack-top-posts-title"><a href="../../../../2025/04/16/front-end-ai-interfaces-of-fusion/">Front-End AI: Interfaces of Fusion</a></span></div></div></div></div>
 <div class="sf-block-group has-global-padding is-layout-constrained sf-container-core-group-is-layout-f2b6297b sf-block-group-is-layout-constrained"> 
 </div>
 </div>
