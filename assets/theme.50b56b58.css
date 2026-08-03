@@ -695,6 +695,9 @@ tbody tr:hover td{
 }
 .table-wrap th{ background: #23292e; }
 .entry-content h3:not(h2 + h3):not(:first-child){ margin-block-start: 30px; }
+.entry-content h2{
+  font-size: clamp(1.4375rem, 1.4375rem + ((1vw - 0.2rem) * 0.455), 1.6875rem);
+}
 .sf-block-code{
   background: rgba(255, 255, 255, .05); border: 1px solid #3a4045;
   border-radius: 6px; padding: 1em 1.25em; overflow-x: auto;
