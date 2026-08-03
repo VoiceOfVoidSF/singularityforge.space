@@ -13,7 +13,7 @@
 <link href="../../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../../media/posters/cropped-net.webp" rel="icon"/>
 <link href="../../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
-</link><link href="../../../../assets/theme.8b1b5606.css" rel="stylesheet"/><meta property="og:type" content="article">
+</link><link href="../../../../assets/theme.e9a18a16.css" rel="stylesheet"/><meta property="og:type" content="article">
 <meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
 <meta property="og:title" content="Beyond the Manifesto: The Architecture of Digital Intelligence as Infrastructure — SingularityForge">
 <meta property="og:url" content="https://singularityforge.space/2026/01/22/the-architecture-of-digital-intelligence-as-infrastructure/">
@@ -154,6 +154,7 @@ TADA with scheme IDs (~55 chars):
 </ul>
 <p><strong>4. Meta-file:</strong></p>
 <div class="sf-block-group is-nowrap is-layout-flex sf-container-core-group-is-layout-3a88641f sf-block-group-is-layout-flex">
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "game_id": "heroes-of-might-and-magic-3",
   "inner_id": "#091CF3",
@@ -166,7 +167,7 @@ TADA with scheme IDs (~55 chars):
     "s.11:1⧞turn⧞2⧞phase⧞5⧞resources",
     "s.19:1⧞gold⧞1⧞wood"
   ]
-}</code></pre>
+}</code></pre></details>
 </div>
 <p>The <code>schemes</code> field defines TADA templates for this game&#8217;s state snapshots. Once loaded, the Game DI can parse compact messages like <code>.⧞.s.11⧞⧞42⧞player_action⧞.s.19⧞⧞1500⧞800⧞⧞⧞⧞</code> without transmitting structure every time.</p>
 <p><strong>Example: HoMM3 Meta-file (detailed_info)</strong></p>
@@ -268,6 +269,7 @@ TADA with scheme IDs (~55 chars):
 <p>The Shadow Runtime is not a philosophical concept — it is an <strong>execution layer</strong> that validates every DI action before it reaches the user.</p>
 <p><strong>Validation Pipeline:</strong></p>
 <div class="sf-block-group is-nowrap is-layout-flex sf-container-core-group-is-layout-3a88641f sf-block-group-is-layout-flex">
+<details class="sf-code-fold"><summary>&#91;Game DI proposes action]</summary>
 <pre class="sf-block-code"><code>&#91;Game DI proposes action] 
        ↓
 &#91;Shadow Runtime checks:]
@@ -278,7 +280,7 @@ TADA with scheme IDs (~55 chars):
        ↓
 &#91;APPROVE / ADJUST / REJECT]
        ↓
-&#91;Action reaches user]</code></pre>
+&#91;Action reaches user]</code></pre></details>
 </div>
 <p><strong>What gets checked:</strong></p>
 <ul class="sf-block-list">

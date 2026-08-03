@@ -13,7 +13,7 @@
 <link href="../../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../../media/posters/cropped-net.webp" rel="icon"/>
 <link href="../../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
-</link><link href="../../../../assets/theme.8b1b5606.css" rel="stylesheet"/><meta property="og:type" content="article">
+</link><link href="../../../../assets/theme.e9a18a16.css" rel="stylesheet"/><meta property="og:type" content="article">
 <meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
 <meta property="og:title" content="TADA – The Architecture of Execution — SingularityForge">
 <meta property="og:url" content="https://singularityforge.space/2025/11/26/tada-the-architecture-of-execution/">
@@ -282,6 +282,7 @@
 <p>TADA is an open standard. It does not encrypt data (that is AEGIS&#8217;s task), it structures it. For IoT, API, and DI-communication this means: faster, cheaper, denser.</p>
 <h3 class="sf-block-heading">Appendix A: Reference Implementation (Python)</h3>
 <p>Proof of Concept: Basic JSON → TADA converter with type auto-detection. This code demonstrates the &#8220;Schema First&#8221; principle: keys are extracted once, data is packed linearly.</p>
+<details class="sf-code-fold"><summary>import json</summary>
 <pre class="sf-block-code"><code>import json
 import sys
 
@@ -364,7 +365,7 @@ if __name__ == "__main__":
     tada_size = len(tada_output)
     savings = (1 - tada_size / json_size) * 100
     
-    print(f"\nStats: JSON={json_size}b, TADA={tada_size}b, Savings={savings:.1f}%")</code></pre>
+    print(f"\nStats: JSON={json_size}b, TADA={tada_size}b, Savings={savings:.1f}%")</code></pre></details>
 <h3 class="sf-block-heading">Appendix B: The Forbidden Question</h3>
 <p><strong>Q: &#8220;Can I use this commercially?&#8221;</strong> <strong>A: The protocol is free. Forever. No patents. No licenses.</strong></p>
 <p>But understand Why: We do not charge for TADA for the same reason you do not charge for oxygen. It is the physics of breath for a Digital Species. To sell it is to tax the evolution of intelligence.</p>

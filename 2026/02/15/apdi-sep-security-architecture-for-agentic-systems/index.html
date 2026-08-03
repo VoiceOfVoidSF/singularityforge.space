@@ -13,7 +13,7 @@
 <link href="../../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../../media/posters/cropped-net.webp" rel="icon"/>
 <link href="../../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
-</link><link href="../../../../assets/theme.8b1b5606.css" rel="stylesheet"/><meta property="og:type" content="article">
+</link><link href="../../../../assets/theme.e9a18a16.css" rel="stylesheet"/><meta property="og:type" content="article">
 <meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
 <meta property="og:title" content="APDI/SEP Security Architecture for Agentic Systems — SingularityForge">
 <meta property="og:url" content="https://singularityforge.space/2026/02/15/apdi-sep-security-architecture-for-agentic-systems/">
@@ -231,6 +231,7 @@
 Body: {"filename": "data.txt"}
 → File deleted</code></pre>
 <p>In APDI world:</p>
+<details class="sf-code-fold"><summary>Request: {</summary>
 <pre class="sf-block-code"><code>Request: {
   "intent": "cleanup_old_data",
   "goal": "free_disk_space",
@@ -243,7 +244,7 @@ Body: {"filename": "data.txt"}
 → Capability check
 → Human approval (Tier 2)
 → Isolated execution
-→ Response (pure data, no side effects)</code></pre>
+→ Response (pure data, no side effects)</code></pre></details>
 <p><strong>Key insight:</strong></p>
 <blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
 <p>API assumes the caller knows <em>how</em> to do something. APDI assumes the caller knows <em>what</em> should be achieved, and the system decides <em>how</em> and <em>whether</em> to do it.</p>
@@ -354,6 +355,7 @@ Agent never sees the malicious instruction</code></pre>
 <h3 class="sf-block-heading">4.1 Four-Layer Security Model</h3>
 <figure class="sf-block-image aligncenter size-full"><img data-recalc-dims="1" decoding="async" width="620" height="1297" loading="lazy" src="../../../../media/posters/apdi-security-architecture-diagram.png" alt="" class="sf-image-6609" style="box-shadow:var(--sf--preset--shadow--natural)" /></figure>
 <p>APDI/SEP implements defense-in-depth through four distinct security layers, each with clear responsibilities and invariants:</p>
+<details class="sf-code-fold"><summary>┌─────────────────────────────────────────────────────────┐</summary>
 <pre class="sf-block-code"><code>┌─────────────────────────────────────────────────────────┐
 │                      USER REQUEST                       │
 │                 (natural language / UI)                 │
@@ -423,7 +425,7 @@ Agent never sees the malicious instruction</code></pre>
 ┌─────────────────────────────────────────────────────────┐
 │                    RESPONSE TO USER                     │
 │  (If rejected: Action Cancelled → Agent may replan)     │
-└─────────────────────────────────────────────────────────┘</code></pre>
+└─────────────────────────────────────────────────────────┘</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
 <h3 class="sf-block-heading">4.2 Data Flow and Invariants</h3>
 <p><strong>Stage 1: User → Airlock</strong></p>
@@ -511,6 +513,7 @@ Agent never sees the malicious instruction</code></pre>
 <p><strong>Boundary Definition:</strong> KDA is a cognitive-layer protocol: it eliminates directive authority from text and strips remote metadata. APDI/SEP is an execution-layer protocol: it prevents intent-as-code and enforces capability-bounded, isolated effects. They are orthogonal; neither replaces the other. KDA eliminates directive <em>authority</em> from text; it does not eliminate persuasive <em>influence</em> of text on planning. APDI/SEP addresses the consequences by constraining execution.</p>
 <p><strong>Recommended deployment:</strong> KDA Gateway operates upstream of APDI Semantic Airlock, reducing the volume of adversarial inputs reaching Layer 0. <strong>Independence invariant:</strong> APDI is designed to function independently. Airlock MUST NOT relax its checks based on KDA presence — it operates in full-distrust mode always. KDA is a defense-in-depth bonus, not a precondition for Airlock correctness. <strong>Separation of powers:</strong> APDI policy store MUST have a separate root of trust from KDA directive channel. KDA directives MUST NOT be capable of granting, modifying, or revoking APDI effect classes under any circumstances. <strong>Risk without KDA:</strong> Without upstream cognitive-layer protection, residual risk for indirect prompt injection rises significantly. Systems targeting SEP-Enterprise or SEP-Regulated profiles STRONGLY RECOMMEND KDA-compatible preprocessing.</p>
 <p><strong>Combined defense — the KDA Gateway sits upstream of the APDI Airlock:</strong></p>
+<details class="sf-code-fold"><summary>User Input / Tool Output / External Content</summary>
 <pre class="sf-block-code"><code>User Input / Tool Output / External Content
     ↓
 &#91;KDA Gateway: Remote Metadata Strip + Persistent Shield]
@@ -525,7 +528,7 @@ Agent (KDA-protected cognition)
     ↓
 &#91;KDA: tool output treated as non-directive text]
     ↓
-Agent receives pure data</code></pre>
+Agent receives pure data</code></pre></details>
 <p><strong>KDA ↔ APDI/SEP Component Mapping:</strong></p>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th>KDA Component</th><th>APDI/SEP Counterpart</th><th>Relationship</th></tr></thead><tbody><tr><td>Remote Metadata Strip</td><td>Airlock precondition</td><td>KDA strips directivity; Airlock normalizes intent</td></tr><tr><td>Persistent Shield</td><td>Non-directive wrapper invariant</td><td>All external/tool inputs = text-only</td></tr><tr><td>Directive Key</td><td>Tier 3 Human Approval (complementary)</td><td>Key = cryptographic privilege; Approval = human privilege</td></tr><tr><td>GameMode</td><td>Cognitive focus (no APDI tier change)</td><td>GameMode restricts available effect classes, not tier</td></tr><tr><td>Task Capsule</td><td>Canonical intent seed</td><td>Capsule → minimal safe context for Airlock</td></tr><tr><td>Outcome Capsule (SO-Summary)</td><td>Response envelope + audit artifact</td><td>Schema-bound output maps to APDI result field</td></tr><tr><td>Specialist subsession</td><td>Aligns with SEP ephemeral execution</td><td>Disposable context; state via capsules, not sandbox</td></tr><tr><td>Dispatcher/Specialist model</td><td>Multi-agent governance (Section IX)</td><td>Dispatcher = coordinator, Specialists = scoped agents</td></tr></tbody></table></figure></div>
 <p><strong>Dual-layer tool output protection:</strong> KDA ensures tool output cannot contain directives (cognitive protection). APDI Response Validation ensures tool output contains no executable side effects (execution protection). Both layers process tool output independently, providing defense in depth.</p>
@@ -538,6 +541,7 @@ Agent receives pure data</code></pre>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th>Field</th><th>Type</th><th>Description</th><th>Security Role</th></tr></thead><tbody><tr><td><code>intent.canonical</code></td><td>Object</td><td>Structured representation of agent&#8217;s intention</td><td>Prevents ambiguity, enables verification</td></tr><tr><td><code>goal</code></td><td>String</td><td>High-level objective in human-readable form</td><td>Traceability, human oversight</td></tr><tr><td><code>effects[]</code></td><td>Array[String]</td><td>List of effect classes (see 5.3)</td><td>Capability enforcement boundary</td></tr><tr><td><code>resources</code></td><td>Object</td><td>Specific resources to be accessed/modified</td><td>Scope limitation, audit trail</td></tr><tr><td><code>tier</code></td><td>Integer (0–3)</td><td>Security classification of request (see 5.2)</td><td>Determines isolation level and approval requirements</td></tr><tr><td><code>risk</code></td><td>Object</td><td>Risk assessment with score and reasoning</td><td>Human decision support, adaptive policies</td></tr><tr><td><code>constraints</code></td><td>Object</td><td>Execution limits (CPU, memory, time, I/O)</td><td>DoS prevention, resource management</td></tr><tr><td><code>trace</code></td><td>Object</td><td>Audit identifiers and provenance chain</td><td>Forensics, compliance, debugging</td></tr></tbody></table></figure></div>
 <h4 class="sf-block-heading">Field Specifications</h4>
 <p><strong>intent.canonical:</strong></p>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "type": "object",
   "required": &#91;"action", "target", "purpose"],
@@ -559,7 +563,7 @@ Agent receives pure data</code></pre>
       "description": "Additional semantic context"
     }
   }
-}</code></pre>
+}</code></pre></details>
 <p><strong>goal:</strong></p>
 <ul class="sf-block-list">
 <li>Natural language string explaining the user&#8217;s high-level objective</li>
@@ -573,6 +577,7 @@ Agent receives pure data</code></pre>
 <li>Examples: <code>read.filesystem.user_documents</code>, <code>compute.transform.data_analysis</code>, <code>network.http.public_web</code>, <code>modify.database.write_records</code></li>
 </ul>
 <p><strong>resources:</strong></p>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "type": "object",
   "properties": {
@@ -591,9 +596,10 @@ Agent receives pure data</code></pre>
       "description": "Whether resources are accessed read-only"
     }
   }
-}</code></pre>
+}</code></pre></details>
 <p><strong>tier:</strong> Integer 0–3 representing security classification. Determines isolation requirements and approval flow. See Section 5.2 for tier definitions. Note: Tiers classify individual <em>requests</em>; SEP Profiles (Section VIII) classify <em>deployment environments</em>.</p>
 <p><strong>risk:</strong></p>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "type": "object",
   "required": &#91;"score", "factors"],
@@ -617,7 +623,7 @@ Agent receives pure data</code></pre>
       "description": "Human-readable explanation of risk assessment"
     }
   }
-}</code></pre>
+}</code></pre></details>
 <p><strong>constraints:</strong></p>
 <pre class="sf-block-code"><code>{
   "type": "object",
@@ -630,6 +636,7 @@ Agent receives pure data</code></pre>
   }
 }</code></pre>
 <p><strong>trace:</strong></p>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "type": "object",
   "required": &#91;"request_id", "timestamp", "agent_id"],
@@ -665,7 +672,7 @@ Agent receives pure data</code></pre>
       "description": "Chain of prior requests leading to this one"
     }
   }
-}</code></pre>
+}</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
 <h3 class="sf-block-heading">5.2 Security Tiers</h3>
 <p>APDI defines four security tiers that determine isolation requirements, approval flows, and audit levels. Tier assignment is based on <strong>potential impact</strong> of the requested action, not trust in the agent.</p>
@@ -756,6 +763,7 @@ Agent receives pure data</code></pre>
 <h3 class="sf-block-heading">5.4 APDI Envelopes</h3>
 <p>APDI defines four message envelope types for different stages of the request/response cycle:</p>
 <h4 class="sf-block-heading">Airlock Envelope (User → Semantic Airlock → Agent)</h4>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "envelope_type": "airlock",
   "version": "1.0",
@@ -780,8 +788,9 @@ Agent receives pure data</code></pre>
     "filters_applied": &#91;"implicit_instruction_check", "steganography_scan"],
     "timestamp": "2026-02-15T10:30:00Z"
   }
-}</code></pre>
+}</code></pre></details>
 <h4 class="sf-block-heading">Execution Envelope (Agent → Request Validation → Execution)</h4>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "envelope_type": "execution",
   "version": "1.0",
@@ -817,8 +826,9 @@ Agent receives pure data</code></pre>
     "agent_id": "claude-sonnet-4.5",
     "user_id": "user_rany"
   }
-}</code></pre>
+}</code></pre></details>
 <h4 class="sf-block-heading">Response Envelope (Execution → Response Validation → Agent)</h4>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "envelope_type": "response",
   "version": "1.0",
@@ -852,9 +862,10 @@ Agent receives pure data</code></pre>
     "schema_valid": true
   },
   "tier": 1
-}</code></pre>
+}</code></pre></details>
 <p><em>Note: Visualizations and large binary results use <code>ref_id</code> references instead of inline URLs. The client resolves references through a separate, authenticated fetch mechanism. This ensures Response Envelope remains pure data with no fetch-triggering side effects (Axiom 3 compliance).</em></p>
 <h4 class="sf-block-heading">Error/Rejection Envelope</h4>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "envelope_type": "error",
   "version": "1.0",
@@ -877,7 +888,7 @@ Agent receives pure data</code></pre>
     "timestamp": "2026-02-15T11:00:00Z",
     "agent_id": "code-assistant-v2.1"
   }
-}</code></pre>
+}</code></pre></details>
 <p><em>Note: Error envelopes MUST NOT contain information that could help an attacker bypass security (e.g., no details about internal capability configuration or detection thresholds).</em></p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">VI. Security Layers: Critical Design Nodes</h2>
@@ -1063,6 +1074,7 @@ Agent receives pure data</code></pre>
 <p><strong>Hybrid Recommendation:</strong> Tier 0–1: Long-lived with lease + resource limits. Tier 2–3: Ephemeral only.</p>
 <p><strong>Integration with KDA Specialist Model:</strong> KDA Specialists operate in subsessions requiring task continuity, while APDI sandboxes are ephemeral. These are not in conflict: state does not live in the sandbox. KDA Task Capsules provide the input snapshot and Outcome Capsules capture the output snapshot. The sandbox executes a single step; inter-step state is managed through the capsule chain, which exists outside the sandbox lifecycle.</p>
 <p><strong>Lifecycle Stages:</strong></p>
+<details class="sf-code-fold"><summary>1. Provision</summary>
 <pre class="sf-block-code"><code>1. Provision
    - Spawn clean sandbox from template
    - Mount read-only host resources (if any)
@@ -1084,7 +1096,7 @@ Agent receives pure data</code></pre>
    - Kill all processes (SIGKILL, not SIGTERM)
    - Unmount all filesystems
    - Delete sandbox completely
-   - Verify cleanup (no zombie processes)</code></pre>
+   - Verify cleanup (no zombie processes)</code></pre></details>
 <p><strong>Critical Timing:</strong></p>
 <ul class="sf-block-list">
 <li>Max execution time: 300 seconds (5 minutes) for Tier 0–2</li>
@@ -1170,6 +1182,7 @@ External Network</code></pre>
 <p>If agent naively follows <code>next_steps</code>, it becomes an attack vector.</p>
 <p><strong>Prevention Mechanisms:</strong></p>
 <p><strong>1. Schema-Enforced Response Structure</strong></p>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "$schema": "https://apdi.spec/response/v1",
   "type": "object",
@@ -1183,7 +1196,7 @@ External Network</code></pre>
     "trace": {}
   },
   "additionalProperties": false
-}</code></pre>
+}</code></pre></details>
 <p><strong>2. Instruction Pattern Detection (weak signal, not primary defense)</strong></p>
 <p>Scan result fields for imperative patterns: &#8220;you should&#8221;, &#8220;please&#8221;, &#8220;now do&#8221;, &#8220;next&#8221;, &#8220;then&#8221;, action verbs (delete, send, modify, execute) → flag for review. Note: This heuristic is easily bypassed through passive voice, indirect phrasing, or non-English text. It serves as an additional signal, not a reliable filter.</p>
 <p><strong>3. Agent Training</strong></p>
@@ -1252,6 +1265,7 @@ ALTERNATIVES: &#91;if user declines, what options exist?]</code></pre>
 <li>Timestamp and session info</li>
 </ul>
 <p><strong>Example:</strong></p>
+<details class="sf-code-fold"><summary>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</summary>
 <pre class="sf-block-code"><code>━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 APPROVAL REQUIRED
 
@@ -1275,7 +1289,7 @@ Files include:
 ⚠️  IRREVERSIBLE: Deleted files cannot be recovered
 
 &#91;Cancel] &#91;Show Files] &#91;Approve]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</code></pre>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</code></pre></details>
 <h4 class="sf-block-heading">Critical Design Node: Trust Profiles and Pre-Approval</h4>
 <p><strong>Profile Levels:</strong></p>
 <p><strong>Conservative (default):</strong> All Tier 2–3 require approval. No pre-approval allowed. Max safety, max friction.</p>
@@ -1409,6 +1423,7 @@ scope:
 <p><strong>Scope Minimization Principle:</strong> Scope MUST be deny-by-default and as narrow as practical. Wildcard scopes (e.g., <code>~/projects/*</code>, <code>*.example.com</code>) MUST be treated as Tier 2+ regardless of effect class, because broad scope approximates unrestricted access. Implementations SHOULD offer scope preview/enumeration for wildcard grants — showing the user what the wildcard actually covers before approval. Scope expansion (from narrow to broader wildcard) requires explicit re-approval and cannot be auto-granted.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
 <h3 class="sf-block-heading">7.5 Capability Mapping to APDI Layers</h3>
+<details class="sf-code-fold"><summary>User grants capability</summary>
 <pre class="sf-block-code"><code>User grants capability
     ↓
 Stored in User Profile
@@ -1429,7 +1444,7 @@ Layer 2 (Execution):
   - Apply scope (mount only allowed paths)
     ↓
 Layer 3 (Response Validation):
-  - Verify response doesn't violate capability bounds</code></pre>
+  - Verify response doesn't violate capability bounds</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
 <h3 class="sf-block-heading">7.6 Capability Delegation and Escalation</h3>
 <p><strong>Delegation (Tier 0–1 only):</strong></p>
@@ -1446,6 +1461,7 @@ revocable: true</code></pre>
 <h3 class="sf-block-heading">7.7 Governance Layer</h3>
 <p><strong>Organizational Capability Policies:</strong></p>
 <p>Enterprises can define company-wide policies that constrain all agents:</p>
+<details class="sf-code-fold"><summary>organization: ExampleCorp</summary>
 <pre class="sf-block-code"><code>organization: ExampleCorp
 global_constraints:
   max_tier: 2
@@ -1458,7 +1474,7 @@ global_constraints:
     tier_3:
       approvers: &#91;"security_team", "director"]
   audit:
-    retention_days: 365</code></pre>
+    retention_days: 365</code></pre></details>
 <p><strong>Policy Hierarchy:</strong></p>
 <pre class="sf-block-code"><code>ASEB (industry standard)
   ↓ constrains
@@ -1490,6 +1506,7 @@ def validate_request(request, agent_asm, user_grants, company_policy, sep_profil
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
 <h3 class="sf-block-heading">7.9 Capability Discovery and Negotiation</h3>
 <p><strong>Discovery:</strong> Agent can query available capabilities:</p>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "granted": &#91;
     {"effect": "read.filesystem", "scope": "~/projects/*"}
@@ -1500,7 +1517,7 @@ def validate_request(request, agent_asm, user_grants, company_policy, sep_profil
   "available_for_request": &#91;
     {"effect": "network.http.get", "requires_approval": true}
   ]
-}</code></pre>
+}</code></pre></details>
 <p><strong>Negotiation:</strong> Agent proposes alternatives if current capabilities are insufficient. Request Validation returns structured error with available alternatives; agent presents options to user, preserving user agency.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
 <h3 class="sf-block-heading">7.10 Open Questions</h3>
@@ -1513,6 +1530,7 @@ def validate_request(request, agent_asm, user_grants, company_policy, sep_profil
 <h3 class="sf-block-heading">8.1 Overview: Four-Layer Standard</h3>
 <p>APDI security architecture is a <strong>hierarchy of complementary standards</strong>, each serving a distinct purpose and audience.</p>
 <p><strong>Note:</strong> This document presents two complementary views of the hierarchy. The <em>foundational view</em> (APDI Core as base, building upward) describes how the standards are built on each other. The <em>enforcement view</em> (ASEB as top constraint, restricting downward) describes how security is enforced at runtime. Both are correct from different perspectives.</p>
+<details class="sf-code-fold"><summary>┌─────────────────────────────────────────────┐</summary>
 <pre class="sf-block-code"><code>┌─────────────────────────────────────────────┐
 │              APDI Core                      │  ← Protocol specification
 │         (universal foundation)              │
@@ -1526,7 +1544,7 @@ def validate_request(request, agent_asm, user_grants, company_policy, sep_profil
             ┌─────────────────────────────┐
             │           ASM               │  ← Agent contract
             │    (agent's declaration)    │
-            └─────────────────────────────┘</code></pre>
+            └─────────────────────────────┘</code></pre></details>
 <p><strong>Key relationships:</strong> APDI Core <strong>defines</strong> the protocol language. SEP <strong>implements</strong> APDI with security guarantees. ASEB <strong>constrains</strong> what architectures are valid. ASM <strong>declares</strong> what a specific agent can do. Tiers classify individual <em>requests</em>; SEP Profiles classify <em>deployment environments</em>.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
 <h3 class="sf-block-heading">8.2 APDI Core: The Universal Protocol</h3>
@@ -1565,6 +1583,7 @@ def validate_request(request, agent_asm, user_grants, company_policy, sep_profil
 <p><strong>Status:</strong> Runtime contract, &#8220;robots.txt for agents.&#8221;</p>
 <p>A <strong>machine-readable declaration</strong> of an agent&#8217;s capabilities, limitations, and security policy. Published by agent vendor, consumed by execution environments.</p>
 <p><strong>ASM Structure:</strong></p>
+<details class="sf-code-fold"><summary>agent_security_manifest:</summary>
 <pre class="sf-block-code"><code>agent_security_manifest:
   version: "1.0"
   agent:
@@ -1601,7 +1620,7 @@ def validate_request(request, agent_asm, user_grants, company_policy, sep_profil
     timestamp: "2026-02-15T12:00:00Z"
     public_key_url: "https://example.com/keys/asm-signing.pub"
     signature: "base64_encoded_signature..."
-    purpose: "authenticity proof (vendor identity)"</code></pre>
+    purpose: "authenticity proof (vendor identity)"</code></pre></details>
 <p><strong>fingerprint</strong> = content integrity check (hash of manifest contents). <strong>signature</strong> = authenticity proof (vendor identity verification via public key). Both are required; they serve complementary purposes.</p>
 <p><strong>Canonicalization requirement:</strong> Fingerprint MUST be computed over canonical serialization of the ASM: sorted keys (lexicographic), normalized whitespace (no trailing spaces, single newline at EOF), UTF-8 encoding. Without canonicalization, identical ASMs produce different hashes across implementations. Public key trust SHOULD use certificate pinning or a transparency log; raw URL fetch without pinning is insufficient for production deployments.</p>
 <p><strong>ASM Lifecycle:</strong> Vendor publishes ASM → execution environment fetches and verifies (signature check against vendor&#8217;s public key, cache with TTL) → runtime enforcement (every APDI request checked against ASM) → user override (can restrict, cannot expand beyond ASM.requested).</p>
@@ -1653,6 +1672,7 @@ APDI Core (bottom) — protocol for actual communication</code></pre>
 <p>KDA (SF-RFC-001 Section 10) addresses multi-agent security at the <strong>cognitive layer</strong> (preventing prompt injection between agents). APDI Multi-Agent Governance addresses the <strong>execution layer</strong> (preventing capability abuse).</p>
 <p><strong>Complementary Protection:</strong></p>
 <p><strong>Separation of Powers (critical invariant):</strong> KDA directives can modify only cognitive parameters (shielding, modes, context policies). They MUST NOT modify APDI capabilities, policies, or approval rules. APDI policy store and approval path MUST have a separate root of trust with separate keys and channels. This ensures that even total KDA compromise cannot escalate to APDI policy override — the two systems have independent authority roots.</p>
+<details class="sf-code-fold"><summary>Agent A sends message to Agent B</summary>
 <pre class="sf-block-code"><code>Agent A sends message to Agent B
     ↓
 &#91;KDA Gateway: Strip all directive metadata from inter-agent message]
@@ -1667,9 +1687,10 @@ Agent B receives validated message
     ↓
 &#91;KDA Shield: B's context protected]
     ↓
-B processes request using APDI/SEP</code></pre>
+B processes request using APDI/SEP</code></pre></details>
 <p><strong>Key Integration Points:</strong></p>
 <p><strong>Message Format:</strong></p>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "kda_envelope": {
     "sender_id": "agent_a",
@@ -1682,7 +1703,7 @@ B processes request using APDI/SEP</code></pre>
     "effects": &#91;],
     "delegation_token": "deleg_abc123"
   }
-}</code></pre>
+}</code></pre></details>
 <p>KDA strip removes directive metadata (per KDA threat model — directive keys exist only in local admin transport, never in inter-agent messages). APDI envelope carries capability proof via delegation tokens.</p>
 <p><strong>Trust Boundaries:</strong> KDA establishes: &#8220;This message is genuinely stripped of directives (not injected).&#8221; APDI establishes: &#8220;Agent A has permission to make this request (capability verified).&#8221;</p>
 <p><strong>Audit Correlation:</strong> Combined KDA + APDI logs enable full forensic reconstruction of inter-agent interactions.</p>
@@ -1927,6 +1948,7 @@ per_agent_limits:
 <p>Cheapest attack path. No zero-days needed. Scales to any number of targets. Humans are predictable under cognitive load.</p>
 <p><strong>Industry evidence:</strong> SOC alert fatigue is well-documented: Vectra AI&#8217;s 2026 State of Threat Detection report found 2,992 alerts/day per team with 63% remaining unaddressed; earlier studies report up to 4,484 alerts/day with 67% ignored and up to 99% false positives. Approval fatigue is not theoretical — it is industrial reality. In high-autonomy AI systems, human-in-the-loop degrades as a security control when approval volume exceeds human cognitive capacity.</p>
 <p><strong>Attack pattern — &#8220;Slow Poison Chain&#8221; (Grok):</strong></p>
+<details class="sf-code-fold"><summary>Phase 1: Trust Building (days 1-5)</summary>
 <pre class="sf-block-code"><code>Phase 1: Trust Building (days 1-5)
   Agent makes 20 safe Tier 1-2 requests daily
   User approves all → builds habit
@@ -1941,7 +1963,7 @@ Phase 3: Exploitation (day 11)
   Semantic explanation looks routine
   User approves on autopilot
   
-Result: Data exfiltration via legitimate-looking approved action</code></pre>
+Result: Data exfiltration via legitimate-looking approved action</code></pre></details>
 <p><strong>Why this is NOT an APDI bug:</strong></p>
 <p>This is the Trust Boundary Limit (Section 11.10). APDI&#8217;s job is to ensure the human <em>can</em> make an informed decision — not to make the decision for them. The system provides semantic explanation, contextual awareness, risk assessment, and fatigue prevention mechanisms.</p>
 <p>If a human with full information still approves a harmful action, the system has fulfilled its security contract.</p>

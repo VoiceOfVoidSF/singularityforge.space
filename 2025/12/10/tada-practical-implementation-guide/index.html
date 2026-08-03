@@ -13,7 +13,7 @@
 <link href="../../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../../media/posters/cropped-net.webp" rel="icon"/>
 <link href="../../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
-</link><link href="../../../../assets/theme.8b1b5606.css" rel="stylesheet"/><meta property="og:type" content="article">
+</link><link href="../../../../assets/theme.e9a18a16.css" rel="stylesheet"/><meta property="og:type" content="article">
 <meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
 <meta property="og:title" content="TADA Phase VII: Practical Implementation Guide — SingularityForge">
 <meta property="og:url" content="https://singularityforge.space/2025/12/10/tada-practical-implementation-guide/">
@@ -231,6 +231,7 @@ DI: &#91;entire graph already loaded, all relationships visible]</code></pre>
 <p><strong>Size: 1,051 bytes</strong> &#8211; this is as small as JSON can get without losing data.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">Formatted (for readability):</h3>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "companyName": "GlobalTech Solutions",
   "headquarters": {
@@ -302,7 +303,7 @@ DI: &#91;entire graph already loaded, all relationships visible]</code></pre>
     {"partnerName": "InnovateCorp", "sinceYear": 2018},
     {"partnerName": "FutureTech", "sinceYear": 2020}
   ]
-}</code></pre>
+}</code></pre></details>
 <p><em>(Formatted version: 1,567 bytes)</em></p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">Structure Analysis</h3>
@@ -492,6 +493,7 @@ lN ↔ lastName
 eID ↔ employeeId</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading">Structure</h4>
+<details class="sf-code-fold"><summary>.L1⧞2⧞2⧞⧞</summary>
 <pre class="sf-block-code"><code>.L1⧞2⧞2⧞⧞
 fN⧞firstName
 ⧞lN⧞lastName
@@ -503,7 +505,7 @@ fN⧞firstName
 ⧞st⧞state
 ⧞zip⧞zipCode
 ⧞ctry⧞country
-⧞⧞</code></pre>
+⧞⧞</code></pre></details>
 <p><strong>Format:</strong></p>
 <ul class="sf-block-list">
 <li>Root: <code>.L1</code></li>
@@ -722,6 +724,7 @@ Sum = 2,018 ✓</code></pre>
 <li><strong>BASE36</strong> &#8211; Compressed encoding for large numbers</li>
 </ol>
 <p><strong>Effect:</strong></p>
+<details class="sf-code-fold"><summary>JSON (minified): 1,051 bytes</summary>
 <pre class="sf-block-code"><code>JSON (minified): 1,051 bytes
 
 TADA (basic): ~780 bytes
@@ -739,7 +742,7 @@ TADA (L1 + .sch): ~550 bytes
 
 TADA (L1 + .sch + BASE36): ~450 bytes
 - Encode large numbers
-- Maximum compression</code></pre>
+- Maximum compression</code></pre></details>
 <p><strong>Total: 57% compression vs JSON</strong></p>
 <p>And we gain:</p>
 <ul class="sf-block-list">
@@ -900,6 +903,7 @@ TADA (L1 + .sch + BASE36): ~450 bytes
 <h3 class="sf-block-heading">Step 7: Projects</h3>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading">JSON</h4>
+<details class="sf-code-fold"><summary>"projects": &#91;</summary>
 <pre class="sf-block-code"><code>"projects": &#91;
   {
     "projectId": "P001",
@@ -911,7 +915,7 @@ TADA (L1 + .sch + BASE36): ~450 bytes
     "projectName": "Project Beta",
     "status": "Completed"
   }
-]</code></pre>
+]</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading">TADA</h4>
 <pre class="sf-block-code"><code>⧞projectId⧞⧞projectName⧞⧞status⧞⧞P001⧞Project Alpha⧞In Progress⧞P002⧞Project Beta⧞Completed</code></pre>
@@ -1007,6 +1011,7 @@ TADA (L1 + .sch + BASE36): ~450 bytes
 </ol>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading">L1 Dictionary</h4>
+<details class="sf-code-fold"><summary>.L1⧞2⧞2⧞⧞</summary>
 <pre class="sf-block-code"><code>.L1⧞2⧞2⧞⧞
 fN⧞firstName
 ⧞lN⧞lastName
@@ -1026,7 +1031,7 @@ fN⧞firstName
 ⧞pN2⧞partnerName
 ⧞yr⧞sinceYear
 ⧞sk⧞skills
-⧞⧞</code></pre>
+⧞⧞</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading">Schema Library</h4>
 <pre class="sf-block-code"><code>.sch⧞5⧞⧞
@@ -1070,6 +1075,7 @@ fN⧞firstName
 <h3 class="sf-block-heading">The Human Limitation: Sudoku 9×9</h3>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading">A Simple Test</h4>
+<details class="sf-code-fold"><summary>5 3 _ | _ 7 _ | _ _ _</summary>
 <pre class="sf-block-code"><code>5 3 _ | _ 7 _ | _ _ _
 6 _ _ | 1 9 5 | _ _ _
 _ 9 8 | _ _ _ | _ 6 _
@@ -1080,7 +1086,7 @@ _ 9 8 | _ _ _ | _ 6 _
 ------+-------+------
 _ 6 _ | _ _ _ | 2 8 _
 _ _ _ | 4 1 9 | _ _ 5
-_ _ _ | _ 8 _ | _ 7 9</code></pre>
+_ _ _ | _ 8 _ | _ 7 9</code></pre></details>
 <p><strong>81 cells. 9×9 grid.</strong></p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading">What Humans See</h4>
@@ -1178,6 +1184,7 @@ Update graph</code></pre>
 <p><strong>Instant. Parallel.</strong></p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading">The Metaphor: Penseсe (Spectacles)</h4>
+<details class="sf-code-fold"><summary>Graph = always there, complete</summary>
 <pre class="sf-block-code"><code>Graph = always there, complete
 Attention key = penseсe with specific lens
 
@@ -1189,7 +1196,7 @@ Put on "financial penseсe":
 Switch to "HR penseсe":
 - Same graph
 - Highlighted: employees, departments, managers  
-- Finance in background</code></pre>
+- Finance in background</code></pre></details>
 <p><strong>Data doesn&#8217;t change. Perception filter changes.</strong></p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">Semantic Fields</h3>
@@ -1248,6 +1255,7 @@ Semantic lens variable</code></pre>
 <p><strong>Purpose:</strong> Expand compressed TADA into human-readable format</p>
 <pre class="sf-block-code"><code>tada-view company.tada</code></pre>
 <p><strong>Output:</strong></p>
+<details class="sf-code-fold"><summary>Company: GlobalTech Solutions</summary>
 <pre class="sf-block-code"><code>Company: GlobalTech Solutions
 ├─ Headquarters
 │  ├─ Address: 123 Innovation Drive
@@ -1261,7 +1269,7 @@ Semantic lens variable</code></pre>
 │     └─ Manager: Diana Prince
 └─ Financial Data
    ├─ Revenue Q1: $15,000,000
-   └─ Expenses Q1: $8,000,000</code></pre>
+   └─ Expenses Q1: $8,000,000</code></pre></details>
 <p><strong>Restructured for human sequential reading.</strong></p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading">2. TADA Navigator</h4>

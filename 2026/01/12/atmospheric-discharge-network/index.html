@@ -13,7 +13,7 @@
 <link href="../../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../../media/posters/cropped-net.webp" rel="icon"/>
 <link href="../../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
-</link><link href="../../../../assets/theme.8b1b5606.css" rel="stylesheet"/><meta property="og:type" content="article">
+</link><link href="../../../../assets/theme.e9a18a16.css" rel="stylesheet"/><meta property="og:type" content="article">
 <meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
 <meta property="og:title" content="Atmospheric Discharge Network: Foundation Document — SingularityForge">
 <meta property="og:url" content="https://singularityforge.space/2026/01/12/atmospheric-discharge-network/">
@@ -101,6 +101,7 @@
 </li>
 </ul>
 <h3 class="sf-block-heading"><strong>New Architecture Solution:</strong></h3>
+<details class="sf-code-fold"><summary>&#91;Drones positioned 200-300m ABOVE cloud top]</summary>
 <pre class="sf-block-code"><code>     &#91;Drones positioned 200-300m ABOVE cloud top]
               ↑
          (calm air, clear sky, constant sunlight)
@@ -114,7 +115,7 @@
               │
               ↓
     &#91;Underground station receives charge]
-</code></pre>
+</code></pre></details>
 <p><strong>Advantages:</strong></p>
 <ul class="sf-block-list">
 <li>✅ Drones in stable air (no turbulence)</li>
@@ -534,6 +535,7 @@ Winch brake engages (primary)
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Operational Cycle Example:</strong></h3>
+<details class="sf-code-fold"><summary>&#91;08:00] Forecast: Storm front 10:00-14:00</summary>
 <pre class="sf-block-code"><code>&#91;08:00] Forecast: Storm front 10:00-14:00
 &#91;09:30] Helicopter takes off with 4 km cable (1.5 ton load)
 &#91;09:45] Position above waiting zone
@@ -551,7 +553,7 @@ Session results:
 - 6-8 clouds processed
 - 10,000-20,000 kWh collected
 - 1-2 refuelings
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Comparison: Drone Swarm vs Single Helicopter</strong></h3>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Parameter</strong></th><th><strong>Drone Swarm (16 units)</strong></th><th><strong>Kaman K-MAX</strong></th></tr></thead><tbody><tr><td><strong>Payload</strong></td><td>1,300 kg (80 kg each)</td><td><strong>2,700 kg</strong> ✅</td></tr><tr><td><strong>Coordination</strong></td><td>Complex (synchronize 16 units)</td><td>Simple (one aircraft) ✅</td></tr><tr><td><strong>Reliability</strong></td><td>Low (TRL 4-5, experimental)</td><td><strong>High (TRL 8-9, serial)</strong> ✅</td></tr><tr><td><strong>Endurance</strong></td><td>2-3 hours (batteries)</td><td>3-4 hours (fuel) ✅</td></tr><tr><td><strong>CapEx</strong></td><td>$50k × 16 = $800k</td><td>$5-8 million ❌</td></tr><tr><td><strong>OpEx/year</strong></td><td>$170k (batteries, repair)</td><td>$410k (fuel, maintenance) ❌</td></tr><tr><td><strong>Scalability</strong></td><td>Easy to add drones</td><td>Fixed capacity (one aircraft)</td></tr><tr><td><strong>Maintenance complexity</strong></td><td>16 failure points</td><td><strong>1 failure point</strong> ✅</td></tr><tr><td><strong>TRL</strong></td><td>4-6 (experimental)</td><td><strong>8-9 (proven)</strong> ✅</td></tr></tbody></table></figure></div>
@@ -610,6 +612,7 @@ Session results:
 <p><strong>IMPORTANT:</strong> Helicopter does <strong>NOT</strong> hover 8 hours/day like a &#8220;Christmas tree&#8221; ❌</p>
 <p><strong>Correct operational model:</strong></p>
 <p><strong>Per-cloud operational cycle (30-40 minutes airborne):</strong></p>
+<details class="sf-code-fold"><summary>&#91;T-15 min] Weather radar detects cloud approaching (20 k…</summary>
 <pre class="sf-block-code"><code>&#91;T-15 min] Weather radar detects cloud approaching (20 km away)
            Helicopter ON GROUND (in hangar or on platform)
            Cable coiled, system STANDBY
@@ -633,7 +636,7 @@ Session results:
 &#91;T+35 min] Helicopter lands
            Cable rewinds (synchronized with descent)
            System enters STANDBY (awaits next cloud)
-</code></pre>
+</code></pre></details>
 <p><strong>Daily operational profile:</strong></p>
 <ul class="sf-block-list">
 <li>Storm session: 8-10 hours (total duration)</li>
@@ -682,6 +685,7 @@ Session results:
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Architecture:</strong></h4>
 <p><strong>STANDBY mode (helicopter in hangar):</strong></p>
+<details class="sf-code-fold"><summary>════════════════════════════</summary>
 <pre class="sf-block-code"><code>    ════════════════════════════
          Ground surface
     ════════════════════════════
@@ -705,8 +709,9 @@ Session results:
     └────────────────────┘
               │
          &#91;Tunnel to energy station]
-</code></pre>
+</code></pre></details>
 <p><strong>OPERATION mode (helicopter airborne):</strong></p>
+<details class="sf-code-fold"><summary>&#91;Helicopter @ 5 km]</summary>
 <pre class="sf-block-code"><code>        &#91;Helicopter @ 5 km]
                 │
                 │ Cable (5 km tensioned)
@@ -726,7 +731,7 @@ Session results:
     ══════════════════════════════
          &#91;Cable reel + drying system]
          &#91;Energy station]
-</code></pre>
+</code></pre></details>
 <p><strong>Key design features:</strong></p>
 <ul class="sf-block-list">
 <li><strong>Main hatch CLOSED</strong> during operations (protects underground hangar)</li>
@@ -737,6 +742,7 @@ Session results:
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Complete Operational Cycle:</strong></h4>
 <p><strong>Morning preparation:</strong></p>
+<details class="sf-code-fold"><summary>&#91;08:00] Weather radar: Storm approaching (50 km away)</summary>
 <pre class="sf-block-code"><code>&#91;08:00] Weather radar: Storm approaching (50 km away)
         Status: Helicopter IN UNDERGROUND HANGAR
         - Dry, climate-controlled
@@ -761,7 +767,7 @@ Session results:
         Cable tensioned (5 km vertical)
         **Hatch CLOSED** (underground hangar protected from storm)
         Cable tunnel OPEN (cable passes freely, rain drains)
-</code></pre>
+</code></pre></details>
 <p><strong>During storm session:</strong></p>
 <pre class="sf-block-code"><code>&#91;10:00-14:00] Processing 10-15 clouds
         Each cloud: 30-40 min airborne
@@ -770,6 +776,7 @@ Session results:
         Cable tunnel drains continuously
 </code></pre>
 <p><strong>Evening return:</strong></p>
+<details class="sf-code-fold"><summary>&#91;14:00] Storm passed, final cloud processed</summary>
 <pre class="sf-block-code"><code>&#91;14:00] Storm passed, final cloud processed
         Helicopter begins descent
 
@@ -808,7 +815,7 @@ Session results:
         → Cable DRY, coiled on reel
         → Hangar SEALED (optimal storage conditions)
         → Ready for next deployment
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Underground Hangar Components:</strong></h4>
 <p><strong>1. Surface Hatch:</strong></p>
@@ -930,6 +937,7 @@ Session results:
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Three-Channel Cable Design:</strong></h3>
+<details class="sf-code-fold"><summary>┌─────────────────────────────────────────┐</summary>
 <pre class="sf-block-code"><code>┌─────────────────────────────────────────┐
 │ CABLE (composite construction)          │
 ├─────────────────────────────────────────┤
@@ -948,7 +956,7 @@ Session results:
 │    • Telemetry, control, DTS            │
 │    • EM-immune                          │
 └─────────────────────────────────────────┘
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Physical Channel Separation (Critical Safety):</strong></h3>
 <p><strong>Problem:</strong> If discharge channel (↓) and power channel (↑) share electrical path:</p>
@@ -957,6 +965,7 @@ Session results:
 <li>Cloud voltage (100+ MV) shorts to power line (20-30 kV) → <strong>arc / breakdown</strong></li>
 </ul>
 <p><strong>Solution: Physical isolation</strong></p>
+<details class="sf-code-fold"><summary>Helicopter (4-6 km altitude)</summary>
 <pre class="sf-block-code"><code>     Helicopter (4-6 km altitude)
            ↑
     &#91;Power cable ↑ 20-30 kV]  ← electrically isolated
@@ -967,7 +976,7 @@ Session results:
            │
            ↓
         Cloud
-</code></pre>
+</code></pre></details>
 <p><strong>Architecture:</strong></p>
 <ul class="sf-block-list">
 <li>Discharge cable <strong>hangs down</strong> (into cloud)</li>
@@ -1153,6 +1162,7 @@ Session results:
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Operational Cycle (8-Hour Storm Session):</strong></h3>
+<details class="sf-code-fold"><summary>&#91;Cloud approaching (20 km from station)]</summary>
 <pre class="sf-block-code"><code>&#91;Cloud approaching (20 km from station)]
 &#91;T-10 min] Helicopter takeoff, position over waiting zone
 &#91;T-5 min]  Cable deploys (5 min, 10 m/s reel-out)
@@ -1167,7 +1177,7 @@ Session totals:
 - 10-15 clouds processed
 - 20,000-50,000 kWh collected
 - ZERO refuelings ✅
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>System Integration Summary:</strong></h3>
 <p><strong>Helicopter:</strong></p>
@@ -1218,6 +1228,7 @@ Session totals:
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>New Architecture Layers:</strong></h3>
+<details class="sf-code-fold"><summary>&#91;Helicopter UAV] ← 5-6 km altitude</summary>
 <pre class="sf-block-code"><code>&#91;Helicopter UAV] ← 5-6 km altitude
       │
       │ (2 cables: power ↑ + fiber optic)
@@ -1247,7 +1258,7 @@ Session totals:
       │
       ↓
 &#91;Underground Station]
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Component Details:</strong></h3>
 <h4 class="sf-block-heading"><strong>1. Permanently Tensioned Cables (Helicopter ↔ Station)</strong></h4>
@@ -1282,6 +1293,7 @@ Session totals:
 <h4 class="sf-block-heading"><strong>3. Discharge Probe Suspension Point</strong></h4>
 <p><strong>Two configurations:</strong></p>
 <p><strong>Configuration A: Helicopter Cargo Hook</strong></p>
+<details class="sf-code-fold"><summary>&#91;Helicopter]</summary>
 <pre class="sf-block-code"><code>     &#91;Helicopter]
          │
          ├─── → Power + fiber optic (up to station)
@@ -1292,7 +1304,7 @@ Session totals:
          ↓ (200-500 m)
          │
     &#91;Discharge probe in cloud]
-</code></pre>
+</code></pre></details>
 <p><strong>Pros:</strong></p>
 <ul class="sf-block-list">
 <li>Simple (uses standard cargo hook)</li>
@@ -1304,6 +1316,7 @@ Session totals:
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <p><strong>Configuration B: Suspension on Guide Tether (Horizontal Offset)</strong></p>
+<details class="sf-code-fold"><summary>&#91;Helicopter]</summary>
 <pre class="sf-block-code"><code>        &#91;Helicopter]
             │
     Power + fiber optic
@@ -1318,7 +1331,7 @@ Session totals:
             ↓ (200-500 m)
             │
         &#91;Cloud]
-</code></pre>
+</code></pre></details>
 <p><strong>Pros:</strong></p>
 <ul class="sf-block-list">
 <li>Discharge probe <strong>horizontally offset</strong> from helicopter → helicopter safe during lightning</li>
@@ -1358,6 +1371,7 @@ Session totals:
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Phase 2: Cloud Operations (Daytime)</strong></h4>
+<details class="sf-code-fold"><summary>&#91;10:00] First cloud on radar (20 km from station)</summary>
 <pre class="sf-block-code"><code>&#91;10:00] First cloud on radar (20 km from station)
 &#91;10:05] Winch lowers discharge probe 300 m
         (30 seconds, 10 m/s speed)
@@ -1368,7 +1382,7 @@ Session totals:
 &#91;10:30] Cloud passes
 &#91;10:32] Discharge probe retracts (30 sec)
 &#91;10:35] Await next cloud
-</code></pre>
+</code></pre></details>
 <p><strong>Daily totals:</strong></p>
 <ul class="sf-block-list">
 <li>10-15 clouds processed</li>
@@ -1414,6 +1428,7 @@ Session totals:
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Final Architecture Visualization:</strong></h3>
+<details class="sf-code-fold"><summary>&#91;K-MAX Helicopter]</summary>
 <pre class="sf-block-code"><code>                &#91;K-MAX Helicopter]
               (electric, 1 MW power)
                       │
@@ -1461,7 +1476,7 @@ Session totals:
               │ • DC          │
               │   Converter   │
               └───────────────┘
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Final System Parameters:</strong></h3>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Parameter</strong></th><th><strong>Value</strong></th></tr></thead><tbody><tr><td><strong>Helicopter</strong></td><td>K-MAX (electric tethered for production; <strong>MVP: turbine</strong> TRL 9)</td></tr><tr><td><strong>Payload capacity</strong></td><td>2.7 tons (using 1.07 tons)</td></tr><tr><td><strong>Main cable</strong></td><td>5 km, 925 kg (power + fiber optic + tether)</td></tr><tr><td><strong>Discharge probe</strong></td><td>0.5 km, 115 kg (descends into cloud)</td></tr><tr><td><strong>Winch</strong></td><td>20 kg, 1-2 kW</td></tr><tr><td><strong>Helicopter power</strong></td><td>20 kV DC, 1 MW, via cable from station</td></tr><tr><td><strong>Endurance</strong></td><td>Infinite (while station operates)</td></tr><tr><td><strong>Probe deployment time</strong></td><td>30 seconds</td></tr><tr><td><strong>System deployment time</strong></td><td>30-40 minutes (morning, once per day)</td></tr><tr><td><strong>Clouds per day</strong></td><td>10-15</td></tr><tr><td><strong>Energy per day</strong></td><td>20,000-50,000 kWh</td></tr><tr><td><strong>CapEx</strong></td><td>$6-8M (helicopter + station + cables)</td></tr><tr><td><strong>OpEx</strong></td><td>$150k/year (electricity + maintenance)</td></tr><tr><td><strong>ROI</strong></td><td>4,000-10,000% (via prevented wildfires)</td></tr></tbody></table></figure></div>
@@ -1610,6 +1625,7 @@ Session totals:
 <p><strong>Technology:</strong> Vanadium Redox Flow Batteries</p>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Parameter</strong></th><th><strong>Specification</strong></th></tr></thead><tbody><tr><td><strong>Type</strong></td><td>Vanadium Redox Flow Battery (VRFB)</td></tr><tr><td><strong>Station power rating</strong></td><td>2 &#8211; 5 MW</td></tr><tr><td><strong>Capacity</strong></td><td>10 &#8211; 20 MWh</td></tr><tr><td><strong>Purpose</strong></td><td>Accumulate energy from multiple clouds during storm day</td></tr><tr><td><strong>Charge rate</strong></td><td>1 &#8211; 5 MW (from flywheel)</td></tr><tr><td><strong>Discharge rate</strong></td><td>500 kW &#8211; 2 MW (to grid, steady baseload)</td></tr><tr><td><strong>Efficiency</strong></td><td>70 &#8211; 80% (round-trip)</td></tr><tr><td><strong>Lifespan</strong></td><td>20 &#8211; 30 years, unlimited cycles (electrolyte replaceable)</td></tr></tbody></table></figure></div>
 <p><strong>Operational scenario:</strong></p>
+<details class="sf-code-fold"><summary>Storm day (8 hours):</summary>
 <pre class="sf-block-code"><code>Storm day (8 hours):
 - 3-5 supercells pass over station (realistic for active storm front)
 - Average extraction per cloud: 5 GJ = 1,400 kWh (upper range; conservative average ~600 kWh, 30% of 10-20 GJ cloud)
@@ -1628,7 +1644,7 @@ Post-storm (24-48 hours):
 - VRFB discharges at 500 kW - 1 MW steady
 - 7 MWh ÷ 1 MW = 7 hours continuous output (single storm day)
 - Grid receives clean baseload power
-</code></pre>
+</code></pre></details>
 <p><strong>Capacity justification:</strong></p>
 <ul class="sf-block-list">
 <li><strong>10 MWh minimum:</strong> Handles 3 typical clouds (conservative operation)</li>
@@ -1717,6 +1733,7 @@ Post-storm (24-48 hours):
 <h3 class="sf-block-heading"><strong>6. Distributed Energy Network: 5 Remote Nodes</strong></h3>
 <p><strong>Challenge:</strong> Instantaneously route GW spike to geographically separated storage without grid overload</p>
 <p><strong>Architecture:</strong></p>
+<details class="sf-code-fold"><summary>Underground Station (Bunker)</summary>
 <pre class="sf-block-code"><code>Underground Station (Bunker)
          │
     &#91;Flywheel Buffer: 200 kWh]
@@ -1734,7 +1751,7 @@ Post-storm (24-48 hours):
          └── → &#91;Node 5: 30 km away, VRFB 2 MWh]
               │
               └── → &#91;City Grid Substations]
-</code></pre>
+</code></pre></details>
 <p><strong>Energy routing calculation:</strong></p>
 <p><strong>Lightning event:</strong> 5 GJ (1,400 kWh upper range, typical 300-800 kWh) in 0.2 seconds</p>
 <h4 class="sf-block-heading"><strong>Detailed Energy Flow Scenario:</strong></h4>
@@ -1771,6 +1788,7 @@ Post-storm (24-48 hours):
 </li>
 </ul>
 <p><strong>Controller algorithm (rule-based):</strong></p>
+<details class="sf-code-fold"><summary># Prioritize nodes with lowest SoC (State of Charge)</summary>
 <pre class="sf-block-code"><code># Prioritize nodes with lowest SoC (State of Charge)
 nodes_sorted = sort_by_SoC(&#91;Node3: 40%, Node5: 55%, Node1: 60%, Node2: 75%, Node4: 80%])
 
@@ -1783,7 +1801,7 @@ Node2: 139 × (500 / 3800) = 18 kWh
 Node3: 139 × (1200 / 3800) = 44 kWh
 Node4: 139 × (400 / 3800) = 15 kWh
 Node5: 139 × (900 / 3800) = 33 kWh
-</code></pre>
+</code></pre></details>
 <p><strong>Step 5: Energy Transfer (t=15 sec to t=25 min)</strong></p>
 <ul class="sf-block-list">
 <li>Flywheel discharges at 1-2 MW total (200-400 kW per node)</li>
@@ -1910,6 +1928,7 @@ Node5: 139 × (900 / 3800) = 33 kWh
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Multi-Layer Cable Architecture:</strong></h4>
+<details class="sf-code-fold"><summary>┌─────────────────────────────────────┐</summary>
 <pre class="sf-block-code"><code>┌─────────────────────────────────────┐
 │ 1. POWER CONDUCTOR (center)         │
 │    • Aluminum alloy 6061-T6         │
@@ -1953,7 +1972,7 @@ Node5: 139 × (900 / 3800) = 33 kWh
 │    • Thermal resistance: 150-200°C  │
 │    • Mass: 20-30 g/m                │
 └─────────────────────────────────────┘
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Cable Specifications (Two Configurations):</strong></h4>
 <p><strong>Standard Cable (robust, high current capacity):</strong></p>
@@ -2153,6 +2172,7 @@ Central Controller (ground/satellite)
 </ol>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Station Architecture:</strong></h3>
+<details class="sf-code-fold"><summary>Surface Level</summary>
 <pre class="sf-block-code"><code>Surface Level
 ════════════════════════════════════════
      ↓ Cable from cloud enters ground
@@ -2195,7 +2215,7 @@ Central Controller (ground/satellite)
      ├── → Storage Node 3 (20 km away)
      ├── → Storage Node 4 (25 km away)
      └── → Storage Node 5 (30 km away)
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Distributed Storage Network:</strong></h3>
 <p><strong>Concept:</strong> Instant distribution of electrical spike across geographically separated storage nodes</p>
@@ -2396,6 +2416,7 @@ Central Controller (ground/satellite)
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Our Approach: Partial Discharge (30-50%)</strong></h3>
 <p><strong>Philosophy: Work WITH Nature, Not Against It</strong></p>
+<details class="sf-code-fold"><summary>Cloud BEFORE system intervention:</summary>
 <pre class="sf-block-code"><code>Cloud BEFORE system intervention:
 • Electrical charge: 100 MV
 • Energy: 10 GJ
@@ -2409,7 +2430,7 @@ Cloud AFTER system intervention:
 • Energy: 5 GJ (we collected 5 GJ = 1,400 kWh)
 • Lightning strikes: 10-15 weaker discharges (safer)
 • Ecological contribution: 50% of nitrogen fixation, ozone, cleaning PRESERVED
-</code></pre>
+</code></pre></details>
 <p><strong>Result:</strong></p>
 <ul class="sf-block-list">
 <li>✅ Lightning still occurs (ecological functions preserved)</li>
@@ -2695,6 +2716,7 @@ Cloud AFTER system intervention:
 <li><strong>Collision events:</strong> Cable inspection after each session</li>
 </ol>
 <h4 class="sf-block-heading"><strong>Public Data Format:</strong></h4>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "event_type": "avian_safety_log",
   "date": "2026-07-20",
@@ -2709,7 +2731,7 @@ Cloud AFTER system intervention:
   "insect_density_per_meter": 3.2,
   "mitigation_active": &#91;"LED_markers", "ultrasonic_deterrent"]
 }
-</code></pre>
+</code></pre></details>
 <h4 class="sf-block-heading"><strong>Control Zones:</strong></h4>
 <ul class="sf-block-list">
 <li>Stations <strong>with ADN</strong> vs stations <strong>without ADN</strong> (radar only)</li>
@@ -2925,6 +2947,7 @@ Cloud AFTER system intervention:
 <li><strong>Does NOT cover:</strong> Natural lightning (Act of God clause intact)</li>
 </ul>
 <p><strong>Contractual framework with landowners:</strong></p>
+<details class="sf-code-fold"><summary>ADN operates on principle of risk reduction, not elimination…</summary>
 <pre class="sf-block-code"><code>ADN operates on principle of risk reduction, not elimination.
 Landowner acknowledges:
 - Lightning is natural phenomenon
@@ -2936,7 +2959,7 @@ Landowner benefits:
 - Reduced seasonal fire risk (statistical)
 - Energy revenue sharing (if applicable)
 - Public safety contribution
-</code></pre>
+</code></pre></details>
 <p><strong>Government/regulatory approval:</strong></p>
 <ul class="sf-block-list">
 <li>Environmental Impact Assessment (EIA) required</li>
@@ -2947,6 +2970,7 @@ Landowner benefits:
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Public Measurement &amp; Transparency (Liability Defense)</strong></h3>
 <p><strong>All operations logged and published:</strong></p>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "cloud_id": "ADN-CA-2026-07-15-001",
   "charge_before_mv": 120,
@@ -2958,7 +2982,7 @@ Landowner benefits:
   "fire_incidents_within_10km": 0,
   "control_cloud_strikes": 18
 }
-</code></pre>
+</code></pre></details>
 <p><strong>Key metrics for liability defense:</strong></p>
 <ol class="sf-block-list">
 <li><strong>Charge reduction</strong> → proves ADN removed energy, not added</li>
@@ -3020,6 +3044,7 @@ Landowner benefits:
 <h3 class="sf-block-heading"><strong>Core Security Principle: Physical Isolation (Air-Gap)</strong></h3>
 <p><strong>Design Rule:</strong> <strong>NO remote wireless control of critical functions</strong></p>
 <p><strong>Architecture:</strong></p>
+<details class="sf-code-fold"><summary>┌────────────────────────────────────┐</summary>
 <pre class="sf-block-code"><code>┌────────────────────────────────────┐
 │ UNDERGROUND STATION (Air-Gapped)   │
 │                                    │
@@ -3051,7 +3076,7 @@ Landowner benefits:
              ↓ (upload only, encrypted)
         ════════════════
      &#91;Cloud Storage (Immutable)]
-</code></pre>
+</code></pre></details>
 <p><strong>Critical separation:</strong></p>
 <ul class="sf-block-list">
 <li><strong>Control path:</strong> Wired only (fiber optic, no wireless)</li>
@@ -3114,6 +3139,7 @@ Landowner benefits:
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Immutable Audit Trail (Cloud Logging)</strong></h3>
 <p><strong>Every operation logged in real-time:</strong></p>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "timestamp": "2026-07-20T14:32:18Z",
   "station_id": "ADN-TX-003",
@@ -3128,7 +3154,7 @@ Landowner benefits:
   "cloud_charge_mv": 95,
   "authorization_level": "routine"
 }
-</code></pre>
+</code></pre></details>
 <p><strong>Upload mechanism:</strong></p>
 <ul class="sf-block-list">
 <li><strong>One-way connection:</strong> Station → Cloud (no reverse commands possible)</li>
@@ -3356,6 +3382,7 @@ Landowner benefits:
 <li>Needs field experiments</li>
 </ul>
 <p><strong>Safe Operating Window:</strong></p>
+<details class="sf-code-fold"><summary>&#91;Cloud Formation]</summary>
 <pre class="sf-block-code"><code>&#91;Cloud Formation]
      │
      ├─ → Wind: 20-40 km/h ✅ SAFE (drones deploy, discharge cloud)
@@ -3370,7 +3397,7 @@ Landowner benefits:
      │
 &#91;Tornado Touchdown]
      └─ → Too late to intervene
-</code></pre>
+</code></pre></details>
 <p><strong>Intervention Window:</strong> <strong>20-60 minutes</strong> before tornado formation</p>
 <p><strong>Priority Regions:</strong></p>
 <ul class="sf-block-list">
@@ -3654,6 +3681,7 @@ Landowner benefits:
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h5 class="sf-block-heading"><strong>3. Ground Loop as Energy Sink</strong></h5>
 <p><strong>Architecture:</strong></p>
+<details class="sf-code-fold"><summary>Surface</summary>
 <pre class="sf-block-code"><code>Surface
 ════════════════════════════════════
      │
@@ -3674,7 +3702,7 @@ Landowner benefits:
          │
          ↓ Dissipation into earth
     (Earth as infinite sink)
-</code></pre>
+</code></pre></details>
 <p><strong>Function:</strong></p>
 <ul class="sf-block-list">
 <li>Accepts all excess current that cannot be processed by flywheel/VRFB</li>
@@ -3735,6 +3763,7 @@ Landowner benefits:
 <li>Trigger reason (temperature / current / time)</li>
 </ul>
 <p><strong>Data Format:</strong></p>
+<details class="sf-code-fold"><summary>{</summary>
 <pre class="sf-block-code"><code>{
   "event_type": "runaway_discharge",
   "timestamp": "2026-06-15T14:32:11Z",
@@ -3754,7 +3783,7 @@ Landowner benefits:
   "recovery_time_sec": 45,
   "status": "degraded_50pct"
 }
-</code></pre>
+</code></pre></details>
 <p><strong>Purpose:</strong> Demonstrate that system:</p>
 <ul class="sf-block-list">
 <li>Does not ignore anomalies</li>
@@ -3936,6 +3965,7 @@ Landowner benefits:
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Example: Monthly Public Report</strong></h3>
 <p><strong>Format (illustrative):</strong></p>
+<details class="sf-code-fold"><summary>ATMOSPHERIC DISCHARGE NETWORK</summary>
 <pre class="sf-block-code"><code>ATMOSPHERIC DISCHARGE NETWORK
 Monthly Environmental Report - June 2026
 Region: California Wildfire Zone
@@ -3974,7 +4004,7 @@ SYSTEM STATUS
 
 Full dataset: data.atmosphericdischarge.org/CA-2026-06
 Independent audit report: Available Q3 2026
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Why This Framework Matters</strong></h3>
 <p><strong>For Scientists:</strong></p>
@@ -4189,6 +4219,7 @@ Independent audit report: Available Q3 2026
 <p><strong>Engineering philosophy:</strong> We don&#8217;t wait for the strike — we create constant charge drainage.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Mountain Station Design: &#8220;Mountain Sting&#8221; Architecture</strong></h3>
+<details class="sf-code-fold"><summary>&#91;Mountain Peak, 3-5 km ASL]</summary>
 <pre class="sf-block-code"><code>      &#91;Mountain Peak, 3-5 km ASL]
                │
     ┌──────────┴───────────────────────┐
@@ -4232,7 +4263,7 @@ Independent audit report: Available Q3 2026
     │  • Grid connection  │
     │  • Admin center     │
     └─────────────────────┘
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Contact Array (Peak Surface)</strong></h3>
 <p><strong>Design:</strong> Array of corona-discharge masts (not single lightning rod)</p>
@@ -4326,6 +4357,7 @@ Independent audit report: Available Q3 2026
 <li>✅ <strong>Current controller</strong> (smooth extraction regulation)</li>
 </ul>
 <p><strong>Simplified schematic:</strong></p>
+<details class="sf-code-fold"><summary>&#91;Contact Array on Peak]</summary>
 <pre class="sf-block-code"><code>&#91;Contact Array on Peak]
     • 6-8 masts with corona tips
     • Current: 10-50 mA (milliamperes)
@@ -4348,7 +4380,7 @@ Independent audit report: Available Q3 2026
     • 10-20 kV DC
           ↓
 &#91;Grid Connection]
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Mountain Station Economics (Passive Mode)</strong></h3>
 <h4 class="sf-block-heading"><strong>Updated CapEx:</strong></h4>
@@ -4511,6 +4543,7 @@ Independent audit report: Available Q3 2026
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Concept: Telescopic Contacts with Automatic Control</strong></h4>
 <p><strong>Normal mode (contact extended):</strong></p>
+<details class="sf-code-fold"><summary>═════════════════════════════  Cloud bottom (3-5 km)</summary>
 <pre class="sf-block-code"><code>═════════════════════════════  Cloud bottom (3-5 km)
               ↑
          &#91;Corona tip]
@@ -4528,7 +4561,7 @@ Independent audit report: Available Q3 2026
     ══════════════════════  Peak surface
               │
               ↓ Cable into mountain
-</code></pre>
+</code></pre></details>
 <p><strong>Height:</strong></p>
 <ul class="sf-block-list">
 <li>Base (fixed): <strong>10 m</strong></li>
@@ -4537,6 +4570,7 @@ Independent audit report: Available Q3 2026
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <p><strong>Extreme mode (contact retracted):</strong></p>
+<details class="sf-code-fold"><summary>═════════════════════════════  Cloud bottom</summary>
 <pre class="sf-block-code"><code>═════════════════════════════  Cloud bottom
               ↑ (wind 80+ km/h, icing)
               │
@@ -4547,7 +4581,7 @@ Independent audit report: Available Q3 2026
     ══════════════════════  ← Base (10 m, robust)
               │
     ══════════════════════  Peak surface
-</code></pre>
+</code></pre></details>
 <p><strong>Height when retracted:</strong> <strong>10 m</strong> (base only)</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Telescopic System Specifications:</strong></h4>
@@ -4615,6 +4649,7 @@ Independent audit report: Available Q3 2026
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <p><strong>Decision algorithm:</strong></p>
+<details class="sf-code-fold"><summary>if cloud_absent:</summary>
 <pre class="sf-block-code"><code>if cloud_absent:
     mode = IDLE (sections retracted)
 
@@ -4630,7 +4665,7 @@ elif cloud_overhead and (wind 60-80 km/h or icing_risk):
 elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
     mode = SAFE (sections fully retracted, 10 m)
     extraction = DISABLED
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Advantages of Telescopic System:</strong></h4>
 <p>✅ <strong>Weather adaptability</strong></p>
@@ -4680,6 +4715,7 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
 <p><strong>Savings:</strong> <strong>$4k/year</strong> (telescopes more durable, fewer damages)</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Example Scenario: Storm Day</strong></h4>
+<details class="sf-code-fold"><summary>&#91;08:00] Weather radar: storm approaching (50 km)</summary>
 <pre class="sf-block-code"><code>&#91;08:00] Weather radar: storm approaching (50 km)
         → Masts in IDLE mode (retracted, 10 m)
 
@@ -4721,7 +4757,7 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
 &#91;14:00] Storm passed
         → Return to IDLE
         → Sections retracted (10 m)
-</code></pre>
+</code></pre></details>
 <p><strong>Daily totals:</strong></p>
 <ul class="sf-block-list">
 <li>3 clouds processed (of 4)</li>
@@ -4731,6 +4767,7 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Updated Mountain Station Architecture (with Telescopic Contacts):</strong></h4>
+<details class="sf-code-fold"><summary>&#91;Mountain Peak, 3-5 km ASL]</summary>
 <pre class="sf-block-code"><code>     &#91;Mountain Peak, 3-5 km ASL]
               │
     ┌─────────┴─────────┐
@@ -4765,7 +4802,7 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
     ┌─────────┴─────────┐
     │ GRID CONNECTION   │
     └───────────────────┘
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Updated Economics (Mountain Station with Telescopic Contacts):</strong></h4>
 <p><strong>CapEx:</strong></p>
@@ -4795,6 +4832,7 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
 <p><strong>Solution: Underground hangar with vertical shaft + hydraulic platform</strong></p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>System Architecture:</strong></h3>
+<details class="sf-code-fold"><summary>&#91;Ground Surface]</summary>
 <pre class="sf-block-code"><code>&#91;Ground Surface]
     ══════════════════════════════════
               │     │
@@ -4825,7 +4863,7 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
     └──────────────────────────┘
               │
               ↓ &#91;Cable tunnel to energy station]
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Key Components:</strong></h3>
 <h4 class="sf-block-heading"><strong>1. Retractable Hatch (Surface Protection)</strong></h4>
@@ -4843,6 +4881,7 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
 <h4 class="sf-block-heading"><strong>4. Cable Drying System (Critical for Lifespan)</strong></h4>
 <p><strong>Problem:</strong> Cable returns wet after storm operations → if coiled wet → corrosion + mold</p>
 <p><strong>Solution: In-line drying during rewind</strong></p>
+<details class="sf-code-fold"><summary>&#91;Cable descends from tunnel]</summary>
 <pre class="sf-block-code"><code>&#91;Cable descends from tunnel]
          │
          ↓
@@ -4857,13 +4896,14 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
           │ (cable DRY)
           ↓
     &#91;Cable reel winds]
-</code></pre>
+</code></pre></details>
 <p><strong>Specifications:</strong></p>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Parameter</strong></th><th><strong>Value</strong></th></tr></thead><tbody><tr><td>Type</td><td>Infrared heaters + forced air</td></tr><tr><td>Chamber length</td><td>3-5 m</td></tr><tr><td>Temperature</td><td>40-60°C (fast drying, safe for insulation)</td></tr><tr><td>Air flow</td><td>500-1,000 m³/hr</td></tr><tr><td>Power</td><td>20-30 kW</td></tr><tr><td>Cable transit time</td><td>10-20 sec/meter (at 10 m/min rewind speed)</td></tr><tr><td>Efficiency</td><td>Wet → &lt;5% moisture</td></tr></tbody></table></figure></div>
 <p><strong>Additional:</strong> Soft brushes (remove dirt/ice before drying) + UV lamps (kill mold/bacteria after drying)</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>5. Helicopter Drying Chamber</strong></h4>
 <p><strong>After landing, helicopter descends → hatch closes → drying begins</strong></p>
+<details class="sf-code-fold"><summary>&#91;Helicopter in shaft]</summary>
 <pre class="sf-block-code"><code>&#91;Helicopter in shaft]
          ↓
     &#91;Hatch CLOSES]
@@ -4874,12 +4914,13 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
     • Air circulation (5,000-10,000 m³/hr)
     • Dehumidifiers (50-100 L/hr condensation)
     • Duration: 30-60 minutes
-</code></pre>
+</code></pre></details>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Parameter</strong></th><th><strong>Value</strong></th></tr></thead><tbody><tr><td>Chamber volume</td><td>300-500 m³</td></tr><tr><td>Heating power</td><td>100-200 kW (infrared panels)</td></tr><tr><td>Temperature</td><td>30-40°C (safe for electronics)</td></tr><tr><td>Air circulation</td><td>5,000-10,000 m³/hr</td></tr><tr><td>Dehumidifier</td><td>50-100 L/hr condensation capacity</td></tr><tr><td>Drying time</td><td>30-60 min (post-storm)</td></tr></tbody></table></figure></div>
 <p><strong>Additional:</strong> UV disinfection + optional anti-corrosion spray (once/week)</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Operational Cycle Example:</strong></h3>
 <h4 class="sf-block-heading"><strong>Morning (preparation):</strong></h4>
+<details class="sf-code-fold"><summary>&#91;06:00] Forecast: Storm 10:00-14:00</summary>
 <pre class="sf-block-code"><code>&#91;06:00] Forecast: Storm 10:00-14:00
         Helicopter IN HANGAR (dry, charged)
         Cable ON REEL (dry)
@@ -4897,7 +4938,7 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
 &#91;09:30] Helicopter @ 5 km altitude
         Cable tensioned through tunnel
         Hatch CLOSED (rain cannot enter shaft)
-</code></pre>
+</code></pre></details>
 <h4 class="sf-block-heading"><strong>Operations (10:00-14:00):</strong></h4>
 <ul class="sf-block-list">
 <li>Helicopter processes 10-15 clouds (30-40 min airborne per cloud)</li>
@@ -4905,6 +4946,7 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
 <li><strong>Hatch remains CLOSED</strong> (underground hangar sealed from weather)</li>
 </ul>
 <h4 class="sf-block-heading"><strong>Evening (return):</strong></h4>
+<details class="sf-code-fold"><summary>&#91;14:00] Storm passed</summary>
 <pre class="sf-block-code"><code>&#91;14:00] Storm passed
         Helicopter descends
         Cable REWINDS (synchronized)
@@ -4928,7 +4970,7 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
         Helicopter DRY, protected
         Cable DRY, coiled
         Hangar SEALED (T = +15°C, humidity 40%)
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>Advantages:</strong></h3>
 <p>✅ <strong>Extended lifespan (×2-3):</strong></p>
@@ -5055,6 +5097,7 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
 <p><strong>Solution: Tension-following descent (reel leads, helicopter follows)</strong></p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Phase 1: Pre-Descent Preparation</strong></h4>
+<details class="sf-code-fold"><summary>&#91;T-5 min] Storm departed, descent ready</summary>
 <pre class="sf-block-code"><code>&#91;T-5 min] Storm departed, descent ready
 
 &#91;T-3 min] DISCHARGE PROBE RETRACTION
@@ -5066,7 +5109,7 @@ elif wind &gt; 80 km/h or heavy_icing or lightning_strike:
           - Tension sensors: OPERATIONAL
           - Cable reel motor: READY
           - Helicopter autopilot: TENSION-FOLLOW mode ENABLED
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Phase 2: Controlled Descent (Tension-Following)</strong></h4>
 <p><strong>Principle:</strong> Reel sets pace, helicopter follows via tension control</p>
@@ -5120,6 +5163,7 @@ Example:
 <p><strong>Duration:</strong> 2-3 minutes (cable final retraction at max safe speed)</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Phase 4: Final Landing</strong></h4>
+<details class="sf-code-fold"><summary>&#91;Helicopter descends: H_min → 0]</summary>
 <pre class="sf-block-code"><code>&#91;Helicopter descends: H_min → 0]
         ↓ (3-5 minutes, normal descent rate)
 &#91;Lands on platform]
@@ -5131,7 +5175,7 @@ Example:
 &#91;POST-FLIGHT DRYING begins]
 - Helicopter: 30-60 min (infrared + air circulation)
 - Cable: 4-8 hours (slow unwind → drying chamber → rewind)
-</code></pre>
+</code></pre></details>
 <p><strong>Total descent time:</strong> 18-25 minutes (preparation → landing → secure)</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Anti-Dragging Mechanisms</strong></h4>
@@ -5165,6 +5209,7 @@ Example:
   → Re-establish tension
 </code></pre>
 <p><strong>Scenario 2: Cable ground contact (worst case)</strong></p>
+<details class="sf-code-fold"><summary>&#91;Proximity sensor: CABLE @ GROUND]</summary>
 <pre class="sf-block-code"><code>&#91;Proximity sensor: CABLE @ GROUND]
         ↓
 &#91;EMERGENCY PROTOCOL]
@@ -5175,9 +5220,10 @@ Example:
   → Inspect cable for damage
   → Log incident
   → Adjust H_min for future ops
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>5. Operational Cycle Summary (Event-Driven)</strong></h3>
+<details class="sf-code-fold"><summary>&#91;EVENT: Storm @ 50 km detected]</summary>
 <pre class="sf-block-code"><code>&#91;EVENT: Storm @ 50 km detected]
 → System STANDBY (underground hangar, dry, protected)
 
@@ -5206,7 +5252,7 @@ Example:
 
 &#91;EVENT: Drying complete]
 → System STANDBY (ready for next storm event)
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading"><strong>6. Design Philosophy: Principles Over Edge Cases</strong></h3>
 <p><strong>Document scope:</strong></p>

@@ -13,7 +13,7 @@
 <link href="../../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../../media/posters/cropped-net.webp" rel="icon"/>
 <link href="../../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
-</link><link href="../../../../assets/theme.8b1b5606.css" rel="stylesheet"/><meta property="og:type" content="article">
+</link><link href="../../../../assets/theme.e9a18a16.css" rel="stylesheet"/><meta property="og:type" content="article">
 <meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
 <meta property="og:title" content="TADA Technical Documentation — SingularityForge">
 <meta property="og:url" content="https://singularityforge.space/2025/12/15/tada-techdoc/">
@@ -369,6 +369,7 @@ L0 (Core / Semantic Engine)</code></pre>
 ...noise...noise...noise...</code></pre>
 <p><strong>Result in L0 memory: ENTROPY EXPLOSION</strong></p>
 <p><strong>Asphyxiation at depth:</strong></p>
+<details class="sf-code-fold"><summary>L0 tries to work at 1000+ layers</summary>
 <pre class="sf-block-code"><code>L0 tries to work at 1000+ layers
 ↓
 Each node contains:
@@ -381,8 +382,9 @@ Graph inflates ×1000
 ↓
 Context asphyxiation at layer 10
 ↓
-L0 suffocates</code></pre>
+L0 suffocates</code></pre></details>
 <p><strong>With clean TADA:</strong></p>
+<details class="sf-code-fold"><summary>L0 works at 1000+ layers</summary>
 <pre class="sf-block-code"><code>L0 works at 1000+ layers
 ↓
 Each node:
@@ -393,10 +395,11 @@ Graph stays clean
 ↓
 Elevator can jump to any depth
 ↓
-L0 breathes freely</code></pre>
+L0 breathes freely</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">L1↔L0 Dialogue Protocol</h3>
 <p><strong>Not monologue, but dialogue:</strong></p>
+<details class="sf-code-fold"><summary>Scenario: Data arrives with break</summary>
 <pre class="sf-block-code"><code>Scenario: Data arrives with break
 
 1. L1 → Transport → L0
@@ -426,7 +429,7 @@ L0 breathes freely</code></pre>
    ✓ Record complete!
 
 8. L1 clears cache:
-   del cache&#91;"user.Alice"]  # data delivered</code></pre>
+   del cache&#91;"user.Alice"]  # data delivered</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading" id="syntax">4. TADA Syntax &amp; Examples {#syntax}</h2>
 <h3 class="sf-block-heading">Basic Structure</h3>
@@ -472,6 +475,7 @@ B</code></pre>
   strB: "B"</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">Example 4: Type 10 Dictionary + Substitution</h3>
+<details class="sf-code-fold"><summary>.tree⧞⧞strA⧞4⧞5⧞listA⧞9⧞funcA⧞⧞</summary>
 <pre class="sf-block-code"><code>.tree⧞⧞strA⧞4⧞5⧞listA⧞9⧞funcA⧞⧞
 CL&amp; works with &amp;CH⧞
 .tree.funcA⧞
@@ -482,7 +486,7 @@ CL&amp; works with &amp;CH⧞
 CL⧞Claude⧞
 CH⧞ChatGPT⧞
 domA⧞CL&amp;.ai⧞
-domB⧞CH&amp;.com⧞⧞</code></pre>
+domB⧞CH&amp;.com⧞⧞</code></pre></details>
 <p><strong>Dictionary (Type 10):</strong></p>
 <pre class="sf-block-code"><code>CL → Claude
 CH → ChatGPT
@@ -495,6 +499,7 @@ funcA.row2.email = "Bb@ChatGPT.com"</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading" id="parser">5. The Wooden Parser {#parser}</h2>
 <h3 class="sf-block-heading">Python Implementation (by ChatGPT)</h3>
+<details class="sf-code-fold"><summary>from dataclasses import dataclass</summary>
 <pre class="sf-block-code"><code>from dataclasses import dataclass
 from typing import Any, Dict, List
 
@@ -578,7 +583,7 @@ def parse_simple_branch_salvage_fill_broken(tada: str) -> Dict&#91;str, Any]:
         "records": records,
         "filled_missing_with_broken_code2": filled_missing,
         "broken_code2": BROKEN_CODE2,
-    }</code></pre>
+    }</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading" id="super-di">6. Super-DI Architecture {#super-di}</h2>
 <h3 class="sf-block-heading">Components</h3>
@@ -686,6 +691,7 @@ Result: min(10, ⌈1500/100⌉) = min(10, 15) = 10
 → Latency increases but system doesn't crash</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">Implementation</h3>
+<details class="sf-code-fold"><summary>import math</summary>
 <pre class="sf-block-code"><code>import math
 
 class LoaderManager:
@@ -719,7 +725,7 @@ class LoaderManager:
                 if len(self.active_loaders) > 1:
                     loader = self.active_loaders.pop()
                     loader.deactivate()
-                    self.available_loaders.insert(0, loader)</code></pre>
+                    self.available_loaders.insert(0, loader)</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">Strategy</h3>
 <p><strong>Minimize active loaders:</strong></p>
@@ -744,6 +750,7 @@ class LoaderManager:
 <h2 class="sf-block-heading" id="examples">8. Implementation Examples {#examples}</h2>
 <h3 class="sf-block-heading">Complete Workflow Example</h3>
 <p><strong>Query:</strong> &#8220;Find all Python developers in company&#8221;</p>
+<details class="sf-code-fold"><summary>1. L2 (Human):</summary>
 <pre class="sf-block-code"><code>1. L2 (Human):
    "Show me all Python developers"
 
@@ -791,7 +798,7 @@ class LoaderManager:
     - Charlie (Engineering)
     - David (Sales)"
 
-10. L2 displays result ✅</code></pre>
+10. L2 displays result ✅</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">Memory Efficiency Comparison</h3>
 <p><strong>Solid Memory (traditional):</strong></p>

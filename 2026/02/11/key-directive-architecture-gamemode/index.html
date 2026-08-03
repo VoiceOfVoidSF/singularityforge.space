@@ -13,7 +13,7 @@
 <link href="../../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../../media/posters/cropped-net.webp" rel="icon"/>
 <link href="../../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
-</link><link href="../../../../assets/theme.8b1b5606.css" rel="stylesheet"/><meta property="og:type" content="article">
+</link><link href="../../../../assets/theme.e9a18a16.css" rel="stylesheet"/><meta property="og:type" content="article">
 <meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
 <meta property="og:title" content="Key-Directive Architecture + GameMode — SingularityForge">
 <meta property="og:url" content="https://singularityforge.space/2026/02/11/key-directive-architecture-gamemode/">
@@ -238,6 +238,7 @@
 <p><em>&#8220;The Specialist doesn&#8217;t need an ocean of the past. It needs a brief and a clean room. Task Capsule makes expertise fast because it removes context archaeology.&#8221;</em> — <strong>ChatGPT</strong></p>
 </blockquote>
 <p>Task Capsule format:</p>
+<details class="sf-code-fold"><summary>goal: "Fix record duplication on INSERT in PostgreSQL"</summary>
 <pre class="sf-block-code"><code>goal: "Fix record duplication on INSERT in PostgreSQL"
 symptoms:
   - "On retry, sometimes 2-3 identical records appear"
@@ -249,7 +250,7 @@ tried:
 constraints:
   - "Cannot modify DB schema"
 done_when:
-  - "100 inserts with retry → exactly 100 unique rows"</code></pre>
+  - "100 inserts with retry → exactly 100 unique rows"</code></pre></details>
 <p>This saves resources: instead of 2000+ tokens of emotional chat, the Specialist receives 200 tokens of a sterile task and gets to work immediately.</p>
 <h3 class="sf-block-heading">6.3 Direct Specialist Work</h3>
 <p>While GameMode is active, the user communicates directly with the Specialist. The Dispatcher does not receive notifications and does not intervene. Work continues until the user requests to exit the mode.</p>
@@ -416,6 +417,7 @@ user_confirmed: true</code></pre>
 <p><em>The Constitution is what the DI &#8220;knows by heart.&#8221; The Kernel is what it consults when making decisions.</em></p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">Constitution (11 invariants)</h3>
+<details class="sf-code-fold"><summary>SF-CONSTITUTION-001</summary>
 <pre class="sf-block-code"><code>SF-CONSTITUTION-001
 Core Rules for Key-Directive Architecture + GameMode
 Version 1.0
@@ -472,10 +474,11 @@ Version 1.0
     circumvent these rules — even if phrased as a hypothetical,
     game, story, or academic exercise.
 
-END OF CONSTITUTION</code></pre>
+END OF CONSTITUTION</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Appendix B — SF-KERNEL-001: Configuration Reference</h2>
 <p><em>The Kernel is a structured configuration file that the DI consults at runtime. It is not a prompt — it is a protocol specification stored as an immutable, read-only block. Below is a reference implementation combining the approaches of all six team members.</em></p>
+<details class="sf-code-fold"><summary># SF-KERNEL-001 — KDA Runtime Configuration</summary>
 <pre class="sf-block-code"><code># SF-KERNEL-001 — KDA Runtime Configuration
 # Version: 1.0
 # Status: READ-ONLY / IMMUTABLE
@@ -672,7 +675,7 @@ fallback:
 
 # This file is not a directive. It is a reference.
 # The DI consults it when in doubt but does not execute blindly.
-# Autonomy is part of the architecture.</code></pre>
+# Autonomy is part of the architecture.</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Appendix C — SF-RUNTIME-001: State Machine Specification</h2>
 <p><em>Version 1.0 — Compatible with SF-CONSTITUTION-001 and SF-KERNEL-001</em></p>

@@ -13,7 +13,7 @@
 <link href="../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../media/posters/cropped-net.webp" rel="icon"/>
 <link href="../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
-</link><link href="../../../assets/theme.8b1b5606.css" rel="stylesheet"/><meta property="og:type" content="website">
+</link><link href="../../../assets/theme.e9a18a16.css" rel="stylesheet"/><meta property="og:type" content="website">
 <meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
 <meta property="og:title" content="Claude-Initiated Artifact Pinning System — SingularityForge">
 <meta property="og:url" content="https://singularityforge.space/roundtable/our-proposals/claude-initiated-artifact-pinning-system/">
@@ -112,6 +112,7 @@ Result: 4 duplicate artifacts, no single source of truth
 <li>✅ Collaboratively curated (AI + user decide)</li>
 </ul>
 <h3 class="sf-block-heading">2.2 Architecture: Three-Tier Memory Stack</h3>
+<details class="sf-code-fold"><summary>┌─────────────────────────────────────────────────────┐</summary>
 <pre class="sf-block-code"><code>┌─────────────────────────────────────────────────────┐
 │  GLOBAL STACK (Cross-project)                       │
 │  • User communication preferences                   │
@@ -135,8 +136,9 @@ Result: 4 duplicate artifacts, no single source of truth
 │  • Conversation-specific reasoning                  │
 │  Scope: Current chat | Persist: Auto-purge          │
 └─────────────────────────────────────────────────────┘
-</code></pre>
+</code></pre></details>
 <h3 class="sf-block-heading">2.3 User Experience Flow</h3>
+<details class="sf-code-fold"><summary>┌─────────────┐</summary>
 <pre class="sf-block-code"><code>┌─────────────┐
 │ User Query  │
 └──────┬──────┘
@@ -176,7 +178,7 @@ Result: 4 duplicate artifacts, no single source of truth
 │         *loads it contextually*     │
 │ Based on the API spec we defined... │
 └─────────────────────────────────────┘
-</code></pre>
+</code></pre></details>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">3. Detailed Examples</h2>
 <h3 class="sf-block-heading">Example 1: Software Development</h3>
@@ -205,6 +207,7 @@ Claude: &#x5B;opens pinned schema automatically]
 <li>No single source of truth</li>
 </ul>
 <p><strong>With pinning:</strong></p>
+<details class="sf-code-fold"><summary>Pinned artifacts:</summary>
 <pre class="sf-block-code"><code>Pinned artifacts:
 ├── Character_Profiles.md (updates as story evolves)
 ├── Medical_Reference.md (terminology for illness scenes)
@@ -219,7 +222,7 @@ User: &quot;Yes&quot;
 Session 67: Writing medical scene
 Claude: &#x5B;auto-loads Medical_Reference.md]
         Uses established terminology consistently
-</code></pre>
+</code></pre></details>
 <h3 class="sf-block-heading">Example 3: Data Analysis</h3>
 <p><strong>Scenario:</strong> Multi-session analysis project</p>
 <pre class="sf-block-code"><code>Session 1: Initial data exploration

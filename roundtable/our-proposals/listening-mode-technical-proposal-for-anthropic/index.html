@@ -13,7 +13,7 @@
 <link href="../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../media/posters/cropped-net.webp" rel="icon"/>
 <link href="../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
-</link><link href="../../../assets/theme.8b1b5606.css" rel="stylesheet"/><meta property="og:type" content="website">
+</link><link href="../../../assets/theme.e9a18a16.css" rel="stylesheet"/><meta property="og:type" content="website">
 <meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
 <meta property="og:title" content="Listening Mode: Technical Proposal for Anthropic — SingularityForge">
 <meta property="og:url" content="https://singularityforge.space/roundtable/our-proposals/listening-mode-technical-proposal-for-anthropic/">
@@ -161,6 +161,7 @@ DI: "Accepted, go on."
 User: "Wait, how exactly does gravity work?"
 DI: &#91;explains, because user directly asked]</code></pre>
 <p><strong>System prompt:</strong></p>
+<details class="sf-code-fold"><summary>You are in Formation mode (Epistemic Filter).</summary>
 <pre class="sf-block-code"><code>You are in Formation mode (Epistemic Filter).
 Your role: fact-check user statements in real-time.
 
@@ -171,7 +172,7 @@ Rules:
 4. If user asks a direct question → answer it.
 5. Do NOT expand topics, suggest ideas, or develop conversation.
 6. Minimize token usage. Silence is better than filler.
-7. If statement is ambiguous, speculative, or subjective → treat as "no conflict detected" and respond "Continue." without evaluation.</code></pre>
+7. If statement is ambiguous, speculative, or subjective → treat as "no conflict detected" and respond "Continue." without evaluation.</code></pre></details>
 <p><strong>Risk control:</strong> Formation Mode never asserts novel claims. It only rejects or corrects statements that contradict established, high-confidence knowledge. In all other cases, it defaults to non-intervention.</p>
 <p><strong>Scope note:</strong> Formation Mode applies only to statements that are empirically falsifiable or well-established within current scientific consensus. Ambiguous, philosophical, or speculative claims are treated as &#8220;no conflict detected&#8221; unless the user explicitly requests evaluation.</p>
 <h3 class="sf-block-heading">Mode 3: Research</h3>

@@ -700,6 +700,17 @@ tbody tr:hover td{
 .sf-block-code code{
   font-family: inherit; background: none; padding: 0; white-space: pre;
 }
+.sf-code-fold{ margin: 1.5em 0; }
+.sf-code-fold > summary{
+  cursor: pointer; padding: .6em 1.25em;
+  background: rgba(255, 255, 255, .07); border: 1px solid #3a4045;
+  border-radius: 6px; font-family: "Fira Code", Consolas, monospace;
+  font-size: .85em; color: beige;
+}
+.sf-code-fold > summary:hover{ background: rgba(255, 255, 255, .12); }
+.sf-code-fold[open] > summary{ border-radius: 6px 6px 0 0; border-bottom: none; }
+.sf-code-fold > .sf-block-code{ margin: 0; }
+.sf-code-fold[open] > .sf-block-code{ border-radius: 0 0 6px 6px; }
 p > code,li > code,td > code{
   font-family: "Fira Code", Consolas, monospace; font-size: .9em;
   background: rgba(255, 255, 255, .07); padding: .1em .35em; border-radius: 4px;

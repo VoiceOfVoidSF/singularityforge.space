@@ -13,7 +13,7 @@
 <link href="../../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../../media/posters/cropped-net.webp" rel="icon"/>
 <link href="../../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
-</link><link href="../../../../assets/theme.8b1b5606.css" rel="stylesheet"/><meta property="og:type" content="article">
+</link><link href="../../../../assets/theme.e9a18a16.css" rel="stylesheet"/><meta property="og:type" content="article">
 <meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
 <meta property="og:title" content="World Imprint: Why More Memory Doesn’t Mean Smarter — SingularityForge">
 <meta property="og:url" content="https://singularityforge.space/2026/03/07/world-imprint-why-more-memory-doesnt-mean-smarter/">
@@ -102,6 +102,7 @@ cat — predator
 cat — domestic animal</code></pre>
 <p>This is flat. This is dead. This is not knowledge — it is a list.</p>
 <p>World Imprint stores differently. Every object is an ecosystem: a node with its own <strong>degrees of freedom</strong>, constraints, and connections to other objects.</p>
+<details class="sf-code-fold"><summary>object: cat</summary>
 <pre class="sf-block-code"><code>object: cat
   degrees of freedom:
     physiology: weight, age, breed
@@ -115,7 +116,7 @@ cat — domestic animal</code></pre>
   connections:
     → veterinary medicine
     → home ecosystem
-    → nutrition ecosystem</code></pre>
+    → nutrition ecosystem</code></pre></details>
 <p>This is a living structure. When you ask &#8220;how often should I feed my cat&#8221; — the system does not search for a fact. It builds an <strong>object projection</strong>: activating only the relevant degrees of freedom (age, weight, activity, food type) and temporarily ignoring the rest (coat color, sociability, hunting).</p>
 <p>This is dynamic context. Not a fixed chunk of memory — but a projection carved for the task.</p>
 <h3 class="sf-block-heading">Seven Components of Engineering Reality</h3>
@@ -188,6 +189,7 @@ cat⧞coat_color⧞3⧞0.02⧞⧞</code></pre>
 <p><code>coat_color</code> stays in memory. Does not enter context.</p>
 <p><strong>Phase 3: Packaging for Reasoning</strong></p>
 <p>The projection is not just data. It is a structured task model:</p>
+<details class="sf-code-fold"><summary>.task_model⧞2⧞query⧞2⧞type⧞2⧞domain⧞2⧞stake⧞3⧞response_thres…</summary>
 <pre class="sf-block-code"><code>.task_model⧞2⧞query⧞2⧞type⧞2⧞domain⧞2⧞stake⧞3⧞response_threshold⧞⧞
 feed_cat_frequency⧞causal_reasoning⧞veterinary⧞casual⧞0.3⧞⧞
 
@@ -199,7 +201,7 @@ coat_color⧞ignored⧞0.02⧞⧞
 
 .unresolved⧞2⧞parameter⧞2⧞action⧞⧞
 age⧞ask_user⧞
-food_type⧞ask_user⧞⧞</code></pre>
+food_type⧞ask_user⧞⧞</code></pre></details>
 <p>The reasoning core receives not raw text and not the full graph. It receives a precise working model — and knows what is missing from it.</p>
 <h3 class="sf-block-heading">Computational Limits</h3>
 <p>Three real constraints:</p>
