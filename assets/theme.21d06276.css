@@ -698,6 +698,7 @@ tbody tr:hover td{
   padding: .35em .75em; border: 1px solid #3a4045; vertical-align: top;
 }
 .table-wrap th{ background: #23292e; }
+.entry-content h3:not(h2 + h3):not(:first-child){ margin-block-start: 30px; }
 .sf-block-code{
   background: rgba(255, 255, 255, .05); border: 1px solid #3a4045;
   border-radius: 6px; padding: 1em 1.25em; overflow-x: auto;
