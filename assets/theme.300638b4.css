@@ -699,7 +699,7 @@ tbody tr:hover td{
   font-size: clamp(1.4375rem, 1.4375rem + ((1vw - 0.2rem) * 0.455), 1.6875rem);
 }
 .entry-content hr.sf-block-separator.is-style-dots{ margin-top: 30px; margin-bottom: 30px; }
-.entry-content hr.sf-block-separator[class*="is-style-wide"]{ margin-top: 20px; margin-bottom: 20px; }
+.entry-content hr.sf-block-separator:not(.is-style-dots){ margin-top: 20px; margin-bottom: 20px; }
 .sf-block-code{
   background: rgba(255, 255, 255, .05); border: 1px solid #3a4045;
   border-radius: 6px; padding: 1em 1.25em; overflow-x: auto;
