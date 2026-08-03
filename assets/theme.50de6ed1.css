@@ -702,7 +702,7 @@ tbody tr:hover td{
   background: rgba(255, 255, 255, .05); border: 1px solid #3a4045;
   border-radius: 6px; padding: 1em 1.25em; overflow-x: auto;
   font-family: "Fira Code", Consolas, monospace; font-size: .85em;
-  line-height: 1.55; margin: 1.5em 0;
+  line-height: 1.55; margin: 1.5em 0; color: beige;
 }
 .sf-block-code code{ font-family: inherit; background: none; padding: 0; }
 p > code,li > code,td > code{
