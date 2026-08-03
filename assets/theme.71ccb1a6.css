@@ -192,7 +192,6 @@ html :where(img[class*=sf-image-]){height:auto;max-width:100%}
 .sf-container-core-buttons-is-layout-bef50db0{gap:12px;}
 .sf-container-core-columns-is-layout-b69ff2a2{flex-wrap:nowrap;gap:var(--sf--preset--spacing--superbspacing-medium) var(--sf--preset--spacing--superbspacing-medium);}
 .sf-container-core-columns-is-layout-83afbf8f{flex-wrap:nowrap;gap:12px 12px;}
-.sf-elements-3d98cbe74de16819cf917f11fec87167 a:where(:not(.sf-element-button)){color:#b8b495;}
 .sf-container-core-group-is-layout-57061c08 > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width:1190px;margin-left:auto !important;margin-right:auto !important;}
 .sf-container-core-group-is-layout-57061c08 > .alignwide{max-width:1190px;}
 .sf-container-core-group-is-layout-57061c08 .alignfull{max-width:none;}
@@ -699,6 +698,17 @@ tbody tr:hover td{
   padding: .35em .75em; border: 1px solid #3a4045; vertical-align: top;
 }
 .table-wrap th{ background: #23292e; }
+.sf-block-code{
+  background: rgba(255, 255, 255, .05); border: 1px solid #3a4045;
+  border-radius: 6px; padding: 1em 1.25em; overflow-x: auto;
+  font-family: "Fira Code", Consolas, monospace; font-size: .85em;
+  line-height: 1.55; margin: 1.5em 0;
+}
+.sf-block-code code{ font-family: inherit; background: none; padding: 0; }
+p > code,li > code,td > code{
+  font-family: "Fira Code", Consolas, monospace; font-size: .9em;
+  background: rgba(255, 255, 255, .07); padding: .1em .35em; border-radius: 4px;
+}
 .sf-linkcolor a{ color: var(--sf-link); }
 .sf-block-navigation__responsive-container-open,.sf-block-navigation__responsive-container-close{ display: none !important; }
 .sf-block-navigation__responsive-container{ display: block !important; position: static !important; }
