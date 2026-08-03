@@ -231,7 +231,7 @@
 Body: {"filename": "data.txt"}
 → File deleted</code></pre>
 <p>In APDI world:</p>
-<details class="sf-code-fold"><summary>Request: {</summary>
+<details class="sf-code-fold"><summary>Request</summary>
 <pre class="sf-block-code"><code>Request: {
   "intent": "cleanup_old_data",
   "goal": "free_disk_space",
@@ -1583,7 +1583,7 @@ def validate_request(request, agent_asm, user_grants, company_policy, sep_profil
 <p><strong>Status:</strong> Runtime contract, &#8220;robots.txt for agents.&#8221;</p>
 <p>A <strong>machine-readable declaration</strong> of an agent&#8217;s capabilities, limitations, and security policy. Published by agent vendor, consumed by execution environments.</p>
 <p><strong>ASM Structure:</strong></p>
-<details class="sf-code-fold"><summary>agent_security_manifest:</summary>
+<details class="sf-code-fold"><summary>agent_security_manifest</summary>
 <pre class="sf-block-code"><code>agent_security_manifest:
   version: "1.0"
   agent:
@@ -1690,7 +1690,7 @@ Agent B receives validated message
 B processes request using APDI/SEP</code></pre></details>
 <p><strong>Key Integration Points:</strong></p>
 <p><strong>Message Format:</strong></p>
-<details class="sf-code-fold"><summary>"kda_envelope": {</summary>
+<details class="sf-code-fold"><summary>"kda_envelope"</summary>
 <pre class="sf-block-code"><code>{
   "kda_envelope": {
     "sender_id": "agent_a",

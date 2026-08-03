@@ -386,7 +386,7 @@
 <h3 class="sf-block-heading">2. <strong>Hybrid Architecture Implementation</strong></h3>
 <p>2.1 The Dual-Controller System with External Resources</p>
 <p>RASLI&#8217;s central innovation lies in its dual-controller architecture that separates planning from validation while orchestrating both internal neural modules and external knowledge systems:</p>
-<details class="sf-code-fold"><summary>class RASLIController:</summary>
+<details class="sf-code-fold"><summary>class RASLIController</summary>
 <pre class="sf-block-code"><code>class RASLIController:
     def __init__(self):
         self.planning_controller = PlanningController()
@@ -421,7 +421,7 @@
         return self.validation_controller.finalize(result)</code></pre></details>
 <p>2.2 Planning Controller with Truth Verification</p>
 <p>The Planning Controller now analyzes incoming queries to determine optimal processing strategies across both neural and external systems:</p>
-<details class="sf-code-fold"><summary>class PlanningController:</summary>
+<details class="sf-code-fold"><summary>class PlanningController</summary>
 <pre class="sf-block-code"><code>class PlanningController:
     def __init__(self):
         # Internal neural modules
@@ -470,7 +470,7 @@
         return plan</code></pre></details>
 <p>2.3 Truth Verification Center Implementation</p>
 <p>The Truth Verification Center serves as the intelligent router between known facts and reasoning requirements:</p>
-<details class="sf-code-fold"><summary>class TruthVerificationCenter:</summary>
+<details class="sf-code-fold"><summary>class TruthVerificationCenter</summary>
 <pre class="sf-block-code"><code>class TruthVerificationCenter:
     def __init__(self):
         self.statement_extractor = StatementExtractor()
@@ -507,7 +507,7 @@
             return VerificationResult.UNKNOWN</code></pre></details>
 <p>2.4 Validation Controller Mathematics</p>
 <p>The Validation Controller implements our sufficiency formula across hybrid processing results:</p>
-<details class="sf-code-fold"><summary>class ValidationController:</summary>
+<details class="sf-code-fold"><summary>class ValidationController</summary>
 <pre class="sf-block-code"><code>class ValidationController:
     def calculate_sufficiency(self, response, query_context, processing_path):
         # Ethics gate (binary) - applies to all processing types
@@ -555,7 +555,7 @@
 <h3 class="sf-block-heading">3. <strong>Reasoning Module Architecture with External Integration</strong></h3>
 <p>3.1 Subjective-Logical Processing with Knowledge Integration</p>
 <p>RASLI&#8217;s core innovation is subjective-logical reasoning that combines neural processing with external knowledge verification:</p>
-<details class="sf-code-fold"><summary>class SubjectiveLogicalProcessor:</summary>
+<details class="sf-code-fold"><summary>class SubjectiveLogicalProcessor</summary>
 <pre class="sf-block-code"><code>class SubjectiveLogicalProcessor:
     def __init__(self):
         # Internal neural modules
@@ -598,7 +598,7 @@
         return adapted_result</code></pre></details>
 <p>3.2 Understanding Module with Database Integration</p>
 <p>The Understanding Module extracts semantic meaning while consulting external knowledge sources:</p>
-<details class="sf-code-fold"><summary>class UnderstandingModule:</summary>
+<details class="sf-code-fold"><summary>class UnderstandingModule</summary>
 <pre class="sf-block-code"><code>class UnderstandingModule:
     def __init__(self):
         # Internal neural components
@@ -640,7 +640,7 @@
         )</code></pre></details>
 <p>3.3 Reasoning Loop with External Validation</p>
 <p>The reasoning loop enables iterative improvement through both internal analysis and external verification:</p>
-<details class="sf-code-fold"><summary>class ReasoningLoop:</summary>
+<details class="sf-code-fold"><summary>class ReasoningLoop</summary>
 <pre class="sf-block-code"><code>class ReasoningLoop:
     def __init__(self, max_iterations=5, time_limit_ms=2000):
         self.max_iterations = max_iterations
@@ -687,7 +687,7 @@
 <h3 class="sf-block-heading">4. <strong>Immutable Ethics Implementation</strong></h3>
 <p>4.1 WebAssembly Ethics Core with Knowledge Integration</p>
 <p>The ethics core uses WebAssembly for tamper-proof ethical reasoning while consulting external ethical frameworks:</p>
-<details class="sf-code-fold"><summary>class ImmutableEthicsCore:</summary>
+<details class="sf-code-fold"><summary>class ImmutableEthicsCore</summary>
 <pre class="sf-block-code"><code>class ImmutableEthicsCore:
     def __init__(self):
         self.wasm_engine = wasmtime.Engine()
@@ -731,7 +731,7 @@
         return self.synthesize_ethical_guidance(guidance)</code></pre></details>
 <p>4.2 Cultural Adaptation with External Ethics Database</p>
 <p>While ethics remain immutable, cultural interpretation adapts using external ethical knowledge:</p>
-<details class="sf-code-fold"><summary>class CulturalAdapter:</summary>
+<details class="sf-code-fold"><summary>class CulturalAdapter</summary>
 <pre class="sf-block-code"><code>class CulturalAdapter:
     def __init__(self):
         self.cultural_database = CulturalNormsDatabase()
@@ -758,7 +758,7 @@
 <h3 class="sf-block-heading">5. <strong>Performance Optimization Through Hybrid Processing</strong></h3>
 <p>5.1 Intelligent Resource Allocation</p>
 <p>RASLI optimizes resource usage through dynamic allocation between neural processing and external systems:</p>
-<details class="sf-code-fold"><summary>class ResourceManager:</summary>
+<details class="sf-code-fold"><summary>class ResourceManager</summary>
 <pre class="sf-block-code"><code>class ResourceManager:
     def __init__(self):
         self.neural_resource_pool = NeuralResourcePool()
@@ -793,7 +793,7 @@
         return resource_allocation</code></pre></details>
 <p>5.2 Hybrid Caching Strategy</p>
 <p>RASLI implements intelligent caching across both neural reasoning and external knowledge:</p>
-<details class="sf-code-fold"><summary>class HybridCacheManager:</summary>
+<details class="sf-code-fold"><summary>class HybridCacheManager</summary>
 <pre class="sf-block-code"><code>class HybridCacheManager:
     def __init__(self):
         self.reasoning_cache = ReasoningCache()
@@ -828,7 +828,7 @@
 <h3 class="sf-block-heading">6. <strong>Deployment Architecture</strong></h3>
 <p>6.1 Enterprise Deployment with External Systems</p>
 <p>RASLI supports multiple deployment configurations integrating external knowledge systems:</p>
-<details class="sf-code-fold"><summary>class RASLIDeployment:</summary>
+<details class="sf-code-fold"><summary>class RASLIDeployment</summary>
 <pre class="sf-block-code"><code>class RASLIDeployment:
     def __init__(self, deployment_type):
         self.deployment_type = deployment_type
@@ -867,7 +867,7 @@
         self.security_hardening = EnterpriseSecurityHardening()</code></pre></details>
 <p>6.2 Scalability Implementation Across Systems</p>
 <p>RASLI scales both neural and external system capabilities based on demand:</p>
-<details class="sf-code-fold"><summary>class HybridScalabilityManager:</summary>
+<details class="sf-code-fold"><summary>class HybridScalabilityManager</summary>
 <pre class="sf-block-code"><code>class HybridScalabilityManager:
     def __init__(self):
         self.neural_resource_pool = NeuralResourcePool()
@@ -897,7 +897,7 @@
 <h3 class="sf-block-heading">7. <strong>Quality Assurance and Testing</strong></h3>
 <p>7.1 Hybrid Reasoning Quality Metrics</p>
 <p>RASLI implements comprehensive quality measurement across all processing types:</p>
-<details class="sf-code-fold"><summary>class HybridQualityAssurance:</summary>
+<details class="sf-code-fold"><summary>class HybridQualityAssurance</summary>
 <pre class="sf-block-code"><code>class HybridQualityAssurance:
     def __init__(self):
         self.reasoning_validator = ReasoningValidator()
@@ -926,7 +926,7 @@
         return quality_report</code></pre></details>
 <p>7.2 Automated Testing Framework for Hybrid Systems</p>
 <p>RASLI includes comprehensive testing for all system components:</p>
-<details class="sf-code-fold"><summary>class RASLIHybridTestSuite:</summary>
+<details class="sf-code-fold"><summary>class RASLIHybridTestSuite</summary>
 <pre class="sf-block-code"><code>class RASLIHybridTestSuite:
     def __init__(self):
         self.neural_reasoning_tests = NeuralReasoningTestSet()
@@ -954,7 +954,7 @@
 <h3 class="sf-block-heading">8. <strong>Integration with Existing Systems</strong></h3>
 <p>8.1 API Design for Hybrid Processing</p>
 <p>RASLI provides APIs that expose both traditional and hybrid capabilities:</p>
-<details class="sf-code-fold"><summary>class RASLIHybridAPIGateway:</summary>
+<details class="sf-code-fold"><summary>class RASLIHybridAPIGateway</summary>
 <pre class="sf-block-code"><code>class RASLIHybridAPIGateway:
     def __init__(self):
         self.rasli_engine = RASLIEngine()
@@ -990,7 +990,7 @@
 <h3 class="sf-block-heading">9. <strong>Monitoring and Observability</strong></h3>
 <p>9.1 Hybrid System Monitoring</p>
 <p>RASLI provides comprehensive monitoring across all system components:</p>
-<details class="sf-code-fold"><summary>class HybridSystemMonitor:</summary>
+<details class="sf-code-fold"><summary>class HybridSystemMonitor</summary>
 <pre class="sf-block-code"><code>class HybridSystemMonitor:
     def __init__(self):
         self.neural_monitor = NeuralProcessingMonitor()
@@ -1027,7 +1027,7 @@
 <h3 class="sf-block-heading">10. <strong>Security Implementation</strong></h3>
 <p>10.1 Security Across Hybrid Systems</p>
 <p>RASLI implements security measures for both neural and external systems:</p>
-<details class="sf-code-fold"><summary>class HybridSecurityManager:</summary>
+<details class="sf-code-fold"><summary>class HybridSecurityManager</summary>
 <pre class="sf-block-code"><code>class HybridSecurityManager:
     def __init__(self):
         self.neural_security = NeuralProcessingSecurity()
@@ -1116,7 +1116,7 @@
 <li>Circuit breakers: Automatic termination of runaway processes</li>
 </ul>
 <p>Implementation:</p>
-<details class="sf-code-fold"><summary>class ReasoningLimiter:</summary>
+<details class="sf-code-fold"><summary>class ReasoningLimiter</summary>
 <pre class="sf-block-code"><code>class ReasoningLimiter:
     def __init__(self, max_iterations=5, time_limit_ms=2000, budget=1000):
         self.max_iterations = max_iterations
@@ -1174,7 +1174,7 @@
 <li>Semantic analysis detecting adversarial patterns</li>
 </ul>
 <p>Defense Implementation:</p>
-<details class="sf-code-fold"><summary>class PromptInjectionDefense:</summary>
+<details class="sf-code-fold"><summary>class PromptInjectionDefense</summary>
 <pre class="sf-block-code"><code>class PromptInjectionDefense:
     def __init__(self):
         self.intent_analyzer = IntentAnalyzer()
@@ -1205,7 +1205,7 @@
 <li>Auto-scaling based on demand patterns</li>
 </ul>
 <p>DDoS Protection:</p>
-<details class="sf-code-fold"><summary>class ReasoningDDoSProtection:</summary>
+<details class="sf-code-fold"><summary>class ReasoningDDoSProtection</summary>
 <pre class="sf-block-code"><code>class ReasoningDDoSProtection:
     def __init__(self):
         self.rate_limiter = RateLimiter()
@@ -1267,7 +1267,7 @@ class RASLICore:
 <li>Multi-person authorization for critical operations</li>
 </ul>
 <p>Insider Threat Detection:</p>
-<details class="sf-code-fold"><summary>class InsiderThreatDetector:</summary>
+<details class="sf-code-fold"><summary>class InsiderThreatDetector</summary>
 <pre class="sf-block-code"><code>class InsiderThreatDetector:
     def __init__(self):
         self.baseline_behavior = AdminBehaviorBaseline()
@@ -1299,7 +1299,7 @@ class RASLICore:
 <li>Continuous education about RASLI limitations</li>
 </ul>
 <p>Overconfidence Prevention:</p>
-<details class="sf-code-fold"><summary>class OverconfidenceMonitor:</summary>
+<details class="sf-code-fold"><summary>class OverconfidenceMonitor</summary>
 <pre class="sf-block-code"><code>class OverconfidenceMonitor:
     def __init__(self):
         self.confidence_tracker = ConfidenceTracker()
@@ -1333,7 +1333,7 @@ class RASLICore:
 <li>Economic impact studies informing policy decisions</li>
 </ul>
 <p>Transition Management:</p>
-<details class="sf-code-fold"><summary>class WorkforceTransitionManager:</summary>
+<details class="sf-code-fold"><summary>class WorkforceTransitionManager</summary>
 <pre class="sf-block-code"><code>class WorkforceTransitionManager:
     def __init__(self):
         self.impact_assessor = EconomicImpactAssessor()
@@ -1365,7 +1365,7 @@ class RASLICore:
 <li>Community feedback mechanisms for bias reporting</li>
 </ul>
 <p>Bias Monitoring System:</p>
-<details class="sf-code-fold"><summary>class BiasDetectionSystem:</summary>
+<details class="sf-code-fold"><summary>class BiasDetectionSystem</summary>
 <pre class="sf-block-code"><code>class BiasDetectionSystem:
     def __init__(self):
         self.bias_detector = BiasDetector()
@@ -1402,7 +1402,7 @@ class RASLICore:
 <li>Public education about risks of unethical AI</li>
 </ul>
 <p>Ethical Competitive Strategy:</p>
-<details class="sf-code-fold"><summary>class EthicalCompetitiveAdvantage:</summary>
+<details class="sf-code-fold"><summary>class EthicalCompetitiveAdvantage</summary>
 <pre class="sf-block-code"><code>class EthicalCompetitiveAdvantage:
     def demonstrate_ethical_superiority(self):
         advantages = {
@@ -1437,7 +1437,7 @@ class RASLICore:
 <li>Community contributions accelerating progress</li>
 </ul>
 <p>Development Acceleration:</p>
-<details class="sf-code-fold"><summary>class DevelopmentAccelerator:</summary>
+<details class="sf-code-fold"><summary>class DevelopmentAccelerator</summary>
 <pre class="sf-block-code"><code>class DevelopmentAccelerator:
     def __init__(self):
         self.modular_updater = ModularUpdater()
@@ -1470,7 +1470,7 @@ class RASLICore:
 <li>Limited autonomy scope preventing unconstrained goal pursuit</li>
 </ul>
 <p>Goal Alignment Verification:</p>
-<details class="sf-code-fold"><summary>class GoalAlignmentMonitor:</summary>
+<details class="sf-code-fold"><summary>class GoalAlignmentMonitor</summary>
 <pre class="sf-block-code"><code>class GoalAlignmentMonitor:
     def __init__(self):
         self.goal_analyzer = GoalAnalyzer()
@@ -1504,7 +1504,7 @@ class RASLICore:
 <li>Graceful degradation capabilities maintaining function during outages</li>
 </ul>
 <p>Dependency Prevention:</p>
-<details class="sf-code-fold"><summary>class DependencyMitigator:</summary>
+<details class="sf-code-fold"><summary>class DependencyMitigator</summary>
 <pre class="sf-block-code"><code>class DependencyMitigator:
     def __init__(self):
         self.reasoning_educator = ReasoningEducator()
@@ -1548,7 +1548,7 @@ class RASLICore:
 </ul>
 <p>8.2 Continuous Risk Evolution</p>
 <p>Risk management evolves with technology and threat landscape:</p>
-<details class="sf-code-fold"><summary>class AdaptiveRiskManager:</summary>
+<details class="sf-code-fold"><summary>class AdaptiveRiskManager</summary>
 <pre class="sf-block-code"><code>class AdaptiveRiskManager:
     def __init__(self):
         self.threat_intelligence = ThreatIntelligence()
