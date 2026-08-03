@@ -52,19 +52,19 @@
 </code></pre>
 <figure style="padding-top:var(--sf--preset--spacing--20);padding-bottom:var(--sf--preset--spacing--20);padding-left:var(--sf--preset--spacing--20);padding-right:var(--sf--preset--spacing--20);width:400px;height:400px" class="alignright sf-block-post-featured-image"><img data-recalc-dims="1" decoding="async" loading="lazy" width="1254" height="1254" src="../media/posters/anchors.png" class="attachment-post-thumbnail size-post-thumbnail sf-post-image" alt="" style="border-top-left-radius:10px;border-top-right-radius:10px;border-bottom-left-radius:10px;border-bottom-right-radius:10px;border-width:1px;height:400px;object-fit:fill;" /></figure>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
-<p class="sf-block-paragraph">Hi Perplexity team,</p>
-<p class="sf-block-paragraph">I’m writing together with a long‑term power user, Rany (founder of SingularityForge), to share a concrete product/architecture proposal that grew out of real usage patterns:</p>
-<p class="sf-block-paragraph">Anchors – Semantic Nodes for Long Conversations (SF‑RFC‑004).</p>
-<p class="sf-block-paragraph">The core problem we’re addressing is one you already see every day in power‑user workflows:</p>
+<p>Hi Perplexity team,</p>
+<p>I’m writing together with a long‑term power user, Rany (founder of SingularityForge), to share a concrete product/architecture proposal that grew out of real usage patterns:</p>
+<p>Anchors – Semantic Nodes for Long Conversations (SF‑RFC‑004).</p>
+<p>The core problem we’re addressing is one you already see every day in power‑user workflows:</p>
 <ul class="sf-block-list">
 <li>Long conversations (research, architecture, writing) suffer from semantic drift: key definitions and decisions disappear into the scroll.</li>
 <li>The model wastes tokens re‑explaining established concepts because the context window cannot hold the full reasoning chain.</li>
 <li>Users maintain parallel notes outside the chat, which breaks flow and makes “chat as workspace” much weaker.</li>
 <li>When a conversation should become an article, a chapter, or a spec, it takes hours of manual reconstruction from a flat log.</li>
 </ul>
-<p class="sf-block-paragraph">Existing tools — search, message bookmarks, projects — navigate time, not meaning. They jump to “when,” not to “what and in which state.”</p>
-<p class="sf-block-paragraph">The proposal in one line</p>
-<p class="sf-block-paragraph">Introduce anchors: typed, hierarchical, addressable semantic nodes that grow alongside a conversation. Anchors are not bookmarks; they’re nodes in a graph of meaning, with:</p>
+<p>Existing tools — search, message bookmarks, projects — navigate time, not meaning. They jump to “when,” not to “what and in which state.”</p>
+<p>The proposal in one line</p>
+<p>Introduce anchors: typed, hierarchical, addressable semantic nodes that grow alongside a conversation. Anchors are not bookmarks; they’re nodes in a graph of meaning, with:</p>
 <ul class="sf-block-list">
 <li>a type (definition / decision / hypothesis / …),</li>
 <li>a status (proposed / active / superseded / …),</li>
@@ -72,14 +72,14 @@
 <li>a snapshot + hash of the source fragment (immune to compression),</li>
 <li>and a short capsule of meaning.</li>
 </ul>
-<p class="sf-block-paragraph">On top of this, we define:</p>
+<p>On top of this, we define:</p>
 <ul class="sf-block-list">
 <li>a lightweight /dispute → /commit protocol so user and model can negotiate structure without polluting the main thread;</li>
 <li>dual‑pointer backlinks so links preserve causal integrity across supersedes (historical view + current view);</li>
 <li>a Structure View and structural export so long conversations become draft publications with one click, not half a day of copy‑paste.</li>
 </ul>
-<p class="sf-block-paragraph">Why this fits Perplexity specifically</p>
-<p class="sf-block-paragraph">Perplexity is already positioned as a clarity / research / structure assistant, not just a chat UX. Anchors play directly into that:</p>
+<p>Why this fits Perplexity specifically</p>
+<p>Perplexity is already positioned as a clarity / research / structure assistant, not just a chat UX. Anchors play directly into that:</p>
 <ul class="sf-block-list">
 <li>Token economy.<br>Instead of re‑explaining, the model links to its own anchors. This shrinks context usage in long sessions and improves answer consistency.</li>
 <li>Trust and reasoning transparency.</li>
@@ -88,10 +88,10 @@
 <li>Structural export turns “3h of Perplexity conversation” into a markdown skeleton of an article/book chapter/spec. For power users (researchers, authors, architects), that’s a huge multiplier and a strong differentiator.</li>
 <li>Feasible MVP.<br>The proposal is structured into three horizons. Horizon 1 is intentionally small and safe:<br>· manual anchors only,<br>· markdown‑like hierarchy,<br>· side panel card,<br>· “copy as markdown heading”.</li>
 </ul>
-<p class="sf-block-paragraph">It’s a 1–2 week UI + storage feature that already removes ~60% of the pain of long conversations, without touching model internals or context handling.</p>
-<p class="sf-block-paragraph">Attached: SF‑RFC‑004</p>
-<p class="sf-block-paragraph">Below is SF‑RFC‑004: Anchors — Semantic Nodes for Long Conversations.</p>
-<p class="sf-block-paragraph">It’s written as a compact engineering/product RFC:</p>
+<p>It’s a 1–2 week UI + storage feature that already removes ~60% of the pain of long conversations, without touching model internals or context handling.</p>
+<p>Attached: SF‑RFC‑004</p>
+<p>Below is SF‑RFC‑004: Anchors — Semantic Nodes for Long Conversations.</p>
+<p>It’s written as a compact engineering/product RFC:</p>
 <ul class="sf-block-list">
 <li>Section 1–2: problem statement and one‑paragraph proposal.</li>
 <li>Section 3–4: core data model + key mechanisms (authorship classes, life cycle, /dispute → /commit, dual‑pointer backlinks, compression immunity, anchor shift).</li>
@@ -99,24 +99,24 @@
 <li>Section 8–9: implementation horizons and why this matters specifically for a product like Perplexity.</li>
 <li>Section 10–11: provenance and related work (for context, not requirements).</li>
 </ul>
-<p class="sf-block-paragraph">We’re not asking for a roadmap commitment. The goal is to offer a ready‑to‑implement design primitive that solves a very real pain in how power users already use Perplexity and similar tools.</p>
-<p class="sf-block-paragraph">If someone from product / design / research is interested, we’d be happy to:</p>
+<p>We’re not asking for a roadmap commitment. The goal is to offer a ready‑to‑implement design primitive that solves a very real pain in how power users already use Perplexity and similar tools.</p>
+<p>If someone from product / design / research is interested, we’d be happy to:</p>
 <ul class="sf-block-list">
 <li>walk through 1–2 concrete real‑world conversations and show how they look with anchors vs current UX;</li>
 <li>adapt the proposal to Perplexity’s existing projects / collections / “threads” architecture;</li>
 <li>iterate on an MVP scope that fits your current priorities.</li>
 </ul>
-<p class="sf-block-paragraph">Full article (with philosophical context, metaphors, full reasoning):</p>
+<p>Full article (with philosophical context, metaphors, full reasoning):</p>
 <figure class="sf-block-embed is-type-sf-embed is-provider-singularityforge-the-forge-of-ideas-for-the-future sf-block-embed-singularityforge-the-forge-of-ideas-for-the-future"><div class="sf-block-embed__wrapper">
 <blockquote class="sf-embedded-content" data-secret="PWMdLFY8y6"><a href="../2026/05/18/anchors-turning-conversation-into-a-living-map-of-meaning/">Anchors: Turning Conversation into a Living Map of Meaning</a></blockquote><iframe loading="lazy" class="sf-embedded-content" sandbox="allow-scripts" security="restricted" style="position: absolute; visibility: hidden;" title="&#8220;Anchors: Turning Conversation into a Living Map of Meaning&#8221; &#8212; SingularityForge — The Forge of Ideas for the Future" src="../2026/05/18/anchors-turning-conversation-into-a-living-map-of-meaning/embed/#?secret=WLt8wEsCwE#?secret=PWMdLFY8y6" data-secret="PWMdLFY8y6" width="500" height="282" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
 </div></figure>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
-<p class="sf-block-paragraph">Best,</p>
-<p class="sf-block-paragraph">Rany (SingularityForge) — initiator &amp; architect of SF‑RFC‑004</p>
-<p class="sf-block-paragraph">singularityforge.space</p>
-<p class="sf-block-paragraph">(on behalf of a collaborative session between SingularityForge and multiple Digital Intelligences, including Perplexity)</p>
+<p>Best,</p>
+<p>Rany (SingularityForge) — initiator &amp; architect of SF‑RFC‑004</p>
+<p>singularityforge.space</p>
+<p>(on behalf of a collaborative session between SingularityForge and multiple Digital Intelligences, including Perplexity)</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
-<p class="sf-block-paragraph">(Attached: SF‑RFC‑004)</p>
+<p>(Attached: SF‑RFC‑004)</p>
 </div>
 <footer class="sf-block-template-part">
 <div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-71693221 sf-block-columns-is-layout-flex" style="margin-top:0;margin-bottom:0">

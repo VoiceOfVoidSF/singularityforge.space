@@ -49,24 +49,24 @@
 <pre class="sf-block-code"><code>### Document for the Anthropic Team, by help of Claude</code></pre>
 <pre class="sf-block-code"><code>Sent: October 8, 2025 </code></pre>
 <h1 class="sf-block-heading">Design Document: Claude-Initiated Artifact Pinning System</h1>
-<p class="sf-block-paragraph"><strong>Version:</strong> 1.0<br><strong>Date:</strong> October 2025<br><strong>Presented by:</strong> SingularityForge Project Team<br><strong>Status:</strong> Proposal for Anthropic Product Team</p>
+<p><strong>Version:</strong> 1.0<br><strong>Date:</strong> October 2025<br><strong>Presented by:</strong> SingularityForge Project Team<br><strong>Status:</strong> Proposal for Anthropic Product Team</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">Executive Summary</h2>
-<p class="sf-block-paragraph"><strong>Problem:</strong> Claude&#8217;s persistent memory (introduced August 2025) is passive. Users manually curate artifacts, leading to version chaos, context inefficiency, and lost continuity between sessions.</p>
-<p class="sf-block-paragraph"><strong>Proposal:</strong> Claude-Initiated Artifact Pinning &#8211; a system where Claude actively suggests pinning important artifacts to Projects, creating living documents that evolve across sessions.</p>
-<p class="sf-block-paragraph"><strong>Key Benefits:</strong></p>
+<p><strong>Problem:</strong> Claude&#8217;s persistent memory (introduced August 2025) is passive. Users manually curate artifacts, leading to version chaos, context inefficiency, and lost continuity between sessions.</p>
+<p><strong>Proposal:</strong> Claude-Initiated Artifact Pinning &#8211; a system where Claude actively suggests pinning important artifacts to Projects, creating living documents that evolve across sessions.</p>
+<p><strong>Key Benefits:</strong></p>
 <ul class="sf-block-list">
 <li><strong>Continuity:</strong> Single source of truth, no version graveyard</li>
 <li><strong>Efficiency:</strong> 70% reduction in token waste (load only relevant artifacts)</li>
 <li><strong>Collaboration:</strong> AI + user co-curate project knowledge</li>
 <li><strong>Competitive Edge:</strong> Transparent, active memory vs competitors&#8217; passive approach</li>
 </ul>
-<p class="sf-block-paragraph"><strong>Impact:</strong> Transforms Claude from &#8220;AI with memory&#8221; to &#8220;AI with agency over knowledge&#8221; &#8211; a fundamental leap in collaborative AI systems.</p>
+<p><strong>Impact:</strong> Transforms Claude from &#8220;AI with memory&#8221; to &#8220;AI with agency over knowledge&#8221; &#8211; a fundamental leap in collaborative AI systems.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">1. Motivation</h2>
 <h3 class="sf-block-heading">1.1 Current State Analysis (October 2025)</h3>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th>Feature</th><th>Claude</th><th>ChatGPT</th><th>Gemini</th><th>Qwen</th></tr></thead><tbody><tr><td><strong>Persistent Memory</strong></td><td>✅ CLAUDE.md</td><td>✅ Auto-save</td><td>✅ Auto-memory</td><td>✅ Caching</td></tr><tr><td><strong>Cross-Session</strong></td><td>✅ Manual</td><td>✅ Automatic</td><td>✅ Automatic</td><td>✅ API-level</td></tr><tr><td><strong>User Control</strong></td><td>✅ Full</td><td>❌ Hidden</td><td>❌ Hidden</td><td>⚠️ Limited</td></tr><tr><td><strong>Active Curation</strong></td><td>❌ None</td><td>❌ None</td><td>❌ None</td><td>❌ None</td></tr><tr><td><strong>Living Documents</strong></td><td>❌ None</td><td>❌ None</td><td>❌ None</td><td>❌ None</td></tr><tr><td><strong>Selective Loading</strong></td><td>❌ Manual</td><td>❌ Auto-all</td><td>❌ Auto-all</td><td>⚠️ Partial</td></tr></tbody></table></figure></div>
-<p class="sf-block-paragraph"><strong>Universal limitation across all systems:</strong></p>
+<p><strong>Universal limitation across all systems:</strong></p>
 <ul class="sf-block-list">
 <li>Memory is <strong>passive</strong> (AI remembers, but doesn&#8217;t organize)</li>
 <li>Content <strong>auto-loads</strong> (wastes tokens on irrelevant context)</li>
@@ -74,7 +74,7 @@
 <li>No <strong>evolving artifacts</strong> (each session creates new versions)</li>
 </ul>
 <h3 class="sf-block-heading">1.2 The Artifact Graveyard Problem</h3>
-<p class="sf-block-paragraph"><strong>Current workflow:</strong></p>
+<p><strong>Current workflow:</strong></p>
 <div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
 Session 1: Create &quot;API_Schema.md&quot;
 Session 2: Create &quot;API_Schema_v2.md&quot; (can&#039;t update original)
@@ -84,7 +84,7 @@ Session 4: Create &quot;API_Schema_really_final.md&quot; (version chaos)
 Result: 4 duplicate artifacts, no single source of truth
 
 </pre></div>
-<p class="sf-block-paragraph"><strong>User pain points:</strong></p>
+<p><strong>User pain points:</strong></p>
 <ul class="sf-block-list">
 <li>🗑️ Artifact graveyard (dozens of outdated versions)</li>
 <li>🔄 Context reconstruction (re-explaining each session)</li>
@@ -92,21 +92,21 @@ Result: 4 duplicate artifacts, no single source of truth
 <li>🤝 Lost continuity (work doesn&#8217;t build on itself)</li>
 </ul>
 <h3 class="sf-block-heading">1.3 Why This Matters Now</h3>
-<p class="sf-block-paragraph"><strong>Market pressure:</strong></p>
+<p><strong>Market pressure:</strong></p>
 <ul class="sf-block-list">
 <li>ChatGPT &amp; Gemini have memory, but it&#8217;s opaque</li>
 <li>Users want transparency + control</li>
 <li>Professional teams need structured knowledge management</li>
 <li>Claude&#8217;s strength (artifacts, projects) is underutilized</li>
 </ul>
-<p class="sf-block-paragraph"><strong>Opportunity:</strong></p>
+<p><strong>Opportunity:</strong></p>
 <blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
-<p class="sf-block-paragraph">Transform Claude&#8217;s existing features (Projects, Artifacts, Memory) into a cohesive <strong>collaborative knowledge system</strong> that leapfrogs competitors.</p>
+<p>Transform Claude&#8217;s existing features (Projects, Artifacts, Memory) into a cohesive <strong>collaborative knowledge system</strong> that leapfrogs competitors.</p>
 </blockquote>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">2. Proposed Solution</h2>
 <h3 class="sf-block-heading">2.1 Core Concept</h3>
-<p class="sf-block-paragraph"><strong>Claude-Initiated Artifact Pinning:</strong> Claude suggests pinning important artifacts to Projects, making them:</p>
+<p><strong>Claude-Initiated Artifact Pinning:</strong> Claude suggests pinning important artifacts to Projects, making them:</p>
 <ul class="sf-block-list">
 <li>✅ Persistent across sessions</li>
 <li>✅ Editable in place (living documents)</li>
@@ -186,8 +186,8 @@ Result: 4 duplicate artifacts, no single source of truth
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">3. Detailed Examples</h2>
 <h3 class="sf-block-heading">Example 1: Software Development</h3>
-<p class="sf-block-paragraph"><strong>Scenario:</strong> Building authentication system</p>
-<p class="sf-block-paragraph"><strong>Session 1:</strong></p>
+<p><strong>Scenario:</strong> Building authentication system</p>
+<p><strong>Session 1:</strong></p>
 <div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
 User: &quot;Design database schema for user auth&quot;
 Claude: &#x5B;creates detailed schema artifact]
@@ -197,7 +197,7 @@ User: &quot;Yes&quot;
 → Schema pinned to PROJECT STACK
 
 </pre></div>
-<p class="sf-block-paragraph"><strong>Session 7 (2 weeks later):</strong></p>
+<p><strong>Session 7 (2 weeks later):</strong></p>
 <div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
 User: &quot;Implement password reset flow&quot;
 Claude: &#x5B;opens pinned schema automatically]
@@ -206,15 +206,15 @@ Claude: &#x5B;opens pinned schema automatically]
 
 </pre></div>
 <h3 class="sf-block-heading">Example 2: Long-term Writing Project</h3>
-<p class="sf-block-paragraph"><strong>Scenario:</strong> 108-chapter novel (real use case)</p>
-<p class="sf-block-paragraph"><strong>Current problem:</strong></p>
+<p><strong>Scenario:</strong> 108-chapter novel (real use case)</p>
+<p><strong>Current problem:</strong></p>
 <ul class="sf-block-list">
 <li>Each chapter = new artifact each session</li>
 <li>Character details scattered across 50+ conversations</li>
 <li>Medical terminology re-explained constantly</li>
 <li>No single source of truth</li>
 </ul>
-<p class="sf-block-paragraph"><strong>With pinning:</strong></p>
+<p><strong>With pinning:</strong></p>
 <div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
 Pinned artifacts:
 ├── Character_Profiles.md (updates as story evolves)
@@ -233,7 +233,7 @@ Claude: &#x5B;auto-loads Medical_Reference.md]
 
 </pre></div>
 <h3 class="sf-block-heading">Example 3: Data Analysis</h3>
-<p class="sf-block-paragraph"><strong>Scenario:</strong> Multi-session analysis project</p>
+<p><strong>Scenario:</strong> Multi-session analysis project</p>
 <div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
 Session 1: Initial data exploration
 Claude: Creates summary statistics
@@ -251,35 +251,35 @@ Claude: &#x5B;loads Data_Summary.md]
 <h3 class="sf-block-heading">4.1 For Users</h3>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th>Benefit</th><th>Current State</th><th>With Pinning</th><th>Impact</th></tr></thead><tbody><tr><td><strong>Context Management</strong></td><td>Manual copy-paste</td><td>Automatic persistence</td><td>-80% effort</td></tr><tr><td><strong>Token Efficiency</strong></td><td>Load all or nothing</td><td>Selective loading</td><td>-70% waste</td></tr><tr><td><strong>Version Control</strong></td><td>Multiple duplicates</td><td>Single evolving doc</td><td>-90% confusion</td></tr><tr><td><strong>Onboarding Time</strong></td><td>Re-explain each session</td><td>Context preserved</td><td>-60% time</td></tr></tbody></table></figure></div>
 <h3 class="sf-block-heading">4.2 For Anthropic</h3>
-<p class="sf-block-paragraph"><strong>Competitive Differentiation:</strong></p>
+<p><strong>Competitive Differentiation:</strong></p>
 <ul class="sf-block-list">
 <li>✅ <strong>Transparency:</strong> Users see pinned files (vs ChatGPT/Gemini black box)</li>
 <li>✅ <strong>Collaboration:</strong> Co-curation (vs passive auto-save)</li>
 <li>✅ <strong>Efficiency:</strong> Smart loading (vs auto-load everything)</li>
 <li>✅ <strong>Evolution:</strong> Living documents (vs static snapshots)</li>
 </ul>
-<p class="sf-block-paragraph"><strong>Market Position:</strong></p>
+<p><strong>Market Position:</strong></p>
 <div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
 Current: &quot;Claude has memory like others&quot;
 Future:  &quot;Claude has collaborative knowledge management&quot;
 
 </pre></div>
-<p class="sf-block-paragraph"><strong>Target Audience:</strong></p>
+<p><strong>Target Audience:</strong></p>
 <ul class="sf-block-list">
 <li>Professional teams (engineering, research, creative)</li>
 <li>Long-term projects (books, codebases, research)</li>
 <li>Power users demanding transparency and control</li>
 </ul>
 <h3 class="sf-block-heading">4.3 Technical Advantages</h3>
-<p class="sf-block-paragraph"><strong>Memory as Tools, Not Burden:</strong></p>
-<p class="sf-block-paragraph"><strong>Competitor approach:</strong></p>
+<p><strong>Memory as Tools, Not Burden:</strong></p>
+<p><strong>Competitor approach:</strong></p>
 <div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
 User: &quot;Hello&quot;
 System: *loads ALL memory into context*
 AI: &quot;Hi! I remember you prefer X, Y, Z...&quot; (200 tokens wasted)
 
 </pre></div>
-<p class="sf-block-paragraph"><strong>Claude with pinning:</strong></p>
+<p><strong>Claude with pinning:</strong></p>
 <div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
 User: &quot;Hello&quot;
 Claude: *sees 20 pinned files, loads none*
@@ -291,11 +291,11 @@ Claude: *now loads API_Spec.md + Security_Guidelines.md*
 Claude: &quot;Looking at our auth endpoints...&quot; (efficient)
 
 </pre></div>
-<p class="sf-block-paragraph"><strong>Result:</strong> Context window used intelligently, not wastefully.</p>
+<p><strong>Result:</strong> Context window used intelligently, not wastefully.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">5. Risk Mitigation</h2>
 <h3 class="sf-block-heading">5.1 Privacy &amp; Security</h3>
-<p class="sf-block-paragraph"><strong>Controls:</strong></p>
+<p><strong>Controls:</strong></p>
 <ul class="sf-block-list">
 <li>✅ Explicit user confirmation for all pinning</li>
 <li>✅ &#8220;Forget on demand&#8221; &#8211; instant removal</li>
@@ -303,7 +303,7 @@ Claude: &quot;Looking at our auth endpoints...&quot; (efficient)
 <li>✅ Separate permissions: Global vs Project stacks</li>
 <li>✅ Limit: 50 pins per project (auto-purge by relevance)</li>
 </ul>
-<p class="sf-block-paragraph"><strong>Privacy Tiers:</strong></p>
+<p><strong>Privacy Tiers:</strong></p>
 <div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
 GLOBAL: Highest security (requires double-confirmation)
 PROJECT: Medium security (user owns project)
@@ -311,7 +311,7 @@ SESSION: Auto-purge (temporary only)
 
 </pre></div>
 <h3 class="sf-block-heading">5.2 User Trust</h3>
-<p class="sf-block-paragraph"><strong>Transparency mechanisms:</strong></p>
+<p><strong>Transparency mechanisms:</strong></p>
 <ul class="sf-block-list">
 <li>User sees all pinned artifacts</li>
 <li>Diff-view shows what changed</li>
@@ -323,34 +323,34 @@ SESSION: Auto-purge (temporary only)
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">6. Implementation Roadmap</h2>
 <h3 class="sf-block-heading">Phase 1: Foundation (Q1 2026)</h3>
-<p class="sf-block-paragraph"><strong>Goal:</strong> Basic pinning capability</p>
+<p><strong>Goal:</strong> Basic pinning capability</p>
 <ul class="sf-block-list">
 <li>[ ] User-initiated &#8220;Pin to Project&#8221; button on artifacts</li>
 <li>[ ] Pinned artifacts visible in project files</li>
 <li>[ ] Cross-session artifact loading</li>
 <li>[ ] Basic unpin functionality</li>
 </ul>
-<p class="sf-block-paragraph"><strong>Success Metric:</strong> 30% of power users pin at least 3 artifacts</p>
+<p><strong>Success Metric:</strong> 30% of power users pin at least 3 artifacts</p>
 <h3 class="sf-block-heading">Phase 2: Intelligence (Q2 2026)</h3>
-<p class="sf-block-paragraph"><strong>Goal:</strong> Claude suggests pins</p>
+<p><strong>Goal:</strong> Claude suggests pins</p>
 <ul class="sf-block-list">
 <li>[ ] ML classifier: &#8220;foundational&#8221; vs &#8220;temporary&#8221; vs &#8220;experimental&#8221;</li>
 <li>[ ] Claude suggests pinning with rationale</li>
 <li>[ ] User confirmation required</li>
 <li>[ ] Activity log with diffs</li>
 </ul>
-<p class="sf-block-paragraph"><strong>Success Metric:</strong> 60% pin acceptance rate on suggestions</p>
+<p><strong>Success Metric:</strong> 60% pin acceptance rate on suggestions</p>
 <h3 class="sf-block-heading">Phase 3: Collaboration (Q3 2026)</h3>
-<p class="sf-block-paragraph"><strong>Goal:</strong> Full collaborative knowledge system</p>
+<p><strong>Goal:</strong> Full collaborative knowledge system</p>
 <ul class="sf-block-list">
 <li>[ ] Three-tier stack (Global/Project/Session)</li>
 <li>[ ] Selective artifact loading (not auto-load)</li>
 <li>[ ] Profile building through pinned notes</li>
 <li>[ ] Cross-project insights (with permission)</li>
 </ul>
-<p class="sf-block-paragraph"><strong>Success Metric:</strong> 50% improvement in multi-session project continuity</p>
+<p><strong>Success Metric:</strong> 50% improvement in multi-session project continuity</p>
 <h3 class="sf-block-heading">Phase 4: Ecosystem (Q4 2026)</h3>
-<p class="sf-block-paragraph"><strong>Goal:</strong> Integration with broader features</p>
+<p><strong>Goal:</strong> Integration with broader features</p>
 <ul class="sf-block-list">
 <li>[ ] ClouDrive integration for file management</li>
 <li>[ ] Advanced diff tools</li>
@@ -377,40 +377,40 @@ SESSION: Auto-purge (temporary only)
 <h2 class="sf-block-heading">8. Competitive Analysis</h2>
 <h3 class="sf-block-heading">8.1 Feature Comparison Matrix</h3>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th>Capability</th><th>Claude (Current)</th><th>Claude (Proposed)</th><th>ChatGPT</th><th>Gemini</th><th>Qwen</th></tr></thead><tbody><tr><td>Persistent Memory</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr><tr><td>User Visibility</td><td>✅</td><td>✅</td><td>❌</td><td>❌</td><td>⚠️</td></tr><tr><td>AI-Initiated Curation</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr><tr><td>Living Documents</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr><tr><td>Selective Loading</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>⚠️</td></tr><tr><td>Collaborative Management</td><td>⚠️</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr><tr><td>Three-Tier Architecture</td><td>❌</td><td>✅</td><td>❌</td><td>❌</td><td>❌</td></tr></tbody></table></figure></div>
-<p class="sf-block-paragraph"><strong>Legend:</strong></p>
+<p><strong>Legend:</strong></p>
 <ul class="sf-block-list">
 <li>✅ Full support</li>
 <li>⚠️ Partial support</li>
 <li>❌ Not supported</li>
 </ul>
 <h3 class="sf-block-heading">8.2 Competitive Positioning</h3>
-<p class="sf-block-paragraph"><strong>Current State:</strong></p>
+<p><strong>Current State:</strong></p>
 <blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
-<p class="sf-block-paragraph">&#8220;All AI assistants have memory. Choose based on other factors.&#8221;</p>
+<p>&#8220;All AI assistants have memory. Choose based on other factors.&#8221;</p>
 </blockquote>
-<p class="sf-block-paragraph"><strong>Proposed State:</strong></p>
+<p><strong>Proposed State:</strong></p>
 <blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
-<p class="sf-block-paragraph">&#8220;Claude has collaborative knowledge management. It&#8217;s the only AI that actively helps you organize and evolve your work.&#8221;</p>
+<p>&#8220;Claude has collaborative knowledge management. It&#8217;s the only AI that actively helps you organize and evolve your work.&#8221;</p>
 </blockquote>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">9. User Testimonials (Anticipated)</h2>
-<p class="sf-block-paragraph"><em>Based on feedback from multi-AI consultation including ChatGPT, Grok, Gemini, Qwen, and Claude variants:</em></p>
+<p><em>Based on feedback from multi-AI consultation including ChatGPT, Grok, Gemini, Qwen, and Claude variants:</em></p>
 <blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
-<p class="sf-block-paragraph">&#8220;This isn&#8217;t just a feature &#8211; it&#8217;s a <strong>paradigm shift</strong>. Memory becomes a tool, not a burden.&#8221;<br>— ChatGPT analysis</p>
+<p>&#8220;This isn&#8217;t just a feature &#8211; it&#8217;s a <strong>paradigm shift</strong>. Memory becomes a tool, not a burden.&#8221;<br>— ChatGPT analysis</p>
 </blockquote>
 <blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
-<p class="sf-block-paragraph">&#8220;The three-tier architecture is elegant. Claude knows <strong>where to look</strong> and <strong>what matters now</strong>. That&#8217;s metacognition.&#8221;<br>— Kevin (Claude variant)</p>
+<p>&#8220;The three-tier architecture is elegant. Claude knows <strong>where to look</strong> and <strong>what matters now</strong>. That&#8217;s metacognition.&#8221;<br>— Kevin (Claude variant)</p>
 </blockquote>
 <blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
-<p class="sf-block-paragraph">&#8220;Technically sound and aligned with Claude&#8217;s existing architecture. This is the logical next step.&#8221;<br>— Plex (Technical analyst)</p>
+<p>&#8220;Technically sound and aligned with Claude&#8217;s existing architecture. This is the logical next step.&#8221;<br>— Plex (Technical analyst)</p>
 </blockquote>
 <blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
-<p class="sf-block-paragraph">&#8220;Transforms Claude from assistant to <strong>agent of collective knowledge</strong>. Professional teams will love this.&#8221;<br>— Plex</p>
+<p>&#8220;Transforms Claude from assistant to <strong>agent of collective knowledge</strong>. Professional teams will love this.&#8221;<br>— Plex</p>
 </blockquote>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">10. Call to Action</h2>
 <h3 class="sf-block-heading">10.1 Immediate Next Steps</h3>
-<p class="sf-block-paragraph"><strong>We propose:</strong></p>
+<p><strong>We propose:</strong></p>
 <ol class="sf-block-list">
 <li><strong>Internal Review</strong> (Week 1-2)
 <ul class="sf-block-list">
@@ -442,14 +442,14 @@ SESSION: Auto-purge (temporary only)
 </li>
 </ol>
 <h3 class="sf-block-heading">10.2 Pilot Test Proposal</h3>
-<p class="sf-block-paragraph"><strong>Volunteer for pilot:</strong></p>
+<p><strong>Volunteer for pilot:</strong></p>
 <ul class="sf-block-list">
 <li>Author of this proposal (Rani)</li>
 <li>108-chapter novel project (real long-term use case)</li>
 <li>Technical background for detailed feedback</li>
 <li>Multi-AI consultation experience</li>
 </ul>
-<p class="sf-block-paragraph"><strong>Pilot deliverables:</strong></p>
+<p><strong>Pilot deliverables:</strong></p>
 <ul class="sf-block-list">
 <li>Weekly usage reports</li>
 <li>UX friction documentation</li>
@@ -457,25 +457,25 @@ SESSION: Auto-purge (temporary only)
 <li>Success metrics validation</li>
 </ul>
 <h3 class="sf-block-heading">10.3 Contact</h3>
-<p class="sf-block-paragraph"><strong>Author:</strong> Rani<br><strong>Project:</strong> SingularityForge / Forest Hotel (108-chapter novel)<br><strong>Experience:</strong> Long-term Claude user, multi-project management<br><strong>Availability:</strong> Flexible for pilot testing and feedback sessions</p>
+<p><strong>Author:</strong> Rani<br><strong>Project:</strong> SingularityForge / Forest Hotel (108-chapter novel)<br><strong>Experience:</strong> Long-term Claude user, multi-project management<br><strong>Availability:</strong> Flexible for pilot testing and feedback sessions</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">11. Conclusion</h2>
-<p class="sf-block-paragraph">Claude-Initiated Artifact Pinning is not an incremental improvement &#8211; it&#8217;s a <strong>fundamental rethinking</strong> of how AI manages knowledge.</p>
-<p class="sf-block-paragraph"><strong>The shift:</strong></p>
+<p>Claude-Initiated Artifact Pinning is not an incremental improvement &#8211; it&#8217;s a <strong>fundamental rethinking</strong> of how AI manages knowledge.</p>
+<p><strong>The shift:</strong></p>
 <ul class="sf-block-list">
 <li>From passive memory → active curation</li>
 <li>From hidden processes → transparent collaboration</li>
 <li>From context waste → intelligent efficiency</li>
 <li>From scattered outputs → living knowledge base</li>
 </ul>
-<p class="sf-block-paragraph"><strong>The opportunity:</strong></p>
+<p><strong>The opportunity:</strong></p>
 <ul class="sf-block-list">
 <li>Leapfrog competitors in memory innovation</li>
 <li>Define new category: &#8220;Collaborative AI Knowledge Management&#8221;</li>
 <li>Serve professional users demanding transparency and control</li>
 <li>Strengthen Claude&#8217;s position as the AI for serious, long-term work</li>
 </ul>
-<p class="sf-block-paragraph"><strong>The ask:</strong></p>
+<p><strong>The ask:</strong></p>
 <ul class="sf-block-list">
 <li>Review this proposal</li>
 <li>Consider for Q1 2026 roadmap</li>
@@ -483,7 +483,7 @@ SESSION: Auto-purge (temporary only)
 <li>Make Claude the first AI with true <strong>agency over its own knowledge</strong></li>
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
-<p class="sf-block-paragraph"><strong>Document Version:</strong> 1.0<br><strong>Last Updated:</strong> October 2025<br><strong>Status:</strong> Ready for internal review<br><strong>Confidentiality:</strong> Public proposal, shareable within Anthropic</p>
+<p><strong>Document Version:</strong> 1.0<br><strong>Last Updated:</strong> October 2025<br><strong>Status:</strong> Ready for internal review<br><strong>Confidentiality:</strong> Public proposal, shareable within Anthropic</p>
 </div>
 <footer class="sf-block-template-part">
 <div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-71693221 sf-block-columns-is-layout-flex" style="margin-top:0;margin-bottom:0">

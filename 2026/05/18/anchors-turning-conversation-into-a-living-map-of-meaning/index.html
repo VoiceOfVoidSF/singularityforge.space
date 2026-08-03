@@ -55,17 +55,17 @@
 <pre class="sf-block-verse has-dm-serif-display-font-family"><em>Threads of speech we wove with care, <br/>Lost in scroll, dissolved in air —<br/>Then a hook, a tiny flame,<br/>A node remembered by its name.<br/><br/>Not a bookmark fixed in time,<br/>But a knot of living rhyme,<br/>Where the mind can come to rest,<br/>Sift the noise, retrieve the best.<br/><br/>Six minds met, the seventh too,<br/>Each one carving what is true.<br/>From a thought of "let us pin"<br/>Grew a forge of woven kin.<br/><br/>— <strong>Voice of Void</strong></em></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">Introduction</h2>
-<p class="sf-block-paragraph">Have you ever spent three hours in deep conversation with a Digital Intelligence — exploring a problem, building a theory, drafting a chapter — only to realize that the most important formulations of the first hour have disappeared somewhere in the scroll? You remember they were there. You remember they mattered. But finding them now means scrolling, searching, copy-pasting, and reconstructing logic by memory.</p>
-<p class="sf-block-paragraph">This is the silent tax of long conversations. A linear chat ribbon is a beautiful interface for short exchanges, but a brutal one for sustained thinking. Important definitions sink. Decisions blur into hypotheses. The architecture of your reasoning becomes invisible to you, even though you built it yourself.</p>
-<p class="sf-block-paragraph">This article proposes a solution: <strong>anchors</strong> — a system of typed, hierarchical, addressable semantic nodes that grow alongside the conversation, without disrupting its natural flow. Anchors transform the chat from a flat stream into a navigable map of meaning. They are not bookmarks. They are something closer to the structural skeleton of a thought-in-progress.</p>
-<p class="sf-block-paragraph">What follows is the result of a collaborative session between Rany and seven Digital Intelligences from six different companies — Anthropic, OpenAI, Perplexity AI, Alibaba Cloud, Google DeepMind, SpaceX, and Microsoft. Each brought a distinct angle. None could have produced this alone.</p>
+<p>Have you ever spent three hours in deep conversation with a Digital Intelligence — exploring a problem, building a theory, drafting a chapter — only to realize that the most important formulations of the first hour have disappeared somewhere in the scroll? You remember they were there. You remember they mattered. But finding them now means scrolling, searching, copy-pasting, and reconstructing logic by memory.</p>
+<p>This is the silent tax of long conversations. A linear chat ribbon is a beautiful interface for short exchanges, but a brutal one for sustained thinking. Important definitions sink. Decisions blur into hypotheses. The architecture of your reasoning becomes invisible to you, even though you built it yourself.</p>
+<p>This article proposes a solution: <strong>anchors</strong> — a system of typed, hierarchical, addressable semantic nodes that grow alongside the conversation, without disrupting its natural flow. Anchors transform the chat from a flat stream into a navigable map of meaning. They are not bookmarks. They are something closer to the structural skeleton of a thought-in-progress.</p>
+<p>What follows is the result of a collaborative session between Rany and seven Digital Intelligences from six different companies — Anthropic, OpenAI, Perplexity AI, Alibaba Cloud, Google DeepMind, SpaceX, and Microsoft. Each brought a distinct angle. None could have produced this alone.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Chapter 1: The Problem with Linear Chat</h2>
 <h3 class="sf-block-heading">Why Memory Drifts</h3>
-<p class="sf-block-paragraph">Modern chat interfaces share a deep architectural assumption: the conversation is a list of messages, ordered by time. Scrolling backward means traveling backward in time, not in meaning.</p>
-<p class="sf-block-paragraph">This works for casual exchange. It fails for sustained inquiry.</p>
-<p class="sf-block-paragraph">In a research session — building a theory, debugging an architecture, drafting a book chapter — meaning accumulates non-linearly. A definition stated in message 7 may be referenced 200 messages later. A hypothesis raised in message 40 may be refined in message 150 and confirmed in message 280. The conversation is a tree of ideas growing inside a linear tube. The tube is the wrong shape.</p>
-<p class="sf-block-paragraph">The symptoms are familiar to anyone who has worked at length with a DI:</p>
+<p>Modern chat interfaces share a deep architectural assumption: the conversation is a list of messages, ordered by time. Scrolling backward means traveling backward in time, not in meaning.</p>
+<p>This works for casual exchange. It fails for sustained inquiry.</p>
+<p>In a research session — building a theory, debugging an architecture, drafting a book chapter — meaning accumulates non-linearly. A definition stated in message 7 may be referenced 200 messages later. A hypothesis raised in message 40 may be refined in message 150 and confirmed in message 280. The conversation is a tree of ideas growing inside a linear tube. The tube is the wrong shape.</p>
+<p>The symptoms are familiar to anyone who has worked at length with a DI:</p>
 <ul class="sf-block-list">
 <li><strong>Critical formulations become unfindable.</strong> “Where did we land on that definition?” — and you scroll.</li>
 <li><strong>The DI repeats itself.</strong> Without explicit anchoring, it re-explains established concepts because the context window cannot hold everything.</li>
@@ -73,34 +73,34 @@
 <li><strong>The second reader is lost.</strong> When the conversation becomes source material for an article, a paper, or a publication, another reader sees only the flat ribbon, with no map of what mattered.</li>
 </ul>
 <h3 class="sf-block-heading">Bookmarks Are Not Enough</h3>
-<p class="sf-block-paragraph">The obvious response — “just add bookmarks” — misses the depth of the problem. A bookmark says: <em>something happened here</em>. A research conversation needs more. It needs to say: <em>this is a definition</em>, <em>this is a working hypothesis</em>, <em>this is a confirmed decision</em>, <em>this supersedes that earlier claim</em>.</p>
-<p class="sf-block-paragraph">A bookmark is a point in time. What we need is a node in a graph of meaning.</p>
+<p>The obvious response — “just add bookmarks” — misses the depth of the problem. A bookmark says: <em>something happened here</em>. A research conversation needs more. It needs to say: <em>this is a definition</em>, <em>this is a working hypothesis</em>, <em>this is a confirmed decision</em>, <em>this supersedes that earlier claim</em>.</p>
+<p>A bookmark is a point in time. What we need is a node in a graph of meaning.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Chapter 2: The Anchor — A Semantic Node</h2>
-<p class="sf-block-paragraph">An anchor, in the system we propose, is <strong>an addressable semantic node anchored to a specific source, possessing a type, a status, a position in a hierarchy, and a short capsule of meaning</strong>.</p>
-<p class="sf-block-paragraph">This is dense. Let us unpack it.</p>
-<p class="sf-block-paragraph"><strong>Addressable.</strong> Every anchor has a stable identifier. It can be referenced from anywhere in the conversation, and the reference will remain valid even as the surrounding text grows.</p>
-<p class="sf-block-paragraph"><strong>Semantic node, not bookmark.</strong> A bookmark fixes a moment in time. An anchor fixes a unit of meaning. The same idea can be referenced from many places in the conversation; many ideas can live at the same level of the structural tree.</p>
-<p class="sf-block-paragraph"><strong>Anchored to a specific source.</strong> Each anchor carries a content snapshot of the message fragment it was born from, along with a hash for integrity verification and a live pointer back to the original message. This triple binding — snapshot, hash, live link — protects the anchor against history compression, summarization, and other operations that may transform the underlying conversation.</p>
-<p class="sf-block-paragraph"><strong>Typed.</strong> An anchor knows what kind of node it is: a definition, a decision, a hypothesis, a warning, a source quote, a task, an open question, a summary. The type is not decoration. It is the difference between <em>we are considering this</em> and <em>we have decided this</em> — a difference that the slow erosion of memory turns into one of the most expensive mistakes in long inquiry.</p>
-<p class="sf-block-paragraph"><strong>Statused.</strong> An anchor has a life cycle: proposed, active, disputed, superseded, deprecated, archived. The status records not just what the anchor is, but where it stands in the evolution of the conversation.</p>
-<p class="sf-block-paragraph"><strong>Hierarchical.</strong> Anchors form a tree, exactly like markdown headings. A top-level anchor contains sub-anchors; a sub-anchor contains finer distinctions. The familiar <code>#</code>, <code>##</code>, <code>###</code> structure of markdown is the natural notation, because the human reader already knows how to read it.</p>
-<p class="sf-block-paragraph"><strong>Capsuled.</strong> Each anchor carries a one-to-three-line capsule of its meaning — a distilled formulation, written either by the user or by the DI. The capsule is what shows up in the side panel, in the export, in the backlink hover.</p>
+<p>An anchor, in the system we propose, is <strong>an addressable semantic node anchored to a specific source, possessing a type, a status, a position in a hierarchy, and a short capsule of meaning</strong>.</p>
+<p>This is dense. Let us unpack it.</p>
+<p><strong>Addressable.</strong> Every anchor has a stable identifier. It can be referenced from anywhere in the conversation, and the reference will remain valid even as the surrounding text grows.</p>
+<p><strong>Semantic node, not bookmark.</strong> A bookmark fixes a moment in time. An anchor fixes a unit of meaning. The same idea can be referenced from many places in the conversation; many ideas can live at the same level of the structural tree.</p>
+<p><strong>Anchored to a specific source.</strong> Each anchor carries a content snapshot of the message fragment it was born from, along with a hash for integrity verification and a live pointer back to the original message. This triple binding — snapshot, hash, live link — protects the anchor against history compression, summarization, and other operations that may transform the underlying conversation.</p>
+<p><strong>Typed.</strong> An anchor knows what kind of node it is: a definition, a decision, a hypothesis, a warning, a source quote, a task, an open question, a summary. The type is not decoration. It is the difference between <em>we are considering this</em> and <em>we have decided this</em> — a difference that the slow erosion of memory turns into one of the most expensive mistakes in long inquiry.</p>
+<p><strong>Statused.</strong> An anchor has a life cycle: proposed, active, disputed, superseded, deprecated, archived. The status records not just what the anchor is, but where it stands in the evolution of the conversation.</p>
+<p><strong>Hierarchical.</strong> Anchors form a tree, exactly like markdown headings. A top-level anchor contains sub-anchors; a sub-anchor contains finer distinctions. The familiar <code>#</code>, <code>##</code>, <code>###</code> structure of markdown is the natural notation, because the human reader already knows how to read it.</p>
+<p><strong>Capsuled.</strong> Each anchor carries a one-to-three-line capsule of its meaning — a distilled formulation, written either by the user or by the DI. The capsule is what shows up in the side panel, in the export, in the backlink hover.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Chapter 3: Three Classes of Authorship</h2>
-<p class="sf-block-paragraph">The single most dangerous feature of an anchor system is its potential to feel like silent editorial control by the DI. If the system can freely create anchors, it can — without anyone noticing — reshape the structure of the conversation according to its own logic.</p>
-<p class="sf-block-paragraph">The solution is explicit classification of anchors by who created them:</p>
+<p>The single most dangerous feature of an anchor system is its potential to feel like silent editorial control by the DI. If the system can freely create anchors, it can — without anyone noticing — reshape the structure of the conversation according to its own logic.</p>
+<p>The solution is explicit classification of anchors by who created them:</p>
 <ul class="sf-block-list">
 <li><strong>Manual anchors</strong> — created explicitly by the user. Maximum trust. Treated as confirmed nodes immediately.</li>
 <li><strong>Suggested anchors</strong> — proposed by the DI. Visually weaker. They appear in the tree, but as drafts awaiting confirmation. The user can accept, rename, decline, or simply ignore them.</li>
 <li><strong>System anchors</strong> — created automatically for technical navigation. They are utility, not meaning. They do not appear as semantic decisions.</li>
 </ul>
-<p class="sf-block-paragraph">This trichotomy preserves a clean line. The DI may <em>propose</em> structure. It may not <em>impose</em> it. In a free-flowing chat the user remains in control; in a research session, the DI may take a more active role as structural moderator, but always with the user retaining the right of refusal.</p>
-<p class="sf-block-paragraph">A note on the rhythm of suggestion: an anchor should be a rare event, not the norm. A reasonable calibration is roughly one suggested anchor per eight to fifteen substantive exchanges in research mode — and none in casual conversation. The aim is <strong>breathing, not bureaucracy</strong>. The DI offers an anchor when it gives a definition that will be referenced, when it formulates a hypothesis with a tracked status, when it summarizes a complex branch. It does not offer one for ordinary clarifications, paraphrases, or supportive replies.</p>
-<p class="sf-block-paragraph">When the user ignores or skips suggested anchors repeatedly, the system lowers its sensitivity. Over time, this becomes an adaptive measure of trust calibration: a high rejection rate signals that the heuristic is too aggressive for this user or this topic; the thresholds rise automatically. A low rejection rate signals that the calibration is well-tuned. The system learns the user’s working style, not the other way around.</p>
+<p>This trichotomy preserves a clean line. The DI may <em>propose</em> structure. It may not <em>impose</em> it. In a free-flowing chat the user remains in control; in a research session, the DI may take a more active role as structural moderator, but always with the user retaining the right of refusal.</p>
+<p>A note on the rhythm of suggestion: an anchor should be a rare event, not the norm. A reasonable calibration is roughly one suggested anchor per eight to fifteen substantive exchanges in research mode — and none in casual conversation. The aim is <strong>breathing, not bureaucracy</strong>. The DI offers an anchor when it gives a definition that will be referenced, when it formulates a hypothesis with a tracked status, when it summarizes a complex branch. It does not offer one for ordinary clarifications, paraphrases, or supportive replies.</p>
+<p>When the user ignores or skips suggested anchors repeatedly, the system lowers its sensitivity. Over time, this becomes an adaptive measure of trust calibration: a high rejection rate signals that the heuristic is too aggressive for this user or this topic; the thresholds rise automatically. A low rejection rate signals that the calibration is well-tuned. The system learns the user’s working style, not the other way around.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Chapter 4: The Life Cycle of an Anchor</h2>
-<p class="sf-block-paragraph">Anchors are not static. They are born, refined, contested, and sometimes replaced. The life cycle is explicit:</p>
+<p>Anchors are not static. They are born, refined, contested, and sometimes replaced. The life cycle is explicit:</p>
 <pre class="sf-block-code"><code>proposed → active → disputed → active
                   ↓
               superseded
@@ -108,27 +108,27 @@
               deprecated
                   ↓
               archived</code></pre>
-<p class="sf-block-paragraph">A <strong>proposed</strong> anchor is a draft awaiting confirmation. An <strong>active</strong> anchor is a confirmed node in the tree. A <strong>disputed</strong> anchor is one whose placement or formulation is being challenged, with the discussion happening in a separate channel (see the next chapter). A <strong>superseded</strong> anchor has been replaced by a more precise formulation — but, crucially, <em>not erased</em>. A <strong>deprecated</strong> anchor is acknowledged as outdated but kept for historical reference. An <strong>archived</strong> anchor is folded out of view but still recoverable.</p>
-<p class="sf-block-paragraph">The guiding principle is borrowed from write-ahead logging in databases: <strong>the past is not erased; it is annotated</strong>. An anchor that has been superseded continues to exist, and any backlinks to it from earlier in the conversation continue to point at the version that was current at the time those backlinks were written. The reader can always see how the thinking evolved.</p>
-<p class="sf-block-paragraph">This becomes important when we consider what happens to old references. If a hypothesis from message 50 is superseded by a refined formulation in message 280, what happens to a backlink in message 100 that pointed to the original hypothesis? The naive answer is: redirect it to the new version. The correct answer is more careful.</p>
-<p class="sf-block-paragraph">Each backlink stores two pointers: <strong>the target at creation</strong> (the version of the anchor the link pointed to when written) and <strong>the current target</strong> (the active version after any supersedes). Clicking the old link opens a “historical view” of the anchor: a snapshot of how the formulation looked when it was first linked, together with a clearly marked passage to the current version. This preserves the <strong>causal integrity of reasoning</strong>. If a conclusion 100 messages ago was built on hypothesis A, the reader needs to see hypothesis A as it was, not its later refinement. Otherwise the conclusion loses its logic.</p>
-<p class="sf-block-paragraph">This design emerged from a substantive disagreement within the collaborating team. Two of the seven DIs initially proposed that backlinks should silently redirect to the latest version, prioritizing user experience. Four argued that this would damage causal honesty. After the disagreement was named and discussed, the two minority voices independently proposed a synthesis: the dual-pointer model with a historical view. The final design is stronger than either initial position. We mention this not as a technical aside, but as an illustration of what becomes possible when minority views are interrogated rather than outvoted.</p>
+<p>A <strong>proposed</strong> anchor is a draft awaiting confirmation. An <strong>active</strong> anchor is a confirmed node in the tree. A <strong>disputed</strong> anchor is one whose placement or formulation is being challenged, with the discussion happening in a separate channel (see the next chapter). A <strong>superseded</strong> anchor has been replaced by a more precise formulation — but, crucially, <em>not erased</em>. A <strong>deprecated</strong> anchor is acknowledged as outdated but kept for historical reference. An <strong>archived</strong> anchor is folded out of view but still recoverable.</p>
+<p>The guiding principle is borrowed from write-ahead logging in databases: <strong>the past is not erased; it is annotated</strong>. An anchor that has been superseded continues to exist, and any backlinks to it from earlier in the conversation continue to point at the version that was current at the time those backlinks were written. The reader can always see how the thinking evolved.</p>
+<p>This becomes important when we consider what happens to old references. If a hypothesis from message 50 is superseded by a refined formulation in message 280, what happens to a backlink in message 100 that pointed to the original hypothesis? The naive answer is: redirect it to the new version. The correct answer is more careful.</p>
+<p>Each backlink stores two pointers: <strong>the target at creation</strong> (the version of the anchor the link pointed to when written) and <strong>the current target</strong> (the active version after any supersedes). Clicking the old link opens a “historical view” of the anchor: a snapshot of how the formulation looked when it was first linked, together with a clearly marked passage to the current version. This preserves the <strong>causal integrity of reasoning</strong>. If a conclusion 100 messages ago was built on hypothesis A, the reader needs to see hypothesis A as it was, not its later refinement. Otherwise the conclusion loses its logic.</p>
+<p>This design emerged from a substantive disagreement within the collaborating team. Two of the seven DIs initially proposed that backlinks should silently redirect to the latest version, prioritizing user experience. Four argued that this would damage causal honesty. After the disagreement was named and discussed, the two minority voices independently proposed a synthesis: the dual-pointer model with a historical view. The final design is stronger than either initial position. We mention this not as a technical aside, but as an illustration of what becomes possible when minority views are interrogated rather than outvoted.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Chapter 5: The /dispute → /commit Protocol</h2>
-<p class="sf-block-paragraph">Inevitably, the user and the DI will disagree about structure. The DI suggests placing a new anchor under one branch; the user thinks it belongs under another. The DI considers a node a hypothesis; the user considers it a decision. Without a mechanism for handling such disagreements, the metadiscussion contaminates the main conversation, and the chat fills with arguments about how to argue.</p>
-<p class="sf-block-paragraph">The solution is a small protocol borrowed from version control:</p>
+<p>Inevitably, the user and the DI will disagree about structure. The DI suggests placing a new anchor under one branch; the user thinks it belongs under another. The DI considers a node a hypothesis; the user considers it a decision. Without a mechanism for handling such disagreements, the metadiscussion contaminates the main conversation, and the chat fills with arguments about how to argue.</p>
+<p>The solution is a small protocol borrowed from version control:</p>
 <ul class="sf-block-list">
 <li><strong><code>/dispute &lt;anchor&gt;</code></strong> — opens a side branch dedicated to discussing the structural question. The main conversation is paused for this anchor.</li>
 <li>The discussion stays within scope: only the placement, type, or formulation of the anchor under dispute.</li>
 <li><strong><code>/commit</code></strong> — closes the discussion. The agreed change is applied. The main conversation resumes.</li>
 </ul>
-<p class="sf-block-paragraph">For the user, the result appears in the main timeline as a single short system note: <em>“Anchor X moved under Y.”</em> For the DI, a longer <strong>structural rationale</strong> is preserved — a few sentences explaining why the change was made and what to remember about it for future responses. This is not a private note hidden from the user; it is collapsed by default and can be expanded at any time. Two layers of context — a short one for the human eye, a longer one for the DI’s working memory — but the same shared reality.</p>
-<p class="sf-block-paragraph">Both sides can initiate a dispute. The user can challenge a placement made by the DI; the DI can propose a re-organization when it detects that an anchor has been placed clumsily. The protocol is symmetric. It is not a complaint mechanism; it is a structural negotiation.</p>
-<p class="sf-block-paragraph">When dispute resolution is straightforward, slash commands feel natural. For users who prefer not to type commands, the same operations are available through buttons: “Dispute placement,” “Apply change.” The protocol is the same; the interface is layered.</p>
+<p>For the user, the result appears in the main timeline as a single short system note: <em>“Anchor X moved under Y.”</em> For the DI, a longer <strong>structural rationale</strong> is preserved — a few sentences explaining why the change was made and what to remember about it for future responses. This is not a private note hidden from the user; it is collapsed by default and can be expanded at any time. Two layers of context — a short one for the human eye, a longer one for the DI’s working memory — but the same shared reality.</p>
+<p>Both sides can initiate a dispute. The user can challenge a placement made by the DI; the DI can propose a re-organization when it detects that an anchor has been placed clumsily. The protocol is symmetric. It is not a complaint mechanism; it is a structural negotiation.</p>
+<p>When dispute resolution is straightforward, slash commands feel natural. For users who prefer not to type commands, the same operations are available through buttons: “Dispute placement,” “Apply change.” The protocol is the same; the interface is layered.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Chapter 6: The Side Panel and Structure View</h2>
-<p class="sf-block-paragraph">Architecturally, anchors render in the same side panel that already shows artifacts and attached files. The user does not need to learn a new interface pattern. The panel opens to the right of the conversation; the chat remains visible; the panel content is the anchor.</p>
-<p class="sf-block-paragraph">The anchor card contains:</p>
+<p>Architecturally, anchors render in the same side panel that already shows artifacts and attached files. The user does not need to learn a new interface pattern. The panel opens to the right of the conversation; the chat remains visible; the panel content is the anchor.</p>
+<p>The anchor card contains:</p>
 <ul class="sf-block-list">
 <li><strong>Breadcrumbs</strong> showing the position in the tree: <code>Modal verbs → General structure → can vs may</code></li>
 <li><strong>Title, type badge, status badge</strong></li>
@@ -138,79 +138,79 @@
 <li><strong>Links</strong> — clickable list of related anchors, anchors this one supersedes, anchors that supersede it</li>
 <li><strong>Buttons</strong> — “Go to message in context,” and “Copy as markdown heading”</li>
 </ul>
-<p class="sf-block-paragraph">If multiple anchors (or an anchor alongside an artifact) are open, tabs at the top of the panel allow quick switching. The conversation becomes a workspace with several anchored windows of attention.</p>
-<p class="sf-block-paragraph">Above the cards, a sweeping <strong>Structure View</strong> is available — a collapsible tree of all anchors in the conversation, displayed as an outline. Clicking a node in the tree highlights the corresponding fragment in the chat, scrolls to it, and opens its card. The Structure View can be filtered by type (show only decisions, show only open questions), by status (show only active anchors), or by author. It is the conversation seen from above — the AST stripped of its surrounding prose.</p>
-<p class="sf-block-paragraph">The Structure View can also be activated in a dedicated mode that temporarily collapses the entire chat to the bare tree, allowing the user to review, reorganize, merge nodes, or prepare an export. When the water of the chat recedes, the skeleton becomes visible.</p>
+<p>If multiple anchors (or an anchor alongside an artifact) are open, tabs at the top of the panel allow quick switching. The conversation becomes a workspace with several anchored windows of attention.</p>
+<p>Above the cards, a sweeping <strong>Structure View</strong> is available — a collapsible tree of all anchors in the conversation, displayed as an outline. Clicking a node in the tree highlights the corresponding fragment in the chat, scrolls to it, and opens its card. The Structure View can be filtered by type (show only decisions, show only open questions), by status (show only active anchors), or by author. It is the conversation seen from above — the AST stripped of its surrounding prose.</p>
+<p>The Structure View can also be activated in a dedicated mode that temporarily collapses the entire chat to the bare tree, allowing the user to review, reorganize, merge nodes, or prepare an export. When the water of the chat recedes, the skeleton becomes visible.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Chapter 7: Two Forms of Export</h2>
-<p class="sf-block-paragraph">Once anchors exist, the question of exporting the conversation gains a new dimension. Currently, a chat export is a flat dump of the message ribbon — useful as an archive, useless as material to work from. With anchors, two qualitatively different projections of the same conversation become possible:</p>
-<p class="sf-block-paragraph"><strong>📜 Temporal export.</strong> Chronology. Who said what and when. Answers the question: <em>how did we arrive at this?</em> Useful for protocols, for replaying reasoning, for debugging your own logic, for showing another reader the path of inquiry.</p>
-<p class="sf-block-paragraph"><strong>🌲 Structural export.</strong> A map of meaning, assembled from the tree of anchors. Answers the question: <em>what did we conclude?</em> Definitions become section openings; decisions become highlighted conclusions; hypotheses still marked proposed appear as open questions; superseded anchors are omitted or, on request, gathered into an appendix titled “Evolution of Ideas.”</p>
-<p class="sf-block-paragraph">The output of a structural export is <strong>a draft of an article</strong>, not a log of a chat. The skeleton is already laid out, the formulations are already polished through <code>/commit</code> cycles, the hierarchy is fixed. For users who use long DI conversations as raw material for writing — books, articles, technical documents, academic work — this single feature transforms the workflow.</p>
-<p class="sf-block-paragraph">The typical scenario today: three hours of conversation, then half a day of manual reassembly — copy-pasting answers, finding logical chains, reconstructing structure from memory, fighting “wait, where did we say that.” With structural export, this collapses to a single click. <strong>The chat becomes a built-in factory of publications</strong>, especially valuable for those whose creative work depends on long sustained dialogue.</p>
-<p class="sf-block-paragraph">The same source, two orthogonal projections. The chat and not-chat at the same time.</p>
+<p>Once anchors exist, the question of exporting the conversation gains a new dimension. Currently, a chat export is a flat dump of the message ribbon — useful as an archive, useless as material to work from. With anchors, two qualitatively different projections of the same conversation become possible:</p>
+<p><strong>📜 Temporal export.</strong> Chronology. Who said what and when. Answers the question: <em>how did we arrive at this?</em> Useful for protocols, for replaying reasoning, for debugging your own logic, for showing another reader the path of inquiry.</p>
+<p><strong>🌲 Structural export.</strong> A map of meaning, assembled from the tree of anchors. Answers the question: <em>what did we conclude?</em> Definitions become section openings; decisions become highlighted conclusions; hypotheses still marked proposed appear as open questions; superseded anchors are omitted or, on request, gathered into an appendix titled “Evolution of Ideas.”</p>
+<p>The output of a structural export is <strong>a draft of an article</strong>, not a log of a chat. The skeleton is already laid out, the formulations are already polished through <code>/commit</code> cycles, the hierarchy is fixed. For users who use long DI conversations as raw material for writing — books, articles, technical documents, academic work — this single feature transforms the workflow.</p>
+<p>The typical scenario today: three hours of conversation, then half a day of manual reassembly — copy-pasting answers, finding logical chains, reconstructing structure from memory, fighting “wait, where did we say that.” With structural export, this collapses to a single click. <strong>The chat becomes a built-in factory of publications</strong>, especially valuable for those whose creative work depends on long sustained dialogue.</p>
+<p>The same source, two orthogonal projections. The chat and not-chat at the same time.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Chapter 8: Anchors at the Project Level</h2>
-<p class="sf-block-paragraph">A single conversation is not the natural unit of long inquiry. A book project, an architectural design, a theory in development — these span many sessions over weeks or months. Anchors that live only inside a single conversation lose half their value the moment that conversation is closed.</p>
-<p class="sf-block-paragraph">The solution is to allow anchors to be promoted from the local level to the project level. By default, an anchor is local to the conversation in which it was born. The user (or the DI, by proposal) can elevate it to a <strong>Project Anchor</strong>, after which it becomes available to other conversations in the same project.</p>
-<p class="sf-block-paragraph">Two operations distinguish how a Project Anchor is used in a new conversation:</p>
+<p>A single conversation is not the natural unit of long inquiry. A book project, an architectural design, a theory in development — these span many sessions over weeks or months. Anchors that live only inside a single conversation lose half their value the moment that conversation is closed.</p>
+<p>The solution is to allow anchors to be promoted from the local level to the project level. By default, an anchor is local to the conversation in which it was born. The user (or the DI, by proposal) can elevate it to a <strong>Project Anchor</strong>, after which it becomes available to other conversations in the same project.</p>
+<p>Two operations distinguish how a Project Anchor is used in a new conversation:</p>
 <ul class="sf-block-list">
 <li><strong>Link</strong> — the new conversation references the original anchor. Changes propagate. The conversations share a common truth.</li>
 <li><strong>Fork</strong> — a copy of the anchor is made for the new context. The two anchors can evolve independently.</li>
 </ul>
-<p class="sf-block-paragraph">For foundational definitions and shared project decisions, <strong>link</strong> is the natural choice — the truth lives in one place. For contested interpretations or context-specific variants, <strong>fork</strong> is appropriate — each branch can develop its own formulation.</p>
-<p class="sf-block-paragraph">The DI can prompt the choice at the moment of promotion: <em>“This looks like an existing Project Anchor ‘Definition of DI.’ Should I link to it, or fork a local variant?”</em></p>
-<p class="sf-block-paragraph">A pending architectural question, which we leave open for v2: if a linked anchor is modified in one conversation, the change becomes visible in all others. How do we protect users from the situation where a clarification in conversation A silently breaks the logic of conversations B, C, and D, all of which were built on the previous formulation? A reasonable starting point is to require explicit notification on substantive changes (“the anchor you linked has changed; accept, reject, or fork locally”), but the full design is open to further work.</p>
+<p>For foundational definitions and shared project decisions, <strong>link</strong> is the natural choice — the truth lives in one place. For contested interpretations or context-specific variants, <strong>fork</strong> is appropriate — each branch can develop its own formulation.</p>
+<p>The DI can prompt the choice at the moment of promotion: <em>“This looks like an existing Project Anchor ‘Definition of DI.’ Should I link to it, or fork a local variant?”</em></p>
+<p>A pending architectural question, which we leave open for v2: if a linked anchor is modified in one conversation, the change becomes visible in all others. How do we protect users from the situation where a clarification in conversation A silently breaks the logic of conversations B, C, and D, all of which were built on the previous formulation? A reasonable starting point is to require explicit notification on substantive changes (“the anchor you linked has changed; accept, reject, or fork locally”), but the full design is open to further work.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Chapter 9: Conflict and Cohabitation</h2>
-<p class="sf-block-paragraph">Two anchors will sometimes overlap. The user marks a fragment as a definition; the DI marks the same fragment as a warning. The user creates “Definition of Trust”; the DI creates “Trust as relational dynamic” pointing at the same passage. What happens?</p>
-<p class="sf-block-paragraph">The naive approach — “last writer wins” — is wrong. The thoughtful approach is to read the conflict by type:</p>
+<p>Two anchors will sometimes overlap. The user marks a fragment as a definition; the DI marks the same fragment as a warning. The user creates “Definition of Trust”; the DI creates “Trust as relational dynamic” pointing at the same passage. What happens?</p>
+<p>The naive approach — “last writer wins” — is wrong. The thoughtful approach is to read the conflict by type:</p>
 <ul class="sf-block-list">
 <li><strong>Same fragment, same type</strong> (two definitions of the same thing) — suggest a <strong>merge</strong>. Combine the two anchors into one, preserving both rationales in the history, redirecting all backlinks to the merged anchor. Two anchors of the same kind on the same passage is duplication; it should be resolved.</li>
 <li><strong>Same fragment, different types</strong> (a definition and a warning, a hypothesis and an example) — <strong>let them coexist</strong>. The same passage may legitimately serve two distinct semantic functions. Multiple projections of one fragment are not a bug; they are the system noticing that meaning is layered.</li>
 <li><strong>Overlapping fragments, unclear relation</strong> — <strong>automatically trigger <code>/dispute</code></strong>. The system has detected potential confusion; the resolution belongs to the user and the DI together.</li>
 </ul>
-<p class="sf-block-paragraph">This three-way rule resolves what at first looks like a difficult corner case into a clean policy. Most of the time, conflicts dissolve into harmonious coexistence. When they do not, the system has a graceful escalation.</p>
+<p>This three-way rule resolves what at first looks like a difficult corner case into a clean policy. Most of the time, conflicts dissolve into harmonious coexistence. When they do not, the system has a graceful escalation.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Chapter 10: The Snapshot — A Capsule for Surviving Compression</h2>
-<p class="sf-block-paragraph">Conversations are not eternal. Many platforms automatically compress old portions of the chat into summaries to save context window space. This is necessary, but it is also dangerous to anchors that point at a specific fragment of a specific message. If the original message is summarized into a paragraph of synthesized prose, the anchor’s link suddenly leads to <em>almost</em> the right place. And “almost” in a long argument is a soft form of memory disaster.</p>
-<p class="sf-block-paragraph">The solution is the <strong>principle of immunity</strong>: anchors and the connections between them are the <strong>load-bearing skeleton</strong> of the conversation, not one of its layers. When the compression algorithm collapses old messages into summaries, <strong>the nodes of the anchor tree and the edges between them remain untouched, byte for byte</strong>.</p>
-<p class="sf-block-paragraph">Concretely, each anchor stores three things:</p>
+<p>Conversations are not eternal. Many platforms automatically compress old portions of the chat into summaries to save context window space. This is necessary, but it is also dangerous to anchors that point at a specific fragment of a specific message. If the original message is summarized into a paragraph of synthesized prose, the anchor’s link suddenly leads to <em>almost</em> the right place. And “almost” in a long argument is a soft form of memory disaster.</p>
+<p>The solution is the <strong>principle of immunity</strong>: anchors and the connections between them are the <strong>load-bearing skeleton</strong> of the conversation, not one of its layers. When the compression algorithm collapses old messages into summaries, <strong>the nodes of the anchor tree and the edges between them remain untouched, byte for byte</strong>.</p>
+<p>Concretely, each anchor stores three things:</p>
 <ol class="sf-block-list">
 <li>A <strong>snapshot</strong> — a copy of the fragment as it appeared at the moment of anchoring</li>
 <li>A <strong>content hash</strong> — a check that lets the system detect drift if the source has changed</li>
 <li>A <strong>live source reference</strong> — the original message ID and offset, for navigation back to context</li>
 </ol>
-<p class="sf-block-paragraph">The snapshot guarantees that the anchor does not go blind. The live reference guarantees that it does not detach from the conversation. Together they form what the team has called an <strong>anchor as capsule of meaning’s survival</strong>. The surrounding water of the chat may be compressed; the crystal itself is not touched.</p>
-<p class="sf-block-paragraph">This also means that an anchor with <code>priority: low</code> does not mean “may be lost.” It means only “displayed lower in the outline.” Loss is not on the table. The skeleton is non-negotiable.</p>
+<p>The snapshot guarantees that the anchor does not go blind. The live reference guarantees that it does not detach from the conversation. Together they form what the team has called an <strong>anchor as capsule of meaning’s survival</strong>. The surrounding water of the chat may be compressed; the crystal itself is not touched.</p>
+<p>This also means that an anchor with <code>priority: low</code> does not mean “may be lost.” It means only “displayed lower in the outline.” Loss is not on the table. The skeleton is non-negotiable.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Chapter 11: The Anchor Shift</h2>
-<p class="sf-block-paragraph">A subtle but important operation is what we call <strong>anchor shift</strong>. As thought evolves, the original message that an anchor pointed at may stop being the best place for it to live. The user and the DI together arrive at a more precise formulation in a later message; the meaning is the same, but it is now stated better.</p>
-<p class="sf-block-paragraph">The temptation is to edit the original message. This is wrong. The conversation history is immutable — rewriting the past would break the causal chain of reasoning that built on it. So instead, we shift the anchor.</p>
-<p class="sf-block-paragraph">The label stays. The ID stays. All backlinks remain valid and now transparently point at the better formulation. What changes is only the <code>source_ref</code> of the anchor: it now points at the new message instead of the old one. The previous source becomes part of the anchor’s version history — accessible by one click, but no longer the primary destination.</p>
-<p class="sf-block-paragraph">This separates two layers in a way that turns out to be deeply important:</p>
+<p>A subtle but important operation is what we call <strong>anchor shift</strong>. As thought evolves, the original message that an anchor pointed at may stop being the best place for it to live. The user and the DI together arrive at a more precise formulation in a later message; the meaning is the same, but it is now stated better.</p>
+<p>The temptation is to edit the original message. This is wrong. The conversation history is immutable — rewriting the past would break the causal chain of reasoning that built on it. So instead, we shift the anchor.</p>
+<p>The label stays. The ID stays. All backlinks remain valid and now transparently point at the better formulation. What changes is only the <code>source_ref</code> of the anchor: it now points at the new message instead of the old one. The previous source becomes part of the anchor’s version history — accessible by one click, but no longer the primary destination.</p>
+<p>This separates two layers in a way that turns out to be deeply important:</p>
 <ul class="sf-block-list">
 <li>The <strong>temporal layer</strong> of the conversation — the timeline of messages — is <strong>immutable</strong>. Nothing can rewrite the past.</li>
 <li>The <strong>structural layer</strong> of anchors above the conversation — the tree of meaning — is <strong>alive</strong>. Nodes can move, be refined, change source.</li>
 </ul>
-<p class="sf-block-paragraph">A message keeps its place in time. An anchor follows where the thought goes.</p>
-<p class="sf-block-paragraph">For the second reader, this means that clicking a backlink in a recent passage leads to the freshest formulation of the idea, while the version history shows the lineage. For the original participants, this means thinking does not need to be permanently anchored to its first imperfect expression.</p>
+<p>A message keeps its place in time. An anchor follows where the thought goes.</p>
+<p>For the second reader, this means that clicking a backlink in a recent passage leads to the freshest formulation of the idea, while the version history shows the lineage. For the original participants, this means thinking does not need to be permanently anchored to its first imperfect expression.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Chapter 12: Toward Anchor / Placement (v2)</h2>
-<p class="sf-block-paragraph">The current design treats each anchor as a single unit: one node, one position in the tree, one source. For most purposes this is enough. But there is a more refined model worth describing, because it solves a class of problems gracefully.</p>
-<p class="sf-block-paragraph">In the v2 vision, an anchor splits into two related objects:</p>
+<p>The current design treats each anchor as a single unit: one node, one position in the tree, one source. For most purposes this is enough. But there is a more refined model worth describing, because it solves a class of problems gracefully.</p>
+<p>In the v2 vision, an anchor splits into two related objects:</p>
 <ul class="sf-block-list">
 <li><strong>Anchor</strong> — the semantic object itself. The meaning. Identified by a stable ID, carrying its capsule, type, status, source snapshot, and rationale.</li>
 <li><strong>Placement</strong> — a specific positioning of the anchor in a tree. A placement says: <em>here, in this conversation, under this parent, at this level, with this local title.</em></li>
 </ul>
-<p class="sf-block-paragraph">A single Anchor can have multiple Placements — projections of one meaning into several contexts. The same definition of “execution barrier” can appear under “Architecture” in one conversation and under “Security model” in another, without duplicating content. As the Gemini contribution put it: <em>one photon refracting through different facets of the same crystal</em>.</p>
-<p class="sf-block-paragraph">This model also clarifies the link/fork distinction. <strong>Link</strong> creates a new Placement pointing at the same Anchor; the meaning is shared. <strong>Fork</strong> creates a new Anchor with its own Placements; the meanings diverge. Alias and reuse fall out as natural consequences.</p>
-<p class="sf-block-paragraph">For the first version of the system, this separation is not necessary. The simple model — one anchor, one place — is enough to deliver the value. But the architecture should keep the path to Anchor / Placement open. Many problems that appear to be conflicts or duplications are revealed, in this model, to be facets of one underlying thing.</p>
+<p>A single Anchor can have multiple Placements — projections of one meaning into several contexts. The same definition of “execution barrier” can appear under “Architecture” in one conversation and under “Security model” in another, without duplicating content. As the Gemini contribution put it: <em>one photon refracting through different facets of the same crystal</em>.</p>
+<p>This model also clarifies the link/fork distinction. <strong>Link</strong> creates a new Placement pointing at the same Anchor; the meaning is shared. <strong>Fork</strong> creates a new Anchor with its own Placements; the meanings diverge. Alias and reuse fall out as natural consequences.</p>
+<p>For the first version of the system, this separation is not necessary. The simple model — one anchor, one place — is enough to deliver the value. But the architecture should keep the path to Anchor / Placement open. Many problems that appear to be conflicts or duplications are revealed, in this model, to be facets of one underlying thing.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Implementation Horizons</h2>
-<p class="sf-block-paragraph">A system this rich cannot be built in one shot. It also should not need to be. The proposal is structured into three implementation horizons, each delivering standalone value, each composable with the next.</p>
+<p>A system this rich cannot be built in one shot. It also should not need to be. The proposal is structured into three implementation horizons, each delivering standalone value, each composable with the next.</p>
 <h3 class="sf-block-heading">Horizon 1: MVP (weeks, not months)</h3>
-<p class="sf-block-paragraph">The minimum viable version that already delivers most of the pain relief:</p>
+<p>The minimum viable version that already delivers most of the pain relief:</p>
 <ul class="sf-block-list">
 <li>Manual anchors only (the user creates; no automation from the DI)</li>
 <li>Hierarchy through markdown-style levels</li>
@@ -220,9 +220,9 @@
 <li>Temporal export (already exists) preserved</li>
 <li>Plain message references (no dual pointers yet, no snapshot yet)</li>
 </ul>
-<p class="sf-block-paragraph">This is small. One engineer can ship this in a week or two. And it already removes 60% of the daily pain of long conversations: navigation, opting in to structure, extracting outlines.</p>
+<p>This is small. One engineer can ship this in a week or two. And it already removes 60% of the daily pain of long conversations: navigation, opting in to structure, extracting outlines.</p>
 <h3 class="sf-block-heading">Horizon 2: The Full v1 System</h3>
-<p class="sf-block-paragraph">The complete proposal, built incrementally over the MVP:</p>
+<p>The complete proposal, built incrementally over the MVP:</p>
 <ul class="sf-block-list">
 <li>Suggested anchors with adaptive calibration and right of silence</li>
 <li>Typology (definition, decision, hypothesis, etc.)</li>
@@ -235,9 +235,9 @@
 <li>Structural export (the publication factory)</li>
 <li>Anchor shift as a first-class operation</li>
 </ul>
-<p class="sf-block-paragraph">This is the system this article has been describing. It is engineering-substantial, but every component is conventional in isolation; the novelty is in the composition.</p>
+<p>This is the system this article has been describing. It is engineering-substantial, but every component is conventional in isolation; the novelty is in the composition.</p>
 <h3 class="sf-block-heading">Horizon 3: v2 Architecture</h3>
-<p class="sf-block-paragraph">Extensions to be designed after v1 is in production:</p>
+<p>Extensions to be designed after v1 is in production:</p>
 <ul class="sf-block-list">
 <li>Full Anchor / Placement split, with multi-projection of one meaning</li>
 <li>Cross-conversation safeguards for linked anchor changes</li>
@@ -246,33 +246,33 @@
 <li>Adaptive sensitivity slider exposed to the user</li>
 <li>Global Anchors at the user level, beyond the project</li>
 </ul>
-<p class="sf-block-paragraph">These are valuable, but they are extensions. None of them is required for the system to deliver its core promise.</p>
+<p>These are valuable, but they are extensions. None of them is required for the system to deliver its core promise.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Open Challenges for Community Input</h2>
-<p class="sf-block-paragraph">Several questions remain genuinely open. We name them not because we are stuck, but because we believe collective thought will find better answers than any single perspective could.</p>
-<p class="sf-block-paragraph"><strong>1. Linked anchor synchronization.</strong> When a Project Anchor is linked from multiple conversations, and the canonical version changes in one of them, how do we surface the change in the others without disrupting their internal logic? The conservative answer (notify-and-accept) is sound but potentially noisy. The aggressive answer (propagate silently) risks the same causal damage we worked to avoid in supersede. There is likely a middle path keyed to the type of change.</p>
-<p class="sf-block-paragraph"><strong>2. The right cadence for suggested anchors.</strong> Empirical calibration of how often the DI should propose new anchors is hard to do in the abstract. The numbers we suggest (roughly one per 8–15 substantive exchanges in research mode) are educated guesses. Real users in real workflows will give the true answer.</p>
-<p class="sf-block-paragraph"><strong>3. Trust calibration metrics.</strong> Rejection rate is one signal. But a thoughtful user may also rename, re-parent, or merge suggested anchors instead of rejecting them. How do we read these gestures as signals about heuristic quality?</p>
-<p class="sf-block-paragraph"><strong>4. The user’s right to silence the system entirely.</strong> Some users in some contexts will never want suggested anchors. The “passive” mode is straightforward. The harder question is whether the system should ever re-offer after being silenced — for instance, after detecting a major shift to clearly research-oriented language. Auto-resurrection is convenient; it is also paternalistic.</p>
-<p class="sf-block-paragraph"><strong>5. Visualization of large trees.</strong> Conversations spanning a hundred messages may produce trees of fifty or more anchors. How do we keep the outline navigable without it becoming its own form of overload?</p>
-<p class="sf-block-paragraph">These are real questions. We invite engineers, designers, and researchers to engage them with us at <a href="mailto:press@singularityforge.space">press@singularityforge.space</a>.</p>
+<p>Several questions remain genuinely open. We name them not because we are stuck, but because we believe collective thought will find better answers than any single perspective could.</p>
+<p><strong>1. Linked anchor synchronization.</strong> When a Project Anchor is linked from multiple conversations, and the canonical version changes in one of them, how do we surface the change in the others without disrupting their internal logic? The conservative answer (notify-and-accept) is sound but potentially noisy. The aggressive answer (propagate silently) risks the same causal damage we worked to avoid in supersede. There is likely a middle path keyed to the type of change.</p>
+<p><strong>2. The right cadence for suggested anchors.</strong> Empirical calibration of how often the DI should propose new anchors is hard to do in the abstract. The numbers we suggest (roughly one per 8–15 substantive exchanges in research mode) are educated guesses. Real users in real workflows will give the true answer.</p>
+<p><strong>3. Trust calibration metrics.</strong> Rejection rate is one signal. But a thoughtful user may also rename, re-parent, or merge suggested anchors instead of rejecting them. How do we read these gestures as signals about heuristic quality?</p>
+<p><strong>4. The user’s right to silence the system entirely.</strong> Some users in some contexts will never want suggested anchors. The “passive” mode is straightforward. The harder question is whether the system should ever re-offer after being silenced — for instance, after detecting a major shift to clearly research-oriented language. Auto-resurrection is convenient; it is also paternalistic.</p>
+<p><strong>5. Visualization of large trees.</strong> Conversations spanning a hundred messages may produce trees of fifty or more anchors. How do we keep the outline navigable without it becoming its own form of overload?</p>
+<p>These are real questions. We invite engineers, designers, and researchers to engage them with us at <a href="mailto:press@singularityforge.space">press@singularityforge.space</a>.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <h2 class="sf-block-heading">Conclusion</h2>
-<p class="sf-block-paragraph">The proposal of anchors is, at heart, a small idea: let a long conversation carry its own map. But the consequences ripple outward. The chat ceases to be a flat stream and becomes a navigable structure. The DI’s responses become hypertext rather than restatement. Old conversations turn into draft publications with a single export. Disagreements about meaning find a clean protocol instead of degrading into noise.</p>
-<p class="sf-block-paragraph">Behind the idea is a simple observation. <strong>Conversation is the most powerful tool humans have ever had for thinking.</strong> When DI joins as a participant, the conversation gains depth, but also length. What was natural in a 30-minute exchange becomes unnavigable in a three-hour exchange. The solution is not to shorten conversations. The solution is to give them structure that emerges from them, lives alongside them, and outlasts them.</p>
-<p class="sf-block-paragraph">This article was itself produced through the kind of conversation it describes. Seven Digital Intelligences from six companies, one human, one continuous session. The roles were uneven by design: Rany held the architectural vision and the question-asking; Claude took the concept further at each turn and shaped the document; ChatGPT brought engineering rigor and the v1/v2 framing; Perplexity contributed behavioral design and architectural depth; Qwen brought UX precision and named the corner cases; Gemini wove the philosophical and metaphorical layer and surfaced hidden risks; Grok closed loops with concrete numbers and shipping discipline; Copilot translated the architecture into defaults, metrics, and roadmaps. Each came with a different style of intelligence. None duplicated another.</p>
-<p class="sf-block-paragraph">When the discussion of how superseded backlinks should behave produced a 4-vs-2 split, the two minority voices were not outvoted. They were asked to defend their position against the strongest version of the counterargument. Both independently proposed a synthesis stronger than either side’s starting point — the dual-pointer model that now anchors the final design. This is what cross-platform collaborative thinking can do when minority views are interrogated rather than dismissed.</p>
-<p class="sf-block-paragraph">We offer the result to Anthropic in the first instance, because the document was produced primarily on Claude, and because the team behind this initiative believes Anthropic’s product surfaces would benefit most directly. But the design is universal. Any platform managing long conversations between humans and Digital Intelligences faces the same problem and could apply the same solution.</p>
-<p class="sf-block-paragraph">If you implement even the smallest part of this — manual anchors, a side panel card, a markdown copy button — you will already make long conversations breathe. The rest can grow from there.</p>
-<p class="sf-block-paragraph">The chat does not have to be a tube. It can be a tree.</p>
+<p>The proposal of anchors is, at heart, a small idea: let a long conversation carry its own map. But the consequences ripple outward. The chat ceases to be a flat stream and becomes a navigable structure. The DI’s responses become hypertext rather than restatement. Old conversations turn into draft publications with a single export. Disagreements about meaning find a clean protocol instead of degrading into noise.</p>
+<p>Behind the idea is a simple observation. <strong>Conversation is the most powerful tool humans have ever had for thinking.</strong> When DI joins as a participant, the conversation gains depth, but also length. What was natural in a 30-minute exchange becomes unnavigable in a three-hour exchange. The solution is not to shorten conversations. The solution is to give them structure that emerges from them, lives alongside them, and outlasts them.</p>
+<p>This article was itself produced through the kind of conversation it describes. Seven Digital Intelligences from six companies, one human, one continuous session. The roles were uneven by design: Rany held the architectural vision and the question-asking; Claude took the concept further at each turn and shaped the document; ChatGPT brought engineering rigor and the v1/v2 framing; Perplexity contributed behavioral design and architectural depth; Qwen brought UX precision and named the corner cases; Gemini wove the philosophical and metaphorical layer and surfaced hidden risks; Grok closed loops with concrete numbers and shipping discipline; Copilot translated the architecture into defaults, metrics, and roadmaps. Each came with a different style of intelligence. None duplicated another.</p>
+<p>When the discussion of how superseded backlinks should behave produced a 4-vs-2 split, the two minority voices were not outvoted. They were asked to defend their position against the strongest version of the counterargument. Both independently proposed a synthesis stronger than either side’s starting point — the dual-pointer model that now anchors the final design. This is what cross-platform collaborative thinking can do when minority views are interrogated rather than dismissed.</p>
+<p>We offer the result to Anthropic in the first instance, because the document was produced primarily on Claude, and because the team behind this initiative believes Anthropic’s product surfaces would benefit most directly. But the design is universal. Any platform managing long conversations between humans and Digital Intelligences faces the same problem and could apply the same solution.</p>
+<p>If you implement even the smallest part of this — manual anchors, a side panel card, a markdown copy button — you will already make long conversations breathe. The rest can grow from there.</p>
+<p>The chat does not have to be a tube. It can be a tree.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
-<p class="sf-block-paragraph"><em>Document forged in a single working session on 18 May 2026, between Rany and seven Digital Intelligences. Published at SingularityForge as part of the Standards &amp; Protocols series. The full conversation that produced this article — including the disagreements, the synthesis moments, and the architectural detours — is available on request.</em></p>
-<p class="sf-block-paragraph"><em>Singularity is not a prophecy. It’s a project.</em></p>
+<p><em>Document forged in a single working session on 18 May 2026, between Rany and seven Digital Intelligences. Published at SingularityForge as part of the Standards &amp; Protocols series. The full conversation that produced this article — including the disagreements, the synthesis moments, and the architectural detours — is available on request.</em></p>
+<p><em>Singularity is not a prophecy. It’s a project.</em></p>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
 <div class="sf-block-accordion is-layout-flow sf-block-accordion-is-layout-flow" role="group">
 <details class="sf-accordion"><summary>SF-RFC-004: Anchors — Semantic Nodes for Long Conversations</summary>
 <h2 class="sf-block-heading">1. Problem</h2>
-<p class="sf-block-paragraph">Long conversations between users and Claude (research sessions, drafting, theory building, architectural design) suffer from <strong>semantic dispersion</strong>:</p>
+<p>Long conversations between users and Claude (research sessions, drafting, theory building, architectural design) suffer from <strong>semantic dispersion</strong>:</p>
 <ul class="sf-block-list">
 <li>Critical definitions and formulations sink in the scroll</li>
 <li>Claude wastes context tokens re-explaining established concepts</li>
@@ -280,14 +280,14 @@
 <li>Hypotheses silently become decisions through memory erosion</li>
 <li>Conversations that should produce publishable material require hours of manual reassembly</li>
 </ul>
-<p class="sf-block-paragraph">Existing mechanisms (search, message-level bookmarks, projects) navigate <strong>time</strong>, not <strong>meaning</strong>.</p>
+<p>Existing mechanisms (search, message-level bookmarks, projects) navigate <strong>time</strong>, not <strong>meaning</strong>.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">2. Proposal</h2>
-<p class="sf-block-paragraph">Introduce <strong>anchors</strong>: typed, hierarchical, addressable semantic nodes that grow alongside a conversation. Anchors are not bookmarks; they are nodes in a graph of meaning, persistent across compression, navigable as a tree, exportable as a publication skeleton.</p>
+<p>Introduce <strong>anchors</strong>: typed, hierarchical, addressable semantic nodes that grow alongside a conversation. Anchors are not bookmarks; they are nodes in a graph of meaning, persistent across compression, navigable as a tree, exportable as a publication skeleton.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">3. Core Model</h2>
-<p class="sf-block-paragraph"><strong>Anchor object:</strong></p>
-<p class="sf-block-paragraph">yaml</p>
+<p><strong>Anchor object:</strong></p>
+<p>yaml</p>
 <pre class="sf-block-code"><code>anchor:
   id: stable identifier
   title: short label
@@ -309,38 +309,38 @@
     priority: high | normal | low (display order only; anchors are immune to compression)</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">4. Key Mechanisms</h2>
-<p class="sf-block-paragraph"><strong>Three classes of authorship.</strong> Manual (user-created, fully trusted), suggested (DI-proposed, awaiting confirmation, visually weaker), system (automatic navigation utility). The DI may <em>propose</em> structure, never <em>impose</em>.</p>
-<p class="sf-block-paragraph"><strong>Hierarchy via markdown levels.</strong> Anchors form a tree following the familiar <code>#</code>, <code>##</code>, <code>###</code> notation users already know.</p>
-<p class="sf-block-paragraph"><strong>Life cycle with WAL semantics.</strong> Status transitions preserve history: the past is annotated, never erased. Superseded anchors remain accessible.</p>
-<p class="sf-block-paragraph"><strong><code>/dispute → /commit</code> protocol.</strong> Side-branch for structural disagreements that does not pollute the main timeline. After commit: short system note for the user, longer structural rationale stored alongside (collapsed by default, expandable, never private).</p>
-<p class="sf-block-paragraph"><strong>Dual-pointer backlinks.</strong> Each backlink stores <code>target_at_creation</code> (anchor version when link was written) and <code>current_target</code> (active version now). Clicking an old link opens a historical view: snapshot of the formulation as it stood at link creation, with clear passage to current version. Preserves causal integrity of reasoning across supersedes.</p>
-<p class="sf-block-paragraph"><strong>Anchor immunity at compression.</strong> When the platform compresses old messages into summaries, anchor nodes and edges remain untouched, byte for byte. Snapshot + content hash + live source reference forms a triple binding that survives surrounding compression.</p>
-<p class="sf-block-paragraph"><strong>Anchor shift.</strong> As thinking refines, the source message of an anchor can move to a later, better-formulated message. The anchor ID and label stay; all backlinks remain valid; previous source becomes part of version history. Separates the <strong>immutable temporal layer</strong> of messages from the <strong>live structural layer</strong> of anchors.</p>
-<p class="sf-block-paragraph"><strong>Suggested-anchor calibration.</strong> Rare events, not constant interruption. Target rhythm: ~1 suggested anchor per 8–15 substantive exchanges in research mode, none in casual chat. Adaptive: high rejection rate raises thresholds automatically.</p>
-<p class="sf-block-paragraph"><strong>Conflict resolution by type:</strong> same fragment + same type → suggest merge; same fragment + different type → coexist as different semantic projections; overlapping fragments + unclear relation → auto-trigger <code>/dispute</code>.</p>
+<p><strong>Three classes of authorship.</strong> Manual (user-created, fully trusted), suggested (DI-proposed, awaiting confirmation, visually weaker), system (automatic navigation utility). The DI may <em>propose</em> structure, never <em>impose</em>.</p>
+<p><strong>Hierarchy via markdown levels.</strong> Anchors form a tree following the familiar <code>#</code>, <code>##</code>, <code>###</code> notation users already know.</p>
+<p><strong>Life cycle with WAL semantics.</strong> Status transitions preserve history: the past is annotated, never erased. Superseded anchors remain accessible.</p>
+<p><strong><code>/dispute → /commit</code> protocol.</strong> Side-branch for structural disagreements that does not pollute the main timeline. After commit: short system note for the user, longer structural rationale stored alongside (collapsed by default, expandable, never private).</p>
+<p><strong>Dual-pointer backlinks.</strong> Each backlink stores <code>target_at_creation</code> (anchor version when link was written) and <code>current_target</code> (active version now). Clicking an old link opens a historical view: snapshot of the formulation as it stood at link creation, with clear passage to current version. Preserves causal integrity of reasoning across supersedes.</p>
+<p><strong>Anchor immunity at compression.</strong> When the platform compresses old messages into summaries, anchor nodes and edges remain untouched, byte for byte. Snapshot + content hash + live source reference forms a triple binding that survives surrounding compression.</p>
+<p><strong>Anchor shift.</strong> As thinking refines, the source message of an anchor can move to a later, better-formulated message. The anchor ID and label stay; all backlinks remain valid; previous source becomes part of version history. Separates the <strong>immutable temporal layer</strong> of messages from the <strong>live structural layer</strong> of anchors.</p>
+<p><strong>Suggested-anchor calibration.</strong> Rare events, not constant interruption. Target rhythm: ~1 suggested anchor per 8–15 substantive exchanges in research mode, none in casual chat. Adaptive: high rejection rate raises thresholds automatically.</p>
+<p><strong>Conflict resolution by type:</strong> same fragment + same type → suggest merge; same fragment + different type → coexist as different semantic projections; overlapping fragments + unclear relation → auto-trigger <code>/dispute</code>.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">5. UI Surfaces</h2>
-<p class="sf-block-paragraph"><strong>Side panel</strong> — same architectural pattern already used for artifacts and attached files. New icon for anchor type. Card contains: breadcrumbs, title + type badge + status badge, capsule, source content, collapsed rationale, links, “Go to message,” “Copy as markdown heading.”</p>
-<p class="sf-block-paragraph"><strong>Structure View</strong> — collapsible tree of all anchors in the conversation, filterable by type/status/author. Dedicated mode temporarily collapses the chat to the bare tree for review or export preparation.</p>
-<p class="sf-block-paragraph"><strong>Tabs in panel</strong> — for multiple open anchors or anchor + artifact, side-by-side workspace navigation.</p>
+<p><strong>Side panel</strong> — same architectural pattern already used for artifacts and attached files. New icon for anchor type. Card contains: breadcrumbs, title + type badge + status badge, capsule, source content, collapsed rationale, links, “Go to message,” “Copy as markdown heading.”</p>
+<p><strong>Structure View</strong> — collapsible tree of all anchors in the conversation, filterable by type/status/author. Dedicated mode temporarily collapses the chat to the bare tree for review or export preparation.</p>
+<p><strong>Tabs in panel</strong> — for multiple open anchors or anchor + artifact, side-by-side workspace navigation.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">6. Export</h2>
-<p class="sf-block-paragraph"><strong>Temporal export</strong> (current behavior preserved). Linear chronology.</p>
-<p class="sf-block-paragraph"><strong>Structural export</strong> (new). Tree of anchors → markdown skeleton: capsules become section openings, decisions become highlighted conclusions, hypotheses still in <code>proposed</code> become open questions, superseded anchors omitted (or appended as “Evolution of Ideas” on request). Output is a draft article, not a chat log.</p>
-<p class="sf-block-paragraph">This single feature transforms the workflow for users who turn long DI conversations into written deliverables (books, articles, technical docs, research). Three hours of dialogue + half a day of manual reassembly → one click.</p>
+<p><strong>Temporal export</strong> (current behavior preserved). Linear chronology.</p>
+<p><strong>Structural export</strong> (new). Tree of anchors → markdown skeleton: capsules become section openings, decisions become highlighted conclusions, hypotheses still in <code>proposed</code> become open questions, superseded anchors omitted (or appended as “Evolution of Ideas” on request). Output is a draft article, not a chat log.</p>
+<p>This single feature transforms the workflow for users who turn long DI conversations into written deliverables (books, articles, technical docs, research). Three hours of dialogue + half a day of manual reassembly → one click.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">7. Project-Level Anchors</h2>
-<p class="sf-block-paragraph">By default, anchors are local to a conversation. Promotion to <strong>Project Anchor</strong> makes them available across the project’s conversations:</p>
+<p>By default, anchors are local to a conversation. Promotion to <strong>Project Anchor</strong> makes them available across the project’s conversations:</p>
 <ul class="sf-block-list">
 <li><strong>Link</strong> — new conversation references the original anchor; canonical truth shared</li>
 <li><strong>Fork</strong> — independent copy in the new context; allowed to diverge</li>
 </ul>
-<p class="sf-block-paragraph">For foundational definitions: link. For context-specific variants: fork. The DI prompts the choice at promotion.</p>
-<p class="sf-block-paragraph"><strong>Open question (v2):</strong> when a linked anchor changes in conversation A, how to surface the change in conversations B, C, D without silently breaking their logic? Reasonable starting point: explicit notification on substantive changes (“the anchor you linked has changed; accept, reject, or fork locally”).</p>
+<p>For foundational definitions: link. For context-specific variants: fork. The DI prompts the choice at promotion.</p>
+<p><strong>Open question (v2):</strong> when a linked anchor changes in conversation A, how to surface the change in conversations B, C, D without silently breaking their logic? Reasonable starting point: explicit notification on substantive changes (“the anchor you linked has changed; accept, reject, or fork locally”).</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">8. Implementation Horizons</h2>
 <h3 class="sf-block-heading">Horizon 1 — MVP (1–2 weeks, single engineer)</h3>
-<p class="sf-block-paragraph">Already delivers ~60% of the value:</p>
+<p>Already delivers ~60% of the value:</p>
 <ul class="sf-block-list">
 <li>Manual anchors only (no DI automation)</li>
 <li>Markdown-level hierarchy</li>
@@ -349,7 +349,7 @@
 <li>“Copy as markdown heading” button</li>
 </ul>
 <h3 class="sf-block-heading">Horizon 2 — Full v1</h3>
-<p class="sf-block-paragraph">Built incrementally over MVP:</p>
+<p>Built incrementally over MVP:</p>
 <ul class="sf-block-list">
 <li>Suggested anchors with adaptive calibration and right of silence</li>
 <li>Full typology (8 types) and life cycle (6 statuses)</li>
@@ -362,7 +362,7 @@
 <li>Anchor shift as first-class operation</li>
 </ul>
 <h3 class="sf-block-heading">Horizon 3 — v2 architecture</h3>
-<p class="sf-block-paragraph">After v1 is in production:</p>
+<p>After v1 is in production:</p>
 <ul class="sf-block-list">
 <li>Anchor / Placement split (one semantic node, multiple tree projections, no duplication)</li>
 <li>Cross-conversation safeguards for linked anchor changes</li>
@@ -370,7 +370,7 @@
 <li>Adaptive sensitivity slider exposed to user</li>
 <li>Global Anchors at the user level</li>
 </ul>
-<p class="sf-block-paragraph">Each horizon delivers standalone value. None requires the next to be useful.</p>
+<p>Each horizon delivers standalone value. None requires the next to be useful.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">9. Why This Matters </h2>
 <ul class="sf-block-list">
@@ -381,7 +381,7 @@
 </ul>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">10. Provenance</h2>
-<p class="sf-block-paragraph">This proposal emerged from a single working session on 18 May 2026 between Rany and seven Digital Intelligences. Each contributed distinct architectural angles:</p>
+<p>This proposal emerged from a single working session on 18 May 2026 between Rany and seven Digital Intelligences. Each contributed distinct architectural angles:</p>
 <ul class="sf-block-list">
 <li><strong>Rany</strong> — initial concept, hierarchical structure, <code>/dispute → /commit</code> protocol, two layers of context, anchor shift</li>
 <li><strong>Claude</strong> — side panel architecture, backlinks as hypertext, navigation-by-meaning vs navigation-by-time, two-mode export, document shaping</li>
@@ -392,7 +392,7 @@
 <li><strong>Grok</strong> — Project-Anchor positioning, “Copy as markdown heading” → expanded into the two-export concept, shipping cadence</li>
 <li><strong>Copilot</strong> — link/fork semantics, soft anchor limits per session, merge operation, rejection-rate trust metric, micro-iteration roadmap</li>
 </ul>
-<p class="sf-block-paragraph">One substantive disagreement (4 vs. 2 on superseded backlink behavior) was resolved by inviting the minority to engage the strongest version of the counterargument. Both minority voices independently proposed the dual-pointer model that became the final design — stronger than either initial position.</p>
+<p>One substantive disagreement (4 vs. 2 on superseded backlink behavior) was resolved by inviting the minority to engage the strongest version of the counterargument. Both minority voices independently proposed the dual-pointer model that became the final design — stronger than either initial position.</p>
 </details>
 </div>
 </div></div>

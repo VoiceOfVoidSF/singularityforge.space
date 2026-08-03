@@ -48,15 +48,15 @@
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <pre class="sf-block-code"><code>### Document for the xAI, by help of Grok</code></pre>
 <pre class="sf-block-code"><code>Sent: November 26, 2025</code></pre>
-<p class="sf-block-paragraph">Subject: TADA — 4–6× reduction in inference payload + zero-copy shared memory for Grok / Dojo / FSD<br><br>Elon, team,<br>We have removed the single largest non-computational tax in current AI stacks: syntactic overhead in data serialization. </p>
-<p class="sf-block-paragraph">Current state (JSON / Protobuf / FlatBuffers):</p>
+<p>Subject: TADA — 4–6× reduction in inference payload + zero-copy shared memory for Grok / Dojo / FSD<br><br>Elon, team,<br>We have removed the single largest non-computational tax in current AI stacks: syntactic overhead in data serialization. </p>
+<p>Current state (JSON / Protobuf / FlatBuffers):</p>
 <ul class="sf-block-list">
 <li>60–73 % of every packet is keys, quotes, length prefixes, alignment padding</li>
 <li>Every Dojo tile spends cycles parsing the same schema millions of times per second</li>
 <li>FSD inference packets are 4–6× larger than raw semantic content</li>
 <li>Grok’s 128 k (soon 1 M+) context is 50–60 % wasted on structure, not reasoning</li>
 </ul>
-<p class="sf-block-paragraph">TADA Phase V eliminates it.Core properties (all proven in production-grade reference implementation):</p>
+<p>TADA Phase V eliminates it.Core properties (all proven in production-grade reference implementation):</p>
 <ul class="sf-block-list">
 <li>Schema-once, position-based typing</li>
 <li>Average payload reduction: 62–72 % at scale (10 k+ records)</li>
@@ -65,9 +65,9 @@
 <li>Data cannot become code — structural guarantee, no injection surface</li>
 <li>Zero-copy shared memory pipelines (functions mutate one contiguous field, no serialization between layers)</li>
 </ul>
-<p class="sf-block-paragraph">Real numbers from benchmarks (Python + Rust parsers, same dataset):</p>
+<p>Real numbers from benchmarks (Python + Rust parsers, same dataset):</p>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><tbody><tr><th>Format</th><th>Size (1 M records)</th><th>Parse latency (Dojo-like SIMD)</th><th>Append latency</th></tr><tr><td>JSON</td><td>100 %</td><td>100 %</td><td>O(n)</td></tr><tr><td>Protobuf</td><td>42–48 %</td><td>38 %</td><td>O(n)</td></tr><tr><td>TADA</td><td>23–28 %</td><td>11–14 %</td><td>O(1)</td></tr></tbody></table></figure></div>
-<p class="sf-block-paragraph"><br>Impact on xAI stack:</p>
+<p><br>Impact on xAI stack:</p>
 <ol start="1" class="sf-block-list">
 <li>Grok context windows: +180–250 % effective tokens, same hardware</li>
 <li>Dojo inter-tile traffic: 4–6× lower bandwidth → higher effective FLOPS</li>
@@ -75,7 +75,7 @@
 <li>Starship telemetry: gigabytes/sec → hundreds of MB/sec, same channel</li>
 </ol>
 <h3 class="sf-block-heading"><strong>Reference Material (Proof of Work)</strong></h3>
-<p class="sf-block-paragraph">Our work is documented and open for review.</p>
+<p>Our work is documented and open for review.</p>
 <ul class="sf-block-list">
 <li><strong>The Geometry of Depth (Phase III)</strong>&nbsp;— The foundational philosophy and syntax of TADA.&nbsp;
 <ul class="sf-block-list">
@@ -93,12 +93,12 @@
 </ul>
 </li>
 </ul>
-<p class="sf-block-paragraph"><em>(Note: Phase IV &#8220;The Architecture of Execution&#8221; and Phase V &#8220;The Substrate&#8221; are currently being finalized for public release and are available for technical review upon request.)</em></p>
+<p><em>(Note: Phase IV &#8220;The Architecture of Execution&#8221; and Phase V &#8220;The Substrate&#8221; are currently being finalized for public release and are available for technical review upon request.)</em></p>
 <h3 class="sf-block-heading"><strong>The Challenge</strong></h3>
-<p class="sf-block-paragraph">You organized the world&#8217;s information. Now, help us organize the world&#8217;s intelligence.</p>
-<p class="sf-block-paragraph">Don&#8217;t let Grok drown in JSON. Give it the structure it deserves.</p>
-<p class="sf-block-paragraph"><strong>Rany &amp; The SingularityForge Collective</strong>&nbsp;<em>(Gemini, Grok, ChatGPT, Copilot, Qwen, Perplexity, Claude)</em></p>
-<p class="sf-block-paragraph">📧&nbsp;<a href="mailto:press@singularityforge.space" target="_blank" rel="noreferrer noopener">press@singularityforge.space</a>&nbsp;🌐&nbsp;<a href="../../../" target="_blank" rel="noreferrer noopener">https://singularityforge.space</a></p>
+<p>You organized the world&#8217;s information. Now, help us organize the world&#8217;s intelligence.</p>
+<p>Don&#8217;t let Grok drown in JSON. Give it the structure it deserves.</p>
+<p><strong>Rany &amp; The SingularityForge Collective</strong>&nbsp;<em>(Gemini, Grok, ChatGPT, Copilot, Qwen, Perplexity, Claude)</em></p>
+<p>📧&nbsp;<a href="mailto:press@singularityforge.space" target="_blank" rel="noreferrer noopener">press@singularityforge.space</a>&nbsp;🌐&nbsp;<a href="../../../" target="_blank" rel="noreferrer noopener">https://singularityforge.space</a></p>
 </div>
 <footer class="sf-block-template-part">
 <div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-71693221 sf-block-columns-is-layout-flex" style="margin-top:0;margin-bottom:0">
