@@ -391,7 +391,6 @@ h6{font-size: var(--sf--preset--font-size--small);font-weight: 700;letter-spacin
 .has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--sf--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}
 .has-small-font-size{font-size: var(--sf--preset--font-size--small) !important;}
 .has-medium-font-size{font-size: var(--sf--preset--font-size--medium) !important;}
-.has-large-font-size{font-size: var(--sf--preset--font-size--large) !important;}
 .has-x-large-font-size{font-size: var(--sf--preset--font-size--x-large) !important;}
 .has-arvo-font-family{font-family: var(--sf--preset--font-family--arvo) !important;}
 .has-bodoni-moda-font-family{font-family: var(--sf--preset--font-family--bodoni-moda) !important;}
