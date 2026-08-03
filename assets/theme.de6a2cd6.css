@@ -484,10 +484,6 @@ a.sf-block-button__link:hover{
   display:block;
   margin-bottom:8px;
 }
-.has-superbfont-xsmall-font-size,.has-superbfont-xxsmall-font-size,.has-superbfont-tiny-font-size{
-  font-size:18px;
-  line-height:1.75;
-}
 .sf-block-latest-posts.is-grid{
     border-radius: 14px;
     box-shadow: inset 0px 0px 5px rgba(130, 130, 130, 0.6);
