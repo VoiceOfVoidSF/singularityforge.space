@@ -75,15 +75,13 @@
 </ul>
 <h3 class="sf-block-heading">1.2 The Artifact Graveyard Problem</h3>
 <p><strong>Current workflow:</strong></p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-Session 1: Create &quot;API_Schema.md&quot;
+<pre class="sf-block-code"><code>Session 1: Create &quot;API_Schema.md&quot;
 Session 2: Create &quot;API_Schema_v2.md&quot; (can&#039;t update original)
 Session 3: Create &quot;API_Schema_final.md&quot; (user confusion: which is current?)
 Session 4: Create &quot;API_Schema_really_final.md&quot; (version chaos)
 
 Result: 4 duplicate artifacts, no single source of truth
-
-</pre></div>
+</code></pre>
 <p><strong>User pain points:</strong></p>
 <ul class="sf-block-list">
 <li>🗑️ Artifact graveyard (dozens of outdated versions)</li>
@@ -114,8 +112,7 @@ Result: 4 duplicate artifacts, no single source of truth
 <li>✅ Collaboratively curated (AI + user decide)</li>
 </ul>
 <h3 class="sf-block-heading">2.2 Architecture: Three-Tier Memory Stack</h3>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-┌─────────────────────────────────────────────────────┐
+<pre class="sf-block-code"><code>┌─────────────────────────────────────────────────────┐
 │  GLOBAL STACK (Cross-project)                       │
 │  • User communication preferences                   │
 │  • General working style                            │
@@ -138,11 +135,9 @@ Result: 4 duplicate artifacts, no single source of truth
 │  • Conversation-specific reasoning                  │
 │  Scope: Current chat | Persist: Auto-purge          │
 └─────────────────────────────────────────────────────┘
-
-</pre></div>
+</code></pre>
 <h3 class="sf-block-heading">2.3 User Experience Flow</h3>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-┌─────────────┐
+<pre class="sf-block-code"><code>┌─────────────┐
 │ User Query  │
 └──────┬──────┘
        │
@@ -181,30 +176,25 @@ Result: 4 duplicate artifacts, no single source of truth
 │         *loads it contextually*     │
 │ Based on the API spec we defined... │
 └─────────────────────────────────────┘
-
-</pre></div>
+</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">3. Detailed Examples</h2>
 <h3 class="sf-block-heading">Example 1: Software Development</h3>
 <p><strong>Scenario:</strong> Building authentication system</p>
 <p><strong>Session 1:</strong></p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-User: &quot;Design database schema for user auth&quot;
+<pre class="sf-block-code"><code>User: &quot;Design database schema for user auth&quot;
 Claude: &#x5B;creates detailed schema artifact]
 Claude: &quot;📌 Should I pin this schema to the project? 
         You&#039;ll need it when implementing login endpoints.&quot;
 User: &quot;Yes&quot;
 → Schema pinned to PROJECT STACK
-
-</pre></div>
+</code></pre>
 <p><strong>Session 7 (2 weeks later):</strong></p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-User: &quot;Implement password reset flow&quot;
+<pre class="sf-block-code"><code>User: &quot;Implement password reset flow&quot;
 Claude: &#x5B;opens pinned schema automatically]
         &quot;Based on our user schema with email_verified field...&quot;
 → No re-explaining needed, context preserved
-
-</pre></div>
+</code></pre>
 <h3 class="sf-block-heading">Example 2: Long-term Writing Project</h3>
 <p><strong>Scenario:</strong> 108-chapter novel (real use case)</p>
 <p><strong>Current problem:</strong></p>
@@ -215,8 +205,7 @@ Claude: &#x5B;opens pinned schema automatically]
 <li>No single source of truth</li>
 </ul>
 <p><strong>With pinning:</strong></p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-Pinned artifacts:
+<pre class="sf-block-code"><code>Pinned artifacts:
 ├── Character_Profiles.md (updates as story evolves)
 ├── Medical_Reference.md (terminology for illness scenes)
 ├── Story_Timeline.md (keeps plot consistent)
@@ -230,12 +219,10 @@ User: &quot;Yes&quot;
 Session 67: Writing medical scene
 Claude: &#x5B;auto-loads Medical_Reference.md]
         Uses established terminology consistently
-
-</pre></div>
+</code></pre>
 <h3 class="sf-block-heading">Example 3: Data Analysis</h3>
 <p><strong>Scenario:</strong> Multi-session analysis project</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-Session 1: Initial data exploration
+<pre class="sf-block-code"><code>Session 1: Initial data exploration
 Claude: Creates summary statistics
 Claude: &quot;📌 Pin these findings? You&#039;ll need them for modeling.&quot;
 → Pinned as Data_Summary.md
@@ -244,8 +231,7 @@ Session 5: Building ML model
 Claude: &#x5B;loads Data_Summary.md]
         &quot;Given the 37% missing values we identified...&quot;
 → Builds on previous work seamlessly
-
-</pre></div>
+</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">4. Benefits Analysis</h2>
 <h3 class="sf-block-heading">4.1 For Users</h3>
@@ -259,11 +245,9 @@ Claude: &#x5B;loads Data_Summary.md]
 <li>✅ <strong>Evolution:</strong> Living documents (vs static snapshots)</li>
 </ul>
 <p><strong>Market Position:</strong></p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-Current: &quot;Claude has memory like others&quot;
+<pre class="sf-block-code"><code>Current: &quot;Claude has memory like others&quot;
 Future:  &quot;Claude has collaborative knowledge management&quot;
-
-</pre></div>
+</code></pre>
 <p><strong>Target Audience:</strong></p>
 <ul class="sf-block-list">
 <li>Professional teams (engineering, research, creative)</li>
@@ -273,15 +257,12 @@ Future:  &quot;Claude has collaborative knowledge management&quot;
 <h3 class="sf-block-heading">4.3 Technical Advantages</h3>
 <p><strong>Memory as Tools, Not Burden:</strong></p>
 <p><strong>Competitor approach:</strong></p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-User: &quot;Hello&quot;
+<pre class="sf-block-code"><code>User: &quot;Hello&quot;
 System: *loads ALL memory into context*
 AI: &quot;Hi! I remember you prefer X, Y, Z...&quot; (200 tokens wasted)
-
-</pre></div>
+</code></pre>
 <p><strong>Claude with pinning:</strong></p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-User: &quot;Hello&quot;
+<pre class="sf-block-code"><code>User: &quot;Hello&quot;
 Claude: *sees 20 pinned files, loads none*
 Claude: &quot;Hi! 👋&quot; (5 tokens)
 
@@ -289,8 +270,7 @@ User: &quot;Continue the auth implementation&quot;
 Claude: *now loads API_Spec.md + Security_Guidelines.md*
         *ignores unrelated Database_Schema.md*
 Claude: &quot;Looking at our auth endpoints...&quot; (efficient)
-
-</pre></div>
+</code></pre>
 <p><strong>Result:</strong> Context window used intelligently, not wastefully.</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h2 class="sf-block-heading">5. Risk Mitigation</h2>
@@ -304,12 +284,10 @@ Claude: &quot;Looking at our auth endpoints...&quot; (efficient)
 <li>✅ Limit: 50 pins per project (auto-purge by relevance)</li>
 </ul>
 <p><strong>Privacy Tiers:</strong></p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-GLOBAL: Highest security (requires double-confirmation)
+<pre class="sf-block-code"><code>GLOBAL: Highest security (requires double-confirmation)
 PROJECT: Medium security (user owns project)
 SESSION: Auto-purge (temporary only)
-
-</pre></div>
+</code></pre>
 <h3 class="sf-block-heading">5.2 User Trust</h3>
 <p><strong>Transparency mechanisms:</strong></p>
 <ul class="sf-block-list">

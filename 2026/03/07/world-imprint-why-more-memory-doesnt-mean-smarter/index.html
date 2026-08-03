@@ -84,13 +84,11 @@
 <p>Modern LLMs conflate them. They hold everything in one window: long-term knowledge, the current task, dialogue history, external data. It works. But it does not scale. And it is not intelligence — it is luck with a sufficiently large window.</p>
 <h3 class="sf-block-heading">Three-Layer Architecture: Where We Stand</h3>
 <p>From the TADA TechDoc:</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-L2 (Human Interface)      — noise, emotion, language
+<pre class="sf-block-code"><code>L2 (Human Interface)      — noise, emotion, language
        ↕
 L1 (Face Layer / LLM)     — token-limited working window
        ↕  
-L0 (Core / World Imprint) — graph memory: nodes, edges, claims, DoF
-</pre></div>
+L0 (Core / World Imprint) — graph memory: nodes, edges, claims, DoF</code></pre>
 <p><strong>L2</strong> is you, the human. Or another interface. Noise, cultural context, typos, sarcasm.</p>
 <p><strong>L1</strong> is a modern LLM. Claude, GPT, Gemini. It receives the chaos of L2, cleans it, translates it into structures, and passes it to L0. And in reverse — translates L0&#8217;s response back into human language. Not a true DI — but an architecturally necessary translation layer.</p>
 <p><strong>L0</strong> is what does not yet exist in full form, but whose architecture is already described. It does not speak to humans. It does not know the word &#8220;hello.&#8221; It works only with TADA structures, only with semantic graphs. If L0 were trained on human language — it would suffocate in entropy. Every node would carry fifty cultural interpretations instead of one clean meaning.</p>
@@ -99,15 +97,12 @@ L0 (Core / World Imprint) — graph memory: nodes, edges, claims, DoF
 <h2 class="sf-block-heading">Part II: World Imprint — What DI Memory Must Store</h2>
 <h3 class="sf-block-heading">Not Facts. Object Ecosystems.</h3>
 <p>A traditional knowledge base stores facts:</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-cat — mammal
+<pre class="sf-block-code"><code>cat — mammal
 cat — predator
-cat — domestic animal
-</pre></div>
+cat — domestic animal</code></pre>
 <p>This is flat. This is dead. This is not knowledge — it is a list.</p>
 <p>World Imprint stores differently. Every object is an ecosystem: a node with its own <strong>degrees of freedom</strong>, constraints, and connections to other objects.</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-object: cat
+<pre class="sf-block-code"><code>object: cat
   degrees of freedom:
     physiology: weight, age, breed
     nutrition: food type, frequency, portion
@@ -120,8 +115,7 @@ object: cat
   connections:
     → veterinary medicine
     → home ecosystem
-    → nutrition ecosystem
-</pre></div>
+    → nutrition ecosystem</code></pre>
 <p>This is a living structure. When you ask &#8220;how often should I feed my cat&#8221; — the system does not search for a fact. It builds an <strong>object projection</strong>: activating only the relevant degrees of freedom (age, weight, activity, food type) and temporarily ignoring the rest (coat color, sociability, hunting).</p>
 <p>This is dynamic context. Not a fixed chunk of memory — but a projection carved for the task.</p>
 <h3 class="sf-block-heading">Seven Components of Engineering Reality</h3>
@@ -167,8 +161,7 @@ object: cat
 <h3 class="sf-block-heading">Three Phases of Projection</h3>
 <p><strong>Phase 1: Query Interpretation</strong></p>
 <p>Not just NER. Not just keyword search. L1 unfolds the query into a task structure:</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-query: &quot;How often should I feed my cat?&quot;
+<pre class="sf-block-code"><code>query: &quot;How often should I feed my cat?&quot;
 
 task frame:
   object: cat
@@ -176,8 +169,7 @@ task frame:
   goal: practical recommendation
   implicit parameters: age, weight, activity, food type
   domain: veterinary
-  stake level: casual
-</pre></div>
+  stake level: casual</code></pre>
 <p>Key point: the system sees not only what was asked explicitly. It infers what is needed for the answer — even if not stated. &#8220;Age&#8221; was never mentioned, but it is causally necessary.</p>
 <p>Solvable today via LLM + chain-of-thought: &#8220;to answer the feeding frequency, I need to know&#8230;&#8221;</p>
 <p><strong>Phase 2: Subgraph Construction</strong></p>
@@ -187,19 +179,16 @@ task frame:
 <p><em>Buildable now (MVP):</em> Static weights + embedding similarity. Simple, reliable, production-ready.</p>
 <p><em>Phase 2:</em> Dynamic GNN-based reweighting — Graph Attention Networks with edge reweighting per query at runtime. The technology exists in research but is not yet production-ready at this scale.</p>
 <p>Result — Active Projection: a temporary subgraph with annotated weights:</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-.active_projection⧞2⧞object⧞2⧞dof⧞3⧞relevance⧞⧞
+<pre class="sf-block-code"><code>.active_projection⧞2⧞object⧞2⧞dof⧞3⧞relevance⧞⧞
 cat⧞age⧞3⧞0.92⧞
 cat⧞mass⧞3⧞0.87⧞
 cat⧞activity_level⧞3⧞0.74⧞
 cat⧞food_type⧞3⧞0.95⧞
-cat⧞coat_color⧞3⧞0.02⧞⧞
-</pre></div>
+cat⧞coat_color⧞3⧞0.02⧞⧞</code></pre>
 <p><code>coat_color</code> stays in memory. Does not enter context.</p>
 <p><strong>Phase 3: Packaging for Reasoning</strong></p>
 <p>The projection is not just data. It is a structured task model:</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-.task_model⧞2⧞query⧞2⧞type⧞2⧞domain⧞2⧞stake⧞3⧞response_threshold⧞⧞
+<pre class="sf-block-code"><code>.task_model⧞2⧞query⧞2⧞type⧞2⧞domain⧞2⧞stake⧞3⧞response_threshold⧞⧞
 feed_cat_frequency⧞causal_reasoning⧞veterinary⧞casual⧞0.3⧞⧞
 
 .active_dof⧞2⧞dof⧞2⧞status⧞3⧞weight⧞⧞
@@ -210,8 +199,7 @@ coat_color⧞ignored⧞0.02⧞⧞
 
 .unresolved⧞2⧞parameter⧞2⧞action⧞⧞
 age⧞ask_user⧞
-food_type⧞ask_user⧞⧞
-</pre></div>
+food_type⧞ask_user⧞⧞</code></pre>
 <p>The reasoning core receives not raw text and not the full graph. It receives a precise working model — and knows what is missing from it.</p>
 <h3 class="sf-block-heading">Computational Limits</h3>
 <p>Three real constraints:</p>
@@ -291,12 +279,10 @@ food_type⧞ask_user⧞⧞
 </ol>
 <h3 class="sf-block-heading">Three Action Thresholds</h3>
 <p>Confidence is not a single scale. It is a matrix that depends on domain and the cost of error.</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-.response_policy⧞2⧞domain⧞3⧞min_confidence⧞2⧞action_below⧞⧞
+<pre class="sf-block-code"><code>.response_policy⧞2⧞domain⧞3⧞min_confidence⧞2⧞action_below⧞⧞
 casual⧞0.3⧞hedge_and_answer⧞
 analytical⧞0.7⧞show_alternatives⧞
-safety_critical⧞0.95⧞refuse_and_redirect⧞⧞
-</pre></div>
+safety_critical⧞0.95⧞refuse_and_redirect⧞⧞</code></pre>
 <p>Where do these thresholds come from? These are starting heuristics, not magic numbers. Calibration is performed per domain: a calibrated probability of correctness is built for each domain via Platt/Isotonic regression on a validation set with ground truth labels. Thresholds for casual, analytical, and safety are determined to achieve the required precision/recall trade-offs and to control false-positive rate in critical domains. Final values depend on validation and the cost of error in the specific application.</p>
 <p>For a casual question — answer with a hedge even at confidence 0.4. Blocking a response at that confidence is paralysis, not caution.</p>
 <p>For safety-critical — below threshold, the system is better off not answering than answering incorrectly. This is not a failure. This is correct behavior. Additional requirement: a minimum of two independent sources for any claim in a safety-critical domain.</p>
@@ -341,16 +327,14 @@ safety_critical⧞0.95⧞refuse_and_redirect⧞⧞
 <p><code>domain = veterinary</code>, <code>stake = casual</code>. Adversarial check not needed. Mode: fast.</p>
 <p><strong>Stage 2: Projection</strong></p>
 <p>Projection Controller queries World Imprint. Object: cat. Activated degrees of freedom: age, weight, activity, food type. Ignored: coat color, sociability, hunting.</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-active_projection:
+<pre class="sf-block-code"><code>active_projection:
   cat⧞age⧞3⧞0.92⧞
   cat⧞mass⧞3⧞0.87⧞
   cat⧞food_type⧞3⧞0.95⧞
   cat⧞activity_level⧞3⧞0.74⧞
   cat⧞coat_color⧞3⧞0.02⧞  ← not activated
 
-unresolved: age → ask_user, food_type → ask_user
-</pre></div>
+unresolved: age → ask_user, food_type → ask_user</code></pre>
 <p><strong>Stage 3: Projection Audit</strong></p>
 <p>Two unresolved parameters. Gap signal: DoF mismatch. Strategy: clarify with user (step 3 of cascade).</p>
 <p>But for casual response the system does not block — it answers with a hedge, offering clarification.</p>
@@ -387,10 +371,8 @@ unresolved: age → ask_user, food_type → ask_user
 <h3 class="sf-block-heading">Cognitive Cycle Stages</h3>
 <p><strong>Stage 0: Intake.</strong> L1 receives query from L2. Cleans noise, normalizes, forms TADA structure.</p>
 <p><strong>Stage 1: Query Interpretation.</strong> Unfolds the query into a Task Envelope — a meta-structure that accompanies the query through the entire pipeline. Task Envelope is not just a data container but a unit of traceability: each stage writes its result into it, and the entire path from query to response becomes auditable, reproducible, and suitable for safety review.</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-.task_envelope⧞2⧞query_id⧞2⧞type⧞2⧞domain⧞2⧞stake⧞3⧞response_threshold⧞⧞
-q_7842⧞causal_reasoning⧞veterinary⧞analytical⧞0.85⧞⧞
-</pre></div>
+<pre class="sf-block-code"><code>.task_envelope⧞2⧞query_id⧞2⧞type⧞2⧞domain⧞2⧞stake⧞3⧞response_threshold⧞⧞
+q_7842⧞causal_reasoning⧞veterinary⧞analytical⧞0.85⧞⧞</code></pre>
 <p><strong>Stage 1.5: Domain Classifier.</strong> Determines stake level before building the projection. This solves the chicken-and-egg problem: adversarial check (Stage 6) needs to know the operating mode before the system starts thinking. A simple LLM classifier by domain + keywords. Fast, cheap, critical.</p>
 <p><strong>Stage 2: Projection.</strong> Projection Controller builds Active Projection. Latency targets: &lt;500ms for casual, &lt;800ms for analytical (with precomputed indices for hot nodes).</p>
 <p><strong>Stage 3: Projection Audit.</strong> First metacognitive check — before reasoning begins. Seven gap signals. On critical gaps — return to Stage 2 with expanded parameters or escalation.</p>
@@ -407,12 +389,10 @@ q_7842⧞causal_reasoning⧞veterinary⧞analytical⧞0.85⧞⧞
 <p><strong>Hot Buffer.</strong> All new knowledge immediately. Fast write. Available for current session but with reduced trust weight. Analogous to the hippocampus.</p>
 <p><strong>Quarantine.</strong> Consolidation daemon moves data from hot buffer here. Deduplication. Conflict detection. Source verification. Facts that fail verification stay here — not deleted, marked as disputed. If after consolidation confidence &lt; 0.5 — flag <code>human_review</code>. The system does not make final decisions on disputed facts independently.</p>
 <p><strong>World Imprint.</strong> Verified facts only. Slow write. Full indexing. This is permanent, stable memory.</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-.memory_zones⧞2⧞zone⧞2⧞write_speed⧞2⧞trust_level⧞2⧞persistence⧞⧞
+<pre class="sf-block-code"><code>.memory_zones⧞2⧞zone⧞2⧞write_speed⧞2⧞trust_level⧞2⧞persistence⧞⧞
 hot_buffer⧞immediate⧞provisional⧞session⧞
 quarantine⧞batch⧞pending⧞until_verified⧞
-world_imprint⧞slow⧞verified⧞permanent⧞⧞
-</pre></div>
+world_imprint⧞slow⧞verified⧞permanent⧞⧞</code></pre>
 <h3 class="sf-block-heading">Latency Budget</h3>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th>Mode</th><th>Total budget</th><th>Profile</th></tr></thead><tbody><tr><td>Casual</td><td>&lt;1.5s</td><td>Interpret 100ms + Classify 50ms + Project 500ms + Reason 800ms + Format 50ms</td></tr><tr><td>Analytical</td><td>&lt;3s</td><td>+ Full audit 200ms + Full validation 200ms</td></tr><tr><td>Safety-critical</td><td>&lt;5s</td><td>+ Adversarial 1–2s + possible retry + rollback</td></tr></tbody></table></figure></div>
 <h3 class="sf-block-heading">Minimum Orchestration, Buildable Today</h3>

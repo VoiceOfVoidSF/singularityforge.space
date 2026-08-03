@@ -331,11 +331,9 @@
 <p>Think of Shield OS as the &#8220;brain&#8221; of Living Boundary. Just like your smartphone has an operating system (iOS, Android) that manages apps, battery, sensors, Shield OS manages all the protective layers.</p>
 <p><strong>The key principle:</strong> Shield OS doesn&#8217;t run at maximum power 24/7. It operates in a <strong>6-stage decision cycle</strong> that activates protection <strong>only when needed</strong>.</p>
 <h3 class="sf-block-heading">The 6-Stage Cycle</h3>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-Sense → Classify → Predict → Actuate → Verify → Degrade Safely
+<pre class="sf-block-code"><code>Sense → Classify → Predict → Actuate → Verify → Degrade Safely
    ↑                                                    ↓
-   └────────────────────────────────────────────────────┘
-</pre></div>
+   └────────────────────────────────────────────────────┘</code></pre>
 <p>Let&#8217;s walk through what happens when, say, a dust storm approaches your building:</p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading"><strong>Stage 1: Sense</strong> [REALITY]</h4>
@@ -509,11 +507,9 @@ Sense → Classify → Predict → Actuate → Verify → Degrade Safely
 <p>This is a separate layer that monitors <strong>all commands and rule changes</strong>:</p>
 <p><strong>1. Tamper-evident logging:</strong> Every command is recorded in a <strong>hash-chain</strong> (like blockchain) — cryptographic fingerprints that show if someone altered the records.</p>
 <p><strong>Example log entry:</strong></p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-&#x5B;2026-01-11T14:30:00Z] Command: &quot;Activate plasma filter&quot;
+<pre class="sf-block-code"><code>&#x5B;2026-01-11T14:30:00Z] Command: &quot;Activate plasma filter&quot;
 Source: authorized_user_rany
-Hash: a3f5c9d7e2b1... (linked to previous command)
-</pre></div>
+Hash: a3f5c9d7e2b1... (linked to previous command)</code></pre>
 <p>If someone tries to delete or modify this log, the hash-chain breaks → system detects tampering.</p>
 <p><strong>2. Safe State on integrity violation:</strong></p>
 <p>If Shield OS detects:</p>
@@ -843,8 +839,7 @@ Hash: a3f5c9d7e2b1... (linked to previous command)
 <h3 class="sf-block-heading">Data Format (CSV/JSON)</h3>
 <p>Each measurement record includes:</p>
 <p>json</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-{
+<pre class="sf-block-code"><code>{
   &quot;timestamp&quot;: &quot;2026-01-11T14:23:45Z&quot;,
   &quot;sensor_type&quot;: &quot;PM2.5&quot; | &quot;EMI&quot; | &quot;thermal&quot; | &quot;integrity&quot;,
   &quot;value&quot;: 12.3,
@@ -854,8 +849,7 @@ Hash: a3f5c9d7e2b1... (linked to previous command)
   &quot;data_plane_config&quot;: &quot;HEPA+plasma_off&quot;,
   &quot;location_hash&quot;: &quot;sha256(lat,lon,salt)&quot;,
   &quot;energy_mode&quot;: &quot;Active-A&quot;
-}
-</pre></div>
+}</code></pre>
 <p><strong>Field explanations:</strong></p>
 <ul class="sf-block-list">
 <li><strong>timestamp:</strong> When measurement was taken (ISO 8601 format)</li>
@@ -1891,9 +1885,7 @@ Hash: a3f5c9d7e2b1... (linked to previous command)
 <h3 class="sf-block-heading">D.2 Energy Budget Formula &amp; Coefficients</h3>
 <p><strong>Generic energy model for any Living Boundary implementation</strong></p>
 <h4 class="sf-block-heading">Universal Formula:</h4>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-E_total = A × (E_idle + D_A×E_A + D_B×E_B + D_C×E_C)
-</pre></div>
+<pre class="sf-block-code"><code>E_total = A × (E_idle + D_A×E_A + D_B×E_B + D_C×E_C)</code></pre>
 <p><strong>Where:</strong></p>
 <ul class="sf-block-list">
 <li><strong>A</strong> = protected area (m²)</li>
@@ -1908,23 +1900,19 @@ E_total = A × (E_idle + D_A×E_A + D_B×E_B + D_C×E_C)
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h4 class="sf-block-heading">Quick Calculation Examples:</h4>
 <p><strong>Example 1: Residential home (100 m²)</strong></p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-E_idle   = 0.1 W/m² × 100 m² × 24 h = 240 Wh/day
+<pre class="sf-block-code"><code>E_idle   = 0.1 W/m² × 100 m² × 24 h = 240 Wh/day
 E_A      = 1.5 W/m² × 100 m² × 12 h = 1,800 Wh/day
 E_B      = 10 W/m² × 100 m² × 0.5 h = 50 Wh/day
 ─────────────────────────────────────────────────
-Total    ≈ 2,100 Wh/day = 2.1 kWh/day
-</pre></div>
+Total    ≈ 2,100 Wh/day = 2.1 kWh/day</code></pre>
 <p>Solar canopy (30 m², 7 kW peak) → 30-35 kWh/day → <strong>15-17× margin</strong></p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <p><strong>Example 2: Data center (1,000 m²)</strong></p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-E_idle   = 0.2 W/m² × 1,000 m² × 24 h = 4,800 Wh/day
+<pre class="sf-block-code"><code>E_idle   = 0.2 W/m² × 1,000 m² × 24 h = 4,800 Wh/day
 E_A      = 2 W/m² × 1,000 m² × 24 h = 48,000 Wh/day
 E_B      = 15 W/m² × 1,000 m² × 1 h = 15,000 Wh/day
 ──────────────────────────────────────────────────
-Total    ≈ 68 kWh/day
-</pre></div>
+Total    ≈ 68 kWh/day</code></pre>
 <p>Rooftop solar (200 m², 140 kW peak) → 500-600 kWh/day → <strong>7-9× margin</strong></p>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <p><strong>Usage notes:</strong></p>
@@ -2012,8 +2000,7 @@ Total    ≈ 68 kWh/day
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">E.2 Core Data Schema (JSON)</h3>
 <p>json</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-{
+<pre class="sf-block-code"><code>{
   &quot;measurement_id&quot;: &quot;uuid-v4-string&quot;,
   &quot;timestamp&quot;: &quot;ISO-8601-datetime&quot;,
   &quot;system_info&quot;: {
@@ -2053,8 +2040,7 @@ Total    ≈ 68 kWh/day
     &quot;data_validation_passed&quot;: true,
     &quot;anomaly_flags&quot;: &#x5B;]
   }
-}
-</pre></div>
+}</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">E.3 Field Definitions</h3>
 <div class="table-wrap"><figure class="sf-block-table"><table class="has-fixed-layout"><thead><tr><th><strong>Field</strong></th><th><strong>Type</strong></th><th><strong>Description</strong></th><th><strong>Required</strong></th><th><strong>Privacy Notes</strong></th></tr></thead><tbody><tr><td><code>measurement_id</code></td><td>UUID v4</td><td>Unique identifier for this record</td><td>Yes</td><td>No PII</td></tr><tr><td><code>timestamp</code></td><td>ISO 8601</td><td>When measurement was taken (UTC)</td><td>Yes</td><td>Rounded to nearest hour for privacy</td></tr><tr><td><code>shield_os_version</code></td><td>String</td><td>Version of Shield OS software</td><td>Yes</td><td>Public info</td></tr><tr><td><code>data_plane_config</code></td><td>String</td><td>Physical layer configuration</td><td>Yes</td><td>e.g., &#8220;HEPA+plasma_off&#8221;, &#8220;EM_shield_active&#8221;</td></tr><tr><td><code>location_hash</code></td><td>SHA-256</td><td>Cryptographic hash of coordinates + salt</td><td>Yes</td><td>Cannot be reversed to actual location</td></tr><tr><td><code>climate_zone</code></td><td>Köppen code</td><td>General climate classification</td><td>No</td><td>Low-resolution geo info (e.g., &#8220;Mediterranean&#8221;)</td></tr><tr><td><code>sensor_type</code></td><td>Enum</td><td>What parameter was measured</td><td>Yes</td><td>PM2.5, EMI, thermal, etc.</td></tr><tr><td><code>value</code></td><td>Float</td><td>Measurement value</td><td>Yes</td><td>Must include unit</td></tr><tr><td><code>unit</code></td><td>String</td><td>Unit of measurement</td><td>Yes</td><td>μg/m³, dB, °C, mSv, etc.</td></tr><tr><td><code>confidence</code></td><td>Float (0-1)</td><td>Sensor confidence score</td><td>Yes</td><td>0 = unreliable, 1 = high confidence</td></tr><tr><td><code>energy_mode</code></td><td>Enum</td><td>Operating mode at time of measurement</td><td>Yes</td><td>Idle, Active-A/B/C</td></tr><tr><td><code>outdoor_conditions</code></td><td>Object</td><td>External environment for context</td><td>No</td><td>Helps interpret indoor measurements</td></tr><tr><td><code>PM2.5_reduction_percent</code></td><td>Float</td><td>Indoor vs outdoor improvement</td><td>No</td><td>Key performance metric</td></tr><tr><td><code>energy_consumed_Wh</code></td><td>Float</td><td>Energy used in measurement period</td><td>No</td><td>For efficiency analysis</td></tr></tbody></table></figure></div>
@@ -2115,8 +2101,7 @@ Total    ≈ 68 kWh/day
 <p><strong>Rate limit:</strong> 1 submission per minute per installation (to prevent spam/abuse)</p>
 <p><strong>Example submission (Python):</strong></p>
 <p>python</p>
-<div class="sf-block-syntaxhighlighter-code "><pre class="brush: plain; title: ; notranslate" title="">
-import requests
+<pre class="sf-block-code"><code>import requests
 import json
 from datetime import datetime
 
@@ -2160,8 +2145,7 @@ response = requests.post(
     json=measurement
 )
 
-print(response.status_code)  # 200 if successful
-</pre></div>
+print(response.status_code)  # 200 if successful</code></pre>
 <hr class="sf-block-separator has-alpha-channel-opacity"/>
 <h3 class="sf-block-heading">E.6 Public Dashboard Access</h3>
 <p><strong>URL:</strong> <code>https://commons.livingboundary.org/dashboard</code></p>
