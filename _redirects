@@ -13,6 +13,7 @@
 /tada-practical-implementation-guide/* /2025/12/10/tada-practical-implementation-guide/:splat 301
 /publication/* /publications/:splat 301
 /community-engagement/aitraining/* /about/freetraining/:splat 301
+/community-engagement/content-policy/* /about/content-policy/:splat 301
 /contact-us/frequently-asked-questions-faq /about/frequently-asked-questions-faq/ 301
 /contact-us/our-proposals /roundtable/our-proposals/ 301
 /contact-us /about/contact-us/ 301
@@ -28,3 +29,4 @@
 /tada-practical-implementation-guide /2025/12/10/tada-practical-implementation-guide/ 301
 /publication /publications/ 301
 /community-engagement/aitraining /about/freetraining/ 301
+/community-engagement/content-policy /about/content-policy/ 301
