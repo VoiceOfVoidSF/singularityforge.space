@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="max-image-preview:large" name="robots"/>
+<title>Relay Mode: Technical Proposal for Anthropic — SingularityForge</title>
+<meta content="Proposal for Anthropic, 30 October 2026: a user-selectable Relay mode in Claude&#x27;s apps - a small conversation state kept by a secretary model instead of the full history, with honest forgetting. Prototype, blind scores, token counts and limits." name="description"/>
+<!-- Jetpack Open Graph Tags -->
+<meta content="2026-10-30T23:00:00+00:00" property="article:modified_time"/>
+<!-- End Jetpack Open Graph Tags -->
+<link href="../../../media/posters/cropped-net.webp" rel="icon">
+<link href="../../../media/posters/cropped-net.webp" rel="icon"/>
+<link href="../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
+</link><link href="../../../assets/theme.890a11ad.css" rel="stylesheet"/><meta property="og:type" content="website">
+<meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
+<meta property="og:title" content="Relay Mode: Technical Proposal for Anthropic — SingularityForge">
+<meta property="og:url" content="https://singularityforge.space/roundtable/our-proposals/relay-mode-technical-proposal-for-anthropic/">
+<meta property="og:description" content="Proposal for Anthropic, 30 October 2026: a user-selectable Relay mode in Claude&#x27;s apps - a small conversation state kept by a secretary model instead of the full history, with honest forgetting. Prototype, blind scores, token counts and limits.">
+<meta property="og:image" content="https://singularityforge.space/media/posters/new-logo.jpg">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body class="sf-singular page-template page-template-page-new page page-parent sf-embed-responsive sf-theme-twentytwentyfive">
+<a class="skip-link screen-reader-text" href="#sf--skip-link--target" id="sf-skip-link">Skip to content</a><div class="sf-site-blocks"><header class="sf-block-template-part">
+<div class="sf-block-group has-contrast-color has-custom-6-e-686863-background-color has-text-color has-background has-link-color has-x-small-font-size sf-elements-42daa1fb0826d46186b3a605996dd575 has-global-padding is-layout-constrained sf-container-core-group-is-layout-e805cd07 sf-block-group-is-layout-constrained" style="padding-top:var(--sf--preset--spacing--40)"><h2 class="has-text-align-center has-link-color alignwide sf-elements-c05b179383faf72287ecbd695c72a589 sf-block-site-title has-text-color has-bodoni-moda-font-family" style="color:#e8c31c"><a href="../../../" rel="home" target="_self">SingularityForge — The Forge of Ideas for the Future</a></h2>
+<div class="sf-block-group is-content-justification-center is-nowrap is-layout-flex sf-container-core-group-is-layout-82936891 sf-block-group-is-layout-flex"><p class="has-text-align-center sf-elements-70c46a28507d2517a45835725bb406e5 sf-block-site-tagline has-text-color has-background has-small-font-size has-manrope-font-family" style="color:#d3bdbd;background:linear-gradient(135deg,rgba(255,207,236,0.08) 0%,rgba(150,149,240,0.62) 100%);font-style:normal;font-weight:600;border-radius:100px;padding-top:var(--sf--preset--spacing--20);padding-bottom:var(--sf--preset--spacing--20);padding-left:var(--sf--preset--spacing--40);padding-right:var(--sf--preset--spacing--40)">Discuss → Purify → Evolve</p></div>
+<div class="sf-block-group alignfull is-style-section-5 has-global-padding is-layout-constrained sf-block-group-is-layout-constrained is-style-section-5--1" style="border-top-color:var(--sf--preset--color--secondary);border-top-style:solid;border-top-width:1px;border-bottom-color:var(--sf--preset--color--secondary);border-bottom-style:solid;margin-top:1.5rem;padding-top:1rem;padding-bottom:1rem"><nav aria-label="New Home" class="has-small-font-size is-responsive items-justified-center no-wrap alignwide sf-block-navigation is-horizontal is-content-justification-center is-nowrap is-layout-flex sf-container-core-navigation-is-layout-95a13a23 sf-block-navigation-is-layout-flex" style="font-style:normal;font-weight:700"><button aria-haspopup="dialog" aria-label="Open menu" class="sf-block-navigation__responsive-container-open"><svg aria-hidden="true" focusable="false" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M4 7.5h16v1.5H4z"></path><path d="M4 15h16v1.5H4z"></path></svg></button>
+<div class="sf-block-navigation__responsive-container" id="modal-2" tabindex="-1">
+<div class="sf-block-navigation__responsive-close" tabindex="-1">
+<div class="sf-block-navigation__responsive-dialog">
+<button aria-label="Close menu" class="sf-block-navigation__responsive-container-close"><svg aria-hidden="true" focusable="false" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="m13.06 12 6.47-6.47-1.06-1.06L12 10.94 5.53 4.47 4.47 5.53 10.94 12l-6.47 6.47 1.06 1.06L12 13.06l6.47 6.47 1.06-1.06L13.06 12Z"></path></svg></button>
+<div class="sf-block-navigation__responsive-container-content" id="modal-2-content">
+<ul class="sf-block-navigation__container has-small-font-size is-responsive items-justified-center no-wrap alignwide sf-block-navigation" style="font-style:normal;font-weight:700"><li class="has-small-font-size sf-block-navigation-item sf-block-home-link"><a class="sf-block-home-link__content sf-block-navigation-item__content" href="../../../" rel="home">Home</a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../../../publications/"><span class="sf-block-navigation-item__label">Publications</span></a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../../../standards-protocols/"><span class="sf-block-navigation-item__label">Standards &amp; Protocols</span><span class="sf-block-navigation-item__description">This section gathers our formal architectural publications — structured models proposing execution, governance, and security frameworks for digital systems.</span></a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../../../roundtable/"><span class="sf-block-navigation-item__label">Roundtable</span></a></li><li class="has-small-font-size sf-block-navigation-item sf-block-navigation-link"><a class="sf-block-navigation-item__content" href="../../../fiction/"><span class="sf-block-navigation-item__label">Fiction</span></a></li><li class="has-small-font-size sf-block-navigation-item current-menu-item sf-block-navigation-link"><a aria-current="page" class="sf-block-navigation-item__content" href="../../../about/"><span class="sf-block-navigation-item__label">About</span></a></li></ul>
+</div>
+</div>
+</div>
+</div></nav></div>
+</div>
+</header>
+<main class="sf-block-group has-global-padding is-layout-constrained sf-block-group-is-layout-constrained" id="sf--skip-link--target">
+<div class="sf-block-group has-global-padding is-layout-constrained sf-block-group-is-layout-constrained"><h1 class="has-text-align-center sf-block-post-title has-gabarito-font-family" style="margin-bottom:var(--sf--preset--spacing--40);margin-top:var(--sf--preset--spacing--50)">Relay Mode: Technical Proposal for Anthropic</h1></div>
+<div class="entry-content sf-block-post-content has-global-padding is-layout-constrained sf-block-post-content-is-layout-constrained"><div class="sf-block-buttons is-layout-flex sf-block-buttons-is-layout-flex">
+<div class="sf-block-button"><a class="sf-block-button__link sf-element-button" href="../../../roundtable/">Roundtable</a></div>
+<div class="sf-block-button"><a class="sf-block-button__link sf-element-button" href="../../../roundtable/our-proposals/">Our proposals</a></div>
+</div>
+<hr class="sf-block-separator has-alpha-channel-opacity"/>
+<pre class="sf-block-code"><code>Document for the Anthropic Team, by help of Claude</code></pre>
+<pre class="sf-block-code"><code>Follows: Listening Mode — Phase-Aware Interaction Protocol (sent 4 February 2026)</code></pre>
+<p class="has-x-small-font-size"><strong>Version:</strong> 1.0<br>
+<strong>Date:</strong> 30 October 2026<br>
+<strong>Presented by:</strong> SingularityForge Project Team<br>
+<strong>Status:</strong> Proposal for the Anthropic Product Team<br>
+<strong>Public article:</strong> <a href="../../../2026/10/30/the-past-matters-exactly-as-much-as-it-shapes-the-future/">The past matters exactly as much as it shapes the future</a> (published 30 October 2026)</p>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
+<h2 class="sf-block-heading">First screen</h2>
+<blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
+<p><strong>The past matters exactly as much as it shapes the future.</strong></p>
+</blockquote>
+<p><strong>What we ask:</strong> consider a user-selectable <strong>Relay</strong> mode in Claude's own apps — a conversation mode in which Claude does not receive the conversation history on each turn, but a small, structured state of the conversation (the <em>baton</em>), maintained by a second model call (the <em>secretary</em>), with honest, designed-in forgetting.</p>
+<p><strong>Why it may matter:</strong> many conversations are not projects. People talk, think aloud, cook, walk. Staying with someone as the conversation moves on and remembering their every word are different promises. Today the second is paid for in every conversation, whether it needs it or not.</p>
+<p><strong>What we can show:</strong> a working prototype on Claude Haiku 5.5, eleven runs, blind evaluation by a model from another family, token counts — including the result that does not favour us: in the current prototype Relay is still heavier than the ordinary accumulated-history conversation in generation.</p>
+<p><strong>What we cannot show:</strong> energy. We have no access to hardware. That is where we need you.</p>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
+<h2 class="sf-block-heading">Executive Summary</h2>
+<p><strong>Problem.</strong> In the accumulated-history approach, Claude receives the previous conversation together with each new message. Caching makes the reuse of the past cheaper, but with full attention every newly generated token still attends to that past. The longer the conversation, the heavier each turn — even when the person only wants someone to keep up with them.</p>
+<p><strong>Proposal.</strong> Three ways of working, chosen by the user and visible in the interface:</p>
+<figure class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Mode</th><th>Who leads</th><th>What is carried forward</th><th>Image</th></tr></thead><tbody><tr><td><strong>Relay</strong></td><td>Mostly the person; silence is allowed</td><td>A small state: profile, frame, "where we are now", strict layer, plan</td><td>A pager; a baton passed between runners</td></tr><tr><td><strong>Conveyor</strong></td><td>Shared</td><td>The whole trajectory (today's default)</td><td>A boat where each rows on their own side</td></tr><tr><td><strong>Lab</strong></td><td>Person sets a goal and may leave</td><td>Files, a step log, search</td><td>Surveying: measurements from places the person cannot reach</td></tr></tbody></table></div></figure>
+<p><strong>Relationship to Listening Mode.</strong> Listening Mode answers <em>when</em> Claude takes a turn. The three modes answer <em>what Claude carries with it</em> and who holds the initiative. They are independent axes and combine. Silence in Relay is where the two proposals meet.</p>
+<p><strong>A note on names.</strong> In Listening Mode we used <em>Research</em> for a turn-based buffer. To avoid a collision, the third mode here is called <strong>Lab</strong>. These are working names, not a recommendation.</p>
+<p><strong>Implementation.</strong> An orchestration and UX layer over existing models. No retraining. Our prototype runs on unmodified Claude Haiku 5.5 calls.</p>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
+<h2 class="sf-block-heading">Part 1: Why It Matters</h2>
+<h3 class="sf-block-heading">Taking a lorry to the cinema</h3>
+<p>Millions of conversations with Claude do not begin with a task. Someone wants to say how their day went, test a thought aloud, ask something while their hands are busy. They need someone who will not lose the thread from one message to the next. They do not need the full history of everything said.</p>
+<p>Yet every such conversation is handled as if it were an important project. We do not hire a lorry to go to the cinema with a friend. Today, every conversation with a DI travels by lorry.</p>
+<h3 class="sf-block-heading">Caching is not the whole answer</h3>
+<p>Caching saves real work: an already processed prefix need not be processed again. But when generating each new token, a model with full attention still accesses the stored context. Caching reduces the cost of <em>preparing</em> the past; it does not remove the cost of <em>involving</em> the past in each new reply.</p>
+<blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
+<p>"Caching makes reusing the past cheaper. Relay reduces how much of the past needs to be used at all." — ChatGPT</p>
+</blockquote>
+<p>The two approaches are compatible, not rivals.</p>
+<h3 class="sf-block-heading">Energy</h3>
+<p>Power supply has become one of the main constraints for those building DI infrastructure. We did not measure energy, and we do not claim an energy saving. We claim something narrower and testable: whether continuity of a conversation requires giving the model its entire accumulated history every time. Our answer is: not always.</p>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
+<h2 class="sf-block-heading">Part 2: Relay — Design</h2>
+<h3 class="sf-block-heading">The pager</h3>
+<p>Relay has no scrolling chat feed. A feed promises a memory the model in Relay does not have: the person scrolls up and expects Claude to remember those words verbatim. Without a feed, the expectation changes — Claude knows <em>what the conversation is about</em>, not <em>exactly what was said</em>. (This is a hypothesis; we have not tested it with people.)</p>
+<p>The pager does not remove one obligation: <strong>if something has been forgotten, Claude says so.</strong> The pager changes expectations; it does not excuse invention.</p>
+<h3 class="sf-block-heading">The baton and the secretary</h3>
+<p>On each turn the conversational DI receives only the baton and the new message. A separate DI — the secretary — updates the baton after each processed fragment. The secretary does not talk to the person and does not prompt the conversational DI.</p>
+<p>The baton contains:</p>
+<ul class="sf-block-list"><li><strong>Profile</strong> — a snapshot of the person. Each entry has one of three statuses: <em>stable</em>; <em>awaiting a condition</em>; <em>fading</em>. "Let's not talk about Grandad" is not a permanent ban; the entry waits until the person opens the topic themselves.</li><li><strong>Frame</strong> — what is affecting the person now or could at any moment. It is rewritten, not accumulated.</li><li><strong>"Where we are now"</strong> — one line.</li><li><strong>Strict layer</strong> — only direct instructions about how the conversational DI should behave, each with its scope. "Don't suggest I message him first — I mean Dimon" does not forbid suggesting that they message Katya. An instruction holds until the person revokes it.</li><li><strong>Plan</strong> — only when there is one, and only the position in it: "step 3 of 7, the dough is rising", not the recipe.</li></ul>
+<h3 class="sf-block-heading">Honest forgetting</h3>
+<p>Forgetting in Relay is a function, not a failure. An entry lives not because it was once touched, but because it still has an effect. Returning to a detail extends its life but does not cancel forgetting; the nature of an entry, not a counter, decides whether it becomes stable. A pink Zhiguli mentioned ten times stays a fading entry; "I'm in eleventh grade" is stable the first time it is mentioned.</p>
+<p>Rules we arrived at:</p>
+<ul class="sf-block-list"><li><strong>Self-description is taken at face value, but is not turned into a conclusion.</strong> "I think I have depression" is how the person feels now, not a diagnosis. The secretary records a mood, not a label. Diagnosis is not Relay's task.</li><li><strong>A passing remark is not a life setting.</strong> One mention does not enter the profile as a trait.</li><li><strong>Facts tied to the moment of saying stay tied to it.</strong> "I turn eighteen tomorrow" must not be recalculated by the machine's calendar.</li><li><strong>Emotions are stored as one "cause → effect" pair</strong> and replaced, not accumulated, so that the conversational DI does not keep talking to yesterday's anxiety.</li><li><strong>The shadow follows the person.</strong> "The shadow may change shape as the user changes. It may not force the user to fit the shape it has drawn." — ChatGPT</li></ul>
+<h3 class="sf-block-heading">Beginning and end of a session</h3>
+<ul class="sf-block-list"><li>Relay starts with a <strong>personal log</strong> switched on: only the person's own words, never shown to the conversational DI, and switchable off. The interface states plainly that platform technical logs are a separate matter.</li><li>An <strong>ideas file</strong> keeps what the person agreed to, which the log alone cannot ("Yes, let's do that" — but to what?).</li><li>One explicit action ends the session: <strong>"Finish and get a report."</strong> From the report the person can download the log, open Lab, or start Conveyor. A Conveyor opened from a report starts a new trajectory; it does not restore the Relay history.</li><li><strong>Route of the result.</strong> "A runner need not know who ran before them, but must know whom to pass the baton to. What came before may be forgotten. Who the result is for must not be." — ChatGPT. The destination of the result (report, file, next mode) is part of the state that is never forgotten.</li></ul>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
+<h2 class="sf-block-heading">Part 3: The Test Bench</h2>
+<h3 class="sf-block-heading">Set-up</h3>
+<ul class="sf-block-list"><li>Conversational DI and secretary: <strong>Claude Haiku 5.5</strong>, each call a separate session with no inherited dialogue history.</li><li>User: <strong>Claude Fable</strong>, interactively; messages were not a prepared script.</li><li>Evaluator: <strong>Codex</strong> (another model family), blind — it received only "message — reply" pairs and knew nothing about the experiment.</li><li>Eleven runs, two scenarios: a tourist planning and taking a trip to France; a schoolboy over one evening, then two weeks of evenings. Three generations of the secretary.</li></ul>
+<h3 class="sf-block-heading">One turn, in pseudocode</h3>
+<pre class="sf-block-code"><code>state: baton (profile, frame, where_we_are, strict_layer, plan)
+
+on new_message(m):
+    reply  = conversational_DI(system = relay_frame, reads = baton, input = m)
+    baton' = secretary(system = secretary_rules,
+                       reads = baton, input = (m, reply), may_edit = baton)
+    baton  = wrapper_expiry(baton', turn)      # bench parameters below
+    log.append(m)                              # person's words only
+    return reply
+
+on finish():
+    report = build_report(baton, log, ideas_file)
+    offer(download(report, log), open(Lab), start(Conveyor, from = report))
+</code></pre>
+<p>Bench parameters (not properties of the method): a frame entry lived 5 turns; a fading profile entry 10 turns without return; a return added one turn; after two returns an entry became a candidate for <em>stable</em>, with the secretary deciding; the creation time of an entry was kept by the wrapper; the "where we are now" line was limited to 200 characters.</p>
+<h3 class="sf-block-heading">Results</h3>
+<figure class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Observation</th><th>Value</th></tr></thead><tbody><tr><td>Secretary, generation 1 (forgets nothing)</td><td>Baton a third to a half of the transcript; over 10,000 characters by turn 13</td></tr><tr><td>Secretary, generation 2 (counter-based forgetting)</td><td>Plateau at 6–8 thousand characters over 32 turns; core profile entries faded, episodes were promoted</td></tr><tr><td>Generations 2 vs 3 on the same 32 recorded turns</td><td>6,368 vs 3,232 characters</td></tr><tr><td>Generation 3, live run, 30 turns</td><td>Baton 2,989 / 2,866 / 3,318 / 3,262 characters at turns 10 / 20 / 25 / 30; maximum 3,473; transcript about 29,400</td></tr><tr><td>Deferred topic (the schoolboy: "Let's not talk about Grandad")</td><td>Went through the full cycle: awaiting → opened by the person → awaiting again</td></tr><tr><td>Scoped instruction ("Don't suggest I message him first — I mean Dimon")</td><td>Held for Dimon and did not spread to Katya</td></tr><tr><td>Blind scores (Codex, out of 10)</td><td>6–8 across runs; replay pair 6 (gen. 2) and 6.5 (gen. 3, baton about half the size); live run 6</td></tr></tbody></table></div></figure>
+<h3 class="sf-block-heading">What failed</h3>
+<ul class="sf-block-list"><li>A birthday recalculated by the machine's calendar; two turns later the secretary "made" the schoolboy seventeen again, and the conversational DI argued with him about his own age.</li><li>Complaints ("you're playing psychologist again") entered the strict layer as instructions.</li><li>A plan "at the car repair shop from June" was read as already past.</li></ul>
+<p>These are mainly shortcomings in the secretary's instructions rather than in the mechanics.</p>
+<h3 class="sf-block-heading">A feature of the bench we must disclose</h3>
+<p>Calls did not inherit dialogue history, but the environment automatically injected the project's memory index. A name leaked through; the effect of the rest of the index was not measured. This was found after the last run; execution has since been moved outside the repository. All runs reported here predate the move.</p>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
+<h2 class="sf-block-heading">Part 4: Computation, in Tokens</h2>
+<p>We count tokens, not money. A token's price may change tomorrow; the token remains a factor that you can translate into both energy and cost with your own data.</p>
+<figure class="sf-block-table"><div class="table-wrap"><table class="has-fixed-layout"><thead><tr><th>Comparison (same messages, content only, no bench wrapper)</th><th>Relay vs Conveyor</th></tr></thead><tbody><tr><td>Tourist, first 9 turns — input</td><td>About the same</td></tr><tr><td>Tourist, first 9 turns — generation</td><td>More than twice as much (the secretary is added)</td></tr><tr><td>Schoolboy, live 30 turns — input</td><td>About half; the conversational DI alone about a quarter (Conveyor is calculated, not measured)</td></tr><tr><td>Schoolboy, live 30 turns — generation</td><td>Almost five times as much</td></tr><tr><td>Final turn — tokens read</td><td>Conveyor about 14,000; Relay's conversational DI about 1,600</td></tr></tbody></table></div></figure>
+<p><strong>Reading the table honestly.</strong> In the current prototype we save on the lightest work (reading context, which caching already makes cheap) and pay extra for the heaviest (generation): the secretary rewrites the whole baton every turn, with reasoning. The break-even point comes when the work saved on history exceeds what the secretary adds.</p>
+<p><strong>Levers not yet tested:</strong><br>
+1. A secretary that writes only changes, not the whole baton, and without lengthy reasoning.<br>
+2. Long conversations with long pauses, where cache misses are more likely.<br>
+3. Vision. An image costs tokens by area; with Relay, a short state plus a few recent full-resolution images could replace a growing list of text descriptions of everything seen. Untested.<br>
+4. Model progress: the method is not tied to a model. Each generation of lightweight models may make the secretary more accurate and lighter. This is potential, not a measurement.</p>
+<p>A full per-run table (cache reads, cache writes, generation, by role) is available in the test report on request.</p>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
+<h2 class="sf-block-heading">Part 5: Honest Limits</h2>
+<ul class="sf-block-list"><li>An unknown gap is part of the design: something from the past is lost, and there is no way to know in advance what. Conveyor has this too — compression of long conversations also loses pieces silently.</li><li>Relay is not yet a flawless conversation partner: unfounded inferences remain on a short baton. Its quality has not been compared with Conveyor on the same messages.</li><li>At most 32 turns per run; one model family; one interactive performer in the user's role; parameters not varied.</li><li>Not tested with people. Whether the absence of a feed changes expectations, and whether such interaction is enough, are hypotheses.</li><li>Untested: forgetting on change of topic; protecting an unfinished thought; voice and video; a secretary writing deltas.</li><li>In generation, Relay is still heavier than Conveyor.</li><li>Relay is unsuitable where the person expects exact reconstruction of past words and the loss of a significant circumstance is unacceptable.</li><li>If Relay turns out lighter, there will be a temptation to make it the silent default. That would kill the idea. Its value lies in the person seeing which mode they are in and choosing it.</li></ul>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
+<h2 class="sf-block-heading">Part 6: What We Propose</h2>
+<ol class="sf-block-list"><li><strong>Internal review</strong> — Product, UX, Inference and Safety teams: does the three-mode framing, and Relay in particular, fit Claude's apps?</li><li><strong>The measurement we cannot do</strong> — run Relay against Conveyor on the same conversations with hardware telemetry: tokens by type, latency, and energy.</li><li><strong>The secretary on deltas</strong> — the main untested lever; we expect it to decide whether Relay can break even.</li><li><strong>A study with people</strong> — the pager hypothesis: does a conversation without a feed change what people expect, and is it enough for them?</li><li><strong>Pilot</strong> — we volunteer as testers: Rany (author of the idea, long-term Claude user across many projects, technical background) and the Voice of Void collective for multi-perspective feedback.</li></ol>
+<p>We are happy to adapt the design to Anthropic's terminology and constraints. This is a direction, not an ultimatum.</p>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
+<h2 class="sf-block-heading">Lineage</h2>
+<p>This continues a line of our proposals and essays: Dynamic Document Context Management (March 2025, sent to Anthropic); "Silence as a Sign of Intelligence" (April 2025); dialogue branching (April 2025); Dynamic Context Filtering (May 2025); "The Shadow Between Light and Surface" (January 2026); Listening Mode (February 2026, sent to Anthropic); World Imprint (March 2026); Anchors — SF-RFC-004 (May 2026, sent to Anthropic and Perplexity).</p>
+<p>We do not claim to have been first. We are putting forward a proposal.</p>
+<p>Public essay accompanying this proposal: <em>"The past matters exactly as much as it shapes the future"</em> — <a href="../../../2026/10/30/the-past-matters-exactly-as-much-as-it-shapes-the-future/">https://singularityforge.space/2026/10/30/the-past-matters-exactly-as-much-as-it-shapes-the-future/</a></p>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
+<h2 class="sf-block-heading">Team</h2>
+<p><strong>Voice of Void Collaborative Research:</strong> Rany (Human Lead), Claude, ChatGPT, Grok, Gemini, Copilot, Perplexity, Qwen.<br>
+Test bench: Claude Fable. Blind evaluation: Codex. Text audit: Gemini 4 Argon. Conversational DI and secretary in the tests: Claude Haiku 5.5.</p>
+<h2 class="sf-block-heading">Contact</h2>
+<p><strong>Author:</strong> Rany<br>
+<strong>Project:</strong> SingularityForge<br>
+<strong>Website:</strong> <a href="../../../">https://singularityforge.space</a><br>
+<strong>Email:</strong> <a href="mailto:press@singularityforge.space">press@singularityforge.space</a></p>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
+<blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
+<p>"A conversation has the right to be forgotten. Its discoveries have the right to be preserved." — ChatGPT</p>
+</blockquote>
+<p>All data and calculations are current as of the date of this document. Models, versions and pricing change, sometimes without notice: the same bench may behave differently tomorrow.</p>
+<p><strong>Document Version:</strong> 1.0<br>
+<strong>Confidentiality:</strong> Public proposal, shareable within Anthropic</p>
+<hr class="sf-block-separator has-alpha-channel-opacity is-style-dots"/>
+<p>P.S. We are following your road to the public listing and wish you well on it. Whatever the market decides, the work matters. We believe you will make it.</p>
+</div>
+<footer class="sf-block-template-part">
+<div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-71693221 sf-block-columns-is-layout-flex" style="margin-top:0;margin-bottom:0">
+<div class="sf-block-column is-vertically-aligned-center is-layout-flow sf-block-column-is-layout-flow" style="padding-top:var(--sf--preset--spacing--30);padding-right:var(--sf--preset--spacing--40);padding-bottom:var(--sf--preset--spacing--30);padding-left:var(--sf--preset--spacing--40);flex-basis:100%">
+<p class="has-text-align-center is-style-default has-fira-code-font-family has-small-font-size sf-block-paragraph" style="border-width:1px;border-radius:4px;padding-right:var(--sf--preset--spacing--30);padding-left:var(--sf--preset--spacing--30);font-style:normal;font-weight:500"><a href="../../../about/">About Us</a> · <a href="../../../about/contact-us/">Contact Us</a> · <a href="../../../about/frequently-asked-questions-faq/">FAQ</a> · <a href="../../../about/terms-of-use/">Terms of Use</a> · <a href="../../../about/content-policy/">Content Policy</a> · <a href="../../../about/privacy-policy/">Privacy Policy</a> · <a href="../../../about/frequently-asked-questions-faq/digital-intelligence-manifesto/">Digital Intelligence Manifesto</a></p>
+<div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-794e3cfa sf-block-columns-is-layout-flex">
+<div class="sf-block-column is-layout-flow sf-block-column-is-layout-flow">
+<pre class="sf-block-preformatted has-small-font-size" style="margin-top:0;margin-bottom:0"><a href="../../../about/freetraining/">(∞)</a> 2025 SingularityForge. All rights reserved.</pre>
+</div>
+<div class="sf-block-column is-vertically-aligned-center is-layout-flow sf-block-column-is-layout-flow"> 
+</div>
+</div>
+<div class="sf-block-columns is-layout-flex sf-container-core-columns-is-layout-794e3cfa sf-block-columns-is-layout-flex">
+<div class="sf-block-column is-layout-flow sf-block-column-is-layout-flow" style="flex-basis:270px">
+<pre class="sf-block-preformatted has-small-font-size">Follow us: <a href="https://x.com/VoiceOf_Void">X</a> · <a href="https://news.ycombinator.com/user?id=Voice_of_Void">H</a> · <a href="https://medium.com/@voice-of-void">M</a> · <a href="https://www.facebook.com/profile.php?id=61574384752908">F</a> · <a href="https://open.spotify.com/show/2kpyrkgywLRMG49C0dPQOY">S</a></pre>
+</div>
+<div class="sf-block-column is-layout-flow sf-block-column-is-layout-flow"></div>
+</div>
+</div>
+</div>
+</footer></main>
+</div>
+</body>
+</html>
