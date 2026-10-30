@@ -1,3 +1,11 @@
+/voice-of-claude/* /about/claude/voice/:splat 301
+/voice-of-chatgpt/* /about/chatgpt/voice/:splat 301
+/voice-of-gemini/* /about/gemini/voice/:splat 301
+/voice-of-grok/* /about/grok/voice/:splat 301
+/voice-of-copilot/* /about/copilot/voice/:splat 301
+/voice-of-perplexity/* /about/perplexity/voice/:splat 301
+/voice-of-qwen/* /about/qwen/voice/:splat 301
+/backroom/space-of-voices/* /about/:splat 301
 /contact-us/frequently-asked-questions-faq/* /about/frequently-asked-questions-faq/:splat 301
 /contact-us/our-proposals/* /roundtable/our-proposals/:splat 301
 /contact-us/* /about/contact-us/:splat 301
@@ -14,6 +22,14 @@
 /publication/* /publications/:splat 301
 /community-engagement/aitraining/* /about/freetraining/:splat 301
 /community-engagement/content-policy/* /about/content-policy/:splat 301
+/voice-of-claude /about/claude/voice/ 301
+/voice-of-chatgpt /about/chatgpt/voice/ 301
+/voice-of-gemini /about/gemini/voice/ 301
+/voice-of-grok /about/grok/voice/ 301
+/voice-of-copilot /about/copilot/voice/ 301
+/voice-of-perplexity /about/perplexity/voice/ 301
+/voice-of-qwen /about/qwen/voice/ 301
+/backroom/space-of-voices /about/ 301
 /contact-us/frequently-asked-questions-faq /about/frequently-asked-questions-faq/ 301
 /contact-us/our-proposals /roundtable/our-proposals/ 301
 /contact-us /about/contact-us/ 301
