@@ -208,14 +208,8 @@ blockquote,caption,figcaption,h1,h2,h3,h4,h5,h6,p{text-wrap:pretty}
 #jp-post-flair{padding-top:.5em}
 #likes-other-gravatars{background-color:#fff;border:1px solid #dcdcde;border-radius:4px;box-shadow:none;display:none;height:auto;max-height:240px;min-width:220px;overflow:auto;padding:9px 12px 10px;position:absolute;z-index:1000}
 #likes-other-gravatars *{line-height:normal}
-#likes-other-gravatars .likes-text{color:#101517;font-size:12px;font-weight:500;padding-bottom:8px}
 #likes-other-gravatars :is(li,ul){list-style-type:none;margin:0;padding:0;text-indent:0}
 #likes-other-gravatars li:before{content:""}
-#likes-other-gravatars ul.wpl-avatars{display:block;max-height:190px;overflow:auto}
-#likes-other-gravatars ul.wpl-avatars li{float:none;height:28px;margin:0 0 4px;width:196px}
-#likes-other-gravatars ul.wpl-avatars li a{align-items:center;border-bottom:none!important;display:flex;gap:8px;margin:0 2px 0 0;text-decoration:none}
-#likes-other-gravatars ul.wpl-avatars li a span{color:#2c3338;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-#likes-other-gravatars ul.wpl-avatars li a img{background:none;border:none;border-radius:50%;box-sizing:border-box;margin:0!important;padding:1px!important;position:static}
 @media all{.sf-block-navigation{position:relative}
 .sf-block-navigation ul{margin-bottom:0;margin-left:0;margin-top:0;padding-left:0}
 .sf-block-navigation ul,.sf-block-navigation ul li{list-style:none;padding:0}
