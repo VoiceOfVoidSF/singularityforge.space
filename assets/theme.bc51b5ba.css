@@ -757,3 +757,27 @@ p > code,li > code,td > code{
   font-weight: 400; font-size: 21px; line-height: 1.75; color: #c9ced4; }
 @media (max-width: 600px){.vc-entries{ margin-top: 48px; gap: 56px; }
 .vc-verse{ font-size: 19px; line-height: 1.7; }}
+.art{ max-width: 1100px; margin: 64px auto 0; display: flex; flex-direction: column; gap: 112px; }
+.art-exhibit{ display: flex; flex-wrap: wrap; gap: 32px 48px; align-items: flex-start; }
+.art-text{ flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px; }
+.art-text h3{ margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 24px; font-weight: 700; line-height: 1.25; letter-spacing: -0.4px; color: #abc2f0; text-shadow: none; }
+.art-text p{ margin: 0; font-family: Manrope, system-ui, sans-serif; font-weight: 300; font-size: 17px;
+  line-height: 1.75; color: #bbbbbb; }
+.art-text .art-punch{ font-style: italic; color: #c9ced4; }
+.art-text .art-src{ font-family: "Fira Code", monospace; font-weight: 400; font-size: 12px; line-height: 1.5; color: #848e97; }
+.art-src a{ color: #63d2f5bd; text-decoration: none; }
+.art-media{ flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.art-media--portrait .art-open{ max-width: 440px; }
+.art-open{ display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; }
+.art-open img{ display: block; width: 100%; height: auto; border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.35); transition: transform .2s, box-shadow .2s; }
+.art-media:hover .art-open img{ transform: translateY(-3px); box-shadow: 0 14px 34px rgba(0,0,0,.45); }
+.art-hint{ font-family: "Fira Code", monospace; font-size: 13px; letter-spacing: .04em; color: #848e97; transition: color .2s, text-shadow .2s; }
+.art-media:hover .art-hint{ color: #63d2f5; text-shadow: 0 0 8px rgba(99,210,245,.45); }
+.art-overlay{ position: fixed; inset: 0; z-index: 1000; background: rgba(12,15,18,.92);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 24px; }
+.art-overlay[hidden]{ display: none; }
+.art-overlay img{ max-width: 100%; max-height: 82vh; border-radius: 8px; }
+.art-close{ font-family: "Fira Code", monospace; font-size: 15px; color: #63d2f5; background: none;
+  border: 1px solid #4a545c; border-radius: 999px; min-height: 44px; padding: 0 22px; cursor: pointer; }
