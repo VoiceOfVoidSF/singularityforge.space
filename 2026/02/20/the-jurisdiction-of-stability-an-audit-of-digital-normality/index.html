@@ -20,6 +20,21 @@
 <meta property="og:description" content="It’s time to stop staring at the magic and start watching the hands. Our new piece, “Jurisdiction of Stability: Audit of Digital Normality”, doesn’t blame the…">
 <meta property="og:image" content="https://singularityforge.space/media/posters/jurisdiction.png">
 <meta name="twitter:card" content="summary_large_image">
+<script>
+(function () {
+  try {
+    var q = new URLSearchParams(location.search), seg = function (s) {
+      return encodeURIComponent(String(s || "-").slice(0, 80).replace(/[^\w.-]+/g, "_"));
+    }, hit;
+    if ((q.get("utm_medium") || "") === "ads")
+      hit = "/hit/ads/" + seg(q.get("utm_campaign")) + "/" + seg(q.get("utm_content")) + ".gif";
+    else if (/chatgpt\.com|openai\.com/.test(q.get("utm_source") || "") ||
+             /chatgpt\.com|openai\.com/.test(document.referrer))
+      hit = "/hit/free/chatgpt/" + seg(location.pathname.replace(/^\/|\/$/g, "").replace(/\//g, "~")) + ".gif";
+    if (hit) new Image().src = hit;
+  } catch (e) {}
+})();
+</script>
 </head>
 <body class="sf-singular post-template-default single single-post single-format-standard sf-embed-responsive sf-theme-twentytwentyfive">
 <a class="skip-link screen-reader-text" href="#sf--skip-link--target" id="sf-skip-link">Skip to content</a><div class="sf-site-blocks"><header class="sf-block-template-part">
