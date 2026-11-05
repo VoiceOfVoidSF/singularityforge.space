@@ -8,7 +8,7 @@
 <meta content="We live in an era where artificial intelligence is becoming not just a tool, but a partner in decision-making. But where is the line between helpful advice and…" name="description"/>
 <!-- Jetpack Open Graph Tags -->
 <meta content="2025-04-06T13:39:05+00:00" property="article:published_time"/>
-<meta content="2026-11-05T14:30:00+00:00" property="article:modified_time"/>
+<meta content="2026-11-05T15:40:00+00:00" property="article:modified_time"/>
 <!-- End Jetpack Open Graph Tags -->
 <link href="../../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../../media/posters/cropped-net.webp" rel="icon"/>
@@ -59,6 +59,10 @@
 <div class="sf-block-group alignfull is-style-default is-layout-flow sf-block-group-is-layout-flow" style="border-width:1px;border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:15px;border-bottom-right-radius:15px;margin-top:0;margin-bottom:0;padding-top:var(--sf--preset--spacing--20);padding-right:var(--sf--preset--spacing--30);padding-bottom:var(--sf--preset--spacing--20);padding-left:var(--sf--preset--spacing--30);box-shadow:var(--sf--preset--shadow--natural)">
 <div class="sf-block-group is-style-default has-accent-6-color has-text-color has-link-color sf-elements-d57fe0ea1eac88127dfcc9b185d4a86d is-content-justification-center is-nowrap is-layout-flex sf-container-core-group-is-layout-ca5fbc45 sf-block-group-is-layout-flex" style="border-top-left-radius:25px;border-top-right-radius:25px;border-bottom-left-radius:25px;border-bottom-right-radius:25px;border-bottom-width:1px;margin-bottom:var(--sf--preset--spacing--40)"><h1 class="has-text-align-center sf-block-post-title" style="border-top-left-radius:100px;border-top-right-radius:100px;border-bottom-left-radius:100px;border-bottom-right-radius:100px;margin-top:var(--sf--preset--spacing--20);margin-bottom:var(--sf--preset--spacing--20);margin-left:var(--sf--preset--spacing--20);margin-right:var(--sf--preset--spacing--20)">Ethics of AI Manipulation: A Comprehensive View</h1></div>
 <div class="entry-content alignfull sf-block-post-content is-layout-flow sf-block-post-content-is-layout-flow"><figure class="sf-block-audio"><audio controls src="../../../../media/audio/SingularityForge.EthicsOfManipulation.mp3?v=048499b1"></audio></figure>
+<figure class="sf-block-video" data-yt="IGwq15ojuyg">
+<a class="sf-video-poster" href="https://www.youtube.com/watch?v=IGwq15ojuyg" aria-label="Play the DeepDive video: Ethics of AI Manipulation: A Comprehensive View"><img src="../../../../media/video/SingularityForge.EthicsOfManipulation.webp" alt="DeepDive video: Ethics of AI Manipulation: A Comprehensive View" width="1280" height="720" loading="lazy" decoding="async"/><span class="sf-video-play" aria-hidden="true"></span></a>
+<figcaption class="has-x-small-font-size"><em>DeepDive video, 5:16: the same conversation with slides. Loads from YouTube only after you press play; <a href="https://www.youtube.com/watch?v=IGwq15ojuyg">watch on YouTube</a>.</em></figcaption>
+</figure>
 <div class="sf-block-buttons is-layout-flex sf-block-buttons-is-layout-flex">
 <div class="sf-block-button"><a class="sf-block-button__link sf-element-button" href="../../../../publications/">Publications</a></div>
 </div>
@@ -333,5 +337,21 @@ Modern neuroscience shows differences in brain activation during intuitive and r
 </div>
 </footer></main>
 </div>
+<script>
+(function () {
+  document.querySelectorAll(".sf-block-video[data-yt]").forEach(function (fig) {
+    var a = fig.querySelector(".sf-video-poster"); if (!a) return;
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + fig.dataset.yt + "?autoplay=1&rel=0";
+      f.title = a.getAttribute("aria-label") || "DeepDive video";
+      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      f.setAttribute("allowfullscreen", "");
+      a.replaceWith(f);
+    });
+  });
+})();
+</script>
 </body>
 </html>
