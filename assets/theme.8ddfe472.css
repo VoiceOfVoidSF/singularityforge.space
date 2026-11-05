@@ -40,6 +40,11 @@
 .sf-block-spacer{clear:both}
 pre.sf-block-verse{box-sizing:border-box;min-width:1em;overflow:auto;white-space:pre-wrap;word-break:break-word}
 :where(pre.sf-block-verse){font-family:inherit}
+.sf-block-video{box-sizing:border-box}
+.sf-block-video video{height:auto;vertical-align:middle;width:100%}
+@supports (position:sticky){.sf-block-video [poster]{object-fit:cover}}
+.sf-block-video.aligncenter{text-align:center}
+.sf-block-video :where(figcaption){margin-bottom:1em;margin-top:.5em}
 .entry-content{counter-reset:footnotes}
 #jp-relatedposts{display:none;padding-top:1em;margin:1em 0;position:relative;clear:both}
 .sf-block-navigation{position:relative}
@@ -781,3 +786,16 @@ p > code,li > code,td > code{
 .art-overlay img{ max-width: 100%; max-height: 82vh; border-radius: 8px; }
 .art-close{ font-family: "Fira Code", monospace; font-size: 15px; color: #63d2f5; background: none;
   border: 1px solid #4a545c; border-radius: 999px; min-height: 44px; padding: 0 22px; cursor: pointer; }
+.sf-block-video{ margin: 0 0 1.25em; }
+.sf-video-poster{ position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden;
+  border-radius: 12px; background: #0c0f12; box-shadow: 0 8px 24px rgba(0,0,0,.35); }
+.sf-video-poster img{ display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .25s; }
+.sf-video-poster:hover img{ transform: scale(1.02); }
+.sf-video-play{ position: absolute; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px;
+  border-radius: 999px; background: rgba(12,15,18,.78); border: 1px solid #4a545c;
+  display: flex; align-items: center; justify-content: center; transition: background .2s, border-color .2s; }
+.sf-video-play::before{ content: ""; display: block; margin-left: 6px; border-style: solid;
+  border-width: 14px 0 14px 24px; border-color: transparent transparent transparent #63d2f5; }
+.sf-video-poster:hover .sf-video-play{ background: rgba(12,15,18,.95); border-color: #63d2f5; }
+.sf-block-video iframe{ display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 12px; }
+.sf-block-video figcaption{ margin-top: .5em; }

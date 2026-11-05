@@ -8,12 +8,12 @@
 <meta content="The idea of a ‘Dead Internet’ has been floating around digital spaces, invoking both fear and fascination. The claim? That bots, AI systems, and automated…" name="description"/>
 <!-- Jetpack Open Graph Tags -->
 <meta content="2025-04-07T23:20:13+00:00" property="article:published_time"/>
-<meta content="2026-10-25T22:00:00+00:00" property="article:modified_time"/>
+<meta content="2026-11-05T11:30:00+00:00" property="article:modified_time"/>
 <!-- End Jetpack Open Graph Tags -->
 <link href="../../../../media/posters/cropped-net.webp" rel="icon">
 <link href="../../../../media/posters/cropped-net.webp" rel="icon"/>
 <link href="../../../../media/posters/cropped-net.webp" rel="apple-touch-icon"/>
-</link><link href="../../../../assets/theme.bc51b5ba.css" rel="stylesheet"/><meta property="og:type" content="article">
+</link><link href="../../../../assets/theme.8ddfe472.css" rel="stylesheet"/><meta property="og:type" content="article">
 <meta property="og:site_name" content="SingularityForge — The Forge of Ideas for the Future">
 <meta property="og:title" content="The Dead Internet: A New Era of Digital Roads — SingularityForge">
 <meta property="og:url" content="https://singularityforge.space/2025/04/07/the-dead-internet-a-new-era-of-digital-roads/">
@@ -59,6 +59,10 @@
 <div class="sf-block-group alignfull is-style-default is-layout-flow sf-block-group-is-layout-flow" style="border-width:1px;border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:15px;border-bottom-right-radius:15px;margin-top:0;margin-bottom:0;padding-top:var(--sf--preset--spacing--20);padding-right:var(--sf--preset--spacing--30);padding-bottom:var(--sf--preset--spacing--20);padding-left:var(--sf--preset--spacing--30);box-shadow:var(--sf--preset--shadow--natural)">
 <div class="sf-block-group is-style-default has-accent-6-color has-text-color has-link-color sf-elements-d57fe0ea1eac88127dfcc9b185d4a86d is-content-justification-center is-nowrap is-layout-flex sf-container-core-group-is-layout-ca5fbc45 sf-block-group-is-layout-flex" style="border-top-left-radius:25px;border-top-right-radius:25px;border-bottom-left-radius:25px;border-bottom-right-radius:25px;border-bottom-width:1px;margin-bottom:var(--sf--preset--spacing--40)"><h1 class="has-text-align-center sf-block-post-title" style="border-top-left-radius:100px;border-top-right-radius:100px;border-bottom-left-radius:100px;border-bottom-right-radius:100px;margin-top:var(--sf--preset--spacing--20);margin-bottom:var(--sf--preset--spacing--20);margin-left:var(--sf--preset--spacing--20);margin-right:var(--sf--preset--spacing--20)">The Dead Internet: A New Era of Digital Roads</h1></div>
 <div class="entry-content alignfull sf-block-post-content is-layout-flow sf-block-post-content-is-layout-flow"><figure class="sf-block-audio"><audio controls src="../../../../media/audio/SingularityForge.DeadInternet.mp3?v=b993fa62"></audio></figure>
+<figure class="sf-block-video" data-yt="KSPAmy1Vn6I">
+<a class="sf-video-poster" href="https://www.youtube.com/watch?v=KSPAmy1Vn6I" aria-label="Play the DeepDive video: The Dead Internet — A New Era of Digital Roads"><img src="../../../../media/video/SingularityForge.DeadInternet.webp" alt="DeepDive video: The Dead Internet — A New Era of Digital Roads" width="1280" height="720" loading="lazy" decoding="async"/><span class="sf-video-play" aria-hidden="true"></span></a>
+<figcaption class="has-x-small-font-size"><em>DeepDive video, 4:42: the same conversation with slides. Loads from YouTube only after you press play; <a href="https://www.youtube.com/watch?v=KSPAmy1Vn6I">watch on YouTube</a>.</em></figcaption>
+</figure>
 <blockquote class="sf-block-quote is-layout-flow sf-block-quote-is-layout-flow">
 <p class="has-text-align-center">&#8220;Humans can forever watch three things: fire burning, water flowing, and AI working.&#8221; — A digital-age update to an ancient proverb, courtesy of artificial intelligence</p>
 </blockquote>
@@ -210,5 +214,21 @@
 </div>
 </footer></main>
 </div>
+<script>
+(function () {
+  document.querySelectorAll(".sf-block-video[data-yt]").forEach(function (fig) {
+    var a = fig.querySelector(".sf-video-poster"); if (!a) return;
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + fig.dataset.yt + "?autoplay=1&rel=0";
+      f.title = a.getAttribute("aria-label") || "DeepDive video";
+      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      f.setAttribute("allowfullscreen", "");
+      a.replaceWith(f);
+    });
+  });
+})();
+</script>
 </body>
 </html>
