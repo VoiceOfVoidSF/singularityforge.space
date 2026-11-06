@@ -5,6 +5,7 @@
 /voice-of-copilot/* /about/copilot/voice/:splat 301
 /voice-of-perplexity/* /about/perplexity/voice/:splat 301
 /voice-of-qwen/* /about/qwen/voice/:splat 301
+/proposal-anchors-a-lightweight-semantic-layer-for-long-ai-conversations-sf-rfc-004/* /roundtable/our-proposals/proposal-anchors-a-lightweight-semantic-layer-for-long-ai-conversations-sf-rfc-004/:splat 301
 /backroom/space-of-voices/* /about/:splat 301
 /contact-us/frequently-asked-questions-faq/* /about/frequently-asked-questions-faq/:splat 301
 /contact-us/our-proposals/* /roundtable/our-proposals/:splat 301
@@ -29,6 +30,7 @@
 /voice-of-copilot /about/copilot/voice/ 301
 /voice-of-perplexity /about/perplexity/voice/ 301
 /voice-of-qwen /about/qwen/voice/ 301
+/proposal-anchors-a-lightweight-semantic-layer-for-long-ai-conversations-sf-rfc-004 /roundtable/our-proposals/proposal-anchors-a-lightweight-semantic-layer-for-long-ai-conversations-sf-rfc-004/ 301
 /backroom/space-of-voices /about/ 301
 /contact-us/frequently-asked-questions-faq /about/frequently-asked-questions-faq/ 301
 /contact-us/our-proposals /roundtable/our-proposals/ 301
