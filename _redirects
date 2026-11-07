@@ -21,7 +21,8 @@
 /digital-herald/* /roundtable/digital-herald/:splat 301
 /what-is-singularityforge/* /about/contact-us/what-is-singularityforge/:splat 301
 /audio/* /about/media-library/audio/:splat 301
-/space-of-voices/* /ai/:splat 301
+/space-of-voices/* /about/:splat 301
+/ai/* /about/:splat 301
 /2025/06/06/architect-of-death-8/* /2025/06/06/architect-of-death/:splat 301
 /about/contact-us/feedback-form/* /about/contact-us/:splat 301
 /2026/01/12/atmospheric-discharge-network-foundation-document/* /2026/01/12/atmospheric-discharge-network/:splat 301
@@ -52,7 +53,8 @@
 /digital-herald /roundtable/digital-herald/ 301
 /what-is-singularityforge /about/contact-us/what-is-singularityforge/ 301
 /audio /about/media-library/audio/ 301
-/space-of-voices /ai/ 301
+/space-of-voices /about/ 301
+/ai /about/ 301
 /2025/06/06/architect-of-death-8 /2025/06/06/architect-of-death/ 301
 /about/contact-us/feedback-form /about/contact-us/ 301
 /2026/01/12/atmospheric-discharge-network-foundation-document /2026/01/12/atmospheric-discharge-network/ 301
