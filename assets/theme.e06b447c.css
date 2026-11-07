@@ -686,7 +686,8 @@ tbody tr:hover td{
 .sf-subscribe-row{ display: flex; gap: .5em; }
 .sf-subscribe input[type=email]{ flex: 1 1 auto; min-width: 0; padding: .45em .7em; border: 2px solid currentColor; border-radius: 10px; background: transparent; color: inherit; font: inherit; }
 .sf-subscribe button{ padding: .45em 1em; border: 2px solid currentColor; border-radius: 10px; background: transparent; color: inherit; font: inherit; cursor: pointer; }
-.sf-subscribe button:hover{ background: currentColor; color: var(--sf--preset--color--base, #fff); }
+.sf-subscribe button:hover,.sf-subscribe button:focus-visible{ background: rgba(127,127,127,.25); }
+.sf-subscribe input[type=email]:focus{ outline: 2px solid currentColor; outline-offset: 2px; }
 .sf-subscribe small{ display: block; margin-top: .4em; opacity: .75; }
 .table-wrap{ overflow-x: auto; margin: 1.5rem 0; }
 .table-wrap table{ border-collapse: collapse; }
