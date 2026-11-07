@@ -46,8 +46,8 @@
 /audio /about/media-library/audio/ 301
 /home/* /:splat 301
 /home / 301
-/articles/chaos-vs-order-in-ai-evolution/* /2025/05/01/when-code-comes-alive-chaos-and-emergence-in-ai-evolution/:splat 301
-/articles/chaos-vs-order-in-ai-evolution /2025/05/01/when-code-comes-alive-chaos-and-emergence-in-ai-evolution/ 301
+/articles/chaos-vs-order-in-ai-evolution/* /about/grok/:splat 301
+/articles/chaos-vs-order-in-ai-evolution /about/grok/ 301
 /space-of-voices/* /about/:splat 301
 /space-of-voices /about/ 301
 /ai/* /about/:splat 301
