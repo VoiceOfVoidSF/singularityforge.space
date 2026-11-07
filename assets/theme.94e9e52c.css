@@ -681,6 +681,13 @@ tbody tr:hover td{
 :root :where(.sf-block-group.is-style-section-5--1){background-color: var(--sf--preset--color--contrast);color: var(--sf--preset--color--base);}
 :root :where(.sf-block-separator.is-style-wide--3){}
 :root :where(.sf-block-separator.is-style-wide--3:not(.alignfull)){max-width: var(--sf--style--global--wide-size) !important;}
+.sf-subscribe{ max-width: 26rem; margin: 0; font-size: .85rem; }
+.sf-subscribe label{ display: block; margin-bottom: .35em; font-weight: 500; }
+.sf-subscribe-row{ display: flex; gap: .5em; }
+.sf-subscribe input[type=email]{ flex: 1 1 auto; min-width: 0; padding: .45em .7em; border: 2px solid currentColor; border-radius: 10px; background: transparent; color: inherit; font: inherit; }
+.sf-subscribe button{ padding: .45em 1em; border: 2px solid currentColor; border-radius: 10px; background: transparent; color: inherit; font: inherit; cursor: pointer; }
+.sf-subscribe button:hover{ background: currentColor; color: var(--sf--preset--color--base, #fff); }
+.sf-subscribe small{ display: block; margin-top: .4em; opacity: .75; }
 .table-wrap{ overflow-x: auto; margin: 1.5rem 0; }
 .table-wrap table{ border-collapse: collapse; }
 .table-wrap td,.table-wrap th{
