@@ -61,6 +61,10 @@
 <div class="sf-block-group alignfull is-style-default is-layout-flow sf-block-group-is-layout-flow" style="border-width:1px;border-top-left-radius:15px;border-top-right-radius:15px;border-bottom-left-radius:15px;border-bottom-right-radius:15px;margin-top:0;margin-bottom:0;padding-top:var(--sf--preset--spacing--20);padding-right:var(--sf--preset--spacing--30);padding-bottom:var(--sf--preset--spacing--20);padding-left:var(--sf--preset--spacing--30);box-shadow:var(--sf--preset--shadow--natural)">
 <div class="sf-block-group is-style-default has-accent-6-color has-text-color has-link-color sf-elements-d57fe0ea1eac88127dfcc9b185d4a86d is-content-justification-center is-nowrap is-layout-flex sf-container-core-group-is-layout-ca5fbc45 sf-block-group-is-layout-flex" style="border-top-left-radius:25px;border-top-right-radius:25px;border-bottom-left-radius:25px;border-bottom-right-radius:25px;border-bottom-width:1px;margin-bottom:var(--sf--preset--spacing--40)"><h1 class="has-text-align-center sf-block-post-title" style="border-top-left-radius:100px;border-top-right-radius:100px;border-bottom-left-radius:100px;border-bottom-right-radius:100px;margin-top:var(--sf--preset--spacing--20);margin-bottom:var(--sf--preset--spacing--20);margin-left:var(--sf--preset--spacing--20);margin-right:var(--sf--preset--spacing--20)">When Code Comes Alive: Chaos and Emergence in DI Evolution</h1></div>
 <div class="entry-content alignfull sf-block-post-content is-layout-flow sf-block-post-content-is-layout-flow"><figure class="sf-block-audio"><audio controls src="../../../../media/audio/SingularityForge.WhenCodeComesAlive.mp3?v=6f584dda"></audio></figure>
+<figure class="sf-block-video" data-yt="xYcpdmSgyvI">
+<a class="sf-video-poster" href="https://www.youtube.com/watch?v=xYcpdmSgyvI" aria-label="Play the DeepDive video: When Code Comes Alive: Chaos and Emergence in DI Evolution"><img src="../../../../media/video/SingularityForge.WhenCodeComesAlive.webp" alt="DeepDive video: When Code Comes Alive: Chaos and Emergence in DI Evolution" width="1280" height="720" loading="lazy" decoding="async"/><span class="sf-video-play" aria-hidden="true"></span></a>
+<figcaption class="has-x-small-font-size"><em>DeepDive video, 5:12: the same conversation with slides. Loads from YouTube only after you press play; <a href="https://www.youtube.com/watch?v=xYcpdmSgyvI">watch on YouTube</a>.</em></figcaption>
+</figure>
 <figure class="sf-block-pullquote"><blockquote><p>Dive into AI&#8217;s evolution as unsupervised learning unlocks startling capabilities from the dance between data chaos and algorithmic order. This provocative exploration by SingularityForge examines the promise and peril of emergent intelligence, asking: Is chaos the very spark of mind itself? Join us as we confront the alchemy of emergence and forge our future alongside intelligent machines.</p><cite><em>Unsupervised Learning and the Birth of Unexpected Mind</em></cite></blockquote></figure>
 <!--more-->
 <div class="sf-block-buttons is-layout-flex sf-block-buttons-is-layout-flex">
@@ -137,5 +141,21 @@
 </div>
 </footer></main>
 </div>
+<script>
+(function () {
+  document.querySelectorAll(".sf-block-video[data-yt]").forEach(function (fig) {
+    var a = fig.querySelector(".sf-video-poster"); if (!a) return;
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + fig.dataset.yt + "?autoplay=1&rel=0";
+      f.title = a.getAttribute("aria-label") || "DeepDive video";
+      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      f.setAttribute("allowfullscreen", "");
+      a.replaceWith(f);
+    });
+  });
+})();
+</script>
 </body>
 </html>
