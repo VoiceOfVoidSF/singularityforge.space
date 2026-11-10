@@ -28,6 +28,12 @@
 /2025/04/02/ai-potential-what-it-means-for-you-part-iv /2025/03/16/ai-potential-what-it-means-for-you/ 301
 /backroom/space-of-voices/* /about/:splat 301
 /backroom/space-of-voices /about/ 301
+/backroom/neural-poetry/* /about/media-library/:splat 301
+/backroom/neural-poetry /about/media-library/ 301
+/backroom/the-entropy-ledger/* /about/:splat 301
+/backroom/the-entropy-ledger /about/ 301
+/backroom/* /about/:splat 301
+/backroom /about/ 301
 /lab/energy-theory-of-the-universe/* /roundtable/discussions/:splat 301
 /lab/energy-theory-of-the-universe /roundtable/discussions/ 301
 /research/* /publications/:splat 301
@@ -70,6 +76,12 @@
 /community-engagement/aitraining /about/freetraining/ 301
 /community-engagement/content-policy/* /about/content-policy/:splat 301
 /community-engagement/content-policy /about/content-policy/ 301
+/about/space-of-voices/* /about/:splat 301
+/about/space-of-voices /about/ 301
+/about/neural-poetry/* /about/media-library/:splat 301
+/about/neural-poetry /about/media-library/ 301
+/about/the-entropy-ledger/* /about/:splat 301
+/about/the-entropy-ledger /about/ 301
 /about/contact-us/frequently-asked-questions-faq/* /about/frequently-asked-questions-faq/:splat 301
 /about/contact-us/frequently-asked-questions-faq /about/frequently-asked-questions-faq/ 301
 /about/contact-us/our-proposals/* /roundtable/our-proposals/:splat 301
