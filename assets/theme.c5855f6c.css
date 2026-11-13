@@ -814,3 +814,4 @@ p > code,li > code,td > code{
 .sf-video-poster:hover .sf-video-play{ background: rgba(12,15,18,.95); border-color: #63d2f5; }
 .sf-block-video iframe{ display: block; width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 12px; }
 .sf-block-video figcaption{ margin-top: .5em; }
+.sf-mirror-line{ font-size: .8125em; }
