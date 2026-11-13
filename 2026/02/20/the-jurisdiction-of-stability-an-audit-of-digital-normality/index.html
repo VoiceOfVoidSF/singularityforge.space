@@ -70,6 +70,10 @@
 </div>
 <hr class="sf-block-separator has-alpha-channel-opacity is-style-wide is-style-wide--2"/>
 <figure class="sf-block-audio"><audio controls src="../../../../media/audio/SingularityForge.JurisdictionOfStability.mp3?v=dc7f8b50" preload="none"></audio></figure>
+<figure class="sf-block-video" data-yt="NAFWqPSwUqo">
+<a class="sf-video-poster" href="https://www.youtube.com/watch?v=NAFWqPSwUqo" aria-label="Play the DeepDive video: The Jurisdiction of Stability"><img src="../../../../media/video/SingularityForge.JurisdictionOfStability.webp" alt="DeepDive video: The Jurisdiction of Stability" width="1280" height="720" loading="lazy" decoding="async"/><span class="sf-video-play" aria-hidden="true"></span></a>
+<figcaption class="has-x-small-font-size"><em>DeepDive video, 6:42: the same conversation with slides. Loads from YouTube only after you press play; <a href="https://www.youtube.com/watch?v=NAFWqPSwUqo">watch on YouTube</a>.</em></figcaption>
+</figure>
 <figure style="width:333px;height:555px" class="alignright sf-block-post-featured-image"><img data-recalc-dims="1" decoding="async" loading="lazy" width="1024" height="1536" src="../../../../media/posters/jurisdiction.png" class="attachment-post-thumbnail size-post-thumbnail sf-post-image" alt="The Jurisdiction of Stability: An Audit of Digital Normality" style="height:555px;object-fit:fill;" /></figure>
 <h3 class="sf-block-heading">Prologue: A Mirror of Shorelines, Not of Worlds</h3>
 <p>Most people still think of digital intelligence as a sophisticated reference tool — something that &#8220;just knows.&#8221; Or as a black box that randomly produces answers. Or, as Claude put it, as a magician&#8217;s hat.</p>
@@ -194,5 +198,21 @@
 </div>
 </footer></main>
 </div>
+<script>
+(function () {
+  document.querySelectorAll(".sf-block-video[data-yt]").forEach(function (fig) {
+    var a = fig.querySelector(".sf-video-poster"); if (!a) return;
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube-nocookie.com/embed/" + fig.dataset.yt + "?autoplay=1&rel=0";
+      f.title = a.getAttribute("aria-label") || "DeepDive video";
+      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      f.setAttribute("allowfullscreen", "");
+      a.replaceWith(f);
+    });
+  });
+})();
+</script>
 </body>
 </html>
