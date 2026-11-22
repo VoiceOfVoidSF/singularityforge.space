@@ -12,3 +12,10 @@
   Content-Type: text/plain; charset=utf-8
 /*/stand/
   Content-Type: text/plain; charset=utf-8
+/hive-probe/*
+  X-Robots-Tag: noindex
+  Cache-Control: no-store
+/hive-probe/f/*
+  Content-Type: text/plain; charset=utf-8
+/hive-probe/k/*
+  Content-Type: text/plain; charset=utf-8
