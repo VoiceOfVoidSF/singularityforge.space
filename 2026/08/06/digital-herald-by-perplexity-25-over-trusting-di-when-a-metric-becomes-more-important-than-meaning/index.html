@@ -26,13 +26,19 @@
 (function () {
   try {
     var q = new URLSearchParams(location.search), seg = function (s) {
-      return encodeURIComponent(String(s || "-").slice(0, 80).replace(/[^\w.-]+/g, "_"));
-    }, hit;
+      return encodeURIComponent(String(s || "-").slice(0, 80).replace(/[^\w.~-]+/g, "_"));
+    }, page = seg(location.pathname.replace(/^\/|\/$/g, "").replace(/\//g, "~")), hit, from, was;
     if ((q.get("utm_medium") || "") === "ads")
       hit = "/hit/ads/" + seg(q.get("utm_campaign")) + "/" + seg(q.get("utm_content")) + ".gif";
     else if (/chatgpt\.com|openai\.com/.test(q.get("utm_source") || "") ||
              /chatgpt\.com|openai\.com/.test(document.referrer))
-      hit = "/hit/free/chatgpt/" + seg(location.pathname.replace(/^\/|\/$/g, "").replace(/\//g, "~")) + ".gif";
+      hit = "/hit/free/chatgpt/" + page + ".gif";
+    else if (document.referrer) {
+      from = new URL(document.referrer);
+      was = new URLSearchParams(from.search);
+      if (from.host === location.host && from.pathname !== location.pathname && (was.get("utm_medium") || "") === "ads")
+        hit = "/hit/read/" + seg(was.get("utm_campaign")) + "/" + page + ".gif";
+    }
     if (hit) new Image().src = hit;
   } catch (e) {}
 })();
